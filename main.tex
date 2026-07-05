@@ -41,70 +41,21 @@ This paper studies how securitization affects asset prices and realized returns 
 
 \section{Introduction}
 
-The introduction of financial instruments that allowed banks to cash in the loans they issued facilitated the boom in house prices that preceded the 2007 financial crisis (\cite{Brunnermeier2009}). Subprime mortgages were pooled together and sold in the form of mortgage-backed securities (MBS), meaning that  mortgage repayments went to MBS investors rather than the mortgage originators. Furthermore, MBS were pooled together and sold in the form of collateralized debt obligations (CDO), implying that the MBS payouts went to CDO investors. The CDO backed by the same pool of MBS were issued with different degrees of payment priority, allowing the ones with the highest priority to be highly rated by rating agencies. The process was iterated even further to create squared CDO (Figure \ref{fig:mbs}). Instruments like MBS, CDO and squared CDO are known as asset-backed securities (ABS), which are securities whose payout is derived from and collateralized by some underlying assets. The possibility of creating high-rated securities backed by subprime mortgages eased the credit towards subprime borrowers, fueling an increase in house prices.\footnote{For a historical account of security innovation, see \cite{Matthews1994}.}
+Can securitization raise the market value of an asset without changing its cash flow? This paper studies this question in an infinite-horizon asset-pricing model with heterogeneous beliefs and short-selling constraints. I compare a benchmark economy in which investors trade a risk-free bond and a long-term asset with economies in which the owner of the long-term asset can issue asset-backed securities (ABS) backed by its future cash flow. The central mechanism is that an investor who is not the most optimistic buyer of the whole asset may be the most optimistic buyer of a particular tranche.
 
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[xscale=20,yscale=20]
-\draw (0.0, .06) rectangle (0.1, 0);
-\draw (0.0, .12) rectangle (0.1, .06);
-\draw (0.0, .24) rectangle (0.1, .12);
-\draw (0.0, .30) rectangle (0.1, .24);
-\node  at (0.05,.35) {MBS};
-\node  at (0.05,.27) {AAA};
-\node  at (0.05,.09) {B};
-\node  at (0.05,.03) {Equity};
-\draw[->] (0.1,0.09) -- (.2,.27);
-\draw[->] (0.1,0.09) -- (.2,.14);
-\draw[->] (0.1,0.09) -- (.2,.08);
-\draw[->] (0.1,0.09) -- (.2,.02);
-\draw (0.2, .06) rectangle (.3, 0);
-\draw (0.2, .12) rectangle (.3, .06);
-\draw (0.2, .24) rectangle (.3, .12);
-\draw (0.2, .30) rectangle (.3, .24);
-\node  at (0.25,.36) {CDO};
-\node  at (0.25,.27) {AAA};
-\node  at (0.25,.09) {B};
-\node  at (0.25,.03) {Equity};
-\draw[->] (0.3,0.09) -- (.4,.27);
-\draw[->] (0.3,0.09) -- (.4,.14);
-\draw[->] (0.3,0.09) -- (.4,.08);
-\draw[->] (0.3,0.09) -- (.4,.02);
-\draw (0.4, .06) rectangle (.5, 0);
-\draw (0.4, .12) rectangle (.5, .06);
-\draw (0.4, .24) rectangle (.5, .12);
-\draw (0.4, .30) rectangle (.5, .24);
-\node  at (0.45,.36) {CDO$^2$};
-\node  at (0.45,.27) {AAA};
-\node  at (0.45,.09) {B};
-\node  at (0.45,.03) {Equity};
-\node[label=below:\rotatebox{90}{Rating}] at (-0.045,0.2) {};
-\end{tikzpicture}
-\caption{Multiple rounds of ABS}
-\label{fig:mbs}
-\end{figure}
+In the resale-option model of \cite{HarrisonKreps1978}, the price of the whole asset reflects the valuation of the investor most optimistic about that asset. With securitization, the relevant object changes. Each tranche is priced by the investor most optimistic about the payoff range covered by that tranche. If perceived distributions over next-period asset prices cross, different tranches can be priced by different investors, and the sum of tranche prices can exceed the valuation of the whole asset by any single investor. Since ownership of the asset is necessary to issue the securities, the higher value of claims backed by the asset feeds back into the demand for the asset itself.
 
-This paper studies the effect of the introduction of ABS on the price of the underlying assets. It does so in an environment where investors may not take into account all available information, potentially leading to heterogeneous beliefs about the future payouts of the underlying assets. The paper compares a benchmark scenario, where ABS are absent, with scenarios that include an increasing variety of ABS. The underlying hypothesis is that, due to belief disagreement, the gradual introduction of ABS inflated the price of the underlying assets above their fundamental value.
+The paper formalizes this mechanism by allowing a finite number of risk-neutral investors to trade three types of assets in each period of a countably infinite sequence: i) an infinitely-supplied, risk-free, one-period bond, ii) a finitely-supplied, long-term asset that pays an uncertain dividend every period, and iii) securities backed by the latter. By issuing ABS, the owner of the long-term asset commits to transferring its future cash flow to the investors who buy the ABS. These securities have a waterfall payment structure: the most senior tranche promises a fixed amount unless the total cash flow from the underlying asset is below that amount; the next tranche is paid out of the cash flow left after the senior tranche is paid; and so on. The process of issuing ABS with this priority structure is referred to as \textit{tranching securitization}, or \textit{tranching} for short.
 
-In order to give an intuition of its results, the paper begins with a motivating example. In the benchmark of this example, two risk-neutral agents trade a short-term bond and a long-term asset. The benchmark is a particular case of the \cite{HarrisonKreps1978} model, in which ABS are absent. Next, the paper presents a scenario where the two agents can also trade securities backed by the long-term asset. These asset-backed securities resemble real-life CDOs in their payoff structure. By comparing this scenario with the benchmark, the example illustrates how a specific form of belief disagreement allows this class of ABS to translate into an increase in the price of the long-term asset. Intuitively, the asset-backed securities allow the payoff of the long-term asset to be ``sliced'' in two, allowing both agents to participate in the cash flow generated by the underlying asset. As a result, the demand of the long-term asset increases.
+The equilibrium conditions follow from two assumptions. First, no naked positions are allowed: ownership of the long-term asset is necessary in order to issue ABS. Second, there is an exogenous limit on the short-selling of ABS. Since the long-term asset is in finite supply, these assumptions imply that the supply of ABS is finite as well. The fact that one-period bonds are in infinite supply implies that any investor can borrow as much as she wants at the market interest rate. Since there are no credit constraints, the equilibrium price of each ABS is given by the willingness to pay of whoever is most optimistic about the ABS's next payout. The paper shows that this equilibrium exists and is unique. If no short-selling constraints are assumed, the absence of credit constraints leads to an infinite supply of ABS and no equilibrium exists.
 
-The paper extends the motivating example to a more general case. In this general model, a finite number of risk-neutral agents trade three types of assets in each of many infinitely countable periods. These assets are: i) an infinitely-supplied,  risk-free, one-period bond, ii) a finitely-supplied, long-term asset that pays an uncertain dividend every period, and iii) securities backed by the latter.
+The first result is that tranching weakly raises the equilibrium price of the underlying asset. A strict increase requires that no perceived distribution over next-period asset prices first-order stochastically dominates all others. If one belief dominates, slicing the asset cannot create additional value. If perceived distributions cross, tranching can create claims that are valued most highly by different investors. As a result, the gap between the asset price and any perceived present value of dividends can widen.
 
-The way in which the securities backed by the long-term asset are modeled is as follows. By issuing asset-backed securities, the owner of an underlying asset commits to transferring the cash flow generated by the underlying asset to the investors who buy the ABS. The ABS could simply be pass-through securities in which the cash flow goes to investors in proportion to the securities bought. However, more sophisticated ABS could be created by ``slicing'' or \textit{tranching} the cash flow into tiers or \textit{tranches}. The ABS associated with the most senior tranche promise a fixed amount of cash unless the total cash flow from the underlying asset is below this amount. The next tranche entitles a fixed amount unless the total cash flow, net of the senior tranche payoff, is below this amount, and so on. This waterfall payment structure is also used by \cite{Malamund2010} and \cite{Grodecka2013}. For simplicity, the ABS are assumed to have a maturity of one period. The process of issuing ABS is defined as \textit{securitization}. The process of issuing ABS with a waterfall payment structure is defined as \textit{tranching securitization} or \textit{tranching} for short.
+The same mechanism has ambiguous effects on realized returns. Investors perceive their positions to break even, but their realized returns may differ once payoffs are evaluated under the objective transition probabilities. Following \cite{EysterPiccione2014}, I model beliefs as theories that may coarsen the state space. This allows a comparison between perceived break-even returns and the realized returns associated with the securities investors actually buy. Securitization can transfer low-return claims across investors: it may lower some investors' realized returns without raising anyone else's, but it can also make an investor's realized return less negative by shifting worse claims to someone else.
 
-The equilibrium conditions follow from two assumptions. First, no naked positions are allowed: ownership of the long-term asset is necessary in order to issue ABS. Second, there is an exogenous limit on the short-selling of ABS. Since the long-term asset is in finite supply, these assumptions imply that the supply of ABS is finite as well. The fact that one-period bonds are in infinite supply implies that any agent can borrow as much as she wants at the market interest rate. Since there are no credit constraints, the equilibrium price of each ABS is given by the willingness to pay of whoever is most optimistic about the ABS's next payout. The paper shows that this equilibrium exists and is unique. If no short-selling constraints are assumed, the absence of credit constraints leads to an infinite supply of ABS and no equilibrium exists.
+Relative to \cite{EysterPiccione2014}, the paper does not modify the behavioral foundation of incomplete and diverse perceptions. Instead, it asks how the possibility of designing securities backed by the long-term asset changes equilibrium prices and realized returns. This shift matters because the investor most optimistic about the whole asset need not be the investor most optimistic about each tranche. Relative to the literature on security design and collateral, the paper provides a simple characterization of when waterfall tranching can raise asset values under belief disagreement.
 
-%To formalize this idea, the paper develops a model in which, in each of many infinitely countable periods, risk-neutral agents trade assets of three kinds: a) an infinitely-supplied,  risk-free, one-period bond b) a finitely-supplied, risky asset that pays off a dividend every period and c) securities backed by the latter. The fact that one-period bonds are in infinite supply implies that agents can borrow as much as they want at the market interest rate. Additionally, it is assumed that there is an exogenous limit on the short-selling of ABS. These assumptions imply that the price of any ABS is given by the willingness to pay of whoever is most optimistic about the ABS next payout. If no short-selling constraints are assumed, agents will be willing to make infinite bets on the ABS and no equilibrium will exist. It is assumed that no naked positions are allowed, which means that the ownership of the long-term asset is necessary to issue ABS.
-
-%The way in which ABS are modeled is as follows. By issuing an ABS, the owner of an underlying asset commits to transferring the cash flow generated by the underlying asset to the investors who buy the ABS. The ABS could simply be pass-through securities in which the cash flow goes to investors in proportion to the securities bought. However, more sophisticated ABS could be created by ``slicing'' or \textit{tranching} the cash flow into tiers or \textit{tranches}. The ABS associated with the most senior tranche promise a fixed amount of cash unless the total cash flow from the underlying asset is below this amount. The next tranche entitles a fixed amount unless the total cash flow net of the senior tranche payoff is below this amount, and so on. This waterfall payment structure is also used by \cite{Malamund2010} and \cite{Grodecka2013}. For simplicity, the ABS are assumed to have a maturity of one period. The process of issuing ABS is defined as \textit{securitization}. The process of issuing ABS with a waterfall payment structure is defined as \textit{tranching securitization} or \textit{tranching} for short.
-
-%The model of \cite{HarrisonKreps1978}, in which there is no securitization, serves as a benchmark for this paper. By assuming short-selling constraints and divergent beliefs, they show that the price of the long-term asset is given by the valuation of the most optimistic agent. Since the asset can be resold once the owner is no longer the most optimistic agent, the price surpasses any expectation regarding the present value of dividends. \cite{EysterPiccione2014} use the same framework but provide more structure on agents beliefs. Their admissible beliefs can be represented as partitions of the state-space, formalizing the idea that people have a coarse understanding of their environment. This paper uses their class of admissible beliefs when studying the effect of tranching on the average portfolio return that agents receive.
-
-The paper proceeds to check how an increasing number of tranches affects the equilibrium. Compared to the benchmark, tranching securitization can lead to an increase in the underlying asset price only if, in the benchmark scenario, no agent has a perceived distribution regarding the next-period price of the underlying asset that first-order stochastically dominates the perceived distributions of all other agents. If this is the case, tranching creates securities that are tailor-made for investors with different beliefs. Since ownership of the asset is necessary to issue ABS, the demand for the underlying asset increases. As a result, the gap between the asset price and any perceived present value of its dividends widens. Furthermore, since different tranches could be bought by investors with different beliefs, each investor will think that the others are overpaying for theirs. Hence, the whole asset will be traded at a price higher than what anyone thinks it is worth.
-
-Although securitization is modeled as a refinement of the existing tranches, it alternatively can be seen as the process of issuing securities backed by ABS. This paper shows that the two representations are equivalent. Therefore, the model implicitly captures what \cite{Geanakoplos1996} denominates as \textit{pyramiding arrangements}: using the long-term asset as collateral, an agent may borrow from another agent, who in turn uses the issued debt as collateral to borrow from a third agent. In the original representation, this implies that mezzanine tranches are implicitly borrowing from senior tranches and lending to junior tranches.
-
-Finally, the paper studies the effect of the introduction of ABS on the rates of return that agents receive on their portfolio. For this purpose, it uses the behavioral framework of \cite{EysterPiccione2014}, who take the model of \cite{HarrisonKreps1978} but provide more structure on agents' beliefs. In their model, agents are characterized by a partition of the state space. This formalizes the idea that people have a coarse understanding of their environment. The finer the partition, the more sophisticated they are. \cite{EysterPiccione2014} show that an agent might obtain an average portfolio return lower than the one obtained by a less sophisticated agent. This is because a heterogeneous and coarse understanding of the environment implies a form of winner's curse: buying the long-term asset means that all other agents are pessimistic about its payoff in the next period. This paper shows that, as a consequence, the introduction of new ABS can decrease the portfolio return that some agents receive without increasing any agent's return.
+The mechanism is motivated by securitization before the 2007 financial crisis. Subprime mortgages were pooled into mortgage-backed securities (MBS), MBS were pooled into collateralized debt obligations (CDO), and CDO were further pooled into squared CDO. Instruments like MBS, CDO and squared CDO are ABS, securities whose payout is derived from and collateralized by underlying assets. The possibility of creating highly rated securities backed by subprime mortgages eased credit to subprime borrowers, fueling an increase in house prices \citep{Brunnermeier2009}.\footnote{For a historical account of security innovation, see \cite{Matthews1994}.} The purpose of the model is not to provide a full institutional account of that episode, but to isolate how belief disagreement and security design can interact to raise asset values.
 
 This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model, defines the equilibrium, and proves its existence and uniqueness. Section \ref{sec:eff} studies the effects of tranching securitization on the price of the underlying asset and on actual portfolio returns, and it comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research. Appendix \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching.
 
@@ -876,6 +827,49 @@ Since $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$'s objective and perceived expect
 \subsection{Iterated securitization} \label{sec:is}
 
 In Section \ref{sec:eff}, increased securitization has been modeled as a refinement of the existing tranching, which is equivalent to creating more tranches for the cash flow coming from the long-term asset. Securitization, however, is also seen as issuing securities backed by asset-backed securities, as when CDO are created based on existing MBS or squared CDO are created based on existing CDO. This appendix shows the equivalence between these two interpretations. Remarkably, any tranching is equivalent to issuing debt using debt securities as collateral and iterating this process a finite number of times.
+
+Figure \ref{fig:mbs} sketches the kind of repeated securitization structure that motivates the formal equivalence result below. Subprime mortgages may be pooled into MBS, the MBS cash flow may back CDO, and the CDO cash flow may in turn back squared CDO.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[xscale=20,yscale=20]
+\draw (0.0, .06) rectangle (0.1, 0);
+\draw (0.0, .12) rectangle (0.1, .06);
+\draw (0.0, .24) rectangle (0.1, .12);
+\draw (0.0, .30) rectangle (0.1, .24);
+\node  at (0.05,.35) {MBS};
+\node  at (0.05,.27) {AAA};
+\node  at (0.05,.09) {B};
+\node  at (0.05,.03) {Equity};
+\draw[->] (0.1,0.09) -- (.2,.27);
+\draw[->] (0.1,0.09) -- (.2,.14);
+\draw[->] (0.1,0.09) -- (.2,.08);
+\draw[->] (0.1,0.09) -- (.2,.02);
+\draw (0.2, .06) rectangle (.3, 0);
+\draw (0.2, .12) rectangle (.3, .06);
+\draw (0.2, .24) rectangle (.3, .12);
+\draw (0.2, .30) rectangle (.3, .24);
+\node  at (0.25,.36) {CDO};
+\node  at (0.25,.27) {AAA};
+\node  at (0.25,.09) {B};
+\node  at (0.25,.03) {Equity};
+\draw[->] (0.3,0.09) -- (.4,.27);
+\draw[->] (0.3,0.09) -- (.4,.14);
+\draw[->] (0.3,0.09) -- (.4,.08);
+\draw[->] (0.3,0.09) -- (.4,.02);
+\draw (0.4, .06) rectangle (.5, 0);
+\draw (0.4, .12) rectangle (.5, .06);
+\draw (0.4, .24) rectangle (.5, .12);
+\draw (0.4, .30) rectangle (.5, .24);
+\node  at (0.45,.36) {CDO$^2$};
+\node  at (0.45,.27) {AAA};
+\node  at (0.45,.09) {B};
+\node  at (0.45,.03) {Equity};
+\node[label=below:\rotatebox{90}{Rating}] at (-0.045,0.2) {};
+\end{tikzpicture}
+\caption{Multiple rounds of ABS}
+\label{fig:mbs}
+\end{figure}
 
 \subsubsection{Example}
 
