@@ -508,9 +508,9 @@ Intuitively, there is no harm to the issuer from slicing the cash flow of the un
 It is worth comparing the benchmark scenario, where there is no tranching, with any scenario where there is some degree of tranching:
 
 \begin{crl} \label{cor:eonben}
-Define $\underline{q}:=q_{\left\{[0,\infty)\right\}}$ as the price of the long-term asset in the absence of any tranching. Then, for any tranching $\mathcal{T}$,
+Define $q^0:=q_{\left\{[0,\infty)\right\}}$ as the price of the long-term asset in the absence of any tranching. Then, for any tranching $\mathcal{T}$,
 \begin{equation} \label{eq:eonben}
-\underline{q}(x)\leq q_{\mathcal{T}}(x)
+q^0(x)\leq q_{\mathcal{T}}(x)
 \end{equation}
 for every $x\in X$.
 \end{crl}
@@ -519,7 +519,7 @@ for every $x\in X$.
 Since any tranching $\mathcal{T}$ is a refinement of $\left\{[0,\infty)\right\}$, inequality (\ref{eq:eonben}) follows from Lemma \ref{refine}.
 \end{proof}
 
-The function $\underline{q}$ is a lower bound on asset prices in the sense that any tranching $\mathcal{T}$ cannot decrease the asset price below $\underline{q}(x)$ at any $x\in X$. Intuitively, the price of the long-term asset without any tranching, $\underline{q}(x)$, is given by the highest expectation on the cash flow coming from the whole asset. In contrast, the price of the long-term asset when there is some degree of tranching, $q_{\mathcal{T}}(x)$, is obtained by adding up the highest expectations on the cash flow coming from each tranche. The highest expectation on the cash flow from the whole asset cannot be higher than the sum of the highest expectations on the cash flow from each tranche.
+The function $q^0$ is a lower bound on asset prices in the sense that any tranching $\mathcal{T}$ cannot decrease the asset price below $q^0(x)$ at any $x\in X$. Intuitively, the price of the long-term asset without any tranching, $q^0(x)$, is given by the highest expectation on the cash flow coming from the whole asset. In contrast, the price of the long-term asset when there is some degree of tranching, $q_{\mathcal{T}}(x)$, is obtained by adding up the highest expectations on the cash flow coming from each tranche. The highest expectation on the cash flow from the whole asset cannot be higher than the sum of the highest expectations on the cash flow from each tranche.
 
 Still, a satisfactory explanation for the issuing of ABS will have to show that it \textit{strictly} increases the asset price in at least one state. If this is the case, then it will be natural to assume that anyone who buys the long-term asset will issue ABS until the tranching stops increasing the asset value. A tranching is said to be \textit{issuer-optimal} if no other tranching can increase the asset price in any state:
 \begin{dfn} \label{def:fse}
@@ -553,22 +553,18 @@ for $d\phi_\tau$-almost every $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
 \\
 Proposition \ref{mthm} states that a tranching is issuer-optimal if and only if for every state and every tranche, there is someone who is more optimistic than everyone else regarding the asset price not being below any realization in the tranche. If this is not the case, then there is a tranching that will increase the asset price in every state. This is because at some state there will be someone willing to outbid whoever is buying the current tranche whenever a smaller tranche is issued.
 
-A natural question is whether the benchmark with no tranching is issuer-optimal. Denote by $\underline{G}_{\mathcal{F}}(\cdot\mid x)$ the cumulative distribution function of the asset price for theory $\mathcal{F}$ when there is no tranching, i.e.,
+A natural question is whether the benchmark with no tranching is issuer-optimal. Denote by $G^0_{\mathcal{F}}(\cdot\mid x)$ the cumulative distribution function of the asset price for theory $\mathcal{F}$ when there is no tranching, i.e.,
 \begin{equation*}
-\underline{G}_\mathcal{F}\left(t\mid x\right) := E_{\mathcal{F}}\left(I_{\left\{\underline{q}\leq t\right\}}\mid x\right)
+G^0_\mathcal{F}\left(t\mid x\right) := E_{\mathcal{F}}\left(I_{\left\{q^0\leq t\right\}}\mid x\right)
 \end{equation*}
 for $t\in\mathbb{R}_+$.
 \begin{crl}
 The tranching $\left\{[0,\infty)\right\}$
 is issuer-optimal if and only if, for each $x\in X$, there is a theory $\mathcal{G}\in\mathbf{F}$ such that
-$\underline{G}_{
-\mathcal{G}
-}
+$G^0_{\mathcal{G}}
 \left(\cdot\mid x\right)$
 first-order stochastically dominates
-$\underline{G}_{
-\mathcal{F}
-}
+$G^0_{\mathcal{F}}
 \left(\cdot\mid x\right)$
 for all $\mathcal{F}\in\mathbf{F}$.
 \end{crl}
@@ -597,7 +593,7 @@ in at least one state $x\in X$.
 By Definition \ref{def:fse},
 there is a tranching $\mathcal{T}$ such that
 \begin{equation*}
-\underline{q}(x)
+q^0(x)
 \leq
 %<
 q_{\mathcal{T}}(x)
@@ -632,7 +628,7 @@ q_{\mathcal{T}}(x)=
 E_{\mathcal{F}}\left(q_{\mathcal{T}}\mid x\right)}
 {R(x)}
 \end{equation*}
-for every $x\in X$. But if that is the case, then both $q_{\mathcal{T}}$ and $\underline{q}$ are fixed points of $\Psi_{\left\{[0,\infty)\right\}}$, which is a contradiction to the uniqueness established in Proposition \ref{exu}.
+for every $x\in X$. But if that is the case, then both $q_{\mathcal{T}}$ and $q^0$ are fixed points of $\Psi_{\left\{[0,\infty)\right\}}$, which is a contradiction to the uniqueness established in Proposition \ref{exu}.
 \end{proof}
 
 Intuitively, in an equilibrium different from the no-securitization benchmark, there has to be at least one state in which the tranching allows for an investor who otherwise would not have bought the whole asset to buy a piece of it. Since investors with different theories will be buying different tranches of the same asset, each of them will think that the others are overpaying for theirs.
@@ -665,15 +661,15 @@ for all $x\in X$ and $\mathcal{F}\in\mathbf{F}$.
 \begin{proof}
 The definition of waterfall equilibrium for the benchmark case
 \begin{equation*} \label{equ:qpe}
-\underline{q}(x)
+q^0(x)
 =
-\frac{d(x)+\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\underline{q}\mid x\right)}
+\frac{d(x)+\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(q^0\mid x\right)}
 {R(x)}
 \end{equation*}
 and equation (\ref{equ:fund}) imply
 \begin{equation} \label{equ:ifl}
 v_\mathcal{F}(x)
-\leq \underline{q}(x)
+\leq q^0(x)
 \end{equation}
 for all $x\in X$ and $\mathcal{F}\in\mathbf{F}$. The first claim follows from inequality (\ref{equ:ifl}) and  inequality (\ref{eq:eonben}).  The second claim follows from inequality (\ref{equ:ifl}) and Lemma \ref{prp:nUcon} in the appendix. \end{proof}
 
