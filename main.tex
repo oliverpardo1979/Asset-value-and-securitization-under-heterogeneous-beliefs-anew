@@ -127,6 +127,17 @@ Consider an environment where trade takes place in a countably infinite sequence
 
 There are two types of infinitely lived agents, $\mathcal{A}$  and $\mathcal{B}$. Both are risk-neutral. To keep the notation close to the general model, identify each type with the theory it uses, so that $\mathbf{F}=\{\mathcal{A},\mathcal{B}\}$ in this example. In every state, theory $\mathcal{A}$ assigns probability $1/3$ to each state next period. Meanwhile, theory $\mathcal{B}$ assigns probability $1-\epsilon$ to staying in the current state and is uniform otherwise. The disagreement may emerge because agents use different forecasting tools or do not use all available information. There are many motivations for heterogeneous beliefs, but all require at least some agents to depart from rational expectations: if information is used efficiently, the realizations of the stochastic process feed back into agents' beliefs. Implicitly, the model assumes that the learning process has stalled.
 
+Equivalently, using the notation introduced formally in Section \ref{model}, let $X:=\{l,m,h\}$. The perceived transition probabilities are
+\begin{align}
+Q_{\mathcal{A}}(x,y) &= \frac{1}{3} && \text{for all } x,y\in X, \label{eq:QAexample}\\
+Q_{\mathcal{B}}(x,y) &=
+\begin{cases}
+1-\epsilon, & \text{if } y=x,\\
+\epsilon/2, & \text{if } y\neq x,
+\end{cases}
+&& x,y\in X. \label{eq:QBexample}
+\end{align}
+
 \subsection{Benchmark: A world without asset-backed securities} \label{benchmark}
 
 In the benchmark scenario, there are no asset-backed securities. Because of limited short-selling, the market clears when the long-term asset's highest expected return matches the return of the short-term bond. Let $q:{\left\{l,m,h\right\}}\to\mathbb{R}_+$ be the function that maps states of the world into asset prices. In the notation of the general model below, this is the price associated with the no-securitization tranching $\{[0,\infty)\}$; the example writes it simply as $q$. Notation is simplified by assuming that the asset price is \textit{cum-dividend} and that the declared dividend is to be paid next period.
@@ -335,7 +346,7 @@ meaning that there is no disagreement in the long-run frequency of any state.
 
 If every block in a theory $\mathcal{F}$ is a singleton, it follows that $Q_\mathcal{F}=P$. In this case, $\mathcal{F}$ implies rational expectations. On the other side, if $\mathcal{F}=\left\{X\right\}$, then, $Q_{\mathcal{F}}\left(x,y\right)=\mu(y)$ for all $x$ and $y$ in $X$. This corresponds to the most naive theory, since its forecasts are not conditioned on the state.
 
-The motivating example in Section \ref{example} fits this notation by taking $X=\{l,m,h\}$, a constant interest rate $R$, and $\mathbf{F}=\{\mathcal{A},\mathcal{B}\}$. In the limiting case where the true transition satisfies $P(x,x)=1-\epsilon$ and $P(x,y)=\epsilon/2$ for $y\neq x$, theory $\mathcal{A}$ corresponds to the coarse partition $\{X\}$ and theory $\mathcal{B}$ corresponds to the singleton partition $\{\{l\},\{m\},\{h\}\}$.
+The motivating example in Section \ref{example} fits this notation by taking $X=\{l,m,h\}$, a constant interest rate $R$, and $\mathbf{F}=\{\mathcal{A},\mathcal{B}\}$, with perceived transitions as in equations (\ref{eq:QAexample}) and (\ref{eq:QBexample}). In the limiting case where the true transition satisfies $P(x,x)=1-\epsilon$ and $P(x,y)=\epsilon/2$ for $y\neq x$, theory $\mathcal{A}$ corresponds to the coarse partition $\{X\}$ and theory $\mathcal{B}$ corresponds to the singleton partition $\{\{l\},\{m\},\{h\}\}$.
 
 One-period forward expectations play a pivotal role in the forthcoming analysis. To denote them, consider a random variable $s:X\to\mathbb{R}$. For any theory $\mathcal{F} \in \mathbf{F}$, the expectation regarding $s$ one period forward, conditional on being at state $x\in X$, is given by
 \begin{equation}\label{eq:E}
