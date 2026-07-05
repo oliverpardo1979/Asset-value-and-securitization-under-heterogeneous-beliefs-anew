@@ -141,17 +141,17 @@ The disagreement may emerge because agents use different forecasting tools or do
 
 \subsection{Benchmark: A world without asset-backed securities} \label{benchmark}
 
-In the benchmark scenario, there are no asset-backed securities. Because of limited short-selling, the market clears when the long-term asset's highest expected return matches the return of the short-term bond. Let $q:{\left\{l,m,h\right\}}\to\mathbb{R}_+$ be the function that maps states of the world into asset prices. In the notation of the general model below, this is the price associated with the no-securitization tranching $\{[0,\infty)\}$; the example writes it simply as $q$. Notation is simplified by assuming that the asset price is \textit{cum-dividend} and that the declared dividend is to be paid next period.
+In the benchmark scenario, there are no asset-backed securities. Because of limited short-selling, the market clears when the long-term asset's highest expected return matches the return of the short-term bond. Let $\mathcal{T}^0:=\{[0,\infty)\}$ and write $q^0:=q_{\mathcal{T}^0}$ for the underlying-asset price function associated with this no-securitization tranching. Notation is simplified by assuming that the asset price is \textit{cum-dividend} and that the declared dividend is to be paid next period.
 
-Consider the state $x \in \{l,m,h\}$. When considering buying the long-term asset, both agents are willing to pay $d(x)/R$ plus the discounted asset price they expect for next period. For agent $\mathcal{A}$, the expected price of the long-term asset is $\frac{1}{3}\left(q(l)+q(m)+q(h)\right)$. For agent $\mathcal{B}$, the same expectation is close  to $q(x)$. If, as happens in equilibrium, $q(l)<q(m)<q(h)$, agent $\mathcal{A}$ buys the long-term asset in state $l$ whereas agent $\mathcal{B}$ buys it in state $h$. Ex-ante, it is not clear who will buy the asset in state $m$. Still, the solution to the price function $q$ when $\epsilon$ goes to zero is given by
+Consider the state $x \in \{l,m,h\}$. When considering buying the long-term asset, both agents are willing to pay $d(x)/R$ plus the discounted asset price they expect for next period. For agent $\mathcal{A}$, the expected price of the long-term asset is $\frac{1}{3}\left(q^0(l)+q^0(m)+q^0(h)\right)$. For agent $\mathcal{B}$, the same expectation is close  to $q^0(x)$. If, as happens in equilibrium, $q^0(l)<q^0(m)<q^0(h)$, agent $\mathcal{A}$ buys the long-term asset in state $l$ whereas agent $\mathcal{B}$ buys it in state $h$. Ex-ante, it is not clear who will buy the asset in state $m$. Still, the solution to the price function $q^0$ when $\epsilon$ goes to zero is given by
 
 \begin{eqnarray}
-q(l) & = & \frac{d(l)+\frac{1}{3}\left(q(l)+q(m)+q(h)\right)}{R} \label{ql} \\
-q(m) & = & \frac{ d(m) + \max \left\{ q(m), \frac{1}{3} \left( q(l)+q(m)+q(h)\right) \right\} } {R} \label{qm}\\
-q(h) & = & \frac{d(h)+q(h)}{R} \label{qh}
+q^0(l) & = & \frac{d(l)+\frac{1}{3}\left(q^0(l)+q^0(m)+q^0(h)\right)}{R} \label{ql} \\
+q^0(m) & = & \frac{ d(m) + \max \left\{ q^0(m), \frac{1}{3} \left( q^0(l)+q^0(m)+q^0(h)\right) \right\} } {R} \label{qm}\\
+q^0(h) & = & \frac{d(h)+q^0(h)}{R} \label{qh}
 \end{eqnarray}
 \\
-For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$ and $q(h)=3$.
+For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q^0(l)=1$, $q^0(m)=2$ and $q^0(h)=3$.
 
 
 \begin{figure}[h]
@@ -184,9 +184,9 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \draw [red, domain=0:0.4] (0.1,0.0) -- (0.1,0.3);
 \draw [red, domain=0:0.4] (0.1,0.3) -- (0.5,0.3);
 \node [above left] at (0.2,0.3) {$G_\mathcal{B}(t|l)$};
-\node [below] at (0.1,0) {$q(l)$};
-\node [below] at (0.2,0) {$q(m)$};
-\node [below] at (0.3,0) {$q(h)$};
+\node [below] at (0.1,0) {$q^0(l)$};
+\node [below] at (0.2,0) {$q^0(m)$};
+\node [below] at (0.3,0) {$q^0(h)$};
 \end{tikzpicture}
 %\caption{}
 %\label{fig:Gl}
@@ -214,9 +214,9 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \draw [red, domain=0:0.4] (0.2,0.0) -- (0.2,0.3);
 \draw [red, domain=0:0.4] (0.2,0.3) -- (0.5,0.3);
 \node [left] at (0.2,0.3) {$G_\mathcal{B}(t|m)$};
-\node [below] at (0.1,0) {$q(l)$};
-\node [below] at (0.2,0) {$q(m)$};
-\node [below] at (0.3,0) {$q(h)$};
+\node [below] at (0.1,0) {$q^0(l)$};
+\node [below] at (0.2,0) {$q^0(m)$};
+\node [below] at (0.3,0) {$q^0(h)$};
 \end{tikzpicture}
 %\caption{}
 %\end{subfigure}
@@ -243,9 +243,9 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \draw [red, domain=0:0.4] (0.3,0.0) -- (0.3,0.3);
 \draw [red, domain=0:0.4] (0.3,0.3) -- (0.5,0.3);
 \node [below right] at (0.3,0.1) {$G_\mathcal{B}(t|h)$};
-\node [below] at (0.1,0) {$q(l)$};
-\node [below] at (0.2,0) {$q(m)$};
-\node [below] at (0.3,0) {$q(h)$};
+\node [below] at (0.1,0) {$q^0(l)$};
+\node [below] at (0.2,0) {$q^0(m)$};
+\node [below] at (0.3,0) {$q^0(h)$};
 \end{tikzpicture}
 %\caption{}
 %\end{subfigure}
@@ -253,17 +253,17 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \caption{Perceived distributions on the asset price} \label{fig:CDFs}
 \end{figure}
 
-To illustrate the conditions under which the introduction of ABS increases the long-term asset price, consider the perceived distributions regarding the asset price for the next period. Let $G_i(t\mid x)$ be the probability that the next-period asset price is less than or equal to $t\in\mathbb{R}_+$, as perceived by theory $i\in\mathbf{F}$ conditional on being in state $x\in\left\{l,m,h\right\}$. Figure \ref{fig:CDFs} illustrates these conditional distributions for each of the three states. In states $l$ and $h$, the distributions can be ranked according to first-order stochastic dominance, as one distribution always takes values no lower than the other. The agent whose beliefs first-order stochastically dominate those of the other will buy the asset. In state $m$, there is no stochastic dominance between $G_\mathcal{A}(\cdot\mid m)$ and $G_\mathcal{B}(\cdot\mid m)$. Still, whoever has highest expectation regarding the asset price will buy the asset. At this state, theory $\mathcal{B}$ assigns a lower probability than theory $\mathcal{A}$ to prices below thresholds below $q(m)$, whereas theory $\mathcal{A}$ assigns a lower probability than theory $\mathcal{B}$ to prices below thresholds above $q(m)$. This divergence is exploited by ``slicing'' the asset into two securities: one with a payout attached to realizations below $q(m)$ and the other with a payout attached to realizations above $q(m)$. This is illustrated in the next subsection.
+To illustrate the conditions under which the introduction of ABS increases the long-term asset price, consider the perceived distributions regarding the asset price for the next period. Let $G_i(t\mid x)$ be the probability that the next-period asset price is less than or equal to $t\in\mathbb{R}_+$, as perceived by theory $i\in\mathbf{F}$ conditional on being in state $x\in\left\{l,m,h\right\}$. Figure \ref{fig:CDFs} illustrates these conditional distributions for each of the three states. In states $l$ and $h$, the distributions can be ranked according to first-order stochastic dominance, as one distribution always takes values no lower than the other. The agent whose beliefs first-order stochastically dominate those of the other will buy the asset. In state $m$, there is no stochastic dominance between $G_\mathcal{A}(\cdot\mid m)$ and $G_\mathcal{B}(\cdot\mid m)$. Still, whoever has highest expectation regarding the asset price will buy the asset. At this state, theory $\mathcal{B}$ assigns a lower probability than theory $\mathcal{A}$ to prices below thresholds below $q^0(m)$, whereas theory $\mathcal{A}$ assigns a lower probability than theory $\mathcal{B}$ to prices below thresholds above $q^0(m)$. This divergence is exploited by ``slicing'' the asset into two securities: one with a payout attached to realizations below $q^0(m)$ and the other with a payout attached to realizations above $q^0(m)$. This is illustrated in the next subsection.
 
 \subsection{A world with asset-backed securities}\label{securitized}
 
-Assume now that any owner of the long-term asset can issue two kinds of ABS, each of which has a maturity of one period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Let $\mathcal{T}'=\{\tau^s,\tau^j\}$ denote this two-tranche structure and let $q':{\left\{l,m,h\right\}}\to\mathbb{R}_+$ be its asset price function. The senior tranche is $\tau^s=[0,q'(m))$ and the junior tranche is $\tau^j=[q'(m),\infty)$. The ABS in the senior tranche guarantees a payoff $q'(m)$ for next period unless the state becomes $l$, in which case it pays $q'(l)$. The payoff from the junior tranche is $q'(h)-q'(m)$ if the realized state is $h$ and $0$ otherwise. In short, writing $\underline{\tau^a}:=\inf(\tau^a)$ and $\overline{\tau^a}:=\sup(\tau^a)$ for $a\in\{s,j\}$, as in Section \ref{model}, the payoff functions from the two tranches are
+Assume now that any owner of the long-term asset can issue two kinds of ABS, each of which has a maturity of one period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Let $\mathcal{T}'=\{\tau^s,\tau^j\}$ denote this two-tranche structure and write $q^1:=q_{\mathcal{T}'}$ for its underlying-asset price function. The senior tranche is $\tau^s=[0,q^1(m))$ and the junior tranche is $\tau^j=[q^1(m),\infty)$. The ABS in the senior tranche guarantees a payoff $q^1(m)$ for next period unless the state becomes $l$, in which case it pays $q^1(l)$. The payoff from the junior tranche is $q^1(h)-q^1(m)$ if the realized state is $h$ and $0$ otherwise. In short, writing $\underline{\tau^a}:=\inf(\tau^a)$ and $\overline{\tau^a}:=\sup(\tau^a)$ for $a\in\{s,j\}$, as in Section \ref{model}, the payoff functions from the two tranches are
 
 \begin{align}
 \phi_{\tau^s}(t) & = (t-\underline{\tau^s})^+-(t-\overline{\tau^s})^+
- =  t - (t-q'(m))^+, \label{eq:tauspayoff} \\
+ =  t - (t-q^1(m))^+, \label{eq:tauspayoff} \\
 \phi_{\tau^j}(t) & = (t-\underline{\tau^j})^+-(t-\overline{\tau^j})^+
- =  (t-q'(m))^+, \label{eq:taujpayoff}
+ =  (t-q^1(m))^+, \label{eq:taujpayoff}
 \end{align}
 where $\overline{\tau^j}=\infty$ and the term $(t-\overline{\tau^j})^+$ is interpreted as zero.
 \begin{figure}[h]
@@ -278,41 +278,41 @@ where $\overline{\tau^j}=\infty$ and the term $(t-\overline{\tau^j})^+$ is inter
 \draw [red, ultra thick, domain=0:0.4] (0.2,0) -- (0.5,0.3);
 \node [right] at (0.5,0.3) {$\phi_{\tau^j}(t)$};
 \draw [dotted] (0.2,0) -- (0.2,0.4);
-\node [below] at (0.2,0) {$q'(m)$};
+\node [below] at (0.2,0) {$q^1(m)$};
 \node [above right] at (0.025,0) {$45^{o}$};
 \end{tikzpicture}
 \caption{Payoff functions from the senior tranche $\tau^s$ and junior tranche $\tau^j$}
 \label{fig1:se}
 \end{figure}
 
-Figure \ref{fig1:se} plots the payoff from each tranche as a function of the cum-dividend price of the underlying asset. Note that i) owning the junior tranche is the same as holding a one-period call option on the underlying asset with strike price $q'(m)$, and ii) owning the senior tranche is equivalent to owning the underlying asset together with a one-period written put option with strike price $q'(m)$. In this particular example, the size of each tranche is given by $q'(m)$. Such a threshold is known as an \textit{attachment point}.
+Figure \ref{fig1:se} plots the payoff from each tranche as a function of the cum-dividend price of the underlying asset. Note that i) owning the junior tranche is the same as holding a one-period call option on the underlying asset with strike price $q^1(m)$, and ii) owning the senior tranche is equivalent to owning the underlying asset together with a one-period written put option with strike price $q^1(m)$. In this particular example, the size of each tranche is given by $q^1(m)$. Such a threshold is known as an \textit{attachment point}.
 
-On an alternative interpretation, the buyer of the junior tranche becomes the owner of the asset, but has a debt liability to the buyer of the senior tranche and is using the underlying asset as collateral. In this example, the junior buyer promises to pay $q'(m)$ to the senior buyer in the next period. However, if the value of the collateral is $q'(l)$, the junior buyer defaults and the senior buyer seizes the collateral.
+On an alternative interpretation, the buyer of the junior tranche becomes the owner of the asset, but has a debt liability to the buyer of the senior tranche and is using the underlying asset as collateral. In this example, the junior buyer promises to pay $q^1(m)$ to the senior buyer in the next period. However, if the value of the collateral is $q^1(l)$, the junior buyer defaults and the senior buyer seizes the collateral.
 
-Given the assumption about the existence of an exogenous constraint on short-selling, the price of each ABS is given by the willingness to pay from whoever is most optimistic about the payout of the ABS next period, discounted by the interest rate. To start with, assume $q'(l)<q'(m)<q'(h)$. At state $m$, agent $\mathcal{B}$ expects a payoff close to $q'(m)$ from the senior tranche, while agent $\mathcal{A}$ expects $\frac{2}{3}q'(m)+\frac{1}{3}q'(l)$. Hence, the senior tranche will be bought by agent $\mathcal{B}$. Meanwhile, agent $\mathcal{B}$ expects a  payoff close to zero from the junior tranche, while agent $\mathcal{A}$ expects $q'(h)-q'(m)$ with one-third probability. Hence agent $\mathcal{A}$ will buy the junior tranche. If $p_{\tau^s}(x)$ and $p_{\tau^j}(x)$ denote the prices of senior and junior tranches in state $x\in \left\{l,m,h\right\}$, then, as $\epsilon$ tends to zero,
+Given the assumption about the existence of an exogenous constraint on short-selling, the price of each ABS is given by the willingness to pay from whoever is most optimistic about the payout of the ABS next period, discounted by the interest rate. To start with, assume $q^1(l)<q^1(m)<q^1(h)$. At state $m$, agent $\mathcal{B}$ expects a payoff close to $q^1(m)$ from the senior tranche, while agent $\mathcal{A}$ expects $\frac{2}{3}q^1(m)+\frac{1}{3}q^1(l)$. Hence, the senior tranche will be bought by agent $\mathcal{B}$. Meanwhile, agent $\mathcal{B}$ expects a  payoff close to zero from the junior tranche, while agent $\mathcal{A}$ expects $q^1(h)-q^1(m)$ with one-third probability. Hence agent $\mathcal{A}$ will buy the junior tranche. If $p_{\tau^s}(x)$ and $p_{\tau^j}(x)$ denote the prices of senior and junior tranches in state $x\in \left\{l,m,h\right\}$, then, as $\epsilon$ tends to zero,
 \begin{eqnarray*}
-p_{\tau^s}(m) & = & \frac{q'(m)}{R} \\
-p_{\tau^j}(m) & = & \frac{\frac{1}{3}\left(q'(h)-q'(m)\right)}{R}
+p_{\tau^s}(m) & = & \frac{q^1(m)}{R} \\
+p_{\tau^j}(m) & = & \frac{\frac{1}{3}\left(q^1(h)-q^1(m)\right)}{R}
 \end{eqnarray*}
 
-Since different agents might have claims on the same asset, the introduction of ABS can break the equivalence between any single expectation regarding the value of the underlying asset and the total value of the securities. To show this, note that at state $m$, the expectation on the asset price for next period is close to $q'(m)$ for agent $\mathcal{B}$ and $\frac{1}{3}(q'(l)+q'(m)+q'(h))$ for agent $\mathcal{A}$. Then
+Since different agents might have claims on the same asset, the introduction of ABS can break the equivalence between any single expectation regarding the value of the underlying asset and the total value of the securities. To show this, note that at state $m$, the expectation on the asset price for next period is close to $q^1(m)$ for agent $\mathcal{B}$ and $\frac{1}{3}(q^1(l)+q^1(m)+q^1(h))$ for agent $\mathcal{A}$. Then
 \begin{eqnarray*}
-p_{\tau^s}(m) + p_{\tau^j}(m) & > &  \frac{q'(m)}{R}  \\
-p_{\tau^s}(m) + p_{\tau^j}(m) & > &  \frac{\frac{1}{3}\left(q'(l)+q'(m)+q'(h)\right)}{R}
+p_{\tau^s}(m) + p_{\tau^j}(m) & > &  \frac{q^1(m)}{R}  \\
+p_{\tau^s}(m) + p_{\tau^j}(m) & > &  \frac{\frac{1}{3}\left(q^1(l)+q^1(m)+q^1(h)\right)}{R}
 \end{eqnarray*}
 which means that the payoff from selling the securities surpasses any expectation regarding the discounted price of the underlying asset.\footnote{See \cite{FostelGeanakoplos2012} for a similar result.}
 
 The equilibrium price for the long-term asset is given by a non-arbitrage condition. Any agent could buy the long-term asset and sell the asset-backed securities derived from it. In equilibrium, the long-term asset cum-dividend price has to equal the discounted declared dividend plus the market value of the asset-backed securities:
 \begin{equation} \label{eq:simarb}
-q'(x) = \frac{d(x)}{R} + p_{\tau^s}(x) + p_{\tau^j}(x)
+q^1(x) = \frac{d(x)}{R} + p_{\tau^s}(x) + p_{\tau^j}(x)
 \end{equation}
 If the left-hand side of (\ref{eq:simarb}) were greater than the right-hand side, there would be no demand for the long-term asset. On the other hand, if the left-hand side were smaller than the right-hand side, demand would be infinite.
 
-For states $l$ and $h$, the equilibrium conditions can be derived by identifying who buys the tranches at these states. At state $l$, the expectations of $\mathcal{A}$ on the payoff from any tranche are greater than those of $\mathcal{B}$. The opposite is true at state $h$. Hence both tranches are bought by $\mathcal{A}$ at state $l$ and both tranches are bought by $\mathcal{B}$ at state $h$. Adding up the tranche prices yields the discounted long-term asset price expected by whoever buys both tranches. Hence the price equations for $q'(l)$ and $q'(h)$ resemble equations (\ref{ql}) and (\ref{qh}).  The same is not true for $q'(m)$, however, since at state $m$ each tranche is bought by different agents. In summary, the equilibrium price function $q'$ is given by
+For states $l$ and $h$, the equilibrium conditions can be derived by identifying who buys the tranches at these states. At state $l$, the expectations of $\mathcal{A}$ on the payoff from any tranche are greater than those of $\mathcal{B}$. The opposite is true at state $h$. Hence both tranches are bought by $\mathcal{A}$ at state $l$ and both tranches are bought by $\mathcal{B}$ at state $h$. Adding up the tranche prices yields the discounted long-term asset price expected by whoever buys both tranches. Hence the price equations for $q^1(l)$ and $q^1(h)$ resemble equations (\ref{ql}) and (\ref{qh}).  The same is not true for $q^1(m)$, however, since at state $m$ each tranche is bought by different agents. In summary, the equilibrium price function $q^1$ is given by
 \begin{eqnarray}
-q'(l) & = & \frac{d(l)+\frac{1}{3}\left(q'(l)+q'(m)+q'(h)\right)}{R} \label{qpl}\\
-q'(m) & = & \frac{ d(m) +  q'(m) + \frac{1}{3}(q'(h)-q'(m))} {R} \label{qpm} \\
-q'(h) & = & \frac{d(h)+q'(h)}{R} \label{qph}
+q^1(l) & = & \frac{d(l)+\frac{1}{3}\left(q^1(l)+q^1(m)+q^1(h)\right)}{R} \label{qpl}\\
+q^1(m) & = & \frac{ d(m) +  q^1(m) + \frac{1}{3}(q^1(h)-q^1(m))} {R} \label{qpm} \\
+q^1(h) & = & \frac{d(h)+q^1(h)}{R} \label{qph}
 \end{eqnarray}
 
 By comparing equation (\ref{qpm}) with equation (\ref{qm}), it can be seen that the introduction of ABS has increased the asset price at state $m$. This in turn increases the price at state $l$, since $\mathcal{A}$'s expectation at state $l$ is higher. Returning to the numerical example where $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, the asset price increases by $\frac{1}{20}$ at state $l$ and by $\frac{1}{4}$ at state $m$.
@@ -425,7 +425,7 @@ The securities are backed up by the long-term asset in the sense that they are \
 \end{equation*}
 In addition, there is \textit{limited liability} for the issuer: $\phi_\tau(t) \geq 0$ for all $\tau\in\mathcal{T}$ and $t\in\mathbb{R}_+$.
 
-In the example of subsection \ref{benchmark}, there was no securitization so the tranching was given by $\mathcal{T}^0= \left\{ [0,\infty) \right\}$. In subsection \ref{securitized}, there were only two tranches and the attachment point was calibrated so that the tranching was $\mathcal{T}'=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q'(m))$ and $\tau^j=[q'(m),\infty)$. Hence, the payoff functions in equations (\ref{eq:tauspayoff}) and (\ref{eq:taujpayoff}) are special cases of the generic expression in (\ref{tpayoff}).
+In the example of subsection \ref{benchmark}, there was no securitization so the tranching was given by $\mathcal{T}^0= \left\{ [0,\infty) \right\}$. In subsection \ref{securitized}, there were only two tranches and the attachment point was calibrated so that the tranching was $\mathcal{T}'=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q^1(m))$ and $\tau^j=[q^1(m),\infty)$. Hence, the payoff functions in equations (\ref{eq:tauspayoff}) and (\ref{eq:taujpayoff}) are special cases of the generic expression in (\ref{tpayoff}).
 
 \subsection{The market}
 
@@ -577,7 +577,7 @@ Follows directly from Proposition \ref{mthm}.
 \end{proof}
 If there is only one theory in the market, the first-order stochastic dominance condition trivially holds. As expected, the benchmark without tranching is issuer-optimal if there is no belief disagreement.
 
-As an example of a tranching that is not issuer-optimal, consider $\mathcal{T}^0=\left\{[0,\infty)\right\}$ in subsection \ref{benchmark}: there is no first-order stochastic dominance between beliefs at state $m$, as illustrated by Figure \ref{fig:CDFs}. On the other hand, the tranching $\mathcal{T}'=\left\{[0,q'(m)),[q'(m),\infty)\right\}$ in subsection \ref{securitized} is issuer-optimal: for each tranche and each state there is always an agent whose conditional cumulative distribution of the asset price caps the other one along the realizations in the tranche.
+As an example of a tranching that is not issuer-optimal, consider $\mathcal{T}^0=\left\{[0,\infty)\right\}$ in subsection \ref{benchmark}: there is no first-order stochastic dominance between beliefs at state $m$, as illustrated by Figure \ref{fig:CDFs}. On the other hand, the tranching $\mathcal{T}'=\left\{[0,q^1(m)),[q^1(m),\infty)\right\}$ in subsection \ref{securitized} is issuer-optimal: for each tranche and each state there is always an agent whose conditional cumulative distribution of the asset price caps the other one along the realizations in the tranche.
 
 Finally, it is worth remarking that whenever the introduction of ABS increases the asset price, the asset will be traded at a price higher than anyone thinks it is worth:
 
@@ -1015,7 +1015,7 @@ Thanks to the introduction of ABS, some agents manage to get rid of toxic assets
 
 Apart from having their real-life counterparts, the only appealing features of securities with a waterfall structure are: i) their payoff is monotone in the cash flow from the underlying asset, ii) as shown in section \ref{sec:is}, they implicitly represent any case where only debt and equity can be issued and debt itself can be used as collateral. However, no argument has been given in this paper for agents to choose or be constrained by this class of contracts.
 
-Without being constrained to issue ABS with a waterfall payment structure, agents could exploit the divergence of beliefs even further by creating contracts that do not satisfy this constraint. For instance, consider the equilibrium of subsection \ref{securitized}. The senior tranche pays $q'(m)$ if the state in the next period is $m$ or $h$ and $q'(l)$ otherwise. At state $m$, this tranche is bought by agent $\mathcal{B}$. This agent could create a new security, backed by the senior tranche, that pays $q'(m)$ at state $h$ and 0 otherwise. Such a security does not satisfy the waterfall constraint since its payoff does not exclusively depend on the cash flow from the underlying tranche. This new security is almost worthless for $\mathcal{B}$, given that a realization $h$ next period looks very unlikely. However, agent $\mathcal{A}$ would be willing to pay $\frac{1}{3}\frac{q'(m)}{R}$ for it.
+Without being constrained to issue ABS with a waterfall payment structure, agents could exploit the divergence of beliefs even further by creating contracts that do not satisfy this constraint. For instance, consider the equilibrium of subsection \ref{securitized}. The senior tranche pays $q^1(m)$ if the state in the next period is $m$ or $h$ and $q^1(l)$ otherwise. At state $m$, this tranche is bought by agent $\mathcal{B}$. This agent could create a new security, backed by the senior tranche, that pays $q^1(m)$ at state $h$ and 0 otherwise. Such a security does not satisfy the waterfall constraint since its payoff does not exclusively depend on the cash flow from the underlying tranche. This new security is almost worthless for $\mathcal{B}$, given that a realization $h$ next period looks very unlikely. However, agent $\mathcal{A}$ would be willing to pay $\frac{1}{3}\frac{q^1(m)}{R}$ for it.
 
 As an alternative to the waterfall equilibrium, consider the following asset-backed securities: for $y\in X$, the $y$-security pays $q(y)$ in the next period if the realized state is $y$ and 0 otherwise. The equilibrium price function for the long-term asset, denoted by $\bar{q}$, will be given by
 \begin{equation} \label{eq:upper}
