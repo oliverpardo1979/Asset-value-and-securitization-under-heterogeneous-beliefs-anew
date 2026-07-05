@@ -125,9 +125,7 @@ Finally, the paper relates to security design and securitization. \cite{Garmaise
 
 Consider an environment where trade takes place in a countably infinite sequence of periods. Each period there is an infinitely supplied bond used as a numeraire that entitles a payoff $R>1$ next period. The bond can be traded for a finitely supplied asset that yields a random dividend $d$ every period. There are three possible states of the world: $l$, $m$ and $h$. The realizations of the dividend are such that $d(l) < d(m) < d(h)$. Securities backed by the long-term asset can be issued and traded.
 
-There are two types of infinitely lived agents, $\mathcal{A}$  and $\mathcal{B}$. Both are risk-neutral. To keep the notation close to the general model, identify each type with the theory it uses, so that $\mathbf{F}=\{\mathcal{A},\mathcal{B}\}$ in this example. In every state, theory $\mathcal{A}$ assigns probability $1/3$ to each state next period. Meanwhile, theory $\mathcal{B}$ assigns probability $1-\epsilon$ to staying in the current state and is uniform otherwise. The disagreement may emerge because agents use different forecasting tools or do not use all available information. There are many motivations for heterogeneous beliefs, but all require at least some agents to depart from rational expectations: if information is used efficiently, the realizations of the stochastic process feed back into agents' beliefs. Implicitly, the model assumes that the learning process has stalled.
-
-Equivalently, using the notation introduced formally in Section \ref{model}, let $X:=\{l,m,h\}$. The perceived transition probabilities are
+There are two types of infinitely lived agents, $\mathcal{A}$  and $\mathcal{B}$. Both are risk-neutral. To keep the notation close to the general model, identify each type with the theory it uses, so that $\mathbf{F}=\{\mathcal{A},\mathcal{B}\}$ in this example. In every state, theory $\mathcal{A}$ assigns probability $1/3$ to each state next period. Meanwhile, theory $\mathcal{B}$ assigns probability $1-\epsilon$ to staying in the current state and is uniform otherwise. Equivalently, using the notation introduced formally in Section \ref{model}, let $X:=\{l,m,h\}$. The perceived transition probabilities are
 \begin{align}
 Q_{\mathcal{A}}(x,y) &= \frac{1}{3} && \text{for all } x,y\in X, \label{eq:QAexample}\\
 Q_{\mathcal{B}}(x,y) &=
@@ -137,6 +135,9 @@ Q_{\mathcal{B}}(x,y) &=
 \end{cases}
 && x,y\in X. \label{eq:QBexample}
 \end{align}
+
+The disagreement may emerge because agents use different forecasting tools or do not use all available information. There are many motivations for heterogeneous beliefs, but all require at least some agents to depart from rational expectations: if information is used efficiently, the realizations of the stochastic process feed back into agents' beliefs. Implicitly, the model assumes that the learning process has stalled.
+
 
 \subsection{Benchmark: A world without asset-backed securities} \label{benchmark}
 
