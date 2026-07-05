@@ -253,7 +253,7 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \caption{Perceived distributions on the asset price} \label{fig:CDFs}
 \end{figure}
 
-To illustrate the conditions under which the introduction of ABS increases the long-term asset price, consider the perceived distributions regarding the asset price for the next period. Let $G_i(t|x)$ be the probability that the next-period asset price is less than or equal to $t\in\mathbb{R}_+$, as perceived by theory $i\in\mathbf{F}$ conditional on being in state $x\in\left\{l,m,h\right\}$. Figure \ref{fig:CDFs} illustrates these conditional distributions for each of the three states. In states $l$ and $h$, the distributions can be ranked according to first-order stochastic dominance, as one distribution always takes values no lower than the other. The agent whose beliefs first-order stochastically dominate those of the other will buy the asset. In state $m$, there is no stochastic dominance between $G_\mathcal{A}(\cdot|m)$ and $G_\mathcal{B}(\cdot|m)$. Still, whoever has highest expectation regarding the asset price will buy the asset. At this state, theory $\mathcal{B}$ assigns a lower probability than theory $\mathcal{A}$ to prices below thresholds below $q(m)$, whereas theory $\mathcal{A}$ assigns a lower probability than theory $\mathcal{B}$ to prices below thresholds above $q(m)$. This divergence is exploited by ``slicing'' the asset into two securities: one with a payout attached to realizations below $q(m)$ and the other with a payout attached to realizations above $q(m)$. This is illustrated in the next subsection.
+To illustrate the conditions under which the introduction of ABS increases the long-term asset price, consider the perceived distributions regarding the asset price for the next period. Let $G_i(t\mid x)$ be the probability that the next-period asset price is less than or equal to $t\in\mathbb{R}_+$, as perceived by theory $i\in\mathbf{F}$ conditional on being in state $x\in\left\{l,m,h\right\}$. Figure \ref{fig:CDFs} illustrates these conditional distributions for each of the three states. In states $l$ and $h$, the distributions can be ranked according to first-order stochastic dominance, as one distribution always takes values no lower than the other. The agent whose beliefs first-order stochastically dominate those of the other will buy the asset. In state $m$, there is no stochastic dominance between $G_\mathcal{A}(\cdot\mid m)$ and $G_\mathcal{B}(\cdot\mid m)$. Still, whoever has highest expectation regarding the asset price will buy the asset. At this state, theory $\mathcal{B}$ assigns a lower probability than theory $\mathcal{A}$ to prices below thresholds below $q(m)$, whereas theory $\mathcal{A}$ assigns a lower probability than theory $\mathcal{B}$ to prices below thresholds above $q(m)$. This divergence is exploited by ``slicing'' the asset into two securities: one with a payout attached to realizations below $q(m)$ and the other with a payout attached to realizations above $q(m)$. This is illustrated in the next subsection.
 
 \subsection{A world with asset-backed securities}\label{securitized}
 
@@ -351,11 +351,11 @@ The motivating example in Section \ref{example} fits this notation by taking $X=
 
 One-period forward expectations play a pivotal role in the forthcoming analysis. To denote them, consider a random variable $s:X\to\mathbb{R}$. For any theory $\mathcal{F} \in \mathbf{F}$, the expectation regarding $s$ one period forward, conditional on being at state $x\in X$, is given by
 \begin{equation}\label{eq:E}
-E_{\mathcal{F}}\left(s\right|x):=\sum_{y\in X}s(y)Q_{\mathcal{F}}\left(x,y\right)
+E_{\mathcal{F}}\left(s\mid x\right):=\sum_{y\in X}s(y)Q_{\mathcal{F}}\left(x,y\right)
 \end{equation}
-Denote by $E\left(s\right|x)$ the expectation for the case where $Q_\mathcal{F}=P$. Equations (\ref{eq:mu}), (\ref{eq:E}) and (\ref{eq:Q}) imply that:
+Denote by $E\left(s\mid x\right)$ the expectation for the case where $Q_\mathcal{F}=P$. Equations (\ref{eq:mu}), (\ref{eq:E}) and (\ref{eq:Q}) imply that:
 \begin{equation*}
-\sum_{x\in X}E_{\mathcal{F}}\left(s\right|x)\mu(x)=\sum_{x\in X}E\left(s\right|x)\mu(x)
+\sum_{x\in X}E_{\mathcal{F}}\left(s\mid x\right)\mu(x)=\sum_{x\in X}E\left(s\mid x\right)\mu(x)
 \end{equation*} for all $\mathcal{F}\in\mathbf{F}$. This means that the average one-period-ahead forecast of any theory matches the actual average of the random variable.
 
 
@@ -528,20 +528,20 @@ q_{\mathcal{T}}(x)
 for any tranching $\mathcal{S}$ and all $x\in X$.
 \end{dfn}
 
-In order to characterize the necessary and sufficient conditions for a tranching to be issuer-optimal, the following object is introduced: Let $I_A$ be the indicator function for event $A$. For $t\in\mathbb{R}_+$, define $G^\mathcal{T}_\mathcal{F}\left(t|x\right)$ as the probability at state $x$ that the asset price  next period is no higher than $t$, as perceived by theory $\mathcal{F}$ when the tranching is $\mathcal{T}$:
+In order to characterize the necessary and sufficient conditions for a tranching to be issuer-optimal, the following object is introduced: Let $I_A$ be the indicator function for event $A$. For $t\in\mathbb{R}_+$, define $G^\mathcal{T}_\mathcal{F}\left(t\mid x\right)$ as the probability at state $x$ that the asset price  next period is no higher than $t$, as perceived by theory $\mathcal{F}$ when the tranching is $\mathcal{T}$:
 \begin{equation*}
-G^\mathcal{T}_\mathcal{F}\left(t|x\right) := E_{\mathcal{F}}\left(I_{\left\{q_\mathcal{T}\leq t\right\}}\mid x\right)
+G^\mathcal{T}_\mathcal{F}\left(t\mid x\right) := E_{\mathcal{F}}\left(I_{\left\{q_\mathcal{T}\leq t\right\}}\mid x\right)
 \end{equation*}
 \begin{prp} \label{mthm}
 A tranching $\mathcal{T}$ is issuer-optimal if and only if, for each  $\tau\in\mathcal{T}$ and $x\in X$, there is a theory $\mathcal{G}\in\mathbf{F}$ such that
 \begin{equation*}
 G^{\mathcal{T}}_
 {\mathcal{G}}
-\left(t|x\right)
+\left(t\mid x\right)
 \leq
 G^{\mathcal{T}}_
 {\mathcal{F}}
-\left(t|x\right)
+\left(t\mid x\right)
 \end{equation*}
 for $d\phi_\tau$-almost every $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
 \end{prp}
@@ -550,9 +550,9 @@ for $d\phi_\tau$-almost every $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
 \\
 Proposition \ref{mthm} states that a tranching is issuer-optimal if and only if for every state and every tranche, there is someone who is more optimistic than everyone else regarding the asset price not being below any realization in the tranche. If this is not the case, then there is a tranching that will increase the asset price in every state. This is because at some state there will be someone willing to outbid whoever is buying the current tranche whenever a smaller tranche is issued.
 
-A natural question is whether the benchmark with no tranching is issuer-optimal. Denote by $\underline{G}_{\mathcal{F}}(\cdot|x)$ the cumulative distribution function of the asset price for theory $\mathcal{F}$ when there is no tranching, i.e.,
+A natural question is whether the benchmark with no tranching is issuer-optimal. Denote by $\underline{G}_{\mathcal{F}}(\cdot\mid x)$ the cumulative distribution function of the asset price for theory $\mathcal{F}$ when there is no tranching, i.e.,
 \begin{equation*}
-\underline{G}_\mathcal{F}\left(t|x\right) := E_{\mathcal{F}}\left(I_{\left\{\underline{q}\leq t\right\}}\right)(x)
+\underline{G}_\mathcal{F}\left(t\mid x\right) := E_{\mathcal{F}}\left(I_{\left\{\underline{q}\leq t\right\}}\mid x\right)
 \end{equation*}
 for $t\in\mathbb{R}_+$.
 \begin{crl}
@@ -561,12 +561,12 @@ is issuer-optimal if and only if, for each $x\in X$, there is a theory $\mathcal
 $\underline{G}_{
 \mathcal{G}
 }
-\left(\cdot|x\right)$
+\left(\cdot\mid x\right)$
 first-order stochastically dominates
 $\underline{G}_{
 \mathcal{F}
 }
-\left(\cdot|x\right)$
+\left(\cdot\mid x\right)$
 for all $\mathcal{F}\in\mathbf{F}$.
 \end{crl}
 \begin{proof}
@@ -584,7 +584,7 @@ If  $\left\{[0,\infty)\right\}$ is not issuer-optimal, then there is a tranching
 q_{\mathcal{T}}(x)>
 \frac{d(x)+
 \max_{\mathcal{F}\in\mathbf{F}}
-E_\mathcal{F}\left(q_{\mathcal{T}}\right)(x)}
+E_{\mathcal{F}}\left(q_{\mathcal{T}}\mid x\right)}
 {R(x)}
 \end{equation*}
 in at least one state $x\in X$.
@@ -609,14 +609,14 @@ q_{\mathcal{T}}(x)%=
 \leq
 \frac{d(x)+
 \max_{\mathcal{F}\in\mathbf{F}}
-E_\mathcal{F}\left(q_{\mathcal{T}}\right)(x)}
+E_{\mathcal{F}}\left(q_{\mathcal{T}}\mid x\right)}
 {R(x)}
 \end{equation*}
 for every $x\in X$. Since
 \begin{equation*}
 \frac{d(x)+
 \max_{\mathcal{F}\in\mathbf{F}}
-E_\mathcal{F}\left(q_{\mathcal{T}}\right)(x)}
+E_{\mathcal{F}}\left(q_{\mathcal{T}}\mid x\right)}
 {R(x)}
 \leq
 \Psi_{\mathcal{T}}\left(q_{\mathcal{T}}\right)
@@ -626,7 +626,7 @@ then
 q_{\mathcal{T}}(x)=
 \frac{d(x)+
 \max_{\mathcal{F}\in\mathbf{F}}
-E_\mathcal{F}\left(q_{\mathcal{T}}\right)(x)}
+E_{\mathcal{F}}\left(q_{\mathcal{T}}\mid x\right)}
 {R(x)}
 \end{equation*}
 for every $x\in X$. But if that is the case, then both $q_{\mathcal{T}}$ and $\underline{q}$ are fixed points of $\Psi_{\left\{[0,\infty)\right\}}$, which is a contradiction to the uniqueness established in Proposition \ref{exu}.
@@ -640,7 +640,7 @@ Consider the relationship between the asset price and the perceived fundamental 
 \begin{equation} \label{equ:fund}
 v_\mathcal{F}(x)
 =
-\frac{d(x)+E_\mathcal{F}\left(v_\mathcal{F}\right)(x)}
+\frac{d(x)+E_{\mathcal{F}}\left(v_\mathcal{F}\mid x\right)}
 {R(x)}
 \end{equation}
 for $x\in X$.
@@ -664,7 +664,7 @@ The definition of waterfall equilibrium for the benchmark case
 \begin{equation*} \label{equ:qpe}
 \underline{q}(x)
 =
-\frac{d(x)+\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}\left(\underline{q}\right)(x)}
+\frac{d(x)+\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\underline{q}\mid x\right)}
 {R(x)}
 \end{equation*}
 and equation (\ref{equ:fund}) imply
@@ -801,7 +801,7 @@ p_{\Sigma}(m,x) = \sum_{n\in S(m)}p_{\Sigma}(n,x)
 \end{equation}
 \item For $z\in\mathbb{Z}$,
 \begin{equation} \label{eq:pz}
-p_{\Sigma}(z,x) = \frac{\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}\left(\gamma_z\right)(x)}{R(x)}
+p_{\Sigma}(z,x) = \frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\gamma_z\mid x\right)}{R(x)}
 \end{equation}
 where $\gamma_r=p_{\Sigma}(r,\cdot)$ and, for $n\in\mathbb{N}\setminus\left\{r\right\}$, $\gamma_n$ is given by equation (\ref{eq:gamma}).
 \end{enumerate}
@@ -1068,11 +1068,11 @@ A tranching $\mathcal{T}$ satisfies the dominance condition if, for each  $\tau\
 %%G_{\left(q,\mathcal{F}\right)}\left(t|x\right) := 1 - E_{\mathcal{F}}\left(I_{\left\{q>t\right\}}\right)(x)
 G^{\mathcal{T}}_
 {\mathcal{G}}
-\left(t|x\right)
+\left(t\mid x\right)
 \leq
 G^{\mathcal{T}}_
 {\mathcal{F}}
-\left(t|x\right)
+\left(t\mid x\right)
 \end{equation*}
 for $d\phi_\tau$-almost every $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
 \end{dfn}
@@ -1203,7 +1203,7 @@ for all $y\in X$ with strict inequality for $y=x$. Since for every theory the pe
 \textsc{Proof of Proposition \ref{thm:equiv}}: From equations (\ref{eq:pr}), (\ref{eq:pm}) and (\ref{eq:pz}), it follows that
 
 \begin{equation} \label{eq:pru}
-p_{\Sigma}(r,x) = \frac{d(x)}{R(x)}+\sum_{z\in \mathbb{Z}}\frac{\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}\left(\gamma_z\right)(x)}{R(x)}
+p_{\Sigma}(r,x) = \frac{d(x)}{R(x)}+\sum_{z\in \mathbb{Z}}\frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\gamma_z\mid x\right)}{R(x)}
 \end{equation}
 for $x\in X$.
 
