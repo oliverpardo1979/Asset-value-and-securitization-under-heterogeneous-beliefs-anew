@@ -1,31 +1,18 @@
-%BeginFileInfo
-%%Publisher=
-%%Project=
-%%Manuscript=ectaart.cls
-%%Stage=
-%%TID=Vytas
-%%Format=latex006
-%%Distribution=live4
-%%Destination=PDF
-%%PDF.Maker=vtex_tex_pdf
-%%DVI.Maker=vtex_tex_dvi
-%EndFileInfo
+\documentclass[11pt]{article}
 
-\documentclass[draft,pdftex,nolinenumbers,noinfoline]{ectaart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsthm}
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
 
-\RequirePackage[OT1]{fontenc}
-\RequirePackage{amsthm}
-\RequirePackage[cmex10]{amsmath}
-\RequirePackage{natbib}
-\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
-\RequirePackage{hypernat}
-\RequirePackage{tikz}
-\RequirePackage{amssymb}
-\RequirePackage{subcaption}
-\RequirePackage{enumerate}
-\RequirePackage{comment}
-
-\startlocaldefs
 %\numberwithin{equation}{section}
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}%[section]
@@ -35,67 +22,28 @@
 \newtheorem{example}{Example}%[section]
 \newtheorem{crl}{Corollary}%[section]
 \newtheorem{remark}{Remark}
-\endlocaldefs
+
+\title{Asset Value and Securitization under Heterogeneous Beliefs}
+\author{Oliver Pardo\thanks{Universidad Javeriana, Cra. 7 No. 40b-36, Edificio Jorge Hoyos S.J., Piso 4 Of. 28. Email: \href{mailto:pardoo@javeriana.edu.co}{pardoo@javeriana.edu.co}. I thank Jason Donaldson, Erik Eyster, Leonardo Felli, Francesco Nava, Daniel Osorio, Petr Postl, Balazs Szentes, and participants at the LSE Summer Seminar for comments and suggestions. All errors and omissions are my own.}}
+\date{\today}
 
 \begin{document}
-
-\begin{frontmatter}
-\title{Asset value and securitization under heterogeneous beliefs}
-\runtitle{Asset value and securitization under heterogeneous beliefs}
-%\thankstext{T1}{Thanks to Jason Donaldson, Erik Eyster, Leonardo Felli, Francesco Nava, Daniel Osorio, Petr Postl, Balazs Szentes and attendants to the LSE Summer Seminar for comments and suggestions. All errors and omissions are my own.}
-
-\begin{aug}
-\author{\fnms{Oliver} \snm{Pardo}\thanksref{t1}\ead[label=e1]{pardoo@javeriana.edu.co}}
-
-%\subtitle{JOB MARKET PAPER}%\thanksref{t1,t2}\ead[label=e1]{oliverpardo@gmail.com}
-%\author{\fnms{Second} \snm{Author}\thanksref{t3}\ead[label=e2]{second@somewhere.com}}
-%\and
-%\author{\fnms{Third} \snm{Author}
-%\ead[label=e3]{third@somewhere.com}
-%\ead[label=u1,url]{www.foo.com}}
-
-\thankstext{t1}{Universidad Javeriana, Cra 7 No. 40b-36 Edificio Jorge Hoyos S.J., Piso 4 Of. 28, \printead{e1}. Thanks to Jason Donaldson, Erik Eyster, Leonardo Felli, Francesco Nava, Daniel Osorio, Petr Postl, Balazs Szentes and attendants to the LSE Summer Seminar for comments and suggestions. All errors and omissions are my own.}
-%\thankstext{t2}{First supporter of the project}
-%\thankstext{t3}{Second supporter of the project}
-%\runauthor{O. Pardo}
-
-%\address{London School of Economics,
-%\printead{e1}}
-
-%\address{Address of the Third author,
-%usually few lines long,
-%usually few lines long\\
-%\printead{e3,u1}}
-\end{aug}
-
-
-%{\centering\textsc{JOB MARKET PAPER}}
+\maketitle
 
 \begin{abstract}
-
-\textit{This paper studies the effect of securitization on asset pricing when agents have heterogeneous beliefs about the stochastic process governing dividends, prices and interest rates. For this purpose, the asset pricing model of \cite{HarrisonKreps1978} is modified to account for the possibility for agents to issue asset-backed securities. The securities are constrained to belong to tranches of different payment priority, mimicking collateralized debt obligations (CDO). The introduction of asset-backed securities weakly increases the gap between the price of an underlying asset and any perceived present value of its dividends. A necessary condition for this increase to be strict is the absence of beliefs regarding the next-period price of the underlying asset which first-order stochastically dominate all other beliefs. In states of the world where investors with divergent beliefs buy securities from different tranches, the underlying asset is traded at a price higher than what anyone thinks it is worth. Since securities with a return below the market interest rate may be traded across agents, securitization has mixed effects on portfolio returns. It is shown that when there is an agent who is more sophisticated than all others, securitization can decrease the portfolio return of some agents without increasing the portfolio return of none.}
-
+This paper studies how securitization affects asset pricing when agents have heterogeneous beliefs about the stochastic process governing dividends, prices, and interest rates. I extend the asset-pricing model of \cite{HarrisonKreps1978} by allowing agents to issue asset-backed securities. The securities belong to tranches with different payment priority, as in collateralized debt obligations. The introduction of asset-backed securities weakly increases the gap between the price of an underlying asset and any perceived present value of its dividends. A necessary condition for the increase to be strict is the absence of a belief about the next-period price of the underlying asset that first-order stochastically dominates all other beliefs. In states where investors with divergent beliefs buy securities from different tranches, the underlying asset trades at a price higher than what any investor thinks it is worth. Since securities with returns below the market interest rate may be traded across agents, securitization has ambiguous effects on portfolio returns. When one agent is more sophisticated than all others, securitization can decrease some agents' portfolio returns without increasing any agent's portfolio return.
 \end{abstract}
 
-%\begin{keyword}
-%\kwd{asset pricing}
-%\kwd{securitization}
-%\kwd{tranching}
-%\kwd{finantial innovation}
-%\kwd{belief disagreement}
-%\kwd{toxic assets}
-%\kwd{bubbles}
-%\textsc{JEL}: G12, G21, G24, D84
-%\end{keyword}
+\noindent\textbf{JEL codes:} G12, G21, G24, D84.
 
- \end{frontmatter}
+\noindent\textbf{Keywords:} asset pricing; securitization; tranching; financial innovation; belief disagreement; bubbles.
 
 \section{Introduction}
 
 The introduction of financial instruments that allowed banks to cash in the loans they issued facilitated the boom in house prices that preceded the 2007 financial crisis (\cite{Brunnermeier2009}). Subprime mortgages were pooled together and sold in the form of mortgage-backed securities (MBS), meaning that  mortgage repayments went to MBS investors rather than the mortgage originators. Furthermore, MBS were pooled together and sold in the form of collateralized debt obligations (CDO), implying that the MBS payouts went to CDO investors. The CDO backed by the same pool of MBS were issued with different degrees of payment priority, allowing the ones with the highest priority to be highly rated by rating agencies. The process was iterated even further to create squared CDO (Figure \ref{fig:mbs}). Instruments like MBS, CDO and squared CDO are known as asset-backed securities (ABS), which are securities whose payout is derived from and collateralized by some underlying assets. The possibility of creating high-rated securities backed by subprime mortgages eased the credit towards subprime borrowers, fueling an increase in house prices.\footnote{For a historical account of security innovation, see \cite{Matthews1994}.}
 
 \begin{figure}[h]
-\centering 
+\centering
 \begin{tikzpicture}[xscale=20,yscale=20]
 \draw (0.0, .06) rectangle (0.1, 0);
 \draw (0.0, .12) rectangle (0.1, .06);
@@ -131,23 +79,23 @@ The introduction of financial instruments that allowed banks to cash in the loan
 \node  at (0.45,.03) {Equity};
 \node[label=below:\rotatebox{90}{Rating}] at (-0.045,0.2) {};
 \end{tikzpicture}
-\caption{Multiple rounds of ABS} 
+\caption{Multiple rounds of ABS}
 \label{fig:mbs}
 \end{figure}
 
-This paper studies the effect of the introduction of ABS on the price of the underlying assets.  It does it in an environment where investors may not take into account all information available, potentially leading to heterogeneous beliefs about the future payouts of the underlying assets. The paper compares a benchmark scenario, where ABS are absent, with scenarios that include an increasing variety of ABS. The underlying hypothesis is that, due to belief disagreement, the gradual introduction of ABS inflated the price of the underlying assets above their fundamental value.
+This paper studies the effect of the introduction of ABS on the price of the underlying assets. It does so in an environment where investors may not take into account all available information, potentially leading to heterogeneous beliefs about the future payouts of the underlying assets. The paper compares a benchmark scenario, where ABS are absent, with scenarios that include an increasing variety of ABS. The underlying hypothesis is that, due to belief disagreement, the gradual introduction of ABS inflated the price of the underlying assets above their fundamental value.
 
 In order to give an intuition of its results, the paper begins with a motivating example. In the benchmark of this example, two risk-neutral agents trade a short-term bond and a long-term asset. The benchmark is a particular case of the \cite{HarrisonKreps1978} model, in which ABS are absent. Next, the paper presents a scenario where the two agents can also trade securities backed by the long-term asset. These asset-backed securities resemble real-life CDOs in their payoff structure. By comparing this scenario with the benchmark, the example illustrates how a specific form of belief disagreement allows this class of ABS to translate into an increase in the price of the long-term asset. Intuitively, the asset-backed securities allow the payoff of the long-term asset to be ``sliced'' in two, allowing both agents to participate in the cash flow generated by the underlying asset. As a result, the demand of the long-term asset increases.
 
-The paper extends the motivating example to a more general case. In this general model, a finite number of risk-neutral agents trade three types of assets in each of many infinitely countable periods. These assets are: i) an infinitely-supplied,  risk-free, one-period bond, ii) a finitely-supplied, long-term asset that pays an uncertain dividend every period, and iii) securities backed by the latter. 
+The paper extends the motivating example to a more general case. In this general model, a finite number of risk-neutral agents trade three types of assets in each of many infinitely countable periods. These assets are: i) an infinitely-supplied,  risk-free, one-period bond, ii) a finitely-supplied, long-term asset that pays an uncertain dividend every period, and iii) securities backed by the latter.
 
-The way in which the securities backed by the long-term asset are modeled is as follows. By issuing asset-backed securities, the owner of an underlying asset commits to transferring the cash flow generated by the underlying asset to the investors who buy the ABS. The ABS could simply be pass-through securities in which the cash flow goes to investors in proportion to the securities bought. However, more sophisticated ABS could be created by ``slicing'' or \textit{tranching} the cash flow into tiers or \textit{tranches}. The ABS associated with the most senior tranche promise a fixed amount of cash unless the total cash flow from the underlying asset is below this amount. The next tranche entitles a fixed amount unless the total cash flow, net of the senior tranche payoff, is below this amount, and so on. This waterfall payment structure is also used by \cite{Malamund2010} and \cite{Grodecka2013}. For simplicity, the ABS are assumed to have a maturity of one period. The process of issuing ABS is defined as \textit{securitization}. The process of issuing ABS with a waterfall payment structure is defined as \textit{tranching securitization} or \textit{tranching} for short. 
+The way in which the securities backed by the long-term asset are modeled is as follows. By issuing asset-backed securities, the owner of an underlying asset commits to transferring the cash flow generated by the underlying asset to the investors who buy the ABS. The ABS could simply be pass-through securities in which the cash flow goes to investors in proportion to the securities bought. However, more sophisticated ABS could be created by ``slicing'' or \textit{tranching} the cash flow into tiers or \textit{tranches}. The ABS associated with the most senior tranche promise a fixed amount of cash unless the total cash flow from the underlying asset is below this amount. The next tranche entitles a fixed amount unless the total cash flow, net of the senior tranche payoff, is below this amount, and so on. This waterfall payment structure is also used by \cite{Malamund2010} and \cite{Grodecka2013}. For simplicity, the ABS are assumed to have a maturity of one period. The process of issuing ABS is defined as \textit{securitization}. The process of issuing ABS with a waterfall payment structure is defined as \textit{tranching securitization} or \textit{tranching} for short.
 
-The equilibrium conditions follow from the following assumptions. Firstly, it is assumed that no naked positions are allowed, which means that the ownership of the long-term asset is necessary in order to issue the ABS. Secondly, it is assumed that there is an exogenous limit on the short-selling of the ABS. Since the long-term asset is in finite supply, these assumptions imply that the supply of the ABS is finite as well. The fact that one-period bonds are in infinite supply implies that any agent can borrow as much as she wants at the market interest rate. Since there are no credit constraints, the equilibrium price of each ABS is given by the willingness to pay of whoever is the most optimistic about the ABS' next payout. The paper shows that this equilibrium exists and is unique. If no short-selling constraints are assumed, the absence of credit constraints will lead to an infinite supply of ABS and no equilibrium will exist. 
+The equilibrium conditions follow from two assumptions. First, no naked positions are allowed: ownership of the long-term asset is necessary in order to issue ABS. Second, there is an exogenous limit on the short-selling of ABS. Since the long-term asset is in finite supply, these assumptions imply that the supply of ABS is finite as well. The fact that one-period bonds are in infinite supply implies that any agent can borrow as much as she wants at the market interest rate. Since there are no credit constraints, the equilibrium price of each ABS is given by the willingness to pay of whoever is most optimistic about the ABS's next payout. The paper shows that this equilibrium exists and is unique. If no short-selling constraints are assumed, the absence of credit constraints leads to an infinite supply of ABS and no equilibrium exists.
 
-%To formalize this idea, the paper develops a model in which, in each of many infinitely countable periods, risk-neutral agents trade assets of three kinds: a) an infinitely-supplied,  risk-free, one-period bond b) a finitely-supplied, risky asset that pays off a dividend every period and c) securities backed by the latter. The fact that one-period bonds are in infinite supply implies that agents can borrow as much as they want at the market interest rate. Additionally, it is assumed that there is an exogenous limit on the short-selling of ABS. These assumptions imply that the price of any ABS is given by the willingness to pay of whoever is most optimistic about the ABS next payout. If no short-selling constraints are assumed, agents will be willing to make infinite bets on the ABS and no equilibrium will exist. It is assumed that no naked positions are allowed, which means that the ownership of the long-term asset is necessary to issue ABS. 
+%To formalize this idea, the paper develops a model in which, in each of many infinitely countable periods, risk-neutral agents trade assets of three kinds: a) an infinitely-supplied,  risk-free, one-period bond b) a finitely-supplied, risky asset that pays off a dividend every period and c) securities backed by the latter. The fact that one-period bonds are in infinite supply implies that agents can borrow as much as they want at the market interest rate. Additionally, it is assumed that there is an exogenous limit on the short-selling of ABS. These assumptions imply that the price of any ABS is given by the willingness to pay of whoever is most optimistic about the ABS next payout. If no short-selling constraints are assumed, agents will be willing to make infinite bets on the ABS and no equilibrium will exist. It is assumed that no naked positions are allowed, which means that the ownership of the long-term asset is necessary to issue ABS.
 
-%The way in which ABS are modeled is as follows. By issuing an ABS, the owner of an underlying asset commits to transferring the cash flow generated by the underlying asset to the investors who buy the ABS. The ABS could simply be pass-through securities in which the cash flow goes to investors in proportion to the securities bought. However, more sophisticated ABS could be created by ``slicing'' or \textit{tranching} the cash flow into tiers or \textit{tranches}. The ABS associated with the most senior tranche promise a fixed amount of cash unless the total cash flow from the underlying asset is below this amount. The next tranche entitles a fixed amount unless the total cash flow net of the senior tranche payoff is below this amount, and so on. This waterfall payment structure is also used by \cite{Malamund2010} and \cite{Grodecka2013}. For simplicity, the ABS are assumed to have a maturity of one period. The process of issuing ABS is defined as \textit{securitization}. The process of issuing ABS with a waterfall payment structure is defined as \textit{tranching securitization} or \textit{tranching} for short. 
+%The way in which ABS are modeled is as follows. By issuing an ABS, the owner of an underlying asset commits to transferring the cash flow generated by the underlying asset to the investors who buy the ABS. The ABS could simply be pass-through securities in which the cash flow goes to investors in proportion to the securities bought. However, more sophisticated ABS could be created by ``slicing'' or \textit{tranching} the cash flow into tiers or \textit{tranches}. The ABS associated with the most senior tranche promise a fixed amount of cash unless the total cash flow from the underlying asset is below this amount. The next tranche entitles a fixed amount unless the total cash flow net of the senior tranche payoff is below this amount, and so on. This waterfall payment structure is also used by \cite{Malamund2010} and \cite{Grodecka2013}. For simplicity, the ABS are assumed to have a maturity of one period. The process of issuing ABS is defined as \textit{securitization}. The process of issuing ABS with a waterfall payment structure is defined as \textit{tranching securitization} or \textit{tranching} for short.
 
 %The model of \cite{HarrisonKreps1978}, in which there is no securitization, serves as a benchmark for this paper. By assuming short-selling constraints and divergent beliefs, they show that the price of the long-term asset is given by the valuation of the most optimistic agent. Since the asset can be resold once the owner is no longer the most optimistic agent, the price surpasses any expectation regarding the present value of dividends. \cite{EysterPiccione2014} use the same framework but provide more structure on agents beliefs. Their admissible beliefs can be represented as partitions of the state-space, formalizing the idea that people have a coarse understanding of their environment. This paper uses their class of admissible beliefs when studying the effect of tranching on the average portfolio return that agents receive.
 
@@ -155,32 +103,33 @@ The paper proceeds to check how an increasing number of tranches affects the equ
 
 Although securitization is modeled as a refinement of the existing tranches, it alternatively can be seen as the process of issuing securities backed by ABS. This paper shows that the two representations are equivalent. Therefore, the model implicitly captures what \cite{Geanakoplos1996} denominates as \textit{pyramiding arrangements}: using the long-term asset as collateral, an agent may borrow from another agent, who in turn uses the issued debt as collateral to borrow from a third agent. In the original representation, this implies that mezzanine tranches are implicitly borrowing from senior tranches and lending to junior tranches.
 
-Finally, the paper studies the effect of the introduction of ABS on the rates of return that agents receive on their portfolio. For this purpose, it uses the behavioral framework of \cite{EysterPiccione2014}, who take the model of \cite{HarrisonKreps1978} but provide more structure on agents' beliefs. In their model, agents are characterized by a partition of the state space. This formalizes the idea that people have a coarse understanding of their environment. The finer the partition, the more sophisticated they are. \cite{EysterPiccione2014} show that an agent might obtain an average portfolio return lower than the one obtained by a less sophisticated agent. This is because a heterogeneous and coarse understanding of the environment implies a form of winner's curse: buying the long-term asset means that all other agents are pessimistic about its payoff in the next period. This paper shows that a consequence of this is that the introduction of new ABS could decrease the portfolio return some agents receive without increasing the return of none.
+Finally, the paper studies the effect of the introduction of ABS on the rates of return that agents receive on their portfolio. For this purpose, it uses the behavioral framework of \cite{EysterPiccione2014}, who take the model of \cite{HarrisonKreps1978} but provide more structure on agents' beliefs. In their model, agents are characterized by a partition of the state space. This formalizes the idea that people have a coarse understanding of their environment. The finer the partition, the more sophisticated they are. \cite{EysterPiccione2014} show that an agent might obtain an average portfolio return lower than the one obtained by a less sophisticated agent. This is because a heterogeneous and coarse understanding of the environment implies a form of winner's curse: buying the long-term asset means that all other agents are pessimistic about its payoff in the next period. This paper shows that, as a consequence, the introduction of new ABS can decrease the portfolio return that some agents receive without increasing any agent's return.
 
-This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model and defines the equilibrium. Section \ref{sec:extuni} proves the existence and uniqueness of the equilibrium. Section \ref{sec:eff} studies the effect of tranching securitization on the price of the underlying asset. Section \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching. Section \ref{sec:ep} studies the effect of tranching on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment  constraint. Finally section \ref{sec:disc} presents some conclusions and suggestions for further research.
+This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model and defines the equilibrium. Section \ref{sec:extuni} proves the existence and uniqueness of the equilibrium. Section \ref{sec:eff} studies the effect of tranching securitization on the price of the underlying asset. Section \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching. Section \ref{sec:ep} studies the effect of tranching on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research.
 
 \subsection{Literature Review}
 
-The paper belongs to the branch of asset pricing literature under belief disagreement, of which \cite{Scheinkman2004} offer a survey. \cite{MilgromStokey1982} show that, if rational agents differ in information only but coincide on priors, there would be no trade. Because of this, numerous studies depart from the assumption of common priors. \cite{Miller1977} and \cite{HarrisonKreps1978} were pioneers in this regard. A non-exhaustive list of other studies on asset pricing with heterogeneous beliefs includes \cite{HarrisRavis1993}, \cite{Zapatero1998}, \cite{ChiarellaHe2001}, \cite{ScheinkmanXiong2003}, \cite{CaoOuYang2009}, \cite{XiongYan2010}, \cite{Geanakoplos2010}, \cite{HeXiong2010}, \cite{Cao2011} and \cite{HansonSunderman2013}. Empirically, \cite{HongStein2007} advocate the use of heterogeneous beliefs to explain observed patterns in financial markets.
+The paper belongs to the branch of asset-pricing literature under belief disagreement, of which \cite{Scheinkman2004} offer a survey. \cite{MilgromStokey1982} show that, if rational agents differ in information only but coincide on priors, there would be no trade. Because of this, numerous studies depart from the assumption of common priors. \cite{Miller1977} and \cite{HarrisonKreps1978} were pioneers in this regard. A non-exhaustive list of other studies on asset pricing with heterogeneous beliefs includes \cite{HarrisRavis1993}, \cite{Zapatero1998}, \cite{ChiarellaHe2001}, \cite{ScheinkmanXiong2003}, \cite{CaoOuYang2009}, \cite{XiongYan2010}, \cite{Geanakoplos2010}, \cite{HeXiong2010}, \cite{Cao2011}, and \cite{HansonSunderman2013}. Empirically, \cite{HongStein2007} advocate the use of heterogeneous beliefs to explain observed patterns in financial markets.
 
-The paper also intersects with the literature on financial innovation and security design, of which \cite{DuffieRahi1995} offer a survey. Recent examples include \cite{Brock2009}, \cite{CheSethi2010}, \cite{FostelGeanakoplos2012}, \cite{Kubler2012} and \cite{Simsek2013a, Simsek2013b}, which share with this paper the aim of studying the potentially destabilizing effects of financial innovation. In \cite{Brock2009}, the expectations with  a higher average profit are favorably selected by the market. The learning process might overshoot, though. Under incomplete markets, this implies that the more Arrow-Debreu securities are introduced, the more likely the markets are to become unstable. \cite{Kubler2012} also study the effect of financial innovation under heterogeneous beliefs, but in the context of an overlapping generations model. Their focus is on the effect of completing the markets on asset price volatility. Once markets become complete, wealth starts to shift across generations. As a consequence of the different propensities to consume between generations, asset price volatility increases. \cite{Simsek2013b} shows that, under heterogeneous beliefs, the introduction of new assets could increase rather than decrease the average portfolio variance, as measured by the variance of agents' net worth.
+The paper also intersects with the literature on financial innovation and security design, of which \cite{DuffieRahi1995} offer a survey. Examples include \cite{Brock2009}, \cite{CheSethi2010}, \cite{FostelGeanakoplos2012}, \cite{Kubler2012}, and \cite{Simsek2013a, Simsek2013b}, which share with this paper the aim of studying the potentially destabilizing effects of financial innovation. \cite{Brock2009} shows that market selection among expectations can overshoot; \cite{Kubler2012} studies how market completion under heterogeneous beliefs can increase asset-price volatility; and \cite{Simsek2013b} shows that new financial assets can amplify speculative variance rather than merely improve risk sharing.
 
-The works of \cite{FostelGeanakoplos2012} and \cite{Simsek2013a}, in particular, are closely related to this paper. Both works build upon on a two-period general equilibrium model where agents diverge in their beliefs regarding the dividend of a physical asset. In \cite{FostelGeanakoplos2012}, there are only two states and a continuum of beliefs. In \cite{Simsek2013a}, there is a continuum of states but only two beliefs. Both papers work with the assumption that agents cannot commit to pay what they promise. Therefore, creditors demand collateral in the form of either cash or the physical asset.  This paper shares their prediction regarding the effect of tranching on asset prices, but in a context of partial equilibrium, infinite periods, any finite number of states and any finite number of beliefs. Furthermore, the aforementioned representation equivalence implies that the paper includes the case where promises themselves can be used as collateral. The paper also goes beyond the aim of these two works by studying the effect of securitization on the return each type of agent receives in the long run.
+The works of \cite{FostelGeanakoplos2012} and \cite{Simsek2013a}, in particular, are closely related to this paper. Both works build on two-period general-equilibrium models where agents disagree about the dividend of a physical asset and collateral constraints discipline promises. This paper shares their prediction that tranching can increase asset prices, but it does so in a partial-equilibrium environment with an infinite horizon, any finite number of states, and any finite number of beliefs. The paper also goes beyond these works by studying the effect of securitization on the return each type of agent receives in the long run. Later work by \cite{GeanakoplosZame2014} and \cite{FostelGeanakoplos2016} is useful for positioning the paper in the broader collateral-equilibrium literature because it emphasizes how collateralizable promises can affect prices and investment even without changes in fundamentals.
 
-Another closely related paper to this is \cite{Garmaise2001}. His paper studies the problem of a firm designing a security to be auctioned among two investors. Investors do not have rational expectations: rather they use history to achieve statistical consistency, in a way similar to \cite{EysterPiccione2014}. Apart from this, the problem is essentially static. Furthermore, the firm is constrained to issue only one security. The optimal security maximizes differences in opinion, which is the same motivation found in this paper for issuers to tranche as much as possible any asset they own.
+Recent work on belief distortions in credit markets also supports the paper's motivation. \cite{GennaioliShleiferVishny2012} connect financial innovation with neglected risks and fragility; \cite{BordaloGennaioliShleifer2018} provide a model of credit cycles driven by diagnostic expectations; \cite{BaronXiong2017} show that credit expansions predict crash risk that investors appear to neglect; and \cite{LopezSalidoSteinZakrajsek2017} document that elevated credit-market sentiment predicts subsequent reversals in credit conditions and economic activity. These papers do not model waterfall tranching as in this paper, but they strengthen the empirical and behavioral case for studying how belief disagreement can raise asset prices and later damage returns.
+
+Finally, the paper relates to security design and securitization. \cite{Garmaise2001} studies a firm designing a security to be auctioned among investors with statistically consistent but non-rational beliefs; \cite{DeMarzo2005} provides a canonical model of pooling and tranching; and \cite{BegleyPurnanandam2017} provide empirical evidence on the design of private-label RMBS deals. The contribution here is to characterize when waterfall tranching is issuer-optimal under belief disagreement and to show how the same mechanism affects agents' realized portfolio returns.
 
 %The rest of this paper is organized as follows. Section \ref{example} gives an introductory example which illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model, defines the equilibrium and proves its existence and uniqueness. Section \ref{sec:eff} studies the effect of securitization on the long-term asset price and its relation to any perceived present value of dividends. Section \ref{sec:is} shows that multiple rounds of securitization are equivalent to a refinement of the initial tranching. Section \ref{sec:ep} studies the effect of securitization on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment  constraint. Finally section \ref{sec:disc} presents some conclusions and suggestions for further research.
 
-\begin{comment}
 \section{Motivating example}\label{example}
 
-Consider an environment where trade happens in each of many infinite countable periods. Each period there is an infinitely-supplied bond used as a numeraire that entitles a payoff $R>1$ next period. The bond can be traded for a finitely-supplied asset that yields a random dividend $d$ every period. There are three possible states of the world: $l$, $m$ and $h$. The realizations of the dividend are such that $d(l) < d(m) < d(h)$. Securities backed by the long-term asset can be issued and traded. 
+Consider an environment where trade takes place in a countably infinite sequence of periods. Each period there is an infinitely supplied bond used as a numeraire that entitles a payoff $R>1$ next period. The bond can be traded for a finitely supplied asset that yields a random dividend $d$ every period. There are three possible states of the world: $l$, $m$ and $h$. The realizations of the dividend are such that $d(l) < d(m) < d(h)$. Securities backed by the long-term asset can be issued and traded.
 
-There are two types of infinitely-lived agents, $\mathcal{A}$  and $\mathcal{B}$. Both are risk-neutral. In every state, agent $\mathcal{A}$ thinks that the probability of transiting to any other state next period is $1/3$. Meanwhile, agent $\mathcal{B}$ thinks that the probability of staying in the current state is $1-\epsilon$ and uniform otherwise. The disagreement may emerge as a consequence of agents using different forecasting tools or not using all information available. There are many motivation for heterogeneous beliefs, but all certainly require at least some agents to depart from rational expectations: if information is used efficiently, the realizations of the stochastic process will feed back into agents' beliefs. Implicitly, the model assumes that the learning process has stalled.  
+There are two types of infinitely lived agents, $\mathcal{A}$  and $\mathcal{B}$. Both are risk-neutral. In every state, agent $\mathcal{A}$ thinks that the probability of transiting to any other state next period is $1/3$. Meanwhile, agent $\mathcal{B}$ thinks that the probability of staying in the current state is $1-\epsilon$ and uniform otherwise. The disagreement may emerge because agents use different forecasting tools or do not use all available information. There are many motivations for heterogeneous beliefs, but all require at least some agents to depart from rational expectations: if information is used efficiently, the realizations of the stochastic process feed back into agents' beliefs. Implicitly, the model assumes that the learning process has stalled.
 
 \subsection{Benchmark: A world without asset-backed securities} \label{benchmark}
 
-In the benchmark scenario, there are no asset-backed securities. Because of limited short-selling, the market clears when the long-term asset's highest expected return matches the return of the short-term bond. Let $q:{\left\{l,m,h\right\}}\to\mathbb{R}_+$ be the function that maps states of the world into asset prices. Notation is simplified by assuming that the asset price is \textit{cum-dividend} and that the declared dividend is to be paid next period. 
+In the benchmark scenario, there are no asset-backed securities. Because of limited short-selling, the market clears when the long-term asset's highest expected return matches the return of the short-term bond. Let $q:{\left\{l,m,h\right\}}\to\mathbb{R}_+$ be the function that maps states of the world into asset prices. Notation is simplified by assuming that the asset price is \textit{cum-dividend} and that the declared dividend is to be paid next period.
 
 Consider the state $x \in \{l,m,h\}$. When considering buying the long-term asset, both agents are willing to pay $d(x)/R$ plus the discounted asset price they expect for next period. For agent $\mathcal{A}$, the expected price of the long-term asset is $\frac{1}{3}\left(q(l)+q(m)+q(h)\right)$. For agent $\mathcal{B}$, the same expectation is close  to $q(x)$. If, as happens in equilibrium, $q(l)<q(m)<q(h)$, agent $\mathcal{A}$ buys the long-term asset in state $l$ whereas agent $\mathcal{B}$ buys it in state $h$. Ex-ante, it is not clear who will buy the asset in state $m$. Still, the solution to the price function $q$ when $\epsilon$ goes to zero is given by
 
@@ -193,7 +142,7 @@ q(h) & = & \frac{d(h)+q(h)}{R} \label{qh}
 For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$ and $q(h)=3$.
 
 
-\begin{figure}[h]%\label{se}
+\begin{figure}[h]
 \centering
 %%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{subfigure}[b]{0.30\textwidth}
@@ -201,19 +150,19 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \begin{tikzpicture}[xscale=10,yscale=8]
 \draw [<->] (0,0.35) -- (0,0) -- (0.5,0);
 \node [below right] at (0.5,0) {$t$};
-\draw [ultra thick] 
+\draw [ultra thick]
 (0.0,0.0) -- (0.1,0.0);
-\draw [ultra thick] 
+\draw [ultra thick]
 (0.1,0.0) -- (0.1,0.1);
-\draw [ultra thick] 
+\draw [ultra thick]
 (0.1,0.1) -- (0.2,0.1);
-\draw [ultra thick] 
+\draw [ultra thick]
 (0.2,0.1) -- (0.2,0.2);
-\draw [ultra thick] 
+\draw [ultra thick]
 (0.2,0.2) -- (0.3,0.2);
-\draw [ultra thick] 
+\draw [ultra thick]
 (0.3,0.2) -- (0.3,0.3);
-\draw [ultra thick] 
+\draw [ultra thick]
 (0.3,0.3) -- (0.5,0.3);
 \node [below right] at (0.3,0.2) {$G_\mathcal{A}(t|l)$};
 \node [left] at (0.0,0.1) {$\frac{1}{3}$};
@@ -227,7 +176,7 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \node [below] at (0.2,0) {$q(m)$};
 \node [below] at (0.3,0) {$q(h)$};
 \end{tikzpicture}
-%\caption{} 
+%\caption{}
 %\label{fig:Gl}
 %\end{subfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -257,8 +206,7 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \node [below] at (0.2,0) {$q(m)$};
 \node [below] at (0.3,0) {$q(h)$};
 \end{tikzpicture}
-%\caption{} 
-%\label{fig:Gh}
+%\caption{}
 %\end{subfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -287,25 +235,24 @@ For instance, if $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, then $q(l)=1$, $q(m)=2$
 \node [below] at (0.2,0) {$q(m)$};
 \node [below] at (0.3,0) {$q(h)$};
 \end{tikzpicture}
-%\caption{} 
-%\label{fig:Gh}
+%\caption{}
 %\end{subfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \caption{Perceived distributions on the asset price} \label{fig:CDFs}
 \end{figure}
 
-To illustrate the conditions under which the introduction of ABS increases the long-term asset price, consider the perceived distributions regarding the asset price for the next period. Let $G_i(t|x)$ be the probability that the next-period asset price is less than or equal to $t\in\mathbb{R}_+$, as perceived by agent $i\in\left\{\mathcal{A},\mathcal{B}\right\}$ conditional on being in state $x\in\left\{l,m,h\right\}$. Figure \ref{fig:CDFs} illustrates these conditional distributions for each of the three states. In states $l$ and $h$, the distributions can be ranked according to first-order stochastic dominance, as one distribution always takes values no lower than the other. The agent whose beliefs first-order stochastically dominate that of the other will buy the asset. In state $m$, there is no stochastic dominance between $G_\mathcal{A}(\cdot|m)$ and $G_\mathcal{B}(\cdot|m)$. Still, whoever has highest expectation regarding the asset price will buy the asset. In this state, however, agent $\mathcal{B}$ is more optimistic regarding the price not being below any value below $q(m)$, whereas agent $\mathcal{A}$ is more optimistic regarding the price not being below any value above $q(m)$. This divergence is exploited by ``slicing'' the asset into two securities: one with a payout attached to realizations below $q(m)$ and the other with a payout attached to realizations above $q(m)$. This is illustrated in the next subsection. 
+To illustrate the conditions under which the introduction of ABS increases the long-term asset price, consider the perceived distributions regarding the asset price for the next period. Let $G_i(t|x)$ be the probability that the next-period asset price is less than or equal to $t\in\mathbb{R}_+$, as perceived by agent $i\in\left\{\mathcal{A},\mathcal{B}\right\}$ conditional on being in state $x\in\left\{l,m,h\right\}$. Figure \ref{fig:CDFs} illustrates these conditional distributions for each of the three states. In states $l$ and $h$, the distributions can be ranked according to first-order stochastic dominance, as one distribution always takes values no lower than the other. The agent whose beliefs first-order stochastically dominate that of the other will buy the asset. In state $m$, there is no stochastic dominance between $G_\mathcal{A}(\cdot|m)$ and $G_\mathcal{B}(\cdot|m)$. Still, whoever has highest expectation regarding the asset price will buy the asset. In this state, however, agent $\mathcal{B}$ is more optimistic regarding the price not being below any value below $q(m)$, whereas agent $\mathcal{A}$ is more optimistic regarding the price not being below any value above $q(m)$. This divergence is exploited by ``slicing'' the asset into two securities: one with a payout attached to realizations below $q(m)$ and the other with a payout attached to realizations above $q(m)$. This is illustrated in the next subsection.
 
 \subsection{A world with asset-backed securities}\label{securitized}
 
-Assume now the any owner of the long-term asset can issue two kinds of ABS, each of which have a maturity of one-period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Denote by $q':{\left\{l,m,h\right\}}\to\mathbb{R}_+$ the asset price function in the scenario with these two kinds of ABS. The ABS in the senior tranche guarantees a payoff $q'(m)$ for next period unless the state becomes $l$, in which case it pays $q'(l)$. The payoff from the junior tranche is $q'(h)-q'(m)$ if the realized state is $h$ and $0$ otherwise. In short, if $\phi_s$ and $\phi_j$ denote the payoffs from senior and junior tranches as a function of the realization $q'(x)$, then
+Assume now that any owner of the long-term asset can issue two kinds of ABS, each of which has a maturity of one period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Denote by $q':{\left\{l,m,h\right\}}\to\mathbb{R}_+$ the asset price function in the scenario with these two kinds of ABS. The ABS in the senior tranche guarantees a payoff $q'(m)$ for next period unless the state becomes $l$, in which case it pays $q'(l)$. The payoff from the junior tranche is $q'(h)-q'(m)$ if the realized state is $h$ and $0$ otherwise. In short, if $\phi_s$ and $\phi_j$ denote the payoffs from senior and junior tranches as a function of the realization $q'(x)$, then
 
 \begin{eqnarray}
 \phi_s(q'(x)) & = &  q'(x) - (q'(x)-q'(m))^+ \label{spayoff} \\
 \phi_j(q'(x)) & = &  (q'(x)-q'(m))^+ \label{epayoff}
 \end{eqnarray}
-\begin{figure}[h]%\label{se}
-\centering 
+\begin{figure}[h]
+\centering
 \begin{tikzpicture}[xscale=10,yscale=10]
 \draw [<->] (0,0.4) -- (0,0) -- (0.6,0);
 \node [below right] at (0.6,0) {$t$};
@@ -319,11 +266,11 @@ Assume now the any owner of the long-term asset can issue two kinds of ABS, each
 \node [below] at (0.2,0) {$q'(m)$};
 \node [above right] at (0.025,0) {$45^{o}$};
 \end{tikzpicture}
-\caption{Payoff function from senior and junior tranches} 
+\caption{Payoff function from senior and junior tranches}
 \label{fig1:se}
 \end{figure}
 
-Figure \ref{fig1:se} plots the payoff from each tranche as a function of the cum-dividend price of the underlying asset. Note that i) owning the junior tranche is the same as having a one-period purchased call option on the underlying asset with strike price $q'(m)$ ii) owning the senior tranche is equivalent to owning the underlying asset entangled with a one-period written put option with strike price $q'(m)$. In this particular example, the size of each tranche is given by $q'(m)$. Such a threshold is known as an \textit{attachment point}.  
+Figure \ref{fig1:se} plots the payoff from each tranche as a function of the cum-dividend price of the underlying asset. Note that i) owning the junior tranche is the same as holding a one-period call option on the underlying asset with strike price $q'(m)$, and ii) owning the senior tranche is equivalent to owning the underlying asset together with a one-period written put option with strike price $q'(m)$. In this particular example, the size of each tranche is given by $q'(m)$. Such a threshold is known as an \textit{attachment point}.
 
 On an alternative interpretation, the buyer of the junior tranche becomes the owner of the asset, but has a debt liability to the buyer of the senior tranche and is using the underlying asset as collateral. In this example, the junior buyer promises to pay $q'(m)$ to the senior buyer in the next period. However, if the value of the collateral is $q'(l)$, the junior buyer defaults and the senior buyer seizes the collateral.
 
@@ -333,10 +280,10 @@ p(s,m) & = & \frac{q'(m)}{R} \\
 p(j,m) & = & \frac{\frac{1}{3}\left(q'(h)-q'(m)\right)}{R}
 \end{eqnarray*}
 
-Since different agents might have claims on the same asset, the introduction of ABS can break the equivalence between any single expectation regarding the value of the underlying asset and the total value of the securities. To show this, note that at state $m$, the expectation on the asset price for next period is close to $q'(m)$ for agent $\mathcal{B}$ and $\frac{1}{3}(q'(l)+q'(m)+q'(h))$ for agent $\mathcal{A}$. Then 
+Since different agents might have claims on the same asset, the introduction of ABS can break the equivalence between any single expectation regarding the value of the underlying asset and the total value of the securities. To show this, note that at state $m$, the expectation on the asset price for next period is close to $q'(m)$ for agent $\mathcal{B}$ and $\frac{1}{3}(q'(l)+q'(m)+q'(h))$ for agent $\mathcal{A}$. Then
 \begin{eqnarray*}
 p(s,m) + p(j,m) & > &  \frac{q'(m)}{R}  \\
-p(s,m) + p(j,m) & > &  \frac{\frac{1}{3}\left(q'(l)+q'(m)+q'(h)\right)}{R} 
+p(s,m) + p(j,m) & > &  \frac{\frac{1}{3}\left(q'(l)+q'(m)+q'(h)\right)}{R}
 \end{eqnarray*}
 which means that the payoff from selling the securities surpasses any expectation regarding the discounted price of the underlying asset.\footnote{See \cite{FostelGeanakoplos2012} for a similar result.}
 
@@ -344,22 +291,21 @@ The equilibrium price for the long-term asset is given by a non-arbitrage condit
 \begin{equation} \label{eq:simarb}
 q'(x) = \frac{d(x)}{R} + p(s,x) + p(j,x)
 \end{equation}
-If the left-hand side of (\ref{eq:simarb}) were greater than the right hand side, there would be no demand for the long-term asset. On the other hand, if the left-hand side were lesser than the right-hand side, the demand would be infinite.
+If the left-hand side of (\ref{eq:simarb}) were greater than the right-hand side, there would be no demand for the long-term asset. On the other hand, if the left-hand side were smaller than the right-hand side, demand would be infinite.
 
 For states $l$ and $h$, the equilibrium conditions can be derived by identifying who buys the tranches at these states. At state $l$, the expectations of $\mathcal{A}$ on the payoff from any tranche are greater than those of $\mathcal{B}$. The opposite is true at state $h$. Hence both tranches are bought by $\mathcal{A}$ at state $l$ and both tranches are bought by $\mathcal{B}$ at state $h$. Adding up the tranche prices yields the discounted long-term asset price expected by whoever buys both tranches. Hence the price equations for $q'(l)$ and $q'(h)$ resemble equations (\ref{ql}) and (\ref{qh}).  The same is not true for $q'(m)$, however, since at state $m$ each tranche is bought by different agents. In summary, the equilibrium price function $q'$ is given by
-\begin{eqnarray} 
+\begin{eqnarray}
 q'(l) & = & \frac{d(l)+\frac{1}{3}\left(q'(l)+q'(m)+q'(h)\right)}{R} \label{qpl}\\
 q'(m) & = & \frac{ d(m) +  q'(m) + \frac{1}{3}(q'(h)-q'(m))} {R} \label{qpm} \\
 q'(h) & = & \frac{d(h)+q'(h)}{R} \label{qph}
 \end{eqnarray}
 
-By comparing equation (\ref{qpm}) with equation (\ref{qm}), it can be seen that the introduction of ABS has increased the asset price at state $m$. This in turns increases the price at state $l$, since $\mathcal{A}$'s expectation at state $l$ is higher. Going back to the numerical example where $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, it can be show that the asset price increases by $\frac{1}{20}$ at state $l$ and by $\frac{1}{4}$ at state $m$. 
-Thanks to the reselling opportunity, the introduction of ABS increases the asset price on states in which ABS appear to be innocuous. 
-\end{comment}
+By comparing equation (\ref{qpm}) with equation (\ref{qm}), it can be seen that the introduction of ABS has increased the asset price at state $m$. This in turn increases the price at state $l$, since $\mathcal{A}$'s expectation at state $l$ is higher. Returning to the numerical example where $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, the asset price increases by $\frac{1}{20}$ at state $l$ and by $\frac{1}{4}$ at state $m$.
+Thanks to the reselling opportunity, the introduction of ABS increases the asset price in states in which ABS appear to be innocuous.
 
 \section{The Model}\label{model}
 
-Consider an environment where trade happens in each of many infinite countable periods. The assets traded in each period are of three kinds: 1) an infinitely-supplied one-period maturity bond used as a numeraire, 2) a single long-term asset that generates a random dividend every period and 3) securities backed by the long-term asset.
+Consider an environment where trade takes place in each period of a countably infinite horizon. The assets traded in each period are of three kinds: 1) an infinitely supplied one-period bond used as a numeraire, 2) a single long-term asset that generates a random dividend every period, and 3) securities backed by the long-term asset.
 
 \subsection{Dividends and interest rates}
 
@@ -372,9 +318,9 @@ for every $y\in X$. In the long-run, the world spends a fraction $\mu(x)$ of the
 
 \subsection{Beliefs}
 
-All agents perceive that the state of the world evolves according to a Markov chain, but they may disagree on the transition probabilities. Each agent has a theory which represents her beliefs regarding the chances on the state of the world next-period. The set of theories in the market is represented by $\mathbf{F}$. The transition probability from state $x\in X$ to state $y\in X$, as perceived by theory $\mathcal{F}\in\mathbf{F}$, is denoted by $Q_\mathcal{F}(x,y)$.
+All agents perceive that the state of the world evolves according to a Markov chain, but they may disagree on the transition probabilities. Each agent has a theory that represents her beliefs about the next-period state of the world. The finite set of theories in the market is represented by $\mathbf{F}$. The transition probability from state $x\in X$ to state $y\in X$, as perceived by theory $\mathcal{F}\in\mathbf{F}$, is denoted by $Q_\mathcal{F}(x,y)$.
 
-A theory in $\mathbf{F}$ may be incomplete in the sense that it may be ignoring publicly available information. This idea is formalized by \cite{EysterPiccione2014} by defining an incomplete theory as a coarsening of the state-space. In this setup, every theory $\mathcal{F}\in\mathbf{F}$ is a partition of $X$. An element in $\mathcal{F}$ is known as a block of theory $\mathcal{F}$. If $x$ and $z$ are two different states in the same block of $\mathcal{F}$, then $Q_\mathcal{F}(x,y)=Q_\mathcal{F}(z,y)$ for all $y\in X$. This means that an agent using  theory $\mathcal{F}$ is ignoring the informational content of being at state $x$ rather than at state $z$. 
+A theory in $\mathbf{F}$ may be incomplete in the sense that it may be ignoring publicly available information. This idea is formalized by \cite{EysterPiccione2014} by defining an incomplete theory as a coarsening of the state-space. In this setup, every theory $\mathcal{F}\in\mathbf{F}$ is a partition of $X$. An element in $\mathcal{F}$ is known as a block of theory $\mathcal{F}$. If $x$ and $z$ are two different states in the same block of $\mathcal{F}$, then $Q_\mathcal{F}(x,y)=Q_\mathcal{F}(z,y)$ for all $y\in X$. This means that an agent using  theory $\mathcal{F}$ is ignoring the informational content of being at state $x$ rather than at state $z$.
 
 Although it is assumed that theories may be incomplete, they are all supposed to achieve some degree of statistical consistency. In particular, all theories are assumed to agree in the long-run frequency of each state. Formally, let $\mathcal{F}(x)$ be the block in $\mathcal{F}$ that contains $x\in X$. All theories are assumed to satisfy:
 \begin{equation} \label{eq:Q}
@@ -387,63 +333,58 @@ for all $y$ in $X$. By averaging across states, it follows that
 meaning that there is no disagreement in the long-run frequency of any state.
 
 
-If every block in a theory $\mathcal{F}$ is a singleton, it follows that $Q_\mathcal{F}=P$. In this case, $\mathcal{F}$ implies rational expectations. On the other side, if $\mathcal{F}=\left\{X\right\}$, then, $Q_{\mathcal{F}}\left(x,y\right)=\mu(y)$ for all $x$ and $y$ in $X$. This corresponds to the most naive theory, since its forecasts are not conditioned on the state. 
+If every block in a theory $\mathcal{F}$ is a singleton, it follows that $Q_\mathcal{F}=P$. In this case, $\mathcal{F}$ implies rational expectations. On the other side, if $\mathcal{F}=\left\{X\right\}$, then, $Q_{\mathcal{F}}\left(x,y\right)=\mu(y)$ for all $x$ and $y$ in $X$. This corresponds to the most naive theory, since its forecasts are not conditioned on the state.
 
-One-period forward expectations play a pivotal role in the forthcoming analysis. To denote them, consider a random variable $s:X\to\mathbb{R}$. For any theory $\mathcal{F} \in \mathbf{F}$, the expectation regarding $s$ one period forward, conditional on being at state $x\in X$, is given by 
+One-period forward expectations play a pivotal role in the forthcoming analysis. To denote them, consider a random variable $s:X\to\mathbb{R}$. For any theory $\mathcal{F} \in \mathbf{F}$, the expectation regarding $s$ one period forward, conditional on being at state $x\in X$, is given by
 \begin{equation}\label{eq:E}
 E_{\mathcal{F}}\left(s\right|x):=\sum_{y\in X}s(y)Q_{\mathcal{F}}\left(x,y\right)
 \end{equation}
-Denote by $E\left(s\right|x)$ the expectation for the case where $Q_\mathcal{F}=P$. Equations (\ref{eq:mu}), (\ref{eq:Q}) and (\ref{eq:Q}) imply that:  
-\begin{equation*}\label{eq:consistency}
+Denote by $E\left(s\right|x)$ the expectation for the case where $Q_\mathcal{F}=P$. Equations (\ref{eq:mu}), (\ref{eq:E}) and (\ref{eq:Q}) imply that:
+\begin{equation*}
 \sum_{x\in X}E_{\mathcal{F}}\left(s\right|x)\mu(x)=\sum_{x\in X}E\left(s\right|x)\mu(x)
-\end{equation*} for all $\mathcal{F}\in\mathbf{F}$. This means that the  average one-period forward forecast of any theory matches the actual average of the random variable.
+\end{equation*} for all $\mathcal{F}\in\mathbf{F}$. This means that the average one-period-ahead forecast of any theory matches the actual average of the random variable.
 
 
 %Note that the average one-period forward forecast of every theory is accurate:
 %\begin{equation*}\label{eq:consistency}
 %\sum_{x\in X}E_{\mathcal{F}}\left(s\right|x)\mu(x)=\sum_x %E\left(s\right|x)\mu(x)
 %\end{equation*}
-%%Equation (\ref{eq:consistency}) 
-%This follows from equations (\ref{eq:mu}), (\ref{eq:E}) and (\ref{eq:Q}). 
+%%Equation (\ref{eq:consistency})
+%This follows from equations (\ref{eq:mu}), (\ref{eq:E}) and (\ref{eq:Q}).
 
-%Consider the motivating example of section \ref{example}. The set of beliefs was given by $\mathbf{F}=\left\{\mathcal{A},\mathcal{B}\right\}$. The transition probabilities were given by  $Q_\mathcal{A}(x,y)=\frac{1}{3}$ and $Q_\mathcal{B}(x,x)=1-\epsilon$ for $x,y\in X:=\left\{l,m,h\right\}$. The case studied corresponded to the limiting case where $\epsilon \to 0$. The example was agnostic regarding the true Markov process $P:X^2\to(0,1)$. However, if $P(x,x)=1-\epsilon$ and $P(x,y)=\epsilon/2$ for $x,y\in X$ and $x\neq y$, the beliefs for $\mathcal{A}$ and $\mathcal{B}$ can be represented as the partitions $\left\{\left\{l,m,h\right\}\right\}$ and $\left\{\left\{l\right\},\left\{m\right\},\left\{h\right\}\right\}$, respectively. Agent $\mathcal{A}$'s expectations, despite not being rational, achieve the aforementioned statistical consistency. 
+%Consider the motivating example of section \ref{example}. The set of beliefs was given by $\mathbf{F}=\left\{\mathcal{A},\mathcal{B}\right\}$. The transition probabilities were given by  $Q_\mathcal{A}(x,y)=\frac{1}{3}$ and $Q_\mathcal{B}(x,x)=1-\epsilon$ for $x,y\in X:=\left\{l,m,h\right\}$. The case studied corresponded to the limiting case where $\epsilon \to 0$. The example was agnostic regarding the true Markov process $P:X^2\to(0,1)$. However, if $P(x,x)=1-\epsilon$ and $P(x,y)=\epsilon/2$ for $x,y\in X$ and $x\neq y$, the beliefs for $\mathcal{A}$ and $\mathcal{B}$ can be represented as the partitions $\left\{\left\{l,m,h\right\}\right\}$ and $\left\{\left\{l\right\},\left\{m\right\},\left\{h\right\}\right\}$, respectively. Agent $\mathcal{A}$'s expectations, despite not being rational, achieve the aforementioned statistical consistency.
 
 
 \subsection{Asset-backed securities}
 
-The ownership of the long-term asset allows the possibility of obtaining liquidity (bonds) not only by reselling the asset but also through issuing and selling ABS. It is assumed that the ABS have a maturity of one-period. %Each ABS is associated with a particular interval or \textit{tranche}. 
-The security is a contract in which the owner of the long-term asset (the issuer) commits to transferring to the holder of the security (the investor) a (non-negative) amount of bonds next period. This amount depends on the realization of the asset price when payment is due. The securities are backed by the long term asset in the sense that the net transfer from the issuer to all investors is always equal to the price of the underlying asset. 
-
-Formally, 
-
 %\subsection{Dividends, interest rates and securities' payouts}
 
-%The background structure of the model is given by an exogenous stochastic process governing a) the interest rate on the infinitely-supplied bond and b) the dividend generated by the finitely-supplied long-term asset. If the current state of the world is $x\in X$, the bond pays a gross interest rate $R(x)>1$ next period and the long-term asset pays a dividend $d(x)$ next period. 
+%The background structure of the model is given by an exogenous stochastic process governing a) the interest rate on the infinitely-supplied bond and b) the dividend generated by the finitely-supplied long-term asset. If the current state of the world is $x\in X$, the bond pays a gross interest rate $R(x)>1$ next period and the long-term asset pays a dividend $d(x)$ next period.
 
 
 %The state of the world is publicly observed and evolves according to a Markov process. The transition probability from state $x\in X$ to state $y\in X$ is given by $P(x,y)$, which is assumed to be strictly positive for every pair of states. This assumption is sufficient for the existence of a function $\mu:X\to(0,1)$ such that
 %\begin{equation*}
 %\mu(y)=\sum_{x\in X}P(x,y)\mu(x)
 %\end{equation*}
-%for every $y\in X$. In the long-run, the world spends a fraction $\mu(x)$ of the time at state $x\in X$, regardless of the initial state. 
+%for every $y\in X$. In the long-run, the world spends a fraction $\mu(x)$ of the time at state $x\in X$, regardless of the initial state.
 
 %\subsection{Asset-backed securities}
 
-The ownership of the long-term asset allows the possibility of obtaining liquidity (bonds) not only by reselling the asset but also through issuing and selling ABS. It is assumed that the ABS have a maturity of one-period. %Each ABS is associated with a particular interval or \textit{tranche}. 
-The security is a contract in which the owner of the long-term asset (the issuer) commits to transferring to the holder of the security (the investor) a (non-negative) amount of bonds next period. This amount depends on the realization of the asset price when payment is due. The securities are backed by the long term asset in the sense that the net transfer from the issuer to all investors is always equal to the price of the underlying asset. 
+The ownership of the long-term asset allows the possibility of obtaining liquidity (bonds) not only by reselling the asset but also by issuing and selling ABS. It is assumed that the ABS have a maturity of one period. %Each ABS is associated with a particular interval or \textit{tranche}.
+The security is a contract in which the owner of the long-term asset (the issuer) commits to transferring to the holder of the security (the investor) a non-negative amount of bonds next period. This amount depends on the realization of the asset price when payment is due. The securities are backed by the long-term asset in the sense that the net transfer from the issuer to all investors is always equal to the price of the underlying asset.
 
-Formally, let $\mathcal{T}$ be a collection of non-overlapping intervals that partition the set $[0,\infty)$, which is the set of all conceivable realizations of the asset price. The partition $\mathcal{T}$ is known as a \textit{tranching} and an interval $\tau\in \mathcal{T}$ is known as a \textit{tranche}. Define $\underline{\tau}:=\inf(\tau)$ and $\overline{\tau}:=\sup(\tau)$. The payoff function 
+Formally, let $\mathcal{T}$ be a collection of non-overlapping intervals that partition the set $[0,\infty)$, which is the set of all conceivable realizations of the asset price. The partition $\mathcal{T}$ is known as a \textit{tranching} and an interval $\tau\in \mathcal{T}$ is known as a \textit{tranche}. Define $\underline{\tau}:=\inf(\tau)$ and $\overline{\tau}:=\sup(\tau)$. The payoff function
 $\phi_\tau:\mathbb{R}_+\to\mathbb{R}_+$ from a security associated with tranche $\tau$ is given by
 \begin{equation}\label{tpayoff}
 \phi_\tau(t):=(t-\underline{\tau})^+-(t-\overline{\tau})^+
 \end{equation}
-where $t\in\mathbb{R}_+$ 
-is a realization for the underlying asset price. 
+where $t\in\mathbb{R}_+$
+is a realization for the underlying asset price.
 
 The point $\underline{\tau}$ is known as the \textit{attachment point}  of tranche $\tau$. This is because the tranche only starts to pay off when the realization for the asset price is above $\underline{\tau}$. Above $\overline{\tau}$, the payoff from tranche $\tau$ stalls at $\overline{\tau}-\underline{\tau}$ and the payoff from the next junior tranche (if any) detaches from 0. Figure \ref{fig:pay} illustrates the payoff function for a generic tranche.
 
 \begin{figure}[h]
-\centering 
+\centering
 \begin{tikzpicture}[xscale=10,yscale=10]
 \draw [<->] (0,0.4) -- (0,0) -- (0.6,0);
 \node [below right] at (0.6,0) {$t$};
@@ -457,7 +398,7 @@ The point $\underline{\tau}$ is known as the \textit{attachment point}  of tranc
 \node [below] at (0.3,0) {$\overline{\tau}$};
 \node [above right] at (0.125,0) {$45^{o}$};
 \end{tikzpicture}
-\caption{Payoff function of a generic tranche $\tau$} 
+\caption{Payoff function of a generic tranche $\tau$}
 \label{fig:pay}
 \end{figure}
 
@@ -465,7 +406,7 @@ The securities are backed up by the long-term asset in the sense that they are \
 \begin{equation*}\label{addpayoff}
 \sum_{\tau\in\mathcal{T}} \phi_\tau(t)=t
 \end{equation*}
-In addition, there is \textit{limited liability} for the issuer: $\phi_\tau(t) \geq 0$ for all $\tau\in\mathcal{T}$ and $t\in\mathbb{R}_+$. 
+In addition, there is \textit{limited liability} for the issuer: $\phi_\tau(t) \geq 0$ for all $\tau\in\mathcal{T}$ and $t\in\mathbb{R}_+$.
 
 In the example of subsection \ref{benchmark}, there was no securitization so the tranching was given by $\mathcal{T}= \left\{ [0,\infty) \right\}$. In subsection \ref{securitized}, there were only two tranches and the attachment point was calibrated so that the tranching was $\mathcal{S}= \left\{ [0,q'(m)), [q'(m),\infty) \right\}$. The senior tranche was $s=[0,q'(m))$ while the junior tranche was $j=[q'(m),\infty)$. Hence, the payoff functions in equations (\ref{spayoff}) and (\ref{epayoff}) could be equivalently defined by using the expression in (\ref{tpayoff}).
 
@@ -474,53 +415,53 @@ In the example of subsection \ref{benchmark}, there was no securitization so the
 In each period, there is an infinitely-supplied bond used as a numeraire. The bond entitles a payoff $R(x)>1$ next period when the current state of the world is $x\in X$. The bond can be traded for a finitely-supplied asset that yields a random dividend $d(x)$ next period when the current state of the world is $x\in X$.
 
 
-It is assumed that the short-selling of the ABS or the long-term asset is not possible. Alternatively, it can be assumed that there is an exogenous constraint on the short-selling of the ABS and of the long-term asset. Under this assumption, the price of any ABS will be given by the willingness to pay from whoever is most optimistic about the ABS future payout. Without any limit on the amount of ABS that can be short-sold, agents would be willing to take positions that would imply infinite bets on the future state of the world. If that were the case, there will be no equilibrium. 
+It is assumed that the short-selling of the ABS or the long-term asset is not possible. Alternatively, it can be assumed that there is an exogenous constraint on the short-selling of the ABS and of the long-term asset. Under this assumption, the price of any ABS will be given by the willingness to pay from whoever is most optimistic about the ABS future payout. Without any limit on the amount of ABS that can be short-sold, agents would be willing to take positions that would imply infinite bets on the future state of the world. If that were the case, there will be no equilibrium.
 
 
 \subsection{Equilibrium} \label{sec:eq}
 
-In equilibrium, the demand for the long-term asset and the demand for each security have to match their  respective supply. The exogenous limit on short-selling guarantees that this supply is finite. 
+In equilibrium, the demand for the long-term asset and the demand for each security have to match their  respective supply. The exogenous limit on short-selling guarantees that this supply is finite.
 For $x\in X$, let $p(\tau,x)$ be the price of the security associated with tranche $\tau\in\mathcal{T}$ and $q(x)$ be the price of the long-term asset.
 
 \begin{dfn} \label{def:core}
-For a given securitization $S$,  an equilibrium is a function $q:X\to\mathbb{R}_+$ and a collection of functions $p_s:X\to\mathbb{R}_+$ for $s\in S$ such that
+For a given tranching $\mathcal{T}$, a waterfall equilibrium is a function $q:X\to\mathbb{R}_+$ and a collection of functions $p_\tau:X\to\mathbb{R}_+$ for $\tau\in\mathcal{T}$ such that
 \begin{equation}\label{eqq}
-q(x)=\frac{d(x)}{R\left(x\right)}+\sum_{s\in S}p_s(x)
+q(x)=\frac{d(x)}{R\left(x\right)}+\sum_{\tau\in\mathcal{T}}p_\tau(x)
 \end{equation}
 and
 \begin{equation}\label{eqp}
-p_s(x)=\frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(s\right|x)}{R(x)}
+p_\tau(x)=\frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\phi_\tau(q)\mid x\right)}{R(x)}
 \end{equation}
 for all $x\in X$.
 \end{dfn}
 
-Equation (\ref{eqq}) states that, in equilibrium, zero profits are made by buying the long-term asset and selling the securities derived from it. Equation (\ref{eqp}) states that the price of each security is given by the highest discounted expectation regarding the payoff from the corresponding tranche. 
+Equation (\ref{eqq}) states that, in equilibrium, zero profits are made by buying the long-term asset and selling the securities derived from it. Equation (\ref{eqp}) states that the price of each security is given by the highest discounted expectation regarding the payoff from the corresponding tranche.
 
 %\subsection{Existence and uniqueness}
 \section{Existence and uniqueness} \label{sec:extuni}
 
-The existence and uniqueness of a waterfall equilibrium is proved by constructing the following object: For any securitization $S$, define a mapping $\Psi_S$ from the set of price functions $\mathbb{R}_+^X$ to itself. For $q\in\mathbb{R}_+^X$ and $x\in X$, the mapping is given by
+The existence and uniqueness of a waterfall equilibrium is proved by constructing the following object: For any tranching $\mathcal{T}$, define a mapping $\Psi_\mathcal{T}$ from the set of price functions $\mathbb{R}_+^X$ to itself. For $q\in\mathbb{R}_+^X$ and $x\in X$, the mapping is given by
 
 \begin{equation} \label{eq:map}
-\Psi_{S}(q)(x)=\frac{d(x)+\sum_{s\in S}\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(s|x\right)}{R\left(x\right)}
+\Psi_{\mathcal{T}}(q)(x)=\frac{d(x)+\sum_{\tau\in\mathcal{T}}\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\phi_\tau(q)\mid x\right)}{R\left(x\right)}
 \end{equation}
-By substituting equation (\ref{eqp}) into equation (\ref{eqq}), it follows that a long-term asset price function $q$ must be a fixed point of $\Psi_S$ in order to be part of an equilibrium.
+By substituting equation (\ref{eqp}) into equation (\ref{eqq}), it follows that a long-term asset price function $q$ must be a fixed point of $\Psi_\mathcal{T}$ in order to be part of an equilibrium.
 
 \begin{prp} \label{exu}
-For every securitization $S$, there is a unique equilibrium.
+For every tranching $\mathcal{T}$, there is a unique waterfall equilibrium.
 \end{prp}
 
 \begin{proof}
-The mapping $\Psi_{S}$ has a unique fixed point since it satisfies Blackwell's sufficient conditions: 
+The mapping $\Psi_{\mathcal{T}}$ has a unique fixed point since it satisfies Blackwell's sufficient conditions:
 \begin{enumerate}
-\item (Monotonicity) For all $q,q' \in \mathbb{R}_+^X$ such that $q(x)\leq q'(x)$ for all $x\in X$,   
+\item (Monotonicity) For all $q,q' \in \mathbb{R}_+^X$ such that $q(x)\leq q'(x)$ for all $x\in X$,
 \begin{equation*}
-\Psi_{S}(q)(x) \leq \Psi_{S}(q')(x)
+\Psi_{\mathcal{T}}(q)(x) \leq \Psi_{\mathcal{T}}(q')(x)
 \end{equation*}
 for all $x\in X$.
-\item (Discounting) For any $q \in \mathbb{R}_+^X$ and $c\geq0$, 
+\item (Discounting) For any $q \in \mathbb{R}_+^X$ and $c\geq0$,
 \begin{equation*}
-\Psi_{S}(q+c)(x)\leq \Psi_{S}(q)(x)+\left(\min_{y\in X}R\left(y\right)\right)^{-1}c
+\Psi_{\mathcal{T}}(q+c)(x)\leq \Psi_{\mathcal{T}}(q)(x)+\left(\min_{y\in X}R\left(y\right)\right)^{-1}c
 \end{equation*}
 for all $x\in X$.
 \end{enumerate}
@@ -528,8 +469,8 @@ for all $x\in X$.
 
 \section{The effects of tranching} \label{sec:eff}
 
-This section studies the effect of tranching securitization, understood as the introduction of new ABS with a waterfall payment constraint, on the equilibrium price of the long-term asset. Formally, tranching securitization means a refinement of the existing tranching: 
-\begin{dfn} \label{def:core}
+This section studies the effect of tranching securitization, understood as the introduction of new ABS with a waterfall payment constraint, on the equilibrium price of the long-term asset. Formally, tranching securitization means a refinement of the existing tranching:
+\begin{dfn} \label{def:tranching-sec}
 An economy engages in tranching securitization if it switches from a tranching $\mathcal{T}$ to a tranching  $\mathcal{S}$, where $\mathcal{S}$ is a refinement of $\mathcal{T}$.
 \end{dfn}
 This means that agents who buy the long-term asset are able to sell a greater variety of tranches. It is shown in section \ref{sec:is} that this definition is equivalent to being able to issue new ABS backed by the existing ABS.
@@ -554,11 +495,11 @@ Define $\underline{q}:=q_{\left\{[0,\infty)\right\}}$ as the price of the long-t
 \begin{equation} \label{eq:eonben}
 \underline{q}(x)\leq q_{\mathcal{T}}(x)
 \end{equation}
-for every $x\in X$. 
+for every $x\in X$.
 \end{crl}
 
 \begin{proof}
-Since any tranching $\mathcal{T}$ is a refinement of $\left\{[0,\infty)\right\}$, inequality (\ref{eq:eonben}) follows from Lemma \ref{refine}
+Since any tranching $\mathcal{T}$ is a refinement of $\left\{[0,\infty)\right\}$, inequality (\ref{eq:eonben}) follows from Lemma \ref{refine}.
 \end{proof}
 
 The function $\underline{q}$ is a lower bound on asset prices in the sense that any tranching $\mathcal{T}$ cannot decrease the asset price below $\underline{q}(x)$ at any $x\in X$. Intuitively, the price of the long-term asset without any tranching, $\underline{q}(x)$, is given by the highest expectation on the cash flow coming from the whole asset. In contrast, the price of the long-term asset when there is some degree of tranching, $q_{\mathcal{T}}(x)$, is obtained by adding up the highest expectations on the cash flow coming from each tranche. The highest expectation on the cash flow from the whole asset cannot be higher than the sum of the highest expectations on the cash flow from each tranche.
@@ -567,7 +508,7 @@ Still, a satisfactory explanation for the issuing of ABS will have to show that 
 \begin{dfn} \label{def:fse}
 A tranching $\mathcal{T}$ is issuer-optimal if
 \begin{equation*}
-q_{\mathcal{S}}(x) \leq 
+q_{\mathcal{S}}(x) \leq
 q_{\mathcal{T}}(x)
 \end{equation*}
 for any tranching $\mathcal{S}$ and all $x\in X$.
@@ -575,47 +516,47 @@ for any tranching $\mathcal{S}$ and all $x\in X$.
 
 In order to characterize the necessary and sufficient conditions for a tranching to be issuer-optimal, the following object is introduced: Let $I_A$ be the indicator function for event $A$. For $t\in\mathbb{R}_+$, define $G^\mathcal{T}_\mathcal{F}\left(t|x\right)$ as the probability at state $x$ that the asset price  next period is no higher than $t$, as perceived by theory $\mathcal{F}$ when the tranching is $\mathcal{T}$:
 \begin{equation*}
-G^\mathcal{T}_\mathcal{F}\left(t|x\right) := E_{\mathcal{F}}\left(I_{\left\{q_\mathcal{T}\leq t\right\}}\right)(x)
+G^\mathcal{T}_\mathcal{F}\left(t|x\right) := E_{\mathcal{F}}\left(I_{\left\{q_\mathcal{T}\leq t\right\}}\mid x\right)
 \end{equation*}
 \begin{prp} \label{mthm}
 A tranching $\mathcal{T}$ is issuer-optimal if and only if, for each  $\tau\in\mathcal{T}$ and $x\in X$, there is a theory $\mathcal{G}\in\mathbf{F}$ such that
 \begin{equation*}
 G^{\mathcal{T}}_
-{\mathcal{G}} 
-\left(t|x\right) 
+{\mathcal{G}}
+\left(t|x\right)
 \leq
 G^{\mathcal{T}}_
 {\mathcal{F}}
-\left(t|x\right) 
+\left(t|x\right)
 \end{equation*}
-for all $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
+for $d\phi_\tau$-almost every $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
 \end{prp}
 \textsc{Proof:} See appendix.
 \\
 \\
 Proposition \ref{mthm} states that a tranching is issuer-optimal if and only if for every state and every tranche, there is someone who is more optimistic than everyone else regarding the asset price not being below any realization in the tranche. If this is not the case, then there is a tranching that will increase the asset price in every state. This is because at some state there will be someone willing to outbid whoever is buying the current tranche whenever a smaller tranche is issued.
 
-A natural question is whether the benchmark with no tranching is issuer-optimal. Denote by $\underline{G}_{\mathcal{F}}(\cdot|x)$ the cumulative distribution function of the asset price for theory $\mathcal{F}$ when there is no tranching, i.e., 
+A natural question is whether the benchmark with no tranching is issuer-optimal. Denote by $\underline{G}_{\mathcal{F}}(\cdot|x)$ the cumulative distribution function of the asset price for theory $\mathcal{F}$ when there is no tranching, i.e.,
 \begin{equation*}
-\underline{G}_\mathcal{F}\left(t|x\right) := E_{\mathcal{F}}\left(I_{\left\{\underline{q}\leq t\right\}}\right)(x) 
+\underline{G}_\mathcal{F}\left(t|x\right) := E_{\mathcal{F}}\left(I_{\left\{\underline{q}\leq t\right\}}\right)(x)
 \end{equation*}
-for $t\in\mathbb{R}_+$. 
+for $t\in\mathbb{R}_+$.
 \begin{crl}
-The tranching $\left\{[0,\infty)\right\}$ 
+The tranching $\left\{[0,\infty)\right\}$
 is issuer-optimal if and only if, for each $x\in X$, there is a theory $\mathcal{G}\in\mathbf{F}$ such that
 $\underline{G}_{
 \mathcal{G}
-} 
-\left(\cdot|x\right)$ 
+}
+\left(\cdot|x\right)$
 first-order stochastically dominates
 $\underline{G}_{
 \mathcal{F}
-} 
-\left(\cdot|x\right)$ 
+}
+\left(\cdot|x\right)$
 for all $\mathcal{F}\in\mathbf{F}$.
 \end{crl}
 \begin{proof}
-Follows directly from proposition \ref{mthm}
+Follows directly from Proposition \ref{mthm}.
 \end{proof}
 If there is only one theory in the market, the first-order stochastic dominance condition trivially holds. As expected, the benchmark without tranching is issuer-optimal if there is no belief disagreement.
 
@@ -624,7 +565,7 @@ As an example of a tranching that is not issuer-optimal, consider $\left\{[0,\in
 Finally, it is worth remarking that whenever the introduction of ABS increases the asset price, the asset will be traded at a price higher than anyone thinks it is worth:
 
 \begin{prp} \label{rem:worth}
-If  $\left\{[0,\infty)\right\}$ is not issuer-optimal, then there is a tranching $\mathcal{T}$ in which the waterfall equilibrium $q_{\mathcal{T}}$ is such that 
+If  $\left\{[0,\infty)\right\}$ is not issuer-optimal, then there is a tranching $\mathcal{T}$ in which the waterfall equilibrium $q_{\mathcal{T}}$ is such that
 \begin{equation*}
 q_{\mathcal{T}}(x)>
 \frac{d(x)+
@@ -636,22 +577,22 @@ in at least one state $x\in X$.
 \end{prp}
 
 \begin{proof}
-By Definition \ref{def:fse}, 
+By Definition \ref{def:fse},
 there is a tranching $\mathcal{T}$ such that
 \begin{equation*}
 \underline{q}(x)
-\leq 
+\leq
 %<
 q_{\mathcal{T}}(x)
 \end{equation*}
-with strict inequality for at least one 
-%for all 
+with strict inequality for at least one
+%for all
 $x\in X$.
 
 Suppose that
 \begin{equation*}
 q_{\mathcal{T}}(x)%=
-\leq 
+\leq
 \frac{d(x)+
 \max_{\mathcal{F}\in\mathbf{F}}
 E_\mathcal{F}\left(q_{\mathcal{T}}\right)(x)}
@@ -681,14 +622,14 @@ Intuitively, in an equilibrium different from the no-securitization benchmark, t
 
 \subsection{Relation to Fundamentals} \label{subsec:fun}
 
-Consider the relationship between the asset price and the perceived fundamental values, namely the present value of dividends perceived by each theory in the market. Let $v_\mathcal{F}(x)$ be the present value of dividends perceived by $\mathcal{F}\in\mathbf{F}$ at sate $x\in X$. This value function is given by the recursive solution to
+Consider the relationship between the asset price and the perceived fundamental values, namely the present value of dividends perceived by each theory in the market. Let $v_\mathcal{F}(x)$ be the present value of dividends perceived by $\mathcal{F}\in\mathbf{F}$ at state $x\in X$. This value function is given by the recursive solution to
 \begin{equation} \label{equ:fund}
 v_\mathcal{F}(x)
 =
 \frac{d(x)+E_\mathcal{F}\left(v_\mathcal{F}\right)(x)}
 {R(x)}
 \end{equation}
-for $x\in X$. 
+for $x\in X$.
 
 \begin{prp} \label{prp:fun}
 For any tranching $\mathcal{T}$ and any collection of theories $\mathbf{F}$,
@@ -733,14 +674,14 @@ Consider the case where $X=\left\{a,b,c,d\right\}$ and the probability of a stat
 \mathcal{B} & = & \left\{\left\{a,b,d\right\},\left\{c\right\}\right\} \\
 \mathcal{C} & = & \left\{\left\{a,b,c,d\right\}\right\}
 \end{eqnarray*}
-All theories in the market achieve statistical consistency: the perceived transition probability for agent $\mathcal{A}$ from states $a$ or $d$ to states $a$ or $d$ tends to one half, the perceived transition probability for agent $\mathcal{B}$ from states $a$, $b$ or $d$ to states $a$, $b$ or $d$ tends to one third and the perceived transition probability for agent $\mathcal{C}$ from any state to any other tends to one fourth.  
+All theories in the market achieve statistical consistency: the perceived transition probability for agent $\mathcal{A}$ from states $a$ or $d$ to states $a$ or $d$ tends to one half, the perceived transition probability for agent $\mathcal{B}$ from states $a$, $b$ or $d$ to states $a$, $b$ or $d$ tends to one third and the perceived transition probability for agent $\mathcal{C}$ from any state to any other tends to one fourth.
 
 For this example, it can be shown that a tranching that is issuer-optimal is one where there are four tranches and the attachment points coincide with the realizations of the asset price. Let $q$ be the waterfall equilibrium price function for the issuer-optimal tranching. Assume that the dividend function is such that $q(a)>q(b)>q(c)>q(d)$. In order of seniority, the tranches are labeled $s$ (senior), $m$ (mezzanine), $j$ (junior) and $e$ (equity). Table \ref{tab:ptr} presents the payoff function for each tranche.
 
-\begin{table} 
+\begin{table}
 \caption{Security payoffs for the issuer-optimal tranching}
 \label{tab:ptr}
-\centering 
+\centering
 \begin{tabular}{crrrrc}
 \hline
 %Equil. \\
@@ -758,8 +699,8 @@ In state $d$, theory $\mathcal{A}$ buys the tranche $e$,  theory $\mathcal{B}$ b
 
 Instead of a unique round of securitization with four tranches, consider three rounds of securitization. In the first round, the underlying asset is securitized into debt and equity tranches. In the second round, the debt tranche of the first round is securitized into other debt and equity tranches. In the third round, the debt tranche of the second round is securitized into more debt and equity tranches (Figure \ref{fig:tree}). Let $\phi^i_e$ and $\phi^i_f$ be the payoffs from the equity and the debt tranches in the $i$-th round of securitization, where $i\in\left\{1,2,3\right\}$. Table \ref{tab:pit} shows the assumed payoff for each tranche. By construction, the payoff from the debt and the equity tranches add up to the payoff from the debt tranche from the previous round.
 
-\begin{figure}[h]%\label{se}
-\centering 
+\begin{figure}[h]
+\centering
 \begin{tikzpicture}[xscale=20,yscale=20]
 \node[align=left]  at (0.03,0.25) {$q$};
 \draw[->] (0.05,0.25) -- (.1,.28);
@@ -775,14 +716,14 @@ Instead of a unique round of securitization with four tranches, consider three r
 \node[align=right]  at (.30,.22) {$\phi^3_e$};
 \node[align=right]  at (.30,.16) {$\phi^3_f$};
 \end{tikzpicture}
-\caption{Iterated securitization} 
+\caption{Iterated securitization}
 \label{fig:tree}
 \end{figure}
 
-\begin{table} 
+\begin{table}
 \caption{Security payoffs for the iterated case}
 \label{tab:pit}
-\centering 
+\centering
 \begin{tabular}{ c | c c | c c | c c }
 \hline
 %Equil. \\
@@ -796,51 +737,51 @@ $d$ & $0$         & $q(d)$ & $0$         & $q(d)$ & $0$         & $q(d)$ \\
 \end{tabular}
 \end{table}
 
-Consider the equilibrium in state $d$. The equity tranche of the 1st round will be bought by theory $\mathcal{A}$, the equity tranche of the 2nd round will be bought by theory $\mathcal{B}$, and the equity tranche of the 3rd round will be bought by theory $\mathcal{C}$. The value of the debt tranche on the 3rd round will be $q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{C}$ on the equity tranche of the 3rd round, the value of the debt tranche in the 2nd round will be $q(d)$ plus three quarters of $q(c)-q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{B}$ on the equity tranche of the 2nd round, the value of the debt tranche in the 1st round will be $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{A}$ on the equity tranche of the 1st round, the value of the asset at state $d$ will be the dividend at $d$ plus $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$ plus half of $q(a)-q(c)$, discounted by the interest rate. This is the same asset price equation for the aforementioned case of one round of securitization with four tranches. 
+Consider the equilibrium in state $d$. The equity tranche of the 1st round will be bought by theory $\mathcal{A}$, the equity tranche of the 2nd round will be bought by theory $\mathcal{B}$, and the equity tranche of the 3rd round will be bought by theory $\mathcal{C}$. The value of the debt tranche on the 3rd round will be $q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{C}$ on the equity tranche of the 3rd round, the value of the debt tranche in the 2nd round will be $q(d)$ plus three quarters of $q(c)-q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{B}$ on the equity tranche of the 2nd round, the value of the debt tranche in the 1st round will be $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{A}$ on the equity tranche of the 1st round, the value of the asset at state $d$ will be the dividend at $d$ plus $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$ plus half of $q(a)-q(c)$, discounted by the interest rate. This is the same asset price equation for the aforementioned case of one round of securitization with four tranches.
 
 A way of reading the equilibrium transactions at state $d$ is that agent $\mathcal{A}$ is borrowing from agent $\mathcal{B}$ using the underlying asset as collateral. In turn, agent $\mathcal{B}$ is borrowing from agent $\mathcal{C}$ using the debt issued by $\mathcal{A}$ as collateral. The equilibrium features a \textit{pyramiding arrangement}, as defined by \cite{Geanakoplos1996}.
 
 \subsection{General Case}
 
-In order to define what will be labeled an \textit{iterated securitization equilibrium}, consider the following structure. Let there be a tree where $\mathbb{N}$ is its finite set of nodes, $r\in\mathbb{N}$ is its root node and $\mathbb{Z}\subset\mathbb{N}$ is its set of terminal nodes. Let $a:\mathbb{N}/\left\{r\right\}\to\mathbb{N}/\mathbb{Z}$ be a function where $a(n)$ denotes the predecessor of $n$. The root node $r$ represents the long-term asset. Each node $n\in\mathbb{N}/\left\{r\right\}$ represents a security backed by asset $a(n)$. Nodes in $\mathbb{Z}$ represent securities that are not further securitized. 
+In order to define what will be labeled an \textit{iterated securitization equilibrium}, consider the following structure. Let there be a tree where $\mathbb{N}$ is its finite set of nodes, $r\in\mathbb{N}$ is its root node and $\mathbb{Z}\subset\mathbb{N}$ is its set of terminal nodes. Let $a:\mathbb{N}\setminus\left\{r\right\}\to\mathbb{N}\setminus\mathbb{Z}$ be a function where $a(n)$ denotes the predecessor of $n$. The root node $r$ represents the long-term asset. Each node $n\in\mathbb{N}\setminus\left\{r\right\}$ represents a security backed by asset $a(n)$. Nodes in $\mathbb{Z}$ represent securities that are not further securitized.
 
-For $m\in\mathbb{N}/\mathbb{Z}$, denote by $S(m)$ the set of $m$'s successors:
-\[ 
-S(m) = \left\{ n \in \mathbb{N} / \left\{r\right\} : a(n)=m \right\} 
+For $m\in\mathbb{N}\setminus\mathbb{Z}$, denote by $S(m)$ the set of $m$'s successors:
+\[
+S(m) = \left\{ n \in \mathbb{N}\setminus \left\{r\right\} : a(n)=m \right\}
 \]
 
-Let $(\tau_n)_{n\in\mathbb{N}}$ be a collection of intervals such that 
+Let $(\tau_n)_{n\in\mathbb{N}}$ be a collection of intervals such that
 \begin{enumerate}
 \item $\tau_r=[0,\infty)$ and
-\item for $m\in\mathbb{N}/\mathbb{Z}$, the collection $(\tau_n)_{n\in S(m)}$ partitions the interval \[[0,\sup(\tau_{m})-\inf(\tau_{m})]\]
+\item for $m\in\mathbb{N}\setminus\mathbb{Z}$, the collection $(\tau_n)_{n\in S(m)}$ partitions the interval \[[0,\sup(\tau_{m})-\inf(\tau_{m})]\]
 \end{enumerate}
 
-Each security in $\mathbb{N}/\left\{r\right\}$ is a straddle with a maturity of one period. Its payoff is a function of the cash flow from its predecessor. Specifically, if $t$ is the cash flow from asset $a(n)$, then the cash flow for security $n\in\mathbb{N}/\left\{r\right\}$ would be given by:
+Each security in $\mathbb{N}\setminus\left\{r\right\}$ is a straddle with a maturity of one period. Its payoff is a function of the cash flow from its predecessor. Specifically, if $t$ is the cash flow from asset $a(n)$, then the cash flow for security $n\in\mathbb{N}\setminus\left\{r\right\}$ would be given by:
 \begin{equation} \label{eq:psi}
 \zeta_n(t) = (t-\inf(\tau_n))^+ - (t-\sup(\tau_n))^+
 \end{equation}
-Hence, for $m\in\mathbb{N}/\mathbb{Z}$:
+Hence, for $m\in\mathbb{N}\setminus\mathbb{Z}$:
 \begin{equation*}
 \zeta_{m}(t) = \sum_{n\in S(m)}\zeta_{n}(t)
 \end{equation*}
 This confirms that the cash flow from securities in $S(m)$ add up to the cash flow from asset $m$.
 
-Let $\gamma_n:X\to\mathbb{R}_+$ be the cash flow for security $n\in\mathbb{N}$ as a function of the state of the world. If $q:X\to\mathbb{R}_+$ is the price function for the long-term asset, then $\gamma_r=q$  and 
+Let $\gamma_n:X\to\mathbb{R}_+$ be the cash flow for security $n\in\mathbb{N}$ as a function of the state of the world. If $q:X\to\mathbb{R}_+$ is the price function for the long-term asset, then $\gamma_r=q$  and
 \begin{equation} \label{eq:gamma}
 \gamma_{n}(x) = \zeta_n(\gamma_{a(n)}(x))
 \end{equation}
-for $n\in\mathbb{N}/\left\{r\right\}$ and $x\in X$.
+for $n\in\mathbb{N}\setminus\left\{r\right\}$ and $x\in X$.
 
 A tuple $\Sigma=\left(\mathbb{N},r,\mathbb{Z},a,(\tau_n)_{n\in\mathbb{N}}\right)$ is labeled an \textit{iterated securitization structure}.
 
 \begin{dfn} \label{def:ise}
 For a given iterated securitization structure $\Sigma$, an iterated securitization equilibrium is a function $p_{\Sigma}:\mathbb{N}\times X \to \mathbb{R}_+$ such that, for $x\in X$,
 \begin{enumerate}
-\item 
+\item
 \begin{equation} \label{eq:pr}
 p_{\Sigma}(r,x) = \frac{d(x)}{R(x)}+\sum_{n\in S(r)}p_{\Sigma}(n,x)
 \end{equation}
-\item For $m\in\mathbb{N}/(\mathbb{Z}\cup\left\{r\right\})$,
+\item For $m\in\mathbb{N}\setminus(\mathbb{Z}\cup\left\{r\right\})$,
 \begin{equation} \label{eq:pm}
 p_{\Sigma}(m,x) = \sum_{n\in S(m)}p_{\Sigma}(n,x)
 \end{equation}
@@ -848,7 +789,7 @@ p_{\Sigma}(m,x) = \sum_{n\in S(m)}p_{\Sigma}(n,x)
 \begin{equation} \label{eq:pz}
 p_{\Sigma}(z,x) = \frac{\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}\left(\gamma_z\right)(x)}{R(x)}
 \end{equation}
-where $\gamma_r=p_{\Sigma}(r,\cdot)$ and, for $n\in\mathbb{N}/\left\{r\right\}$, $\gamma_n$ is given by equation (\ref{eq:gamma}).
+where $\gamma_r=p_{\Sigma}(r,\cdot)$ and, for $n\in\mathbb{N}\setminus\left\{r\right\}$, $\gamma_n$ is given by equation (\ref{eq:gamma}).
 \end{enumerate}
 \end{dfn}
 
@@ -868,16 +809,16 @@ Proposition \ref{thm:equiv} states the equivalence between the equilibrium conce
 
 \section{Effect on rates of return} \label{sec:ep}
 
-This section studies the effect of the introduction of ABS on the excess return obtained by each theory in the market, defined as the actual payoff of forgoing one bond to buy ABS instead whenever this is perceived as worthwhile. 
+This section studies the effect of the introduction of ABS on the excess return obtained by each theory in the market, defined as the actual payoff from forgoing one bond to buy ABS instead whenever doing so is perceived as worthwhile.
 
-The effect of the introduction of new ABS on returns is subtle. Agents who are not optimistic about the overall expected payoff from an underlying asset could be the most optimistic regarding the payoff being above a certain threshold. Without ABS, they will not buy the asset. By introducing the appropriate tranching, they will buy a security with an attachment point at the aforementioned threshold. However, this means they will be buying the leftovers from whoever would have bought the overall asset without any ABS. On the other hand, by being outbid by less sophisticated agents, they may be being stopped from buying tranches that do not have a promising payoff. Except for particular cases, the effect of the introduction of ABS on returns is ambiguous.
+The effect of the introduction of new ABS on returns is subtle. Agents who are not optimistic about the overall expected payoff from an underlying asset could be the most optimistic about the payoff being above a certain threshold. Without ABS, they will not buy the asset. By introducing the appropriate tranching, they will buy a security with an attachment point at that threshold. However, this means they will be buying the leftovers from whoever would have bought the whole asset without any ABS. On the other hand, by being outbid by less sophisticated agents, they may be prevented from buying tranches that do not have a promising payoff. Except for special cases, the effect of the introduction of ABS on returns is ambiguous.
 
-Formally, consider the strategy of holding one bond and exchanging it for asset-backed securities only when $\mathcal{F}\in\mathbf{F}$ perceives this to be worthwhile. Denote by $\Delta_\mathcal{F}$ the return of this strategy in excess of always holding a bond. Let $\psi_\tau:=\phi_\tau(q_\mathcal{T})$ be the function that maps states of the world into equilibrium payoffs for tranche $\tau\in\mathcal{T}$. Denote by $\mathbf{B}(\tau,x)$ the set of theories that buy tranche $\tau\in\mathcal{T}$ at state $x\in X$: 
+Formally, consider the strategy of holding one bond and exchanging it for asset-backed securities only when $\mathcal{F}\in\mathbf{F}$ perceives this to be worthwhile. Denote by $\Delta_\mathcal{F}$ the return of this strategy in excess of always holding a bond. Let $\psi_\tau:=\phi_\tau(q_\mathcal{T})$ be the function that maps states of the world into equilibrium payoffs for tranche $\tau\in\mathcal{T}$. Denote by $\mathbf{B}(\tau,x)$ the set of theories that buy tranche $\tau\in\mathcal{T}$ at state $x\in X$:
 \begin{equation*}
 \mathbf{B}
 (\tau,x)=
 \left\{
-\mathcal{F}\in\mathbf{F}: 
+\mathcal{F}\in\mathbf{F}:
 E_\mathcal{F}(\psi%^\mathcal{T}
 _\tau)(x)
 \geq
@@ -916,7 +857,7 @@ It is worth remembering that, in equilibrium, every agent \textit{perceives} the
 Equation (\ref{eq:exr}) could be rewritten as the average gap between actual and perceived payoffs from each tranche. Since the equilibrium price for tranche $\tau$ is given by
 \[
 p%^\mathcal{T}
-(\tau,x) = 
+(\tau,x) =
 \frac{
 \max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}
 (\psi%^\mathcal{T}
@@ -925,8 +866,8 @@ _\tau)(x)
 {R(x)}
 \]
 it follows that
-\begin{equation*} %\label{eq:}
-\Delta_\mathcal{F}%^\mathcal{T} 
+\begin{equation*}
+\Delta_\mathcal{F}%^\mathcal{T}
 =
 \sum_{x\in X}
 \left(
@@ -946,7 +887,7 @@ meaning that the excess return is an average of the gap between actual and expec
 An immediate result obtained from the statistical consistency of beliefs is that if $\mathbf{F}=\left\{\mathcal{F}\right\}$, then $\Delta_\mathcal{F}=0$, i.e. an agent able to match the long-run frequency of the payoff from the asset-backed securities will get a return equal to that from holding the short-term bond as long as there are no competing theories.
 
 When there are competing theories, the return received could be above or below the market interest rate. With no securitization, \cite{EysterPiccione2014} show that, for the case where there is a theory that refines any other, no agent can earn a return above the interest rate. What is true for the whole underlying asset is still true when it is sliced into asset-backed securities. To show this, assume that $\mathcal{G}\in\mathbf{F}$ refines every $\mathcal{F}\in\mathbf{F}$. Define
-\begin{equation*} %\label{eq:}
+\begin{equation*}
 \delta_\mathcal{F}%^\mathcal{T}
 (\tau) :=
 \sum_{x\in X}
@@ -970,11 +911,11 @@ In light of this result, it is no surprise that the introduction of ABS can weak
 
 Nevertheless, the introduction of ABS \textit{can} increase the return of some agents as long as they are not the most sophisticated ones. As an example, consider a state space $X =\left\{l,m,h\right\}$ where the probability of a state going back to itself is close to one and uniform otherwise. The collection of theories is $\mathbf{F}=\left\{\mathcal{A},\mathcal{B},\mathcal{C}\right\}$, where:
 \begin{eqnarray*}
-\mathcal{A} & = & 
+\mathcal{A} & = &
 \left\{
 \left\{l\right\},
 \left\{m,h\right\}
-\right\}, 
+\right\},
 \\
 \mathcal{B} & = &
 \left\{
@@ -989,10 +930,10 @@ Nevertheless, the introduction of ABS \textit{can} increase the return of some a
 \end{eqnarray*}
 The interest rate is constant and the dividend is such that, in the benchmark equilibrium, $q(l) < q(m) <q(h)$.
 
-\begin{table}[h] 
+\begin{table}[h]
 \caption{Expected payoffs from the long-term asset in the benchmark}
 \label{tab:lastw}
-\centering 
+\centering
 \begin{tabular}{ c | c  |  c c c | c   }
 \hline
 %Equil. \\
@@ -1006,18 +947,18 @@ $h$ & $q(h)$         & $\frac{1}{2}\left(q(m)+q(h)\right)$ & $\frac{1}{2}\left(q
 \end{table}
 
 Consider the case without any ABS. Table \ref{tab:lastw} presents i) the true expected price $T(\psi)$, ii) the expected price by each agent and, given these, iii) the set $\mathbf{B}$ of agents who will buy the long-term asset. All these objects are functions of the state of the world. If the dividend at state $h$ is high enough, the asset is bought by $\mathcal{B}$ at state $l$ and by $\mathcal{A}$ at states $m$ and $h$. Agent $\mathcal{C}$, who is less sophisticated than the other two, has a ``loser's blessing'' that allows him to have a non-negative excess return:
-%\[\underline{\Delta}_\mathcal{A}=-\frac{1}{6}\frac{q(h)-q(m)}{q(m)} + \frac{1}{6}\frac{q(h)-q(m)}{q(h)}<0\] 
-\[\underline{\Delta}_\mathcal{A}=-\frac{1}{6}\left(q(h)-q(m)\right) + \frac{1}{6}\left(q(h)-q(m)\right)=0\] 
+%\[\underline{\Delta}_\mathcal{A}=-\frac{1}{6}\frac{q(h)-q(m)}{q(m)} + \frac{1}{6}\frac{q(h)-q(m)}{q(h)}<0\]
+\[\underline{\Delta}_\mathcal{A}=-\frac{1}{6}\left(q(h)-q(m)\right) + \frac{1}{6}\left(q(h)-q(m)\right)=0\]
 %\[\underline{\Delta}_\mathcal{B}=-\frac{1}{6}\frac{q(h)-q(l)}{q(l)}<0\]
 \[\underline{\Delta}_\mathcal{B}=-\frac{1}{6}\left(q(h)-q(l)\right)<0\]
 \[\underline{\Delta}_\mathcal{C}=0\]
 
 Consider now the case where ABS are introduced. A collection of three tranches with attachment points $0$, $q(l)$ and $q(m)$ is an issuer-optimal tranching if $q$ is its waterfall equilibrium and $q(l) < q(m) < q(h)$. The most senior tranche pays $q(l)$ at every state so there is no excess return from it. The excess returns for the mezzanine and the junior tranches can be obtained from Tables \ref{tab:lastm} and \ref{tab:laste}, respectively. These tables present i) the actual expected payoffs $T(\psi_\tau)$, ii) the expected payoff for each agent and, given these, iii) the set $\mathbf{B}(\tau,\cdot)$ of buyers for each of these tranches.
 
-\begin{table}[h] 
+\begin{table}[h]
 \caption{Expected payoffs from the mezzanine tranche}
 \label{tab:lastm}
-\centering 
+\centering
 \begin{tabular}{ c | c  |  c c c | c   }
 \hline
 %Equil. \\
@@ -1032,7 +973,7 @@ $h$ & $q(m)-q(l)$         & $q(m)-q(l)$ & $\frac{1}{2}\left(q(m)-q(l)\right)$ & 
 \begin{table}[h]
 \caption{Expected payoffs from the junior tranche}
 \label{tab:laste}
-\centering 
+\centering
 \begin{tabular}{ c | c  |  c c c | c   }
 \hline
 %Equil. \\
@@ -1046,18 +987,18 @@ $h$ & $q(h)-q(m)$         & $\frac{1}{2}\left(q(h)-q(m)\right)$ & $\frac{1}{2}\l
 \end{table}
 
 Thanks to the introduction of ABS, $\mathcal{C}$ is lured into buying the mezzanine tranche at state $l$. As a consequence, $\mathcal{C}$'s return with securitization is lower than without. Meanwhile, at the expense of agent $\mathcal{C}$, the excess return for $\mathcal{B}$ is higher than what it would be without securitization:
-%\[\Delta_\mathcal{A}=-\frac{1}{6}\frac{q(h)-q(m)}{q(m)} + \frac{1}{6}\frac{q(h)-q(m)}{q(h)}\] 
+%\[\Delta_\mathcal{A}=-\frac{1}{6}\frac{q(h)-q(m)}{q(m)} + \frac{1}{6}\frac{q(h)-q(m)}{q(h)}\]
 %\[\Delta_\mathcal{B}=-\frac{1}{6}\frac{q(h)-q(m)}{q(l)}>\underline{\Delta}_\mathcal{B}\]
 \[\Delta_\mathcal{A}=0=\underline{\Delta}_\mathcal{A}\]
 \[\Delta_\mathcal{B}=-\frac{1}{6}\left(q(h)-q(m)\right)>\underline{\Delta}_\mathcal{B}\]
 \[\Delta_\mathcal{C}=-\frac{2}{9}\left(q(m)-q(l)\right)<\underline{\Delta}_\mathcal{C}\]
-Thanks to the introduction of ABS, some agents manage to get rid of toxic assets and increase their portfolio return. 
+Thanks to the introduction of ABS, some agents manage to get rid of toxic assets and increase their portfolio return.
 
 \section{Other types of contracts} \label{sec:cds}
 
-Apart from having their real-life counterparts, the only appealing features of securities with a waterfall structure are: i) their payoff is monotone in the cash flow from the underlying asset, ii) as shown in section \ref{sec:is}, they implicitly represent any case where only debt and equity can be issued and debt itself can be used as collateral. However, no argument has been given in this paper for agents to choose or be constrained by this class of contracts. 
+Apart from having their real-life counterparts, the only appealing features of securities with a waterfall structure are: i) their payoff is monotone in the cash flow from the underlying asset, ii) as shown in section \ref{sec:is}, they implicitly represent any case where only debt and equity can be issued and debt itself can be used as collateral. However, no argument has been given in this paper for agents to choose or be constrained by this class of contracts.
 
-Without being constrained to issue ABS with a waterfall payment structure, agents could exploit the divergence of beliefs even further by creating contracts which do not satisfy this constraint. For instance, consider the equilibrium of subsection \ref{securitized}.  The senior tranche pays $q(m)$ if the state in the next period is $m$ or $h$ and $q(l)$ otherwise, At state $m$, this tranche is bought by agent $\mathcal{B}$. This agent could create a new security, backed by the senior tranche, which pays $q(m)$ at state $h$ and 0 otherwise. Such a security does not satisfy the waterfall constraint since its payoff does not exclusively depend on the cash flow from the underlying tranche. This new security is (almost) worthless for $\mathcal{B}$, given that a realization $h$ next period looks very unlikely. However, agent $\mathcal{A}$ would be willing to pay $\frac{1}{3}\frac{q(m)}{R}$ for it. 
+Without being constrained to issue ABS with a waterfall payment structure, agents could exploit the divergence of beliefs even further by creating contracts that do not satisfy this constraint. For instance, consider the equilibrium of subsection \ref{securitized}. The senior tranche pays $q(m)$ if the state in the next period is $m$ or $h$ and $q(l)$ otherwise. At state $m$, this tranche is bought by agent $\mathcal{B}$. This agent could create a new security, backed by the senior tranche, that pays $q(m)$ at state $h$ and 0 otherwise. Such a security does not satisfy the waterfall constraint since its payoff does not exclusively depend on the cash flow from the underlying tranche. This new security is almost worthless for $\mathcal{B}$, given that a realization $h$ next period looks very unlikely. However, agent $\mathcal{A}$ would be willing to pay $\frac{1}{3}\frac{q(m)}{R}$ for it.
 
 As an alternative to the waterfall equilibrium, consider the following asset-backed securities: for $y\in X$, the $y$-security pays $q(y)$ in the next period if the realized state is $y$ and 0 otherwise. The equilibrium price function for the long-term asset, denoted by $\bar{q}$, will be given by
 \begin{equation} \label{eq:upper}
@@ -1066,25 +1007,25 @@ As an alternative to the waterfall equilibrium, consider the following asset-bac
 \frac{d(x)+\sum_{y\in X}\bar{q}(y)\max_{\mathcal{F}\in\mathbf{F}}Q_\mathcal{F}(x,y)}
 {R(x)}
 \end{equation}
-for $x\in X$. It is easy to show that there exists such an equilibrium and that $q_{\mathcal{T}}(x)\leq \bar{q}(x)$ for all $x\in X$ and any tranching $\mathcal{T}$.\footnote{\cite{AllenGale1988} also show that, without short selling, the market value of an asset is maximized when the securities are such that each of them gets all the payoff in a single state.} It follows that the lack of a belief that stochastically dominates all others in at least one state is a necessary condition for tranching to increase the asset price only because of the waterfall constraint. Instead, this new kind of securitization structure will increase the price as long as there is any disagreement regarding the transition probabilities. 
+for $x\in X$. It is easy to show that there exists such an equilibrium and that $q_{\mathcal{T}}(x)\leq \bar{q}(x)$ for all $x\in X$ and any tranching $\mathcal{T}$.\footnote{\cite{AllenGale1988} also show that, without short selling, the market value of an asset is maximized when the securities are such that each of them gets all the payoff in a single state.} It follows that the lack of a belief that stochastically dominates all others in at least one state is a necessary condition for tranching to increase the asset price only because of the waterfall constraint. Instead, this new kind of securitization structure will increase the price as long as there is any disagreement regarding the transition probabilities.
 
 \section{Conclusion} \label{sec:disc}
 
-This paper has shown the effect of the introduction of asset-backed securities under heterogeneous beliefs and short-selling constraints. The heterogeneity is motivated by assuming that agents are not capable of processing all information available. Hence, different agents may ignore different information, leading to divergent expectations about the assets' payouts. This heterogeneity can be exploited by financial institutions through the issuing of asset-backed securities to be traded among those agents with divergent beliefs. 
+This paper has shown the effect of the introduction of asset-backed securities under heterogeneous beliefs and short-selling constraints. The heterogeneity is motivated by assuming that agents are not capable of processing all information available. Hence, different agents may ignore different information, leading to divergent expectations about the assets' payouts. This heterogeneity can be exploited by financial institutions through the issuing of asset-backed securities to be traded among those agents with divergent beliefs.
 
-Since the issued securities have to be backed by an underlying asset, the introduction of asset-backed securities weakly increases the demand of the underlying asset. When the asset-backed securities have a waterfall payment structure, the necessary condition for this increase to be strict is the absence of beliefs, represented by perceived distributions on the price of the underlying asset, that first-order stochastically dominate all other beliefs.  If this condition holds, the introduction of asset-backed securities may lead to an increase in the price of the underlying asset.
+Since the issued securities have to be backed by an underlying asset, the introduction of asset-backed securities weakly increases the demand for the underlying asset. When the asset-backed securities have a waterfall payment structure, the necessary condition for this increase to be strict is the absence of beliefs, represented by perceived distributions on the price of the underlying asset, that first-order stochastically dominate all other beliefs. If this condition holds, the introduction of asset-backed securities may lead to an increase in the price of the underlying asset.
 
-The paper has also studied the effect of securitization on agents' average portfolio returns. Whoever buys an asset may by subject to a winner's curse: the return they expect on the asset, which is equal to the return on safe bonds, may be above the return the asset on average generates. As a result, the introduction of asset-backed securities may be a blessing in disguise for some agents: in states of the world where an agent is buying an underperforming asset, securitization may lead her to sell away a fraction of the asset payout, allowing her to inadvertently transfer some of the losses the asset generates to other agents. However, the paper has also shown that the introduction of asset-backed securities may decrease the portfolio return some agents receive without increasing the portfolio return of none.    
+The paper has also studied the effect of securitization on agents' average portfolio returns. Whoever buys an asset may be subject to a winner's curse: the return they expect on the asset, which is equal to the return on safe bonds, may be above the return the asset generates on average. As a result, the introduction of asset-backed securities may be a blessing in disguise for some agents: in states of the world where an agent is buying an underperforming asset, securitization may lead her to sell away a fraction of the asset payout, allowing her to inadvertently transfer some of the losses the asset generates to other agents. However, the paper has also shown that the introduction of asset-backed securities may decrease some agents' portfolio returns without increasing any agent's portfolio return.
 
 The setup of the model implies that agents have no objective reason to trade. Specifically, if agents have rational expectations, they will not trade any ABS, since they are all assumed to be risk-neutral. In this context, restrictions on the trading of ABS will have no effect on the objective well-being of agents, but will help to close the gap between the price of the underlying asset and its fundamental value. Nevertheless, the optimal policy for the case where there are different degrees of risk aversion is still an open question.
 
 %The whole setup is built upon on the assumption that there is an infinite supply of short-term bonds. This allows agents to rollover their debt indefinitely. Since some agents might have a return persistently below the market, their debt could increase boundlessly. Ruling this out would require a general equilibrium model which endogenizes short-term debt and accounts for wealth dynamics.\footnote{\cite{ChiarellaHe2001} and \cite{BlumeEasley2006} present heterogeneous beliefs models with these features.} \footnote{\cite{ChiarellaHe2001} and \cite{BlumeEasley2006} present heterogeneous beliefs general equilibrium models which endogenizes short-term debt and accounts for wealth dynamics.}
 
-In a full theoretical account of the 2007 crisis, both the boom and the bust of asset prices should be explained. This paper explains how the introduction of asset-backed securities allows belief disagreement to translate into an increase in asset prices. However, it does not explain how asset prices may eventually collapse. One possible option to explain this is to allow for agents to update their beliefs based on the return they get on the asset-backed securities. Once they realize that the actual return is below their expectations, the demand for the assets collapses. Another possible option is the introduction of liquidity constraints. In this framework, the agents who buy asset-backed securities with a return below the short-term bond will get into a debt spiral and eventually will hit a liquidity constraint. Since they will no longer be able to rollover their debts in order to buy asset-backed securities, the demand of the underlying assets will fall. A formalization of these narratives is left for future research.
- 
+In a full theoretical account of the 2007 crisis, both the boom and the bust of asset prices should be explained. This paper explains how the introduction of asset-backed securities allows belief disagreement to translate into an increase in asset prices. However, it does not explain how asset prices may eventually collapse. One possible option to explain this is to allow for agents to update their beliefs based on the return they get on the asset-backed securities. Once they realize that the actual return is below their expectations, the demand for the assets collapses. Another possible option is the introduction of liquidity constraints. In this framework, the agents who buy asset-backed securities with a return below the short-term bond will get into a debt spiral and eventually will hit a liquidity constraint. Since they will no longer be able to rollover their debts in order to buy asset-backed securities, the demand for the underlying assets will fall. A formalization of these narratives is left for future research.
+
 \section{Appendix} \label{sec:appx}
 
-\textsc{Proof of Lemma \ref{refine}}: 
+\textsc{Proof of Lemma \ref{refine}}:
 Since $\mathcal{S}$ is a refinement of $\mathcal{T}$, for any function $g:X\to\mathbb{R}_{+}$ and any $x\in X$, the following  inequality holds:
 
 \begin{eqnarray*}
@@ -1103,7 +1044,7 @@ Define $\Psi^1_\mathcal{S}:=\Psi_\mathcal{S}$ and
 \end{equation*}
 for $n=2,3,\dots$\ . Since $\Psi_\mathcal{S}$ is monotone (see proof of Proposition \ref{exu}), $q_\mathcal{T}(x)\leq \Psi_\mathcal{S}(g)(x)$  for all $g$ such that $q_\mathcal{T}(x)\leq g(x)$ for $x\in X$. Hence if $q_\mathcal{T}(x)\leq \Psi_\mathcal{S}^{n-1}(q_\mathcal{T})(x)$,  then $q_\mathcal{T}(x)\leq \Psi_\mathcal{S}^{n}(q_\mathcal{T})(x)$. Since $\Psi_\mathcal{S}$ is a contraction and  $q_\mathcal{S}$ is its fixed point, this implies $q_\mathcal{T}(x)\leq q_\mathcal{S}(x)$ for all $x\in X$.
 
-\hfill $\Box$ 
+\hfill $\Box$
 
 Definition \ref{def:dom} and Lemmas \ref{Urefine}, \ref{prp:Ucon} and \ref{prp:nUcon} will be used to prove Proposition \ref{mthm}.
 
@@ -1112,22 +1053,22 @@ A tranching $\mathcal{T}$ satisfies the dominance condition if, for each  $\tau\
 \begin{equation*}
 %%G_{\left(q,\mathcal{F}\right)}\left(t|x\right) := 1 - E_{\mathcal{F}}\left(I_{\left\{q>t\right\}}\right)(x)
 G^{\mathcal{T}}_
-{\mathcal{G}} 
-\left(t|x\right) 
+{\mathcal{G}}
+\left(t|x\right)
 \leq
 G^{\mathcal{T}}_
 {\mathcal{F}}
-\left(t|x\right) 
+\left(t|x\right)
 \end{equation*}
-for all $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
+for $d\phi_\tau$-almost every $t\in\tau$ and all $\mathcal{F}\in\mathbf{F}$.
 \end{dfn}
 
 \begin{lmm} \label{Urefine}
-If $\mathcal{T}$ satisfies the dominance condition and $\mathcal{S}$ is refinement of $\mathcal{T}$, then $q_{\mathcal{S}}= q_{\mathcal{T}}$
+If $\mathcal{T}$ satisfies the dominance condition and $\mathcal{S}$ is a refinement of $\mathcal{T}$, then $q_{\mathcal{S}}= q_{\mathcal{T}}$.
 \end{lmm}
 
 \begin{proof}
-For any price function $q$, the payoff from a bounded tranche $\tau$ expected for next period by theory $\mathcal{F}$ on state $x$ can be written as
+For $q=q_{\mathcal{T}}$, the payoff from a bounded tranche $\tau$ expected for next period by theory $\mathcal{F}$ on state $x$ can be written as
 \begin{eqnarray}
 E_{\mathcal{F}}
 \left( \phi_\tau \left( q \right) \right)
@@ -1144,11 +1085,12 @@ dG^\mathcal{T}_{\mathcal{F}}\left(t\right | x)
 -\int_{\inf(\tau)}^{\sup(\tau)}
 G^\mathcal{T}_{\mathcal{F}}\left(t\right | x)d\phi_\tau(t) \label{eq:core}
 \end{eqnarray}
+If $\tau$ is unbounded, the same expression is obtained by truncating the upper limit at any $M>\max_{x\in X}q_{\mathcal{T}}(x)$; this is without loss because $X$ is finite.
 
 Therefore, if $\mathcal{T}$ satisfies the dominance condition and $\mathcal{S}$ is a refinement of $\mathcal{T}$, then
 \begin{eqnarray*}
-\sum_{ %\left\{ 
-\upsilon \in \mathcal{S} : \upsilon\subset \tau %\right\} 
+\sum_{ %\left\{
+\upsilon \in \mathcal{S} : \upsilon\subset \tau %\right\}
 }
 \max_{\mathcal{F}\in\mathbf{F}}
 E_{\mathcal{F}}
@@ -1159,10 +1101,10 @@ E_{\mathcal{F}}
 \max_{\mathcal{F}\in\mathbf{F}}
 E_{\mathcal{F}}
 \left(
-\sum_{ %\left\{ 
+\sum_{ %\left\{
 \upsilon \in \mathcal{S} : \upsilon\subset \tau %\right\}
 }
-%\left( 
+%\left(
 \phi_{\upsilon} \left(q_{\mathcal{T}} \right)
 %\right)
 \right)
@@ -1181,8 +1123,8 @@ for any $\tau\in\mathcal{T}$ and $x\in X$. Using equations (\ref{tpayoff}) and (
 \Psi_{\mathcal{S} }
 \left(q_{\mathcal{T} }\right) & = &
 \Psi_{\mathcal{T} }
-\left(q_{\mathcal{T} }\right) \\ & = & 
-q_{\mathcal{T} } 
+\left(q_{\mathcal{T} }\right) \\ & = &
+q_{\mathcal{T} }
 \end{eqnarray*}
 \end{proof}
 
@@ -1190,22 +1132,22 @@ q_{\mathcal{T} }
 If $\mathcal{T}$ satisfies the dominance condition, then
 \begin{equation*}
 q_{\mathcal{S}}(x)\leq q_{\mathcal{T}}(x)
-\end{equation*} 
-for all $x\in X$ and any tranching $\mathcal{S}$. 
+\end{equation*}
+for all $x\in X$ and any tranching $\mathcal{S}$.
 \end{lmm}
 
 \begin{proof}
-Let $\mathcal{S}\vee\mathcal{T}$ the coarsest common refinement between $\mathcal{T}$ and $\mathcal{S}$.
-By Lemma \ref{refine}, 
+Let $\mathcal{S}\vee\mathcal{T}$ be the coarsest common refinement between $\mathcal{T}$ and $\mathcal{S}$.
+By Lemma \ref{refine},
 \begin{equation*}
 q_{\mathcal{S}}(x) \leq q_{\mathcal{S}\vee\mathcal{T}}(x)
-\end{equation*} 
+\end{equation*}
 for $x\in X$.
-By Lemma \ref{Urefine}, 
+By Lemma \ref{Urefine},
 \begin{equation*}
 q_{\mathcal{S}\vee\mathcal{T}}(x)= q_{\mathcal{T}}(x)
 \end{equation*}
-for $x\in X$. 
+for $x\in X$.
 \end{proof}
 
 \begin{lmm} \label{prp:nUcon}
@@ -1213,25 +1155,25 @@ If $\mathcal{T}$ does not satisfy the dominance condition, then there is a tranc
 \begin{equation*}
 q_{\mathcal{T}}(x)<q_{\mathcal{S}}(x)
 \end{equation*}
-for all $x\in X$. 
+for all $x\in X$.
 \end{lmm}
 
 \begin{proof}
-Since $\mathcal{T}$ does not satisfy the dominance condition, there is a state $x\in X$ and a tranche $\tau\in\mathcal{T}$ such that
+Since $\mathcal{T}$ does not satisfy the dominance condition, there is a state $x\in X$ and a tranche $\tau\in\mathcal{T}$ for which no single theory minimizes $G^\mathcal{T}_{\mathcal{F}}(\cdot\mid x)$ on the active part of the tranche. Because $\mathbf{F}$ and $X$ are finite, the perceived distribution functions are step functions. Hence a refinement can split $\tau$ into subintervals on which different theories minimize the relevant integral, so that
 \begin{eqnarray*} \label{eq:auxG}
 \min_{\mathcal{F}\in\mathbf{F}}\int_{\inf(\tau)}^{\sup(\tau)}
 G^{\mathcal{T}}_{\mathcal{F}}\left(t\right | x)d\phi_\tau(t) & > &
-\min_{\mathcal{F}\in\mathbf{F}}\int_{\inf(\tau)}^{\inf(\upsilon)} 
+\min_{\mathcal{F}\in\mathbf{F}}\int_{\inf(\tau)}^{\inf(\upsilon)}
 G^{\mathcal{T}}_{\mathcal{F}}\left(t\right | x)d\phi_\tau(t) \\ & + &
-\min_{\mathcal{F}\in\mathbf{F}}\int_{\inf(\upsilon)}^{\sup(\upsilon)} 
+\min_{\mathcal{F}\in\mathbf{F}}\int_{\inf(\upsilon)}^{\sup(\upsilon)}
 G^{\mathcal{T}}_{\mathcal{F}}\left(t\right | x)d\phi_\tau(t)  \\ & + &
-\min_{\mathcal{F}\in\mathbf{F}}\int_{\sup(\upsilon)}^{\sup(\tau)} 
+\min_{\mathcal{F}\in\mathbf{F}}\int_{\sup(\upsilon)}^{\sup(\tau)}
 G^{\mathcal{T}}_{\mathcal{F}}\left(t\right | x)d\phi_\tau(t)
 \end{eqnarray*}
 for some $\upsilon\subset\tau$. Let $\mathcal{S}$ be a refinement of $\mathcal{T}$ such that $\upsilon\in\mathcal{S}$. From equations (\ref{eq:map}) and (\ref{eq:core}), it then follows that
 \begin{equation*}
-\Psi_{\mathcal{T}}\left(q_{\mathcal{T}}\right)(x)  <  \Psi_{\mathcal{S}}\left(q_{\mathcal{T}}\right)(x) 
-%=  q_{\mathcal{T}}(x) 
+\Psi_{\mathcal{T}}\left(q_{\mathcal{T}}\right)(x)  <  \Psi_{\mathcal{S}}\left(q_{\mathcal{T}}\right)(x)
+%=  q_{\mathcal{T}}(x)
 \end{equation*}
 Hence $q_{\mathcal{T}}$ is not a waterfall equilibrium for tranching $\mathcal{S}$. But since $\mathcal{S}$ is a refinement of $\mathcal{T}$, Lemma \ref{refine} implies
 \begin{equation}
@@ -1251,22 +1193,22 @@ p_{\Sigma}(r,x) = \frac{d(x)}{R(x)}+\sum_{z\in \mathbb{Z}}\frac{\max_{\mathcal{F
 \end{equation}
 for $x\in X$.
 
-Let $b(z)$ be the branch that connects $r$ with $z\in\mathbb{Z}$. Since $\gamma_r=p_{\Sigma}(r,\cdot)$, equations (\ref{eq:psi}) and (\ref{eq:gamma}) imply
+Let $b(z)$ be the set of non-terminal nodes on the branch from $r$ to the predecessor of $z\in\mathbb{Z}$. Since $\gamma_r=p_{\Sigma}(r,\cdot)$, equations (\ref{eq:psi}) and (\ref{eq:gamma}) imply
 \begin{eqnarray} \label{eq:gzx}
 %\begin{split}
-\gamma_z(x)  & = & 
+\gamma_z(x)  & = &
 \left(p_{\Sigma}(r,x) - \sum_{n\in b(z)}\inf(\tau_n) - \inf(\tau_z) \right)^+ \\ \nonumber
-& - & 
+& - &
 \left(p_{\Sigma}(r,x) - \sum_{n\in b(z)}\inf(\tau_n) - \sup(\tau_z) \right)^+
 %\end{split}
 \end{eqnarray}
 
 for $x\in X$.
 
-By replacing (\ref{eq:gzx}) into (\ref{eq:pru}) and using the equilibrium concept in Definition \ref{def:core}, it follows that $p_{\Sigma}(r,\cdot)=q_{\mathcal{T}}$ 
+By replacing (\ref{eq:gzx}) into (\ref{eq:pru}) and using the equilibrium concept in Definition \ref{def:core}, it follows that $p_{\Sigma}(r,\cdot)=q_{\mathcal{T}}$
 if the attachment points for tranching $\mathcal{T}$ are given by
-\begin{equation*} 
-\left(\sum_{n\in b(z)}\inf(\tau_n) - \inf(\tau_z) \right)_{z\in\mathbb{Z}}
+\begin{equation*}
+\left(\sum_{n\in b(z)}\inf(\tau_n) + \inf(\tau_z) \right)_{z\in\mathbb{Z}}
 \end{equation*}
 
 \hfill $\Box$
@@ -1275,8 +1217,8 @@ if the attachment points for tranching $\mathcal{T}$ are given by
 
 
 
-\bibliography{Bibliography}{}
-\bibliographystyle{chicago}
+\bibliographystyle{plainnat}
+\bibliography{Bibliography}
 
 
 %\begin{thebibliography}{}
