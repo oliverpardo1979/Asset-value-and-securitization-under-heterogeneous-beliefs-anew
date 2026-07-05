@@ -315,8 +315,9 @@ q^1(m) & = & \frac{ d(m) +  q^1(m) + \frac{1}{3}(q^1(h)-q^1(m))} {R} \label{qpm}
 q^1(h) & = & \frac{d(h)+q^1(h)}{R} \label{qph}
 \end{eqnarray}
 
-By comparing equation (\ref{qpm}) with equation (\ref{qm}), it can be seen that the introduction of ABS has increased the asset price at state $m$. This in turn increases the price at state $l$, since $\mathcal{A}$'s expectation at state $l$ is higher. Returning to the numerical example where $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, the asset price increases by $\frac{1}{20}$ at state $l$ and by $\frac{1}{4}$ at state $m$.
-The price equations used to obtain $q^0$ and $q^1$ in this example are collected in Appendix \ref{app:example-prices}. Thanks to the reselling opportunity, the introduction of ABS increases the asset price in states in which ABS appear to be innocuous.
+By comparing equation (\ref{qpm}) with equation (\ref{qm}), it can be seen that the introduction of ABS has increased the asset price at state $m$. This in turn increases the price at state $l$, since $\mathcal{A}$'s expectation at state $l$ is higher. Returning to the numerical example where $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, the asset price increases by $\frac{1}{20}$ at state $l$ and by $\frac{1}{4}$ at state $m$. Thanks to the reselling opportunity, the introduction of ABS increases the asset price in states in which ABS appear to be innocuous.
+
+Because $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$ has rational expectations in this example and its actual excess return is zero both with and without ABS. Theory $\mathcal{A}$, instead, earns a negative excess return. In the numerical example, its excess return falls from $-\frac{1}{3}$ without ABS to $-\frac{13}{30}$ with ABS. Thus, in this example, securitization increases the price of the underlying asset while making the less sophisticated agent's realized return worse. This return effect is not general: Section \ref{sec:ep} later presents a case in which securitization makes an agent's excess return less negative, although it remains below zero. Appendix \ref{app:example-prices} reports the corresponding calculations.
 
 \section{The Model}\label{model}
 
@@ -1003,7 +1004,7 @@ $h$ & $q(h)-q(m)$         & $\frac{1}{2}\left(q(h)-q(m)\right)$ & $\frac{1}{2}\l
 \end{tabular}
 \end{table}
 
-Thanks to the introduction of ABS, $\mathcal{C}$ is lured into buying the mezzanine tranche at state $l$. As a consequence, $\mathcal{C}$'s return with securitization is lower than without. Meanwhile, at the expense of agent $\mathcal{C}$, the excess return for $\mathcal{B}$ is higher than what it would be without securitization:
+Thanks to the introduction of ABS, $\mathcal{C}$ is lured into buying the mezzanine tranche at state $l$. As a consequence, $\mathcal{C}$'s return with securitization is lower than without. Meanwhile, at the expense of agent $\mathcal{C}$, the excess return for $\mathcal{B}$ is higher than what it would be without securitization, even though it remains negative:
 %\[\Delta_\mathcal{A}=-\frac{1}{6}\frac{q(h)-q(m)}{q(m)} + \frac{1}{6}\frac{q(h)-q(m)}{q(h)}\]
 %\[\Delta_\mathcal{B}=-\frac{1}{6}\frac{q(h)-q(m)}{q(l)}>\underline{\Delta}_\mathcal{B}\]
 \[\Delta_\mathcal{A}=0=\underline{\Delta}_\mathcal{A}\]
