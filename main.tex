@@ -317,7 +317,7 @@ q^1(h) & = & \frac{d(h)+q^1(h)}{R} \label{qph}
 
 By comparing equation (\ref{qpm}) with equation (\ref{qm}), it can be seen that the introduction of ABS has increased the asset price at state $m$. This in turn increases the price at state $l$, since $\mathcal{A}$'s expectation at state $l$ is higher. Returning to the numerical example where $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, the asset price increases by $\frac{1}{20}$ at state $l$ and by $\frac{1}{4}$ at state $m$. Thanks to the reselling opportunity, the introduction of ABS increases the asset price in states in which ABS appear to be innocuous.
 
-Because $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$ has rational expectations in this example and its actual excess return is zero both with and without ABS. Theory $\mathcal{A}$, instead, earns a negative excess return. In the numerical example, its excess return falls from $-\frac{1}{3}$ without ABS to $-\frac{13}{30}$ with ABS. Thus, in this example, securitization increases the price of the underlying asset while making the less sophisticated agent's realized return worse. This return effect is not general: Section \ref{sec:ep} later presents a case in which securitization makes an agent's excess return less negative, although it remains below zero. Appendix \ref{app:example-prices} reports the corresponding calculations.
+Because $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$ has rational expectations in this example and its actual excess return is zero both with and without ABS. Actual excess return refers to the one-period payoff from buying the asset or ABS, net of the payoff that the same expenditure would have obtained by buying the bond, averaged across states according to their long-run frequencies and evaluated under the objective transition $P$. Theory $\mathcal{A}$, instead, earns a negative excess return. In the numerical example, its excess return falls from $-\frac{1}{3}$ without ABS to $-\frac{13}{30}$ with ABS. Thus, in this example, securitization increases the price of the underlying asset while making the less sophisticated agent's realized return worse. This return effect is not general: Section \ref{sec:ep} later presents a case in which securitization makes an agent's excess return less negative, although it remains below zero. Appendix \ref{app:example-prices} reports the corresponding calculations.
 
 \section{The Model}\label{model}
 
@@ -1063,20 +1063,40 @@ q^1(h) & = \frac{d(h)+q^1(h)}{R}.
 \end{align*}
 For the same parameter values, the solution is $q^1(l)=\frac{21}{20}$, $q^1(m)=\frac{9}{4}$ and $q^1(h)=3$.
 
-The same numerical example illustrates the return effect discussed in Section \ref{sec:ep}. Writing $\underline{\Delta}$ for the benchmark excess return and $\Delta$ for the securitized case, and using $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$'s actual and perceived expectations coincide, so $\underline{\Delta}_{\mathcal{B}}=\Delta_{\mathcal{B}}=0$. In contrast, theory $\mathcal{A}$ receives a negative excess return. In the benchmark,
+The same numerical example illustrates the return effect discussed in Section \ref{sec:ep}. To keep notation consistent with that section, let $T(\psi)(x)=\sum_{y\in X}\psi(y)P(x,y)$ denote the objective expectation of a payoff vector $\psi:X\to\mathbb{R}_{+}$ from state $x$. If theory $\mathcal{F}$ buys a security with payoff $\psi$ at price $p_\psi(x)$, its contribution to the actual excess return is $T(\psi)(x)-R p_\psi(x)$. Since the buyer's equilibrium price satisfies $R p_\psi(x)=E_{\mathcal{F}}(\psi\mid x)$, this contribution can be written as
+\[
+T(\psi)(x)-E_{\mathcal{F}}(\psi\mid x).
+\]
+The long-run average gives weight $\frac{1}{3}$ to each state.
+
+In the benchmark without ABS, take $\psi^0=q^0$; the current dividend is known at state $x$, so it cancels from the actual-versus-perceived payoff gap. Theory $\mathcal{A}$ buys the asset in state $l$ and is tied with $\mathcal{B}$ in state $m$, where the contribution is zero. Hence
 \[
 \underline{\Delta}_{\mathcal{A}}
+=\frac{1}{3}\left[T(q^0)(l)-E_{\mathcal{A}}(q^0\mid l)\right]
++\frac{1}{3}\left[T(q^0)(m)-E_{\mathcal{A}}(q^0\mid m)\right]
 =\frac{1}{3}(1-2)+\frac{1}{3}(2-2)
 =-\frac{1}{3}.
 \]
-With ABS, the senior payoff vector is $\left(\frac{21}{20},\frac{9}{4},\frac{9}{4}\right)$ and the junior payoff vector is $\left(0,0,\frac{3}{4}\right)$. Hence, $\mathcal{A}$'s perceived payoffs are $\frac{37}{20}$ for the senior tranche and $\frac{1}{4}$ for the junior tranche. Since $\mathcal{A}$ buys both tranches in state $l$ and the junior tranche in state $m$,
+
+With ABS, let $\psi_s$ and $\psi_j$ denote the payoff vectors of the senior and junior tranches. At the numerical solution,
+\[
+\psi_s=\left(\frac{21}{20},\frac{9}{4},\frac{9}{4}\right)
+\quad\text{and}\quad
+\psi_j=\left(0,0,\frac{3}{4}\right).
+\]
+Theory $\mathcal{A}$ buys both tranches in state $l$ and the junior tranche in state $m$. Moreover, $E_{\mathcal{A}}(\psi_s\mid l)=\frac{37}{20}$ and $E_{\mathcal{A}}(\psi_j\mid l)=E_{\mathcal{A}}(\psi_j\mid m)=\frac{1}{4}$. Therefore
 \[
 \Delta_{\mathcal{A}}
+=\frac{1}{3}\left[T(\psi_s)(l)-E_{\mathcal{A}}(\psi_s\mid l)
++T(\psi_j)(l)-E_{\mathcal{A}}(\psi_j\mid l)\right]
++\frac{1}{3}\left[T(\psi_j)(m)-E_{\mathcal{A}}(\psi_j\mid m)\right]
+\]
+\[
 =\frac{1}{3}\left(\frac{21}{20}-\frac{37}{20}+0-\frac{1}{4}\right)
 +\frac{1}{3}\left(0-\frac{1}{4}\right)
 =-\frac{13}{30}.
 \]
-Thus, in this example, securitization makes theory $\mathcal{A}$'s excess return lower by $\frac{1}{10}$ without increasing theory $\mathcal{B}$'s excess return.
+Since $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$'s objective and perceived expectations coincide for every payoff vector, so $\underline{\Delta}_{\mathcal{B}}=\Delta_{\mathcal{B}}=0$. Thus, in this example, securitization makes theory $\mathcal{A}$'s excess return lower by $\frac{1}{10}$ without increasing theory $\mathcal{B}$'s excess return.
 
 \subsection{Proofs}
 
