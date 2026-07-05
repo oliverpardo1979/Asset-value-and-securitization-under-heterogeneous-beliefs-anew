@@ -257,15 +257,15 @@ To illustrate the conditions under which the introduction of ABS increases the l
 
 \subsection{A world with asset-backed securities}\label{securitized}
 
-Assume now that any owner of the long-term asset can issue two kinds of ABS, each of which has a maturity of one period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Let $\mathcal{T}'=\{\tau_1,\tau_2\}$ denote this two-tranche structure and let $q':{\left\{l,m,h\right\}}\to\mathbb{R}_+$ be its asset price function. The senior tranche is $\tau_1=[0,q'(m))$ and the junior tranche is $\tau_2=[q'(m),\infty)$. The ABS in the senior tranche guarantees a payoff $q'(m)$ for next period unless the state becomes $l$, in which case it pays $q'(l)$. The payoff from the junior tranche is $q'(h)-q'(m)$ if the realized state is $h$ and $0$ otherwise. In short, writing $\underline{\tau}_k:=\inf(\tau_k)$ and $\overline{\tau}_k:=\sup(\tau_k)$ as in Section \ref{model}, the payoff functions from the two tranches are
+Assume now that any owner of the long-term asset can issue two kinds of ABS, each of which has a maturity of one period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Let $\mathcal{T}'=\{\tau^s,\tau^j\}$ denote this two-tranche structure and let $q':{\left\{l,m,h\right\}}\to\mathbb{R}_+$ be its asset price function. The senior tranche is $\tau^s=[0,q'(m))$ and the junior tranche is $\tau^j=[q'(m),\infty)$. The ABS in the senior tranche guarantees a payoff $q'(m)$ for next period unless the state becomes $l$, in which case it pays $q'(l)$. The payoff from the junior tranche is $q'(h)-q'(m)$ if the realized state is $h$ and $0$ otherwise. In short, writing $\underline{\tau^a}:=\inf(\tau^a)$ and $\overline{\tau^a}:=\sup(\tau^a)$ for $a\in\{s,j\}$, as in Section \ref{model}, the payoff functions from the two tranches are
 
 \begin{align}
-\phi_{\tau_1}(t) & = (t-\underline{\tau}_1)^+-(t-\overline{\tau}_1)^+
- =  t - (t-q'(m))^+, \label{eq:tau1payoff} \\
-\phi_{\tau_2}(t) & = (t-\underline{\tau}_2)^+-(t-\overline{\tau}_2)^+
- =  (t-q'(m))^+, \label{eq:tau2payoff}
+\phi_{\tau^s}(t) & = (t-\underline{\tau^s})^+-(t-\overline{\tau^s})^+
+ =  t - (t-q'(m))^+, \label{eq:tauspayoff} \\
+\phi_{\tau^j}(t) & = (t-\underline{\tau^j})^+-(t-\overline{\tau^j})^+
+ =  (t-q'(m))^+, \label{eq:taujpayoff}
 \end{align}
-where $\overline{\tau}_2=\infty$ and the term $(t-\overline{\tau}_2)^+$ is interpreted as zero.
+where $\overline{\tau^j}=\infty$ and the term $(t-\overline{\tau^j})^+$ is interpreted as zero.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[xscale=10,yscale=10]
@@ -273,15 +273,15 @@ where $\overline{\tau}_2=\infty$ and the term $(t-\overline{\tau}_2)^+$ is inter
 \node [below right] at (0.6,0) {$t$};
 \draw [blue, ultra thick, domain=0:0.4] (0,0) -- (0.2,0.2);
 \draw [blue, ultra thick, domain=0:0.4] (0.2,0.2) -- (0.5,0.2);
-\node [right] at (0.5,0.2) {$\phi_{\tau_1}(t)$};
+\node [right] at (0.5,0.2) {$\phi_{\tau^s}(t)$};
 \draw [red, ultra thick, domain=0:0.4] (0,0) -- (0.2,0);
 \draw [red, ultra thick, domain=0:0.4] (0.2,0) -- (0.5,0.3);
-\node [right] at (0.5,0.3) {$\phi_{\tau_2}(t)$};
+\node [right] at (0.5,0.3) {$\phi_{\tau^j}(t)$};
 \draw [dotted] (0.2,0) -- (0.2,0.4);
 \node [below] at (0.2,0) {$q'(m)$};
 \node [above right] at (0.025,0) {$45^{o}$};
 \end{tikzpicture}
-\caption{Payoff functions from the senior tranche $\tau_1$ and junior tranche $\tau_2$}
+\caption{Payoff functions from the senior tranche $\tau^s$ and junior tranche $\tau^j$}
 \label{fig1:se}
 \end{figure}
 
@@ -289,22 +289,22 @@ Figure \ref{fig1:se} plots the payoff from each tranche as a function of the cum
 
 On an alternative interpretation, the buyer of the junior tranche becomes the owner of the asset, but has a debt liability to the buyer of the senior tranche and is using the underlying asset as collateral. In this example, the junior buyer promises to pay $q'(m)$ to the senior buyer in the next period. However, if the value of the collateral is $q'(l)$, the junior buyer defaults and the senior buyer seizes the collateral.
 
-Given the assumption about the existence of an exogenous constraint on short-selling, the price of each ABS is given by the willingness to pay from whoever is most optimistic about the payout of the ABS next period, discounted by the interest rate. To start with, assume $q'(l)<q'(m)<q'(h)$. At state $m$, agent $\mathcal{B}$ expects a payoff close to $q'(m)$ from the senior tranche, while agent $\mathcal{A}$ expects $\frac{2}{3}q'(m)+\frac{1}{3}q'(l)$. Hence, the senior tranche will be bought by agent $\mathcal{B}$. Meanwhile, agent $\mathcal{B}$ expects a  payoff close to zero from the junior tranche, while agent $\mathcal{A}$ expects $q'(h)-q'(m)$ with one-third probability. Hence agent $\mathcal{A}$ will buy the junior tranche. If $p_{\tau_1}(x)$ and $p_{\tau_2}(x)$ denote the prices of senior and junior tranches in state $x\in \left\{l,m,h\right\}$, then, as $\epsilon$ tends to zero,
+Given the assumption about the existence of an exogenous constraint on short-selling, the price of each ABS is given by the willingness to pay from whoever is most optimistic about the payout of the ABS next period, discounted by the interest rate. To start with, assume $q'(l)<q'(m)<q'(h)$. At state $m$, agent $\mathcal{B}$ expects a payoff close to $q'(m)$ from the senior tranche, while agent $\mathcal{A}$ expects $\frac{2}{3}q'(m)+\frac{1}{3}q'(l)$. Hence, the senior tranche will be bought by agent $\mathcal{B}$. Meanwhile, agent $\mathcal{B}$ expects a  payoff close to zero from the junior tranche, while agent $\mathcal{A}$ expects $q'(h)-q'(m)$ with one-third probability. Hence agent $\mathcal{A}$ will buy the junior tranche. If $p_{\tau^s}(x)$ and $p_{\tau^j}(x)$ denote the prices of senior and junior tranches in state $x\in \left\{l,m,h\right\}$, then, as $\epsilon$ tends to zero,
 \begin{eqnarray*}
-p_{\tau_1}(m) & = & \frac{q'(m)}{R} \\
-p_{\tau_2}(m) & = & \frac{\frac{1}{3}\left(q'(h)-q'(m)\right)}{R}
+p_{\tau^s}(m) & = & \frac{q'(m)}{R} \\
+p_{\tau^j}(m) & = & \frac{\frac{1}{3}\left(q'(h)-q'(m)\right)}{R}
 \end{eqnarray*}
 
 Since different agents might have claims on the same asset, the introduction of ABS can break the equivalence between any single expectation regarding the value of the underlying asset and the total value of the securities. To show this, note that at state $m$, the expectation on the asset price for next period is close to $q'(m)$ for agent $\mathcal{B}$ and $\frac{1}{3}(q'(l)+q'(m)+q'(h))$ for agent $\mathcal{A}$. Then
 \begin{eqnarray*}
-p_{\tau_1}(m) + p_{\tau_2}(m) & > &  \frac{q'(m)}{R}  \\
-p_{\tau_1}(m) + p_{\tau_2}(m) & > &  \frac{\frac{1}{3}\left(q'(l)+q'(m)+q'(h)\right)}{R}
+p_{\tau^s}(m) + p_{\tau^j}(m) & > &  \frac{q'(m)}{R}  \\
+p_{\tau^s}(m) + p_{\tau^j}(m) & > &  \frac{\frac{1}{3}\left(q'(l)+q'(m)+q'(h)\right)}{R}
 \end{eqnarray*}
 which means that the payoff from selling the securities surpasses any expectation regarding the discounted price of the underlying asset.\footnote{See \cite{FostelGeanakoplos2012} for a similar result.}
 
 The equilibrium price for the long-term asset is given by a non-arbitrage condition. Any agent could buy the long-term asset and sell the asset-backed securities derived from it. In equilibrium, the long-term asset cum-dividend price has to equal the discounted declared dividend plus the market value of the asset-backed securities:
 \begin{equation} \label{eq:simarb}
-q'(x) = \frac{d(x)}{R} + p_{\tau_1}(x) + p_{\tau_2}(x)
+q'(x) = \frac{d(x)}{R} + p_{\tau^s}(x) + p_{\tau^j}(x)
 \end{equation}
 If the left-hand side of (\ref{eq:simarb}) were greater than the right-hand side, there would be no demand for the long-term asset. On the other hand, if the left-hand side were smaller than the right-hand side, demand would be infinite.
 
@@ -425,7 +425,7 @@ The securities are backed up by the long-term asset in the sense that they are \
 \end{equation*}
 In addition, there is \textit{limited liability} for the issuer: $\phi_\tau(t) \geq 0$ for all $\tau\in\mathcal{T}$ and $t\in\mathbb{R}_+$.
 
-In the example of subsection \ref{benchmark}, there was no securitization so the tranching was given by $\mathcal{T}^0= \left\{ [0,\infty) \right\}$. In subsection \ref{securitized}, there were only two tranches and the attachment point was calibrated so that the tranching was $\mathcal{T}'=\{\tau_1,\tau_2\}$, where $\tau_1=[0,q'(m))$ and $\tau_2=[q'(m),\infty)$. Hence, the payoff functions in equations (\ref{eq:tau1payoff}) and (\ref{eq:tau2payoff}) are special cases of the generic expression in (\ref{tpayoff}).
+In the example of subsection \ref{benchmark}, there was no securitization so the tranching was given by $\mathcal{T}^0= \left\{ [0,\infty) \right\}$. In subsection \ref{securitized}, there were only two tranches and the attachment point was calibrated so that the tranching was $\mathcal{T}'=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q'(m))$ and $\tau^j=[q'(m),\infty)$. Hence, the payoff functions in equations (\ref{eq:tauspayoff}) and (\ref{eq:taujpayoff}) are special cases of the generic expression in (\ref{tpayoff}).
 
 \subsection{The market}
 
