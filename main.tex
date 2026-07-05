@@ -257,7 +257,7 @@ To illustrate the conditions under which the introduction of ABS increases the l
 
 \subsection{A world with asset-backed securities}\label{securitized}
 
-Assume now that any owner of the long-term asset can issue two kinds of ABS, each of which has a maturity of one period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Let $\mathcal{T}'=\{\tau^s,\tau^j\}$ denote this two-tranche structure and write $q^1:=q_{\mathcal{T}'}$ for its underlying-asset price function. The senior tranche is $\tau^s=[0,q^1(m))$ and the junior tranche is $\tau^j=[q^1(m),\infty)$. The ABS in the senior tranche guarantees a payoff $q^1(m)$ for next period unless the state becomes $l$, in which case it pays $q^1(l)$. The payoff from the junior tranche is $q^1(h)-q^1(m)$ if the realized state is $h$ and $0$ otherwise. In short, writing $\underline{\tau^a}:=\inf(\tau^a)$ and $\overline{\tau^a}:=\sup(\tau^a)$ for $a\in\{s,j\}$, as in Section \ref{model}, the payoff functions from the two tranches are
+Assume now that any owner of the long-term asset can issue two kinds of ABS, each of which has a maturity of one period. The claims of the ABS add up to the realization of the payout of the long-term asset. Each ABS belongs to one of two tranches: the \textit{senior} tranche and the \textit{junior} tranche. Let $\mathcal{T}^1=\{\tau^s,\tau^j\}$ denote this two-tranche structure and write $q^1:=q_{\mathcal{T}^1}$ for its underlying-asset price function. The senior tranche is $\tau^s=[0,q^1(m))$ and the junior tranche is $\tau^j=[q^1(m),\infty)$. The ABS in the senior tranche guarantees a payoff $q^1(m)$ for next period unless the state becomes $l$, in which case it pays $q^1(l)$. The payoff from the junior tranche is $q^1(h)-q^1(m)$ if the realized state is $h$ and $0$ otherwise. In short, writing $\underline{\tau^a}:=\inf(\tau^a)$ and $\overline{\tau^a}:=\sup(\tau^a)$ for $a\in\{s,j\}$, as in Section \ref{model}, the payoff functions from the two tranches are
 
 \begin{align}
 \phi_{\tau^s}(t) & = (t-\underline{\tau^s})^+-(t-\overline{\tau^s})^+
@@ -425,7 +425,7 @@ The securities are backed up by the long-term asset in the sense that they are \
 \end{equation*}
 In addition, there is \textit{limited liability} for the issuer: $\phi_\tau(t) \geq 0$ for all $\tau\in\mathcal{T}$ and $t\in\mathbb{R}_+$.
 
-In the example of subsection \ref{benchmark}, there was no securitization so the tranching was given by $\mathcal{T}^0= \left\{ [0,\infty) \right\}$. In subsection \ref{securitized}, there were only two tranches and the attachment point was calibrated so that the tranching was $\mathcal{T}'=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q^1(m))$ and $\tau^j=[q^1(m),\infty)$. Hence, the payoff functions in equations (\ref{eq:tauspayoff}) and (\ref{eq:taujpayoff}) are special cases of the generic expression in (\ref{tpayoff}).
+In the example of subsection \ref{benchmark}, there was no securitization so the tranching was given by $\mathcal{T}^0= \left\{ [0,\infty) \right\}$. In subsection \ref{securitized}, there were only two tranches and the attachment point was calibrated so that the tranching was $\mathcal{T}^1=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q^1(m))$ and $\tau^j=[q^1(m),\infty)$. Hence, the payoff functions in equations (\ref{eq:tauspayoff}) and (\ref{eq:taujpayoff}) are special cases of the generic expression in (\ref{tpayoff}).
 
 \subsection{The market}
 
@@ -577,7 +577,7 @@ Follows directly from Proposition \ref{mthm}.
 \end{proof}
 If there is only one theory in the market, the first-order stochastic dominance condition trivially holds. As expected, the benchmark without tranching is issuer-optimal if there is no belief disagreement.
 
-As an example of a tranching that is not issuer-optimal, consider $\mathcal{T}^0=\left\{[0,\infty)\right\}$ in subsection \ref{benchmark}: there is no first-order stochastic dominance between beliefs at state $m$, as illustrated by Figure \ref{fig:CDFs}. On the other hand, the tranching $\mathcal{T}'=\left\{[0,q^1(m)),[q^1(m),\infty)\right\}$ in subsection \ref{securitized} is issuer-optimal: for each tranche and each state there is always an agent whose conditional cumulative distribution of the asset price caps the other one along the realizations in the tranche.
+As an example of a tranching that is not issuer-optimal, consider $\mathcal{T}^0=\left\{[0,\infty)\right\}$ in subsection \ref{benchmark}: there is no first-order stochastic dominance between beliefs at state $m$, as illustrated by Figure \ref{fig:CDFs}. On the other hand, the tranching $\mathcal{T}^1=\left\{[0,q^1(m)),[q^1(m),\infty)\right\}$ in subsection \ref{securitized} is issuer-optimal: for each tranche and each state there is always an agent whose conditional cumulative distribution of the asset price caps the other one along the realizations in the tranche.
 
 Finally, it is worth remarking that whenever the introduction of ABS increases the asset price, the asset will be traded at a price higher than anyone thinks it is worth:
 
