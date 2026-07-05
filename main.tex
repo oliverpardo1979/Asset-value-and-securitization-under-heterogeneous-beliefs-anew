@@ -105,7 +105,7 @@ Although securitization is modeled as a refinement of the existing tranches, it 
 
 Finally, the paper studies the effect of the introduction of ABS on the rates of return that agents receive on their portfolio. For this purpose, it uses the behavioral framework of \cite{EysterPiccione2014}, who take the model of \cite{HarrisonKreps1978} but provide more structure on agents' beliefs. In their model, agents are characterized by a partition of the state space. This formalizes the idea that people have a coarse understanding of their environment. The finer the partition, the more sophisticated they are. \cite{EysterPiccione2014} show that an agent might obtain an average portfolio return lower than the one obtained by a less sophisticated agent. This is because a heterogeneous and coarse understanding of the environment implies a form of winner's curse: buying the long-term asset means that all other agents are pessimistic about its payoff in the next period. This paper shows that, as a consequence, the introduction of new ABS can decrease the portfolio return that some agents receive without increasing any agent's return.
 
-This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model, defines the equilibrium, and proves its existence and uniqueness. Section \ref{sec:eff} studies the effect of tranching securitization on the price of the underlying asset. Section \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching. Section \ref{sec:ep} studies the effect of tranching on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research.
+This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model, defines the equilibrium, and proves its existence and uniqueness. Section \ref{sec:eff} studies the effect of tranching securitization on the price of the underlying asset. Section \ref{sec:ep} studies the effect of tranching on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research. Appendix \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching.
 
 \subsection{Literature Review}
 
@@ -490,7 +490,7 @@ This section studies the effect of tranching securitization, understood as the i
 \begin{dfn} \label{def:tranching-sec}
 An economy engages in tranching securitization if it switches from a tranching $\mathcal{T}$ to a tranching  $\mathcal{S}$, where $\mathcal{S}$ is a refinement of $\mathcal{T}$.
 \end{dfn}
-This means that agents who buy the long-term asset are able to sell a greater variety of tranches. It is shown in section \ref{sec:is} that this definition is equivalent to being able to issue new ABS backed by the existing ABS.
+This means that agents who buy the long-term asset are able to sell a greater variety of tranches. Appendix \ref{sec:is} shows that this definition is equivalent to being able to issue new ABS backed by the existing ABS.
 
 \subsection{Effect on asset prices}
 
@@ -675,150 +675,7 @@ for all $x\in X$ and $\mathcal{F}\in\mathbf{F}$. The first claim follows from in
 
 Proposition \ref{prp:fun} states that if the benchmark equilibrium without securitization is not issuer-optimal, then further securitization will eventually increase the gap between the asset price and any perceived present value of dividends. Because of reselling opportunities, securitization increases this gap at every state.
 
-\section{Iterated securitization} \label{sec:is}
-
-In section \ref{sec:eff}, increased securitization has been modeled as a refinement of the existing tranching, which is equivalent to creating more tranches for the cash flow coming from the long-term asset. Securitization, however, is also seen as issuing securities backed by asset-backed securities, as when CDO are created based on existing MBS or squared CDO are created based on existing CDO. This section shows the equivalence between these two interpretations. Remarkably, any tranching is equivalent to issuing debt using debt securities as collateral and iterating this process a finite number of times.
-
-\subsection{Example}
-
-Consider the case where $X=\left\{a,b,c,d\right\}$ and the probability of a state going back to itself is close to one and uniform otherwise. Hence, the system spends a quarter of the time in each state. The interest rate is assumed to be constant. The collection of theories in the market is given by $\mathbf{F}=\left\{\mathcal{A},\mathcal{B},\mathcal{C}\right\}$, where
-\begin{eqnarray*}
-\mathcal{A} & = & \left\{\left\{a,d\right\},\left\{b,c\right\}\right\} \\
-\mathcal{B} & = & \left\{\left\{a,b,d\right\},\left\{c\right\}\right\} \\
-\mathcal{C} & = & \left\{\left\{a,b,c,d\right\}\right\}
-\end{eqnarray*}
-All theories in the market achieve statistical consistency: the perceived transition probability for agent $\mathcal{A}$ from states $a$ or $d$ to states $a$ or $d$ tends to one half, the perceived transition probability for agent $\mathcal{B}$ from states $a$, $b$ or $d$ to states $a$, $b$ or $d$ tends to one third and the perceived transition probability for agent $\mathcal{C}$ from any state to any other tends to one fourth.
-
-For this example, it can be shown that a tranching that is issuer-optimal is one where there are four tranches and the attachment points coincide with the realizations of the asset price. Let $q$ be the waterfall equilibrium price function for the issuer-optimal tranching. Assume that the dividend function is such that $q(a)>q(b)>q(c)>q(d)$. In order of seniority, the tranches are labeled $s$ (senior), $m$ (mezzanine), $j$ (junior) and $e$ (equity). Table \ref{tab:ptr} presents the payoff function for each tranche.
-
-\begin{table}
-\caption{Security payoffs for the issuer-optimal tranching}
-\label{tab:ptr}
-\centering
-\begin{tabular}{crrrrc}
-\hline
-%Equil. \\
-States & \multicolumn{1}{c}{$\phi_e$} & \multicolumn{1}{c}{$\phi_j$} & \multicolumn{1}{c}{$\phi_m$} & \multicolumn{1}{c}{$\phi_s$} \\
-\hline
-$~~a$ & $q(a)-q(b)$             & $q(b)-q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
-$~~b$ & \multicolumn{1}{c}{$0$} & $q(b)-q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
-$~~c$ & \multicolumn{1}{c}{$0$} & \multicolumn{1}{c}{$0$} & $q(c)-q(d)$ & $q(d)$ \\
-$~~d$ & \multicolumn{1}{c}{$0$} & \multicolumn{1}{c}{$0$} & \multicolumn{1}{c}{$0$} & $q(d)$ \\
- \hline
-\end{tabular}
-\end{table}
-
-In state $d$, theory $\mathcal{A}$ buys the tranche $e$,  theory $\mathcal{B}$ buys the tranche $j$ and  theory $\mathcal{C}$ buys the tranche $m$. All agents have the same willingness to pay regarding tranche $s$. In state $d$, three different types of agents have claims on the underlying asset.
-
-Instead of a unique round of securitization with four tranches, consider three rounds of securitization. In the first round, the underlying asset is securitized into debt and equity tranches. In the second round, the debt tranche of the first round is securitized into other debt and equity tranches. In the third round, the debt tranche of the second round is securitized into more debt and equity tranches (Figure \ref{fig:tree}). Let $\phi^i_e$ and $\phi^i_f$ be the payoffs from the equity and the debt tranches in the $i$-th round of securitization, where $i\in\left\{1,2,3\right\}$. Table \ref{tab:pit} shows the assumed payoff for each tranche. By construction, the payoff from the debt and the equity tranches add up to the payoff from the debt tranche from the previous round.
-
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[xscale=20,yscale=20]
-\node[align=left]  at (0.03,0.25) {$q$};
-\draw[->] (0.05,0.25) -- (.1,.28);
-\draw[->] (0.05,0.25) -- (.1,.22);
-\node[align=right]  at (.12,.28) {$\phi^1_e$};
-\node[align=right]  at (.12,.22) {$\phi^1_f$};
-\draw[->] (0.14,0.22) -- (.19,.25);
-\draw[->] (0.14,0.22) -- (.19,.19);
-\node[align=right]  at (.21,.25) {$\phi^2_e$};
-\node[align=right]  at (.21,.19) {$\phi^2_f$};
-\draw[->] (0.23,0.19) -- (.28,.22);
-\draw[->] (0.23,0.19) -- (.28,.16);
-\node[align=right]  at (.30,.22) {$\phi^3_e$};
-\node[align=right]  at (.30,.16) {$\phi^3_f$};
-\end{tikzpicture}
-\caption{Iterated securitization}
-\label{fig:tree}
-\end{figure}
-
-\begin{table}
-\caption{Security payoffs for the iterated case}
-\label{tab:pit}
-\centering
-\begin{tabular}{ c | c c | c c | c c }
-\hline
-%Equil. \\
-States & $\phi^1_e$ & $\phi^1_f$ & $\phi^2_e$ & $\phi^2_f$ & $\phi^3_e$ & $\phi^3_f$ \\
-\hline
-$a$ & $q(a)-q(b)$ & $q(b)$ & $q(b)-q(c)$ & $q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
-$b$ & $0$         & $q(b)$ & $q(b)-q(c)$ & $q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
-$c$ & $0$         & $q(c)$ & $0$         & $q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
-$d$ & $0$         & $q(d)$ & $0$         & $q(d)$ & $0$         & $q(d)$ \\
- \hline
-\end{tabular}
-\end{table}
-
-Consider the equilibrium in state $d$. The equity tranche of the 1st round will be bought by theory $\mathcal{A}$, the equity tranche of the 2nd round will be bought by theory $\mathcal{B}$, and the equity tranche of the 3rd round will be bought by theory $\mathcal{C}$. The value of the debt tranche on the 3rd round will be $q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{C}$ on the equity tranche of the 3rd round, the value of the debt tranche in the 2nd round will be $q(d)$ plus three quarters of $q(c)-q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{B}$ on the equity tranche of the 2nd round, the value of the debt tranche in the 1st round will be $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{A}$ on the equity tranche of the 1st round, the value of the asset at state $d$ will be the dividend at $d$ plus $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$ plus half of $q(a)-q(c)$, discounted by the interest rate. This is the same asset price equation for the aforementioned case of one round of securitization with four tranches.
-
-A way of reading the equilibrium transactions at state $d$ is that agent $\mathcal{A}$ is borrowing from agent $\mathcal{B}$ using the underlying asset as collateral. In turn, agent $\mathcal{B}$ is borrowing from agent $\mathcal{C}$ using the debt issued by $\mathcal{A}$ as collateral. The equilibrium features a \textit{pyramiding arrangement}, as defined by \cite{Geanakoplos1996}.
-
-\subsection{General Case}
-
-In order to define what will be labeled an \textit{iterated securitization equilibrium}, consider the following structure. Let there be a tree where $\mathbb{N}$ is its finite set of nodes, $r\in\mathbb{N}$ is its root node and $\mathbb{Z}\subset\mathbb{N}$ is its set of terminal nodes. Let $a:\mathbb{N}\setminus\left\{r\right\}\to\mathbb{N}\setminus\mathbb{Z}$ be a function where $a(n)$ denotes the predecessor of $n$. The root node $r$ represents the long-term asset. Each node $n\in\mathbb{N}\setminus\left\{r\right\}$ represents a security backed by asset $a(n)$. Nodes in $\mathbb{Z}$ represent securities that are not further securitized.
-
-For $m\in\mathbb{N}\setminus\mathbb{Z}$, denote by $S(m)$ the set of $m$'s successors:
-\[
-S(m) = \left\{ n \in \mathbb{N}\setminus \left\{r\right\} : a(n)=m \right\}
-\]
-
-Let $(\tau_n)_{n\in\mathbb{N}}$ be a collection of intervals such that
-\begin{enumerate}
-\item $\tau_r=[0,\infty)$ and
-\item for $m\in\mathbb{N}\setminus\mathbb{Z}$, the collection $(\tau_n)_{n\in S(m)}$ partitions the interval \[[0,\sup(\tau_{m})-\inf(\tau_{m})]\]
-\end{enumerate}
-
-Each security in $\mathbb{N}\setminus\left\{r\right\}$ is a straddle with a maturity of one period. Its payoff is a function of the cash flow from its predecessor. Specifically, if $t$ is the cash flow from asset $a(n)$, then the cash flow for security $n\in\mathbb{N}\setminus\left\{r\right\}$ would be given by:
-\begin{equation} \label{eq:psi}
-\zeta_n(t) = (t-\inf(\tau_n))^+ - (t-\sup(\tau_n))^+
-\end{equation}
-Hence, for $m\in\mathbb{N}\setminus\mathbb{Z}$:
-\begin{equation*}
-\zeta_{m}(t) = \sum_{n\in S(m)}\zeta_{n}(t)
-\end{equation*}
-This confirms that the cash flow from securities in $S(m)$ add up to the cash flow from asset $m$.
-
-Let $\gamma_n:X\to\mathbb{R}_+$ be the cash flow for security $n\in\mathbb{N}$ as a function of the state of the world. If $q:X\to\mathbb{R}_+$ is the price function for the long-term asset, then $\gamma_r=q$  and
-\begin{equation} \label{eq:gamma}
-\gamma_{n}(x) = \zeta_n(\gamma_{a(n)}(x))
-\end{equation}
-for $n\in\mathbb{N}\setminus\left\{r\right\}$ and $x\in X$.
-
-A tuple $\Sigma=\left(\mathbb{N},r,\mathbb{Z},a,(\tau_n)_{n\in\mathbb{N}}\right)$ is labeled an \textit{iterated securitization structure}.
-
-\begin{dfn} \label{def:ise}
-For a given iterated securitization structure $\Sigma$, an iterated securitization equilibrium is a function $p_{\Sigma}:\mathbb{N}\times X \to \mathbb{R}_+$ such that, for $x\in X$,
-\begin{enumerate}
-\item
-\begin{equation} \label{eq:pr}
-p_{\Sigma}(r,x) = \frac{d(x)}{R(x)}+\sum_{n\in S(r)}p_{\Sigma}(n,x)
-\end{equation}
-\item For $m\in\mathbb{N}\setminus(\mathbb{Z}\cup\left\{r\right\})$,
-\begin{equation} \label{eq:pm}
-p_{\Sigma}(m,x) = \sum_{n\in S(m)}p_{\Sigma}(n,x)
-\end{equation}
-\item For $z\in\mathbb{Z}$,
-\begin{equation} \label{eq:pz}
-p_{\Sigma}(z,x) = \frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\gamma_z\mid x\right)}{R(x)}
-\end{equation}
-where $\gamma_r=p_{\Sigma}(r,\cdot)$ and, for $n\in\mathbb{N}\setminus\left\{r\right\}$, $\gamma_n$ is given by equation (\ref{eq:gamma}).
-\end{enumerate}
-\end{dfn}
-
-The function $p_{\Sigma}(r,\cdot)$ is the price function for the long-term asset. Equation (\ref{eq:pr}) states that it is given by the discounted declared dividend plus the added prices of the securities derived from it. Equation (\ref{eq:pm}) states that for the securities that are not terminal nodes, their price is given by the added prices of the securities derived from them. Finally, equation (\ref{eq:pz}) gives the equilibrium for the terminal nodes, i.e. the securities that are not further securitized. Their price is given by the highest expectation regarding the cash flow coming from them. Ultimately, the cash flow from the securities at the terminal nodes will depend on the price of the long-term asset in the next period.
-
-\begin{prp} \label{thm:equiv}
-For any iterated securitization structure $\Sigma$, there is a tranching $\mathcal{T}$ such that
-\begin{equation*}
-p_{\Sigma}(r,x)= q_{\mathcal{T}}(x)
-\end{equation*}
-for $x\in X$
-\end{prp}
-
-\textsc{Proof:} See appendix.
-
-Proposition \ref{thm:equiv} states the equivalence between the equilibrium concepts in Definitions \ref{def:core} and \ref{def:ise}. For any iterated securitization equilibrium, the price of the long-term asset is the same as in a waterfall equilibrium for a suitable tranching $\mathcal{T}$. Intuitively, multiple rounds of securitization are redundant since the same outcome can be obtained by tranching the long-term asset into $|\mathbb{Z}|$ securities in a single round.
+The analysis in this section represents a richer set of ABS as a refinement of the tranching of the underlying asset. This is without loss for finite rounds of securitization backed by existing ABS. Appendix \ref{sec:is} defines iterated securitization structures and shows that every finite iterated structure generates the same long-term asset price as a suitable one-shot waterfall tranching. This justifies focusing on refinements of $\mathcal{T}$ instead of explicitly tracking pyramiding arrangements.
 
 \section{Effect on rates of return} \label{sec:ep}
 
@@ -931,7 +788,7 @@ where $q(l)<q(m)<q(h)$. Thus, securitization can transfer losses across agents: 
 
 \section{Other types of contracts} \label{sec:cds}
 
-Apart from having their real-life counterparts, the only appealing features of securities with a waterfall structure are: i) their payoff is monotone in the cash flow from the underlying asset, ii) as shown in section \ref{sec:is}, they implicitly represent any case where only debt and equity can be issued and debt itself can be used as collateral. However, no argument has been given in this paper for agents to choose or be constrained by this class of contracts.
+Apart from having their real-life counterparts, the only appealing features of securities with a waterfall structure are: i) their payoff is monotone in the cash flow from the underlying asset, ii) as shown in Appendix \ref{sec:is}, they implicitly represent any case where only debt and equity can be issued and debt itself can be used as collateral. However, no argument has been given in this paper for agents to choose or be constrained by this class of contracts.
 
 Without being constrained to issue ABS with a waterfall payment structure, agents could exploit the divergence of beliefs even further by creating contracts that do not satisfy this constraint. For instance, consider the equilibrium of subsection \ref{securitized}. The senior tranche pays $q^1(m)$ if the state in the next period is $m$ or $h$ and $q^1(l)$ otherwise. At state $m$, this tranche is bought by agent $\mathcal{B}$. This agent could create a new security, backed by the senior tranche, that pays $q^1(m)$ at state $h$ and 0 otherwise. Such a security does not satisfy the waterfall constraint since its payoff does not exclusively depend on the cash flow from the underlying tranche. This new security is almost worthless for $\mathcal{B}$, given that a realization $h$ next period looks very unlikely. However, agent $\mathcal{A}$ would be willing to pay $\frac{1}{3}\frac{q^1(m)}{R}$ for it.
 
@@ -1014,6 +871,151 @@ Theory $\mathcal{A}$ buys both tranches in state $l$ and the junior tranche in s
 =-\frac{13}{30}.
 \]
 Since $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$'s objective and perceived expectations coincide for every payoff vector, so $\underline{\Delta}_{\mathcal{B}}=\Delta_{\mathcal{B}}=0$. Thus, in this example, securitization makes theory $\mathcal{A}$'s excess return lower by $\frac{1}{10}$ without increasing theory $\mathcal{B}$'s excess return.
+
+\subsection{Iterated securitization} \label{sec:is}
+
+In Section \ref{sec:eff}, increased securitization has been modeled as a refinement of the existing tranching, which is equivalent to creating more tranches for the cash flow coming from the long-term asset. Securitization, however, is also seen as issuing securities backed by asset-backed securities, as when CDO are created based on existing MBS or squared CDO are created based on existing CDO. This appendix shows the equivalence between these two interpretations. Remarkably, any tranching is equivalent to issuing debt using debt securities as collateral and iterating this process a finite number of times.
+
+\subsubsection{Example}
+
+Consider the case where $X=\left\{a,b,c,d\right\}$ and the probability of a state going back to itself is close to one and uniform otherwise. Hence, the system spends a quarter of the time in each state. The interest rate is assumed to be constant. The collection of theories in the market is given by $\mathbf{F}=\left\{\mathcal{A},\mathcal{B},\mathcal{C}\right\}$, where
+\begin{eqnarray*}
+\mathcal{A} & = & \left\{\left\{a,d\right\},\left\{b,c\right\}\right\} \\
+\mathcal{B} & = & \left\{\left\{a,b,d\right\},\left\{c\right\}\right\} \\
+\mathcal{C} & = & \left\{\left\{a,b,c,d\right\}\right\}
+\end{eqnarray*}
+All theories in the market achieve statistical consistency: the perceived transition probability for agent $\mathcal{A}$ from states $a$ or $d$ to states $a$ or $d$ tends to one half, the perceived transition probability for agent $\mathcal{B}$ from states $a$, $b$ or $d$ to states $a$, $b$ or $d$ tends to one third and the perceived transition probability for agent $\mathcal{C}$ from any state to any other tends to one fourth.
+
+For this example, it can be shown that a tranching that is issuer-optimal is one where there are four tranches and the attachment points coincide with the realizations of the asset price. Let $q$ be the waterfall equilibrium price function for the issuer-optimal tranching. Assume that the dividend function is such that $q(a)>q(b)>q(c)>q(d)$. In order of seniority, the tranches are labeled $s$ (senior), $m$ (mezzanine), $j$ (junior) and $e$ (equity). Table \ref{tab:ptr} presents the payoff function for each tranche.
+
+\begin{table}
+\caption{Security payoffs for the issuer-optimal tranching}
+\label{tab:ptr}
+\centering
+\begin{tabular}{crrrrc}
+\hline
+%Equil. \\
+States & \multicolumn{1}{c}{$\phi_e$} & \multicolumn{1}{c}{$\phi_j$} & \multicolumn{1}{c}{$\phi_m$} & \multicolumn{1}{c}{$\phi_s$} \\
+\hline
+$~~a$ & $q(a)-q(b)$             & $q(b)-q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
+$~~b$ & \multicolumn{1}{c}{$0$} & $q(b)-q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
+$~~c$ & \multicolumn{1}{c}{$0$} & \multicolumn{1}{c}{$0$} & $q(c)-q(d)$ & $q(d)$ \\
+$~~d$ & \multicolumn{1}{c}{$0$} & \multicolumn{1}{c}{$0$} & \multicolumn{1}{c}{$0$} & $q(d)$ \\
+ \hline
+\end{tabular}
+\end{table}
+
+In state $d$, theory $\mathcal{A}$ buys the tranche $e$,  theory $\mathcal{B}$ buys the tranche $j$ and  theory $\mathcal{C}$ buys the tranche $m$. All agents have the same willingness to pay regarding tranche $s$. In state $d$, three different types of agents have claims on the underlying asset.
+
+Instead of a unique round of securitization with four tranches, consider three rounds of securitization. In the first round, the underlying asset is securitized into debt and equity tranches. In the second round, the debt tranche of the first round is securitized into other debt and equity tranches. In the third round, the debt tranche of the second round is securitized into more debt and equity tranches (Figure \ref{fig:tree}). Let $\phi^i_e$ and $\phi^i_f$ be the payoffs from the equity and the debt tranches in the $i$-th round of securitization, where $i\in\left\{1,2,3\right\}$. Table \ref{tab:pit} shows the assumed payoff for each tranche. By construction, the payoff from the debt and the equity tranches add up to the payoff from the debt tranche from the previous round.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[xscale=20,yscale=20]
+\node[align=left]  at (0.03,0.25) {$q$};
+\draw[->] (0.05,0.25) -- (.1,.28);
+\draw[->] (0.05,0.25) -- (.1,.22);
+\node[align=right]  at (.12,.28) {$\phi^1_e$};
+\node[align=right]  at (.12,.22) {$\phi^1_f$};
+\draw[->] (0.14,0.22) -- (.19,.25);
+\draw[->] (0.14,0.22) -- (.19,.19);
+\node[align=right]  at (.21,.25) {$\phi^2_e$};
+\node[align=right]  at (.21,.19) {$\phi^2_f$};
+\draw[->] (0.23,0.19) -- (.28,.22);
+\draw[->] (0.23,0.19) -- (.28,.16);
+\node[align=right]  at (.30,.22) {$\phi^3_e$};
+\node[align=right]  at (.30,.16) {$\phi^3_f$};
+\end{tikzpicture}
+\caption{Iterated securitization}
+\label{fig:tree}
+\end{figure}
+
+\begin{table}
+\caption{Security payoffs for the iterated case}
+\label{tab:pit}
+\centering
+\begin{tabular}{ c | c c | c c | c c }
+\hline
+%Equil. \\
+States & $\phi^1_e$ & $\phi^1_f$ & $\phi^2_e$ & $\phi^2_f$ & $\phi^3_e$ & $\phi^3_f$ \\
+\hline
+$a$ & $q(a)-q(b)$ & $q(b)$ & $q(b)-q(c)$ & $q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
+$b$ & $0$         & $q(b)$ & $q(b)-q(c)$ & $q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
+$c$ & $0$         & $q(c)$ & $0$         & $q(c)$ & $q(c)-q(d)$ & $q(d)$ \\
+$d$ & $0$         & $q(d)$ & $0$         & $q(d)$ & $0$         & $q(d)$ \\
+ \hline
+\end{tabular}
+\end{table}
+
+Consider the equilibrium in state $d$. The equity tranche of the 1st round will be bought by theory $\mathcal{A}$, the equity tranche of the 2nd round will be bought by theory $\mathcal{B}$, and the equity tranche of the 3rd round will be bought by theory $\mathcal{C}$. The value of the debt tranche on the 3rd round will be $q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{C}$ on the equity tranche of the 3rd round, the value of the debt tranche in the 2nd round will be $q(d)$ plus three quarters of $q(c)-q(d)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{B}$ on the equity tranche of the 2nd round, the value of the debt tranche in the 1st round will be $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$, discounted by the interest rate. Given this and the willingness to pay by agent $\mathcal{A}$ on the equity tranche of the 1st round, the value of the asset at state $d$ will be the dividend at $d$ plus $q(d)$ plus three quarters of $q(c)-q(d)$ plus two thirds of $q(b)-q(c)$ plus half of $q(a)-q(c)$, discounted by the interest rate. This is the same asset price equation for the aforementioned case of one round of securitization with four tranches.
+
+A way of reading the equilibrium transactions at state $d$ is that agent $\mathcal{A}$ is borrowing from agent $\mathcal{B}$ using the underlying asset as collateral. In turn, agent $\mathcal{B}$ is borrowing from agent $\mathcal{C}$ using the debt issued by $\mathcal{A}$ as collateral. The equilibrium features a \textit{pyramiding arrangement}, as defined by \cite{Geanakoplos1996}.
+
+\subsubsection{General case}
+
+In order to define what will be labeled an \textit{iterated securitization equilibrium}, consider the following structure. Let there be a tree where $\mathbb{N}$ is its finite set of nodes, $r\in\mathbb{N}$ is its root node and $\mathbb{Z}\subset\mathbb{N}$ is its set of terminal nodes. Let $a:\mathbb{N}\setminus\left\{r\right\}\to\mathbb{N}\setminus\mathbb{Z}$ be a function where $a(n)$ denotes the predecessor of $n$. The root node $r$ represents the long-term asset. Each node $n\in\mathbb{N}\setminus\left\{r\right\}$ represents a security backed by asset $a(n)$. Nodes in $\mathbb{Z}$ represent securities that are not further securitized.
+
+For $m\in\mathbb{N}\setminus\mathbb{Z}$, denote by $S(m)$ the set of $m$'s successors:
+\[
+S(m) = \left\{ n \in \mathbb{N}\setminus \left\{r\right\} : a(n)=m \right\}
+\]
+
+Let $(\tau_n)_{n\in\mathbb{N}}$ be a collection of intervals such that
+\begin{enumerate}
+\item $\tau_r=[0,\infty)$ and
+\item for $m\in\mathbb{N}\setminus\mathbb{Z}$, the collection $(\tau_n)_{n\in S(m)}$ partitions the interval \[[0,\sup(\tau_{m})-\inf(\tau_{m})]\]
+\end{enumerate}
+
+Each security in $\mathbb{N}\setminus\left\{r\right\}$ is a straddle with a maturity of one period. Its payoff is a function of the cash flow from its predecessor. Specifically, if $t$ is the cash flow from asset $a(n)$, then the cash flow for security $n\in\mathbb{N}\setminus\left\{r\right\}$ would be given by:
+\begin{equation} \label{eq:psi}
+\zeta_n(t) = (t-\inf(\tau_n))^+ - (t-\sup(\tau_n))^+
+\end{equation}
+Hence, for $m\in\mathbb{N}\setminus\mathbb{Z}$:
+\begin{equation*}
+\zeta_{m}(t) = \sum_{n\in S(m)}\zeta_{n}(t)
+\end{equation*}
+This confirms that the cash flow from securities in $S(m)$ add up to the cash flow from asset $m$.
+
+Let $\gamma_n:X\to\mathbb{R}_+$ be the cash flow for security $n\in\mathbb{N}$ as a function of the state of the world. If $q:X\to\mathbb{R}_+$ is the price function for the long-term asset, then $\gamma_r=q$  and
+\begin{equation} \label{eq:gamma}
+\gamma_{n}(x) = \zeta_n(\gamma_{a(n)}(x))
+\end{equation}
+for $n\in\mathbb{N}\setminus\left\{r\right\}$ and $x\in X$.
+
+A tuple $\Sigma=\left(\mathbb{N},r,\mathbb{Z},a,(\tau_n)_{n\in\mathbb{N}}\right)$ is labeled an \textit{iterated securitization structure}.
+
+\begin{dfn} \label{def:ise}
+For a given iterated securitization structure $\Sigma$, an iterated securitization equilibrium is a function $p_{\Sigma}:\mathbb{N}\times X \to \mathbb{R}_+$ such that, for $x\in X$,
+\begin{enumerate}
+\item
+\begin{equation} \label{eq:pr}
+p_{\Sigma}(r,x) = \frac{d(x)}{R(x)}+\sum_{n\in S(r)}p_{\Sigma}(n,x)
+\end{equation}
+\item For $m\in\mathbb{N}\setminus(\mathbb{Z}\cup\left\{r\right\})$,
+\begin{equation} \label{eq:pm}
+p_{\Sigma}(m,x) = \sum_{n\in S(m)}p_{\Sigma}(n,x)
+\end{equation}
+\item For $z\in\mathbb{Z}$,
+\begin{equation} \label{eq:pz}
+p_{\Sigma}(z,x) = \frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\gamma_z\mid x\right)}{R(x)}
+\end{equation}
+where $\gamma_r=p_{\Sigma}(r,\cdot)$ and, for $n\in\mathbb{N}\setminus\left\{r\right\}$, $\gamma_n$ is given by equation (\ref{eq:gamma}).
+\end{enumerate}
+\end{dfn}
+
+The function $p_{\Sigma}(r,\cdot)$ is the price function for the long-term asset. Equation (\ref{eq:pr}) states that it is given by the discounted declared dividend plus the added prices of the securities derived from it. Equation (\ref{eq:pm}) states that for the securities that are not terminal nodes, their price is given by the added prices of the securities derived from them. Finally, equation (\ref{eq:pz}) gives the equilibrium for the terminal nodes, i.e. the securities that are not further securitized. Their price is given by the highest expectation regarding the cash flow coming from them. Ultimately, the cash flow from the securities at the terminal nodes will depend on the price of the long-term asset in the next period.
+
+\begin{prp} \label{thm:equiv}
+For any iterated securitization structure $\Sigma$, there is a tranching $\mathcal{T}$ such that
+\begin{equation*}
+p_{\Sigma}(r,x)= q_{\mathcal{T}}(x)
+\end{equation*}
+for $x\in X$
+\end{prp}
+
+\textsc{Proof:} See the proof of Proposition \ref{thm:equiv} below.
+
+Proposition \ref{thm:equiv} states the equivalence between the equilibrium concepts in Definitions \ref{def:core} and \ref{def:ise}. For any iterated securitization equilibrium, the price of the long-term asset is the same as in a waterfall equilibrium for a suitable tranching $\mathcal{T}$. Intuitively, multiple rounds of securitization are redundant since the same outcome can be obtained by tranching the long-term asset into $|\mathbb{Z}|$ securities in a single round.
 
 \subsection{Return example with three theories}\label{app:return-example}
 
