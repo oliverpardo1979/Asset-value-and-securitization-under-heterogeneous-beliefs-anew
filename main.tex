@@ -105,7 +105,7 @@ Although securitization is modeled as a refinement of the existing tranches, it 
 
 Finally, the paper studies the effect of the introduction of ABS on the rates of return that agents receive on their portfolio. For this purpose, it uses the behavioral framework of \cite{EysterPiccione2014}, who take the model of \cite{HarrisonKreps1978} but provide more structure on agents' beliefs. In their model, agents are characterized by a partition of the state space. This formalizes the idea that people have a coarse understanding of their environment. The finer the partition, the more sophisticated they are. \cite{EysterPiccione2014} show that an agent might obtain an average portfolio return lower than the one obtained by a less sophisticated agent. This is because a heterogeneous and coarse understanding of the environment implies a form of winner's curse: buying the long-term asset means that all other agents are pessimistic about its payoff in the next period. This paper shows that, as a consequence, the introduction of new ABS can decrease the portfolio return that some agents receive without increasing any agent's return.
 
-This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model, defines the equilibrium, and proves its existence and uniqueness. Section \ref{sec:eff} studies the effect of tranching securitization on the price of the underlying asset. Section \ref{sec:ep} studies the effect of tranching on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research. Appendix \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching.
+This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model, defines the equilibrium, and proves its existence and uniqueness. Section \ref{sec:eff} studies the effects of tranching securitization on the price of the underlying asset and on actual portfolio returns, and it comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research. Appendix \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching.
 
 \subsection{Literature Review}
 
@@ -317,7 +317,7 @@ q^1(h) & = & \frac{d(h)+q^1(h)}{R} \label{qph}
 
 By comparing equation (\ref{qpm}) with equation (\ref{qm}), it can be seen that the introduction of ABS has increased the asset price at state $m$. This in turn increases the price at state $l$, since $\mathcal{A}$'s expectation at state $l$ is higher. Returning to the numerical example where $R=2$, $d(l)=0$, $d(m)=2$ and $d(h)=3$, the asset price increases by $\frac{1}{20}$ at state $l$ and by $\frac{1}{4}$ at state $m$. Thanks to the reselling opportunity, the introduction of ABS increases the asset price in states in which ABS appear to be innocuous.
 
-Because $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$ has rational expectations in this example and its actual excess return is zero both with and without ABS. Actual excess return refers to the one-period payoff from buying the asset or ABS, net of the payoff that the same expenditure would have obtained by buying the bond, averaged across states according to their long-run frequencies and evaluated under the objective transition $P$. Theory $\mathcal{A}$, instead, earns a negative excess return. In the numerical example, its excess return falls from $-\frac{1}{3}$ without ABS to $-\frac{13}{30}$ with ABS. Thus, in this example, securitization increases the price of the underlying asset while making the less sophisticated agent's realized return worse. This return effect is not general: Section \ref{sec:ep} later presents a case in which securitization makes an agent's excess return less negative, although it remains below zero. Appendix \ref{app:example-prices} reports the corresponding calculations.
+Because $P=Q_{\mathcal{B}}$, theory $\mathcal{B}$ has rational expectations in this example and its actual excess return is zero both with and without ABS. Actual excess return refers to the one-period payoff from buying the asset or ABS, net of the payoff that the same expenditure would have obtained by buying the bond, averaged across states according to their long-run frequencies and evaluated under the objective transition $P$. Theory $\mathcal{A}$, instead, earns a negative excess return. In the numerical example, its excess return falls from $-\frac{1}{3}$ without ABS to $-\frac{13}{30}$ with ABS. Thus, in this example, securitization increases the price of the underlying asset while making the less sophisticated agent's realized return worse. This return effect is not general: Subsection \ref{sec:ep} later presents a case in which securitization makes an agent's excess return less negative, although it remains below zero. Appendix \ref{app:example-prices} reports the corresponding calculations.
 
 \section{The Model}\label{model}
 
@@ -503,7 +503,7 @@ for all $x\in X$
 \end{lmm}
 \textsc{Proof:} See appendix.
 
-Intuitively, there is no harm to the issuer from slicing the cash flow of the underlying asset into more tranches: if the issuer is lucky, investors who were outbid when the big tranches were issued will push harder when bidding for smaller tranches. At worst, investors will be indifferent.\footnote{It should be noted, though, that this result will hold even if the waterfall constraint is absent - see section \ref{sec:cds}.}
+Intuitively, there is no harm to the issuer from slicing the cash flow of the underlying asset into more tranches: if the issuer is lucky, investors who were outbid when the big tranches were issued will push harder when bidding for smaller tranches. At worst, investors will be indifferent.\footnote{It should be noted, though, that this result will hold even if the waterfall constraint is absent - see Subsection \ref{sec:cds}.}
 
 It is worth comparing the benchmark scenario, where there is no tranching, with any scenario where there is some degree of tranching:
 
@@ -677,9 +677,9 @@ Proposition \ref{prp:fun} states that if the benchmark equilibrium without secur
 
 The analysis in this section represents a richer set of ABS as a refinement of the tranching of the underlying asset. This is without loss for finite rounds of securitization backed by existing ABS. Appendix \ref{sec:is} defines iterated securitization structures and shows that every finite iterated structure generates the same long-term asset price as a suitable one-shot waterfall tranching. This justifies focusing on refinements of $\mathcal{T}$ instead of explicitly tracking pyramiding arrangements.
 
-\section{Effect on rates of return} \label{sec:ep}
+\subsection{Effect on rates of return} \label{sec:ep}
 
-This section studies the effect of the introduction of ABS on the excess return obtained by each theory in the market, defined as the actual payoff from forgoing one bond to buy ABS instead whenever doing so is perceived as worthwhile.
+This subsection studies the effect of the introduction of ABS on the excess return obtained by each theory in the market, defined as the actual payoff from forgoing one bond to buy ABS instead whenever doing so is perceived as worthwhile.
 
 The effect of the introduction of new ABS on returns is subtle. Agents who are not optimistic about the overall expected payoff from an underlying asset could be the most optimistic about the payoff being above a certain threshold. Without ABS, they will not buy the asset. By introducing the appropriate tranching, they will buy a security with an attachment point at that threshold. However, this means they will be buying the leftovers from whoever would have bought the whole asset without any ABS. On the other hand, by being outbid by less sophisticated agents, they may be prevented from buying tranches that do not have a promising payoff. Except for special cases, the effect of the introduction of ABS on returns is ambiguous.
 
@@ -786,7 +786,7 @@ Nevertheless, the introduction of ABS \textit{can} increase the return of some a
 \]
 where $q(l)<q(m)<q(h)$. Thus, securitization can transfer losses across agents: it may lower one theory's return while improving another theory's return relative to the benchmark, even if the improved return remains below the market interest rate.
 
-\section{Other types of contracts} \label{sec:cds}
+\subsection{Other types of contracts} \label{sec:cds}
 
 Apart from having their real-life counterparts, the only appealing features of securities with a waterfall structure are: i) their payoff is monotone in the cash flow from the underlying asset, ii) as shown in Appendix \ref{sec:is}, they implicitly represent any case where only debt and equity can be issued and debt itself can be used as collateral. However, no argument has been given in this paper for agents to choose or be constrained by this class of contracts.
 
@@ -837,7 +837,7 @@ q^1(h) & = \frac{d(h)+q^1(h)}{R}.
 \end{align*}
 For the same parameter values, the solution is $q^1(l)=\frac{21}{20}$, $q^1(m)=\frac{9}{4}$ and $q^1(h)=3$.
 
-The same numerical example illustrates the return effect discussed in Section \ref{sec:ep}. To keep notation consistent with that section, let $T(\psi)(x)=\sum_{y\in X}\psi(y)P(x,y)$ denote the objective expectation of a payoff vector $\psi:X\to\mathbb{R}_{+}$ from state $x$. If theory $\mathcal{F}$ buys a security with payoff $\psi$ at price $p_\psi(x)$, its contribution to the actual excess return is $T(\psi)(x)-R p_\psi(x)$. Since the buyer's equilibrium price satisfies $R p_\psi(x)=E_{\mathcal{F}}(\psi\mid x)$, this contribution can be written as
+The same numerical example illustrates the return effect discussed in Subsection \ref{sec:ep}. To keep notation consistent with that subsection, let $T(\psi)(x)=\sum_{y\in X}\psi(y)P(x,y)$ denote the objective expectation of a payoff vector $\psi:X\to\mathbb{R}_{+}$ from state $x$. If theory $\mathcal{F}$ buys a security with payoff $\psi$ at price $p_\psi(x)$, its contribution to the actual excess return is $T(\psi)(x)-R p_\psi(x)$. Since the buyer's equilibrium price satisfies $R p_\psi(x)=E_{\mathcal{F}}(\psi\mid x)$, this contribution can be written as
 \[
 T(\psi)(x)-E_{\mathcal{F}}(\psi\mid x).
 \]
@@ -1019,7 +1019,7 @@ Proposition \ref{thm:equiv} states the equivalence between the equilibrium conce
 
 \subsection{Return example with three theories}\label{app:return-example}
 
-This appendix provides the example summarized in Section \ref{sec:ep}, in which securitization can increase a theory's excess return even though that excess return remains negative. Consider a state space $X =\left\{l,m,h\right\}$ where the probability of a state going back to itself is close to one and uniform otherwise. The collection of theories is $\mathbf{F}=\left\{\mathcal{A},\mathcal{B},\mathcal{C}\right\}$, where:
+This appendix provides the example summarized in Subsection \ref{sec:ep}, in which securitization can increase a theory's excess return even though that excess return remains negative. Consider a state space $X =\left\{l,m,h\right\}$ where the probability of a state going back to itself is close to one and uniform otherwise. The collection of theories is $\mathbf{F}=\left\{\mathcal{A},\mathcal{B},\mathcal{C}\right\}$, where:
 \begin{eqnarray*}
 \mathcal{A} & = &
 \left\{
