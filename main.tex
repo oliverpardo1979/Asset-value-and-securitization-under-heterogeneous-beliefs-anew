@@ -105,7 +105,7 @@ Although securitization is modeled as a refinement of the existing tranches, it 
 
 Finally, the paper studies the effect of the introduction of ABS on the rates of return that agents receive on their portfolio. For this purpose, it uses the behavioral framework of \cite{EysterPiccione2014}, who take the model of \cite{HarrisonKreps1978} but provide more structure on agents' beliefs. In their model, agents are characterized by a partition of the state space. This formalizes the idea that people have a coarse understanding of their environment. The finer the partition, the more sophisticated they are. \cite{EysterPiccione2014} show that an agent might obtain an average portfolio return lower than the one obtained by a less sophisticated agent. This is because a heterogeneous and coarse understanding of the environment implies a form of winner's curse: buying the long-term asset means that all other agents are pessimistic about its payoff in the next period. This paper shows that, as a consequence, the introduction of new ABS can decrease the portfolio return that some agents receive without increasing any agent's return.
 
-This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model and defines the equilibrium. Section \ref{sec:extuni} proves the existence and uniqueness of the equilibrium. Section \ref{sec:eff} studies the effect of tranching securitization on the price of the underlying asset. Section \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching. Section \ref{sec:ep} studies the effect of tranching on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research.
+This paper is organized as follows. The rest of this introduction presents a literature review. Section \ref{example} presents the motivating example that illustrates the setup and gives a hint of the main results. Section \ref{model} describes the general model, defines the equilibrium, and proves its existence and uniqueness. Section \ref{sec:eff} studies the effect of tranching securitization on the price of the underlying asset. Section \ref{sec:is} shows that multiple rounds of tranching are equivalent to a refinement of the initial tranching. Section \ref{sec:ep} studies the effect of tranching on actual portfolio returns. Section \ref{sec:cds} comments on relaxing the waterfall payment constraint. Finally, Section \ref{sec:disc} presents some conclusions and suggestions for further research.
 
 \subsection{Literature Review}
 
@@ -455,8 +455,7 @@ for all $x\in X$.
 
 Equation (\ref{eqq}) states that, in equilibrium, zero profits are made by buying the long-term asset and selling the securities derived from it. Equation (\ref{eqp}) states that the price of each security is given by the highest discounted expectation regarding the payoff from the corresponding tranche.
 
-%\subsection{Existence and uniqueness}
-\section{Existence and uniqueness} \label{sec:extuni}
+\subsection{Existence and uniqueness} \label{sec:extuni}
 
 The existence and uniqueness of a waterfall equilibrium is proved by constructing the following object: For any tranching $\mathcal{T}$, define a mapping $\Psi_\mathcal{T}$ from the set of price functions $\mathbb{R}_+^X$ to itself. For $q\in\mathbb{R}_+^X$ and $x\in X$, the mapping is given by
 
