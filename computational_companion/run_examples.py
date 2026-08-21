@@ -1,17 +1,17 @@
-"""Run the four parameterizations used in the paper."""
+"""Run the parameterizations included in the computational companion."""
 
 from __future__ import annotations
 
 import numpy as np
 
-from .paper_examples import all_paper_examples
+from .paper_examples import all_examples
 from .waterfall_equilibria import compute_extreme_equilibria
 
 
 def main() -> None:
     np.set_printoptions(precision=9, suppress=True)
 
-    for example in all_paper_examples():
+    for example in all_examples():
         result = compute_extreme_equilibria(example.economy)
         print(example.name)
         print(f"  q_min = {result.q_min}")

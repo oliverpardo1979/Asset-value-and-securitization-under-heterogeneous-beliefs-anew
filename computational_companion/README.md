@@ -47,7 +47,7 @@ From the repository root, install the only dependency:
 python -m pip install -r computational_companion/requirements.txt
 ```
 
-Run every parameterization reported in the paper:
+Run every parameterization included in the companion:
 
 ```bash
 python -m computational_companion.run_examples
@@ -82,12 +82,14 @@ print(result.q_max)
 
 ## Included examples
 
-`paper_examples.py` contains four cases:
+`paper_examples.py` contains five cases:
 
 1. the motivating example without tranching;
 2. the motivating example with two tranches;
-3. the reviewer's parameterization without tranching; and
-4. the reviewer's parameterization with three tranches.
+3. an additional parameterization of the motivating economy in which two
+   tranches generate multiplicity;
+4. the reviewer's parameterization without tranching; and
+5. the reviewer's parameterization with three tranches.
 
 The last case reproduces the least and greatest of the three equilibrium price
 vectors reported in the paper. The tests also verify directly that the reported
@@ -100,6 +102,7 @@ The expected numerical results are:
 | --- | --- | --- | --- |
 | Motivating, no tranching | `(1, 2, 3)` | `(1, 2, 3)` | No |
 | Motivating, two tranches | `(1.05, 2.25, 3)` | `(1.05, 2.25, 3)` | No |
+| Motivating family, two-tranche multiplicity | `(46.634, 48.539, 51.724)` | `(48.497, 51.077, 53.191)` | Yes |
 | Reviewer, no tranching | `(14.174, 16.171, 16.979)` | Same | No |
 | Reviewer, three tranches | `(14.174, 16.171, 16.979)` | `(14.993, 17.194, 17.878)` | Yes |
 

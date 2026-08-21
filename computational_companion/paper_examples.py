@@ -1,4 +1,4 @@
-"""Parameterizations reported in the paper."""
+"""Parameterizations used in the paper and the computational companion."""
 
 from __future__ import annotations
 
@@ -52,6 +52,31 @@ def motivating_example(*, with_tranching: bool) -> PaperExample:
     )
 
 
+def motivating_two_tranche_multiplicity_example() -> PaperExample:
+    """Return a two-tranche multiplicity case in the motivating family."""
+
+    epsilon = 1.0 / 10.0
+    coarse_theory = np.full((3, 3), 1.0 / 3.0)
+    persistent_theory = np.full((3, 3), epsilon / 2.0)
+    np.fill_diagonal(persistent_theory, 1.0 - epsilon)
+
+    return PaperExample(
+        name="Motivating family: two-tranche multiplicity",
+        economy=WaterfallEconomy(
+            dividends=(0.0, 2.0, 3.0),
+            gross_returns=21.0 / 20.0,
+            theories=(coarse_theory, persistent_theory),
+            attachment_points=(0.0, 51.0),
+            state_names=("l", "m", "h"),
+            theory_names=("A", "B"),
+        ),
+        expected_q_min=np.array((28400.0 / 609.0, 29560.0 / 609.0, 1500.0 / 29.0)),
+        expected_q_max=np.array(
+            (154560.0 / 3187.0, 162783.0 / 3187.0, 169521.0 / 3187.0)
+        ),
+    )
+
+
 def reviewer_example(*, with_tranching: bool) -> PaperExample:
     """Return the non-uniqueness example in Section 3.5."""
 
@@ -90,10 +115,11 @@ REVIEWER_INTERMEDIATE_EQUILIBRIUM = (
 )
 
 
-def all_paper_examples() -> tuple[PaperExample, ...]:
+def all_examples() -> tuple[PaperExample, ...]:
     return (
         motivating_example(with_tranching=False),
         motivating_example(with_tranching=True),
+        motivating_two_tranche_multiplicity_example(),
         reviewer_example(with_tranching=False),
         reviewer_example(with_tranching=True),
     )

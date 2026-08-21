@@ -8,7 +8,8 @@ import numpy as np
 
 from computational_companion.paper_examples import (
     REVIEWER_INTERMEDIATE_EQUILIBRIUM,
-    all_paper_examples,
+    all_examples,
+    motivating_two_tranche_multiplicity_example,
     reviewer_example,
 )
 from computational_companion.waterfall_equilibria import (
@@ -21,7 +22,7 @@ from computational_companion.waterfall_equilibria import (
 
 class WaterfallEquilibriumTests(unittest.TestCase):
     def test_all_reported_extreme_equilibria(self) -> None:
-        for example in all_paper_examples():
+        for example in all_examples():
             with self.subTest(example=example.name):
                 result = compute_extreme_equilibria(example.economy)
                 np.testing.assert_allclose(
@@ -38,6 +39,17 @@ class WaterfallEquilibriumTests(unittest.TestCase):
         result = compute_extreme_equilibria(example.economy)
         self.assertTrue(result.multiplicity_detected())
         self.assertTrue(np.all(result.q_min < result.q_max))
+
+    def test_two_tranche_motivating_example_detects_multiplicity(self) -> None:
+        example = motivating_two_tranche_multiplicity_example()
+        result = compute_extreme_equilibria(example.economy)
+        self.assertTrue(result.multiplicity_detected())
+        self.assertTrue(np.all(result.q_min < result.q_max))
+
+        junior_is_active_at_q_min = result.q_min > 51.0
+        junior_is_active_at_q_max = result.q_max > 51.0
+        np.testing.assert_array_equal(junior_is_active_at_q_min, (False, False, True))
+        np.testing.assert_array_equal(junior_is_active_at_q_max, (False, True, True))
 
     def test_reported_intermediate_price_is_a_fixed_point(self) -> None:
         economy = reviewer_example(with_tranching=True).economy
