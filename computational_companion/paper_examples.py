@@ -93,7 +93,7 @@ def reviewer_example(*, with_tranching: bool) -> PaperExample:
 
     return PaperExample(
         name=(
-            "Reviewer example: three tranches"
+            "Reviewer example: two-tranche debt-equity structure"
             if with_tranching
             else "Reviewer example: no tranching"
         ),
@@ -101,7 +101,7 @@ def reviewer_example(*, with_tranching: bool) -> PaperExample:
             dividends=(1.0 / 10.0, 2.0, 16.0 / 5.0),
             gross_returns=28.0 / 25.0,
             theories=(coarse_theory, transition),
-            attachment_points=(0.0, 14.0, 17.0) if with_tranching else (0.0,),
+            attachment_points=(0.0, 17.0) if with_tranching else (0.0,),
             state_names=("l", "m", "h"),
             theory_names=("coarse", "singleton"),
         ),

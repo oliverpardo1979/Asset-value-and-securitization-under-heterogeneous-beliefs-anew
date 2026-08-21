@@ -89,7 +89,7 @@ print(result.q_max)
 3. an additional parameterization of the motivating economy in which two
    tranches generate multiplicity;
 4. the reviewer's parameterization without tranching; and
-5. the reviewer's parameterization with three tranches.
+5. the reviewer's parameterization with a two-tranche debt--equity structure.
 
 The last case reproduces the least and greatest of the three equilibrium price
 vectors reported in the paper. The tests also verify directly that the reported
@@ -104,7 +104,7 @@ The expected numerical results are:
 | Motivating, two tranches | `(1.05, 2.25, 3)` | `(1.05, 2.25, 3)` | No |
 | Motivating family, two-tranche multiplicity | `(46.634, 48.539, 51.724)` | `(48.497, 51.077, 53.191)` | Yes |
 | Reviewer, no tranching | `(14.174, 16.171, 16.979)` | Same | No |
-| Reviewer, three tranches | `(14.174, 16.171, 16.979)` | `(14.993, 17.194, 17.878)` | Yes |
+| Reviewer, two-tranche debt--equity structure | `(14.174, 16.171, 16.979)` | `(14.993, 17.194, 17.878)` | Yes |
 
 The motivating example uses `epsilon = 0`, as do the limiting calculations in
 the text. The input validator therefore permits zero transition probabilities,
