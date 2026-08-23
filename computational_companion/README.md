@@ -82,19 +82,21 @@ print(result.q_max)
 
 ## Included examples
 
-`paper_examples.py` contains five cases:
+`paper_examples.py` contains seven cases:
 
 1. the motivating example without tranching;
 2. the motivating example with two tranches;
 3. an additional parameterization of the motivating economy in which two
    tranches generate multiplicity;
-4. the reviewer's parameterization without tranching; and
-5. the reviewer's parameterization with a two-tranche debt--equity structure.
+4. the reviewer's parameterization without tranching;
+5. the reviewer's parameterization with a two-tranche debt--equity structure;
+6. the full-support realized-payoff example without tranching; and
+7. the same economy with three tranches.
 
-The last case reproduces the least and greatest of the three equilibrium price
-vectors reported in the paper. The tests also verify directly that the reported
-intermediate vector is a fixed point, although the solver does not search for
-or return it.
+The reviewer's tranching case reproduces the least and greatest of the three
+equilibrium price vectors reported in the paper. The tests also verify directly
+that the reported intermediate vector is a fixed point, although the solver
+does not search for or return it.
 
 The expected numerical results are:
 
@@ -105,6 +107,16 @@ The expected numerical results are:
 | Motivating family, two-tranche multiplicity | `(46.634, 48.539, 51.724)` | `(48.497, 51.077, 53.191)` | Yes |
 | Reviewer, no tranching | `(14.174, 16.171, 16.979)` | Same | No |
 | Reviewer, two-tranche debt--equity structure | `(14.174, 16.171, 16.979)` | `(14.993, 17.194, 17.878)` | Yes |
+| Realized-payoff example, no tranching | `(1.994, 2.500, 4.000)` | Same | No |
+| Realized-payoff example, three tranches | `(2, 2.5, 4)` | Same | No |
+
+The notebook also reproduces the buyer selection and realized excess payoffs
+in the last two cases. With no tranching, the payoff vector for theories
+`(A, B, C)` is `(0, -373/4464, 0)`. With attachment points `(0, 2, 2.5)`,
+it is `(0, -1/16, -1/36)`. Thus, theory B's realized excess payoff increases
+while the aggregate payoff becomes more negative. This additional calculation
+is specific to the paper example; the reusable solver continues to compute
+only the least and greatest equilibrium prices.
 
 The motivating example uses `epsilon = 0`, as do the limiting calculations in
 the text. The input validator therefore permits zero transition probabilities,

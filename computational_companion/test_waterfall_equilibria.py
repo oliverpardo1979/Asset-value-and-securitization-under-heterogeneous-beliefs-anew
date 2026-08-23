@@ -7,9 +7,14 @@ import unittest
 import numpy as np
 
 from computational_companion.paper_examples import (
+    REALIZED_PAYOFF_EXPECTED_DELTAS,
+    REALIZED_PAYOFF_OBJECTIVE_TRANSITION,
+    REALIZED_PAYOFF_PRIORITY,
+    REALIZED_PAYOFF_STATIONARY_DISTRIBUTION,
     REVIEWER_INTERMEDIATE_EQUILIBRIUM,
     all_examples,
     motivating_two_tranche_multiplicity_example,
+    realized_payoff_example,
     reviewer_example,
 )
 from computational_companion.waterfall_equilibria import (
@@ -73,6 +78,66 @@ class WaterfallEquilibriumTests(unittest.TestCase):
         np.testing.assert_allclose(
             tranche_payoffs(economy, prices).sum(axis=0), prices
         )
+
+    def test_full_support_realized_payoff_example(self) -> None:
+        computed_deltas = {}
+        computed_buyers = {}
+
+        for with_tranching in (False, True):
+            example = realized_payoff_example(with_tranching=with_tranching)
+            result = compute_extreme_equilibria(example.economy)
+            payoffs = tranche_payoffs(example.economy, result.q_min)
+            perceived_payoffs = np.einsum(
+                "fxy,ty->tfx", example.economy.theories, payoffs
+            )
+            objective_payoffs = np.einsum(
+                "xy,ty->tx", REALIZED_PAYOFF_OBJECTIVE_TRANSITION, payoffs
+            )
+
+            buyers = np.empty(
+                (example.economy.tranche_count, example.economy.state_count),
+                dtype=int,
+            )
+            for tranche_index in range(example.economy.tranche_count):
+                for state_index in range(example.economy.state_count):
+                    values = perceived_payoffs[tranche_index, :, state_index]
+                    highest_value = values.max()
+                    maximizing_theories = np.isclose(
+                        values, highest_value, atol=1e-10, rtol=0.0
+                    )
+                    buyers[tranche_index, state_index] = next(
+                        theory_index
+                        for theory_index in REALIZED_PAYOFF_PRIORITY
+                        if maximizing_theories[theory_index]
+                    )
+
+            deltas = np.zeros(len(example.economy.theory_names))
+            for tranche_index in range(example.economy.tranche_count):
+                for state_index, state_weight in enumerate(
+                    REALIZED_PAYOFF_STATIONARY_DISTRIBUTION
+                ):
+                    buyer = buyers[tranche_index, state_index]
+                    deltas[buyer] += state_weight * (
+                        objective_payoffs[tranche_index, state_index]
+                        - perceived_payoffs[tranche_index, buyer, state_index]
+                    )
+
+            computed_deltas[with_tranching] = deltas
+            computed_buyers[with_tranching] = buyers
+            np.testing.assert_allclose(
+                deltas,
+                REALIZED_PAYOFF_EXPECTED_DELTAS[with_tranching],
+                atol=2e-10,
+                rtol=0.0,
+            )
+
+        np.testing.assert_array_equal(computed_buyers[False], ((1, 0, 0),))
+        np.testing.assert_array_equal(
+            computed_buyers[True],
+            ((0, 0, 0), (2, 0, 0), (1, 0, 0)),
+        )
+        self.assertGreater(computed_deltas[True][1], computed_deltas[False][1])
+        self.assertLess(computed_deltas[True].sum(), computed_deltas[False].sum())
 
     def test_invalid_transition_matrix_is_rejected(self) -> None:
         with self.assertRaisesRegex(ValueError, "sum to one"):

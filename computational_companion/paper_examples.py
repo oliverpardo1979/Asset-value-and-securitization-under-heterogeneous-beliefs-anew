@@ -115,6 +115,64 @@ REVIEWER_INTERMEDIATE_EQUILIBRIUM = (
 )
 
 
+REALIZED_PAYOFF_OBJECTIVE_TRANSITION = np.array(
+    (
+        (1.0 / 2.0, 1.0 / 4.0, 1.0 / 4.0),
+        (1.0 / 4.0, 1.0 / 2.0, 1.0 / 4.0),
+        (1.0 / 4.0, 1.0 / 4.0, 1.0 / 2.0),
+    )
+)
+REALIZED_PAYOFF_STATIONARY_DISTRIBUTION = np.full(3, 1.0 / 3.0)
+REALIZED_PAYOFF_PRIORITY = (0, 1, 2)
+REALIZED_PAYOFF_EXPECTED_DELTAS = {
+    False: np.array((0.0, -373.0 / 4464.0, 0.0)),
+    True: np.array((0.0, -1.0 / 16.0, -1.0 / 36.0)),
+}
+
+
+def realized_payoff_example(*, with_tranching: bool) -> PaperExample:
+    """Return the full-support realized-payoff example in Appendix 6.4."""
+
+    theory_a = np.array(
+        (
+            (1.0 / 2.0, 1.0 / 4.0, 1.0 / 4.0),
+            (1.0 / 4.0, 3.0 / 8.0, 3.0 / 8.0),
+            (1.0 / 4.0, 3.0 / 8.0, 3.0 / 8.0),
+        )
+    )
+    theory_b = np.array(
+        (
+            (3.0 / 8.0, 1.0 / 4.0, 3.0 / 8.0),
+            (1.0 / 4.0, 1.0 / 2.0, 1.0 / 4.0),
+            (3.0 / 8.0, 1.0 / 4.0, 3.0 / 8.0),
+        )
+    )
+    theory_c = np.full((3, 3), 1.0 / 3.0)
+    expected = (
+        np.array((2.0, 5.0 / 2.0, 4.0))
+        if with_tranching
+        else np.array((4451.0 / 2232.0, 5579.0 / 2232.0, 8927.0 / 2232.0))
+    )
+
+    return PaperExample(
+        name=(
+            "Realized-payoff example: three tranches"
+            if with_tranching
+            else "Realized-payoff example: no tranching"
+        ),
+        economy=WaterfallEconomy(
+            dividends=(245.0 / 48.0, 113.0 / 16.0, 209.0 / 16.0),
+            gross_returns=4.0,
+            theories=(theory_a, theory_b, theory_c),
+            attachment_points=(0.0, 2.0, 5.0 / 2.0) if with_tranching else (0.0,),
+            state_names=("l", "m", "h"),
+            theory_names=("A", "B", "C"),
+        ),
+        expected_q_min=expected,
+        expected_q_max=expected,
+    )
+
+
 def all_examples() -> tuple[PaperExample, ...]:
     return (
         motivating_example(with_tranching=False),
@@ -122,4 +180,6 @@ def all_examples() -> tuple[PaperExample, ...]:
         motivating_two_tranche_multiplicity_example(),
         reviewer_example(with_tranching=False),
         reviewer_example(with_tranching=True),
+        realized_payoff_example(with_tranching=False),
+        realized_payoff_example(with_tranching=True),
     )

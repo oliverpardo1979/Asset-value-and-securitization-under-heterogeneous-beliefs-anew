@@ -1,5 +1,7 @@
 # Revision report
 
+> **Superseded on August 18, 2026.** This report predates the referee counterexample to uniqueness and is retained only as a record of the earlier editorial pass. The current revision is documented in `response_letter.tex`. The manuscript and response letter now compile successfully to `build/main.pdf` and `build/response_letter.pdf`.
+
 ## Executive summary
 
 I converted the manuscript from the old `ectaart` format to standard `article`, restored the motivating example to the active text, cleaned several drafting errors, updated the literature review, and corrected a mathematical typo in the proof of the equivalence between iterated securitization and a direct tranching.
