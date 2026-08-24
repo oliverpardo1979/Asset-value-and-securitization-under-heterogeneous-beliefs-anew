@@ -131,7 +131,7 @@ REALIZED_PAYOFF_EXPECTED_DELTAS = {
 
 
 def realized_payoff_example(*, with_tranching: bool) -> PaperExample:
-    """Return the full-support realized-payoff example in Appendix 6.4."""
+    """Return the full-support realized-payoff example in Appendix 6.5."""
 
     theory_a = np.array(
         (
