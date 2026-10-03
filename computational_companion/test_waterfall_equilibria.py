@@ -68,9 +68,9 @@ class WaterfallEquilibriumTests(unittest.TestCase):
         self.assertTrue(np.all(result.q_min < q_middle))
         self.assertTrue(np.all(q_middle < result.q_max))
 
-        np.testing.assert_array_equal(result.q_min > 17.0, (False, False, False))
-        np.testing.assert_array_equal(q_middle > 17.0, (False, False, True))
-        np.testing.assert_array_equal(result.q_max > 17.0, (False, True, True))
+        np.testing.assert_array_equal(result.q_min > 3.0, (False, False, False))
+        np.testing.assert_array_equal(q_middle > 3.0, (False, False, True))
+        np.testing.assert_array_equal(result.q_max > 3.0, (False, True, True))
 
     def test_tranche_payoffs_are_budget_balanced(self) -> None:
         economy = reviewer_example(with_tranching=True).economy

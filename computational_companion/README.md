@@ -105,8 +105,8 @@ The expected numerical results are:
 | Motivating, no tranching | `(1, 2, 3)` | `(1, 2, 3)` | No |
 | Motivating, two tranches | `(1.05, 2.25, 3)` | `(1.05, 2.25, 3)` | No |
 | Motivating family, two-tranche multiplicity | `(46.634, 48.539, 51.724)` | `(48.497, 51.077, 53.191)` | Yes |
-| Reviewer, no tranching | `(14.174, 16.171, 16.979)` | Same | No |
-| Reviewer, two-tranche debt--equity structure | `(14.174, 16.171, 16.979)` | `(14.993, 17.194, 17.878)` | Yes |
+| Reviewer, no tranching | `(2.593, 2.844, 2.991)` | Same | No |
+| Reviewer, two-tranche debt--equity structure | `(2.593, 2.844, 2.991)` | `(2.741, 3.020, 3.142)` | Yes |
 | Realized-payoff example, no tranching | `(1.994, 2.500, 4.000)` | Same | No |
 | Realized-payoff example, three tranches | `(2, 2.5, 4)` | Same | No |
 

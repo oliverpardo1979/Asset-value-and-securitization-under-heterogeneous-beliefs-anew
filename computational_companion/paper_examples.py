@@ -82,14 +82,14 @@ def reviewer_example(*, with_tranching: bool) -> PaperExample:
 
     transition = np.array(
         (
-            (11.0 / 20.0, 1.0 / 20.0, 2.0 / 5.0),
-            (1.0 / 20.0, 9.0 / 10.0, 1.0 / 20.0),
-            (2.0 / 5.0, 1.0 / 20.0, 11.0 / 20.0),
+            (4.0 / 8.0, 1.0 / 8.0, 3.0 / 8.0),
+            (1.0 / 8.0, 6.0 / 8.0, 1.0 / 8.0),
+            (3.0 / 8.0, 1.0 / 8.0, 4.0 / 8.0),
         )
     )
     coarse_theory = np.full((3, 3), 1.0 / 3.0)
-    q_low = np.array((1070435.0, 1221275.0, 1282295.0)) / 75522.0
-    q_high = np.array((30597995.0, 35089765.0, 36486825.0)) / 2040847.0
+    q_low = np.array((848.0, 930.0, 978.0)) / 327.0
+    q_high = np.array((2201.0, 2425.0, 2523.0)) / 803.0
 
     return PaperExample(
         name=(
@@ -98,10 +98,10 @@ def reviewer_example(*, with_tranching: bool) -> PaperExample:
             else "Reviewer example: no tranching"
         ),
         economy=WaterfallEconomy(
-            dividends=(1.0 / 10.0, 2.0, 16.0 / 5.0),
-            gross_returns=28.0 / 25.0,
+            dividends=(0.0, 3.0 / 12.0, 5.0 / 12.0),
+            gross_returns=13.0 / 12.0,
             theories=(coarse_theory, transition),
-            attachment_points=(0.0, 17.0) if with_tranching else (0.0,),
+            attachment_points=(0.0, 3.0) if with_tranching else (0.0,),
             state_names=("l", "m", "h"),
             theory_names=("coarse", "singleton"),
         ),
@@ -111,7 +111,7 @@ def reviewer_example(*, with_tranching: bool) -> PaperExample:
 
 
 REVIEWER_INTERMEDIATE_EQUILIBRIUM = (
-    np.array((4597760.0, 5256495.0, 5490670.0)) / 320834.0
+    np.array((259.0, 285.0, 297.0)) / 97.0
 )
 
 
