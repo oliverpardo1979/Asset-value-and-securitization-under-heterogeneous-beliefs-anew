@@ -1,9 +1,13 @@
 # Computational companion
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oliverpardo1979/Asset-value-and-securitization-under-heterogeneous-beliefs-anew/blob/main/computational_companion/Waterfall_Equilibria.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/oliverpardo1979/Asset-value-and-securitization-under-heterogeneous-beliefs-anew/blob/jme-r2-companion-2026-10-05/computational_companion/Waterfall_Equilibria.ipynb)
 
 This directory contains a minimal Python implementation of the price-forming
 operator in *Asset Value and Securitization under Heterogeneous Beliefs*.
+
+The Colab notebook loads the replication code from commit
+`cbd33472aefa83832db23262868d2da6e041c996`, which contains the paper's current
+Example 1 with attachment point 3. It does not load the default branch.
 
 The code deliberately has a narrow scope:
 
