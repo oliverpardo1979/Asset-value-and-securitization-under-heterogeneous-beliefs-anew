@@ -17,7 +17,7 @@
 \begin{document}
 
 \begin{center}
-{\Large\bfseries Response to the Minor Revision Decision}\par
+{\Large\bfseries Response Letter}\par
 \vspace{0.5em}
 {\large Asset Value and Securitization under Heterogeneous Beliefs}\par
 \vspace{0.25em}
@@ -28,7 +28,7 @@ Oliver Pardo
 
 \bigskip
 
-I thank the editor for the careful reading of the revised manuscript and for the constructive requests in the minor revision decision. I have addressed all four points. The principal changes are a new uniqueness result under the spectral condition, an explicit set-valued refinement comparison, a complete-lattice characterization of the equilibrium set, and a simpler and locally robust multiplicity example. I also revised the exposition and clarified the disclosure concerning the use of AI and the computational code. The responses below describe each change. Table~\ref{tab:substantive-changes} reproduces the original and revised passages for the substantive changes, including key proof changes, and gives the reason for each change. Table~\ref{tab:exposition-changes} separately records the changes in exposition, terminology, and disclosure.
+I thank the editor for the careful reading of the revised manuscript and for the constructive requests in the minor revision decision. I have addressed all four points. The principal changes are a new uniqueness result under the spectral condition, an explicit set-valued refinement comparison, a complete-lattice characterization of the equilibrium set, and a simpler and locally robust multiplicity example. I also revised the exposition and clarified the disclosure concerning the use of AI and the computational code. The responses below describe each change. Table~\ref{tab:substantive-changes} reproduces the original and revised passages for the substantive changes, including key proof changes, and quotes the relevant requests from the decision letter. Table~\ref{tab:exposition-changes} separately records the changes in exposition, terminology, and disclosure.
 
 \commenttext{Please add the uniqueness implication of the spectral-radius condition highlighted by Reviewer 2. If the contraction statement is correct, the paper should say explicitly that the condition implies uniqueness of the waterfall equilibrium.}
 
@@ -82,7 +82,7 @@ Example 1 now includes a brief observation that the three equilibria persist und
 
 \response{I completed the requested exposition check. The introduction now defines a realized excess payoff when the concept first appears: it is the payoff from a purchased security minus the payoff that the same expenditure would have earned in the bond, averaged under the objective transition probabilities. The relevant passages now state that a \emph{position} is perceived to break even at the equilibrium price. The motivating example now defines the attachment point of a tranche before specifying its value for the junior tranche.
 
-The final disclosure now states that OpenAI Codex was used interactively to assist with language editing, mathematical exposition, consistency checks, and the drafting and testing of the computational companion. It also states that I treated the outputs as drafts, supplied the substantive direction, reviewed and revised the resulting text and code, and take full responsibility for both the manuscript and the computational companion. In addition, I streamlined several sentences in the motivating example and model setup whose earlier wording obscured otherwise standard economic assumptions.}
+The revised disclosure specifies the use of OpenAI Codex to help edit the text, review proofs, check notation, and write and test the code in the computational companion. It states that I reviewed and edited the resulting text and code and take full responsibility for the manuscript and computational companion. In addition, I streamlined several sentences in the motivating example and model setup whose earlier wording obscured otherwise standard economic assumptions.}
 
 \bigskip
 
@@ -92,7 +92,7 @@ I hope that these changes fully address the remaining concerns. Thank you again 
 \begin{landscape}
 \section*{Literal comparison of substantive changes}
 
-The comparison is with the submitted R1 manuscript. The two central columns reproduce the manuscript passages verbatim, including the complete result statements. Italic notices identify additions and deletions; they are not quotations. Line breaks and display layout are adjusted to fit the table, and displayed equation numbers are omitted. Cross-references retain their numbers in the respective manuscript; result numbers in the first column refer to the present revision unless otherwise indicated. Key proof changes are shown separately. Repetitions of these results in the abstract, introduction, and conclusion are not quoted again. Table~\ref{tab:exposition-changes} records the other exposition and disclosure changes.
+Tables~\ref{tab:substantive-changes} and~\ref{tab:exposition-changes} together record all changes to the manuscript text, mathematical expressions, and references relative to the submitted R1 version. This table covers results, proofs, and their corresponding adaptations throughout the manuscript, including the abstract, introduction, conclusion, and appendices. The two central columns quote the affected sentences, paragraphs, or displayed expressions; unchanged surrounding text is omitted. Long passages are split across consecutive rows. Italic notices in these columns identify additions and deletions; they are not quotations. Line breaks and display layout are adjusted to fit the table, and displayed equation numbers are omitted. Cross-references retain their numbers in the respective manuscript; result numbers in the first column refer to the present revision unless otherwise indicated. The last column quotes relevant requests from the decision letter verbatim, in italics and quotation marks. Unquoted notes distinguish additional results from changes explicitly requested by the editor.
 
 \begingroup
 \small
@@ -107,12 +107,12 @@ The comparison is with the submitted R1 manuscript. The two central columns repr
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.10\revisiontablewidth}>{\raggedright\arraybackslash}p{0.36\revisiontablewidth}>{\raggedright\arraybackslash}p{0.36\revisiontablewidth}>{\raggedright\arraybackslash}p{0.18\revisiontablewidth}@{}}
 \caption{Literal before-and-after comparison of substantive changes}\label{tab:substantive-changes}\\
 \toprule
-\textbf{Result or location} & \textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} & \textbf{Reason for change} \\
+\textbf{Result or location} & \textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} & \textbf{Editor's request (verbatim)} \\
 \midrule
 \endfirsthead
 \multicolumn{4}{@{}l}{\textit{Table \thetable\ continued}}\\
 \toprule
-\textbf{Result or location} & \textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} & \textbf{Reason for change} \\
+\textbf{Result or location} & \textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} & \textbf{Editor's request (verbatim)} \\
 \midrule
 \endhead
 \midrule
@@ -120,6 +120,71 @@ The comparison is with the submitted R1 manuscript. The two central columns repr
 \endfoot
 \bottomrule
 \endlastfoot
+
+% Complete comparison: abstract_prices
+Abstract: price comparisons
+& \literalcell{
+Focusing on the equilibrium that assigns the lowest asset price in every state, securitization weakly raises the value of the underlying asset. Under this selection, there exists a tranching that raises the asset price strictly above its no-tranching level if and only if, at some state, no agent perceives a distribution of the next-period asset price in the no-tranching benchmark that first-order stochastically dominates the distributions perceived by all other agents.
+}
+& \literalcell{
+In every equilibrium, securitization weakly raises the value of the underlying asset relative to the no-tranching benchmark. For the equilibrium that assigns the lowest asset price in every state, some tranching raises the price strictly above its no-tranching level if and only if, at some state, no agent perceives a distribution of the next-period asset price in the no-tranching benchmark that first-order stochastically dominates the distributions perceived by all other agents.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: abstract_payoffs
+Abstract: realized excess payoffs
+& \literalcell{
+Tranching has ambiguous effects on individual realized excess payoffs, but the aggregate realized excess payoff is nonpositive and weakly decreases as the tranching is refined.
+}
+& \literalcell{
+Tranching has ambiguous effects on individual realized excess payoffs, but the aggregate realized excess payoff is nonpositive in every equilibrium and weakly decreases under refinement for both the lowest- and highest-price equilibria.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: intro_selection
+Introduction: scope of selection
+& \literalcell{
+The equilibrium price conditions rest on three assumptions. First, only owners of the long-term asset can issue ABS. Second, short positions in both the asset and the ABS are bounded. Third, one-period bonds are in infinite supply, so investors can borrow freely at the market interest rate. Because the long-term asset is in finite supply, the first two assumptions make the supply of ABS finite. Free borrowing, in turn, implies that each ABS is priced at the willingness to pay of the investor who is most optimistic about its next payout. The no-tranching benchmark has a unique equilibrium because its price-forming operator is a contraction. With tranching, uniqueness can fail because changes in next-period asset prices can alter both which tranches pay and which theory has the highest willingness to pay for each tranche. Under any tranching, however, there is an equilibrium that assigns the lowest asset price in every state and another that assigns the highest. For its comparative statics, the paper selects the lowest-price equilibrium.
+}
+& \literalcell{
+The equilibrium price conditions rest on three assumptions. First, only owners of the long-term asset can issue ABS. Second, short positions in both the asset and the ABS are bounded. Third, one-period bonds are in infinite supply, so investors can borrow freely at the market interest rate. Because the long-term asset is in finite supply, the first two assumptions make the supply of ABS finite. Free borrowing, in turn, implies that each ABS is priced at the willingness to pay of the investor who is most optimistic about its next payout. The no-tranching benchmark has a unique equilibrium because its price-forming operator is a contraction. With tranching, uniqueness can fail because changes in next-period asset prices can alter both which tranches pay and which theory has the highest willingness to pay for each tranche. Under any tranching, however, there is an equilibrium that assigns the lowest asset price in every state and another that assigns the highest.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: intro_prices
+Introduction: price results
+& \literalcell{
+The first result is that tranching weakly raises the price of the underlying asset in the lowest-price equilibrium. Some tranching raises this price strictly above its no-tranching level if and only if, at some state, no agent perceives a distribution of the next-period asset price in the no-tranching benchmark that first-order stochastically dominates the distributions perceived by all other agents. When a dominant theory exists at every state, slicing cannot create additional value under this selection. If perceived distributions cross, tranching can create claims that are valued most highly by different investors. As a result, the gap between the asset price and any perceived present value of dividends can widen.
+}
+& \literalcell{
+Tranching weakly raises the price of the underlying asset relative to the no-tranching benchmark in every equilibrium. Refinement weakly increases both the lowest- and the highest-price equilibria. The analysis of issuer optimality compares tranchings by their lowest equilibrium prices. Under this criterion, some tranching raises the price strictly above its no-tranching level if and only if, at some state, no agent perceives a distribution of the next-period asset price in the no-tranching benchmark that first-order stochastically dominates the distributions perceived by all other agents. When a dominant theory exists at every state, slicing cannot create additional value under this criterion. If perceived distributions cross, tranching can create claims that are valued most highly by different investors. As a result, the gap between the asset price and any perceived present value of dividends can widen.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: intro_payoff_result
+Introduction: aggregate payoff
+& \literalcell{
+At the aggregate level, the sum of realized excess payoffs from unit tranche purchases is nonpositive and weakly decreases when a tranching is refined.
+}
+& \literalcell{
+At the aggregate level, the sum of realized excess payoffs from unit tranche purchases is nonpositive in every equilibrium and weakly decreases under refinement for both the lowest- and highest-price equilibria.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
 
 % Literal comparison: prop1
 Proposition 1
@@ -141,7 +206,9 @@ q^{\min}_{\mathcal{T}}(x)
 \]
 for every $q\in\mathcal{Q}_{\mathcal{T}}$ and every $x\in X$.
 }
-& Request 3: characterize the entire equilibrium set as a complete lattice, not only its least and greatest elements. \\
+& \literalcell{
+\textit{``Because $\Psi_T$ is monotone on a complete lattice, Tarski's fixed-point theorem appears to provide a complete-lattice structure for its fixed-point set. Please state the appropriate result or explain why it does not apply.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: tarski
@@ -152,7 +219,9 @@ Proposition 1: added proof paragraph
 & \literalcell{
 The interval $[0,M_{\mathcal{T}}]^X$ is a complete lattice under the pointwise order. Since $\Psi_{\mathcal{T}}$ is a monotone self-map of this interval, Tarski's fixed-point theorem implies that its fixed-point set is a nonempty complete lattice (Tarski, 1955). This fixed-point set is precisely $\mathcal{Q}_{\mathcal{T}}$. The following iterations identify its least and greatest elements constructively.
 }
-& Request 3: make the application of Tarski's theorem explicit. The existing bound and constructive iterations are retained. \\
+& \literalcell{
+\textit{``Because $\Psi_T$ is monotone on a complete lattice, Tarski's fixed-point theorem appears to provide a complete-lattice structure for its fixed-point set. Please state the appropriate result or explain why it does not apply.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: ex_setup
@@ -202,7 +271,9 @@ The matrix $P$ is strictly positive and doubly stochastic. Consider the coarse t
 \]
 the senior tranche $[0,3)$ is debt with face value 3, and the junior tranche $[3,\infty)$ is residual equity.
 }
-& Request 3: adopt the simpler parameters supplied by the editor while retaining three states, two theories, and two tranches. \\
+& \literalcell{
+\textit{``Example 1 can be made considerably more readable. One possible replacement retains the same three-state, two-theory, two-tranche structure.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: ex_prices
@@ -257,7 +328,9 @@ q^{(3)}=\frac{1}{803}(2201,2425,2523)
 \end{gathered}
 \]
 }
-& Request 3: independently verify the construction and report approximate prices. Formula line breaks are adjusted to fit the columns. \\
+& \literalcell{
+\textit{``Please independently verify the construction and report approximate values in the main text.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: ex_patterns
@@ -270,7 +343,9 @@ The first vector is also the unique equilibrium price without tranching. The app
 Numerically implementing the monotone-iteration algorithm in Proposition 1, starting from $\mathbf{0}$ and $M_{\mathcal{T}}\mathbf{1}$, yields $q^{(1)}$ and $q^{(3)}$, respectively. Hence, $q^{(1)}=q_{\mathcal{T}}^{\min}$ and $q^{(3)}=q_{\mathcal{T}}^{\max}$, while $q^{(2)}$ is an intermediate equilibrium.
 The first vector is also the unique equilibrium price without tranching. The approximate values make the payment patterns of the residual-equity tranche $[3,\infty)$ explicit. At $q^{(1)}$, all three prices are below 3, so this tranche never pays. At $q^{(2)}$, only $q^{(2)}(h)>3$, so it pays only in state $h$. At $q^{(3)}$, both $q^{(3)}(m)>3$ and $q^{(3)}(h)>3$, so it pays in states $m$ and $h$. Thus even a two-tranche debt--equity structure can support different patterns of active tranches and multiple equilibrium prices.
 }
-& The same economic mechanism and extreme-equilibrium identifications are retained, now with the attachment point of 3. \\
+& \literalcell{
+\textit{``At $q^{(1)}$, residual equity never pays; at $q^{(2)}$, it pays only in state $h$; and at $q^{(3)}$, it pays in states $m$ and $h$.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: ex_robust
@@ -281,7 +356,22 @@ Example 1: local robustness
 & \literalcell{
 The multiplicity in this example is locally robust: sufficiently small changes in the transition probabilities, dividends, interest rate, and attachment point preserve three distinct equilibria. The equilibrium prices may change, but in each of the three equilibria the states in which residual equity pays remain as described above.
 }
-& Request 3: explicitly record local robustness of the three equilibria and their residual-equity payment states. \\
+& \literalcell{
+\textit{``This makes the mechanism more transparent and also supports a local-robustness observation.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lattice_interpretation
+Following Corollary 1: structure of multiplicity
+& \literalcell{
+\textit{No corresponding passage in the submitted R1 version.}
+}
+& \literalcell{
+Proposition 1 nevertheless imposes order on the multiplicity: every collection of waterfall-equilibrium prices has a greatest lower bound and a least upper bound within the equilibrium set. Example 1 shows that this complete-lattice structure may include equilibria strictly between its least and greatest elements.
+}
+& \literalcell{
+\textit{``Because $\Psi_T$ is monotone on a complete lattice, Tarski's fixed-point theorem appears to provide a complete-lattice structure for its fixed-point set. Please state the appropriate result or explain why it does not apply.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: selection
@@ -294,7 +384,10 @@ Comparisons based on a single equilibrium price function for each tranching requ
 
 The least equilibrium price has a finite-horizon interpretation. Consider an economy in which $H$ dividend dates remain, the terminal continuation value is zero, and the same menu of one-period waterfall claims is available at every date. The following proposition shows that its price converges to the least waterfall-equilibrium price as the horizon increases.
 }
-& Request 2: distinguish set-valued comparisons from comparisons requiring a selection. The finite-horizon interpretation remains the motivation for selecting the least equilibrium. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}\par\smallskip
+\textit{``The intended point is that the paper's single-valued price comparisons require a selection. Please revise the wording accordingly.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: selection_default
@@ -305,7 +398,9 @@ Motivated by this finite-horizon limit, the remainder of the paper selects the l
 & \literalcell{
 \textit{Deleted from the present revision.}
 }
-& The paper-wide selection is deleted. The next row shows where the least-equilibrium restriction is now imposed. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: issuer_def
@@ -330,7 +425,9 @@ q_{\mathcal{T}}^{\min}(x)
 \]
 for any tranching $\mathcal{S}$ and all $x\in X$.
 }
-& The criterion is unchanged. Its use of the least equilibrium is now explicit here, rather than inherited from a paper-wide convention. \\
+& \literalcell{
+\textit{``The intended point is that the paper's single-valued price comparisons require a selection. Please revise the wording accordingly.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: issuer_cdf
@@ -347,7 +444,9 @@ In order to characterize the necessary and sufficient conditions for a tranching
 G^\mathcal{T}_\mathcal{F}\left(t\mid x\right) := E_{\mathcal{F}}\left(I_{\left\{q_{\mathcal{T}}^{\min}\leq t\right\}}\mid x\right)
 \]
 }
-& Makes the equilibrium selection in the distribution function explicit; the issuer-optimality criterion is not generalized to the greatest equilibrium. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop3
@@ -388,7 +487,48 @@ q_{\mathcal{T}}^{\min}(x)<q_{\mathcal{S}}^{\min}(x)
 \]
 for every $x\in X$.
 }
-& The characterization and strict-refinement conclusion are retained. The superscript makes the existing least-equilibrium restriction visible. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: issuer_discussion
+Following Proposition 3
+& \literalcell{
+Proposition 3 states that a tranching is issuer-optimal if and only if, for every state and every tranche, there is a theory that is weakly more optimistic than every other theory over the entire range of asset prices covered by the tranche. If this is not the case, then there is a refinement of the tranching that increases the selected asset price strictly in every state. This is because, at some state, the current tranche can be split so that another theory is willing to outbid the theory that values the original tranche most for at least one of the resulting smaller tranches.
+}
+& \literalcell{
+Proposition 3 states that a tranching is issuer-optimal if and only if, for every state and every tranche, there is a theory that is weakly more optimistic than every other theory over the entire range of asset prices covered by the tranche. If this is not the case, then there is a refinement of the tranching that increases the least equilibrium asset price strictly in every state. This is because, at some state, the current tranche can be split so that another theory is willing to outbid the theory that values the original tranche most for at least one of the resulting smaller tranches.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: iterated_summary
+Section 4: iterated securitization
+& \literalcell{
+This means that agents who buy the long-term asset are able to sell a greater variety of tranches. Appendix 6.2 shows that every finite iterated securitization structure backed by existing ABS generates the same set of equilibrium prices for the underlying asset as a suitable one-shot waterfall tranching. In particular, their least equilibrium prices coincide.
+}
+& \literalcell{
+This means that agents who buy the long-term asset are able to sell a greater variety of tranches. Appendix 6.2 shows that every finite iterated securitization structure backed by existing ABS generates the same set of equilibrium prices for the underlying asset as a suitable one-shot waterfall tranching. In particular, their least and greatest equilibrium prices coincide.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma_intro
+Before Lemma 1
+& \literalcell{
+Recall that $q_\mathcal{T}$ denotes the least waterfall-equilibrium price for tranching $\mathcal{T}$. Further securitization cannot decrease this selected price of the underlying asset:
+}
+& \literalcell{
+Further securitization cannot decrease either extreme equilibrium price of the underlying asset:
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: lemma1
@@ -415,7 +555,23 @@ q_{\mathcal{T}}^{\max}\leq q_{\mathcal{S}}^{\max}.
 \end{gathered}
 \]
 }
-& Extension prompted by Request 2: compare the equilibrium sets and obtain monotonicity of both extreme prices. \\
+& \literalcell{
+\textit{``The statement that the comparative statics ``require an equilibrium selection'' is too broad: set-valued comparative statics are possible without selecting an equilibrium.''}\par\smallskip
+Extension prompted by this clarification; not explicitly requested.
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma_intuition
+Following Lemma 1
+& \literalcell{
+The intuition for Lemma 1 is that splitting a tranche into smaller claims cannot reduce the sum of their prices. The highest valuation of the original tranche cannot exceed the sum of the highest valuations of its components, because each component may be priced by a different investor. Refinement therefore cannot reduce the selected price of the underlying asset.
+}
+& \literalcell{
+The intuition for Lemma 1 is that splitting a tranche into smaller claims cannot reduce the sum of their prices. The highest valuation of the original tranche cannot exceed the sum of the highest valuations of its components, because each component may be priced by a different investor. Refinement therefore cannot reduce either extreme equilibrium price of the underlying asset.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: lemma_proof1
@@ -445,7 +601,10 @@ q=\Psi_{\mathcal{T}}(q)\leq\Psi_{\mathcal{S}}(q).
 \]
 Iterating $\Psi_{\mathcal{S}}$ from $q$ therefore produces a nondecreasing sequence. In the notation of the proof of Proposition 1, refinement implies $a_{\mathcal{T}}\leq a_{\mathcal{S}}$ and hence $M_{\mathcal{T}}\leq M_{\mathcal{S}}$. Since $q\leq M_{\mathcal{T}}\mathbf{1}$, the sequence is bounded above by the invariant bound $M_{\mathcal{S}}\mathbf{1}$. Continuity therefore implies that it converges to some $w\in\mathcal{Q}_{\mathcal{S}}$ with $q\leq w$.
 }
-& The unchanged operator inequality is now applied from an arbitrary original equilibrium, not only through iterations starting at zero. \\
+& \literalcell{
+\textit{``The statement that the comparative statics ``require an equilibrium selection'' is too broad: set-valued comparative statics are possible without selecting an equilibrium.''}\par\smallskip
+Proof of the extension stated in Lemma 1.
+} \\
 \addlinespace[1em]
 
 % Literal comparison: lemma_proof2
@@ -471,7 +630,10 @@ q_{\mathcal{T}}^{\max}\leq q_{\mathcal{S}}^{\max},
 \]
 respectively.
 }
-& The converse comparison is new. Together the two comparisons imply monotonicity of the least and greatest equilibria. \\
+& \literalcell{
+\textit{``The statement that the comparative statics ``require an equilibrium selection'' is too broad: set-valued comparative statics are possible without selecting an equilibrium.''}\par\smallskip
+Proof of the extension stated in Lemma 1.
+} \\
 \addlinespace[1em]
 
 % Literal comparison: cor2
@@ -490,7 +652,22 @@ q_{\mathcal{T}^0}(x)\leq q(x)
 \]
 for every $x\in X$.
 }
-& Every equilibrium is now explicitly compared with the unique no-tranching price. The original statement used the default least equilibrium. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: cor2_proof
+Corollary 2: proof
+& \literalcell{
+Since any tranching $\mathcal{T}$ is a refinement of $\mathcal{T}^0$, inequality (19) follows from Lemma 1.
+}
+& \literalcell{
+Every tranching $\mathcal{T}$ refines $\mathcal{T}^0$. Lemma 1(ii) therefore places every $q\in\mathcal{Q}_{\mathcal{T}}$ weakly above an equilibrium of $\mathcal{T}^0$, whose unique equilibrium price is $q_{\mathcal{T}^0}$.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop5
@@ -521,7 +698,148 @@ v_\mathcal{F}(x)
 \]
 for every $q\in\mathcal{Q}_{\mathcal{T}}$, all $x\in X$, and all $\mathcal{F}\in\mathbf{F}$.
 }
-& The weak comparison already covered all equilibria. Only the strict comparison is made explicit for every equilibrium under the same tranching. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop5_proof
+Proposition 5: concluding proof paragraph
+& \literalcell{
+for all $x\in X$ and $\mathcal{F}\in\mathbf{F}$. Since $q_{\mathcal{T}}$ is the least element of $\mathcal{Q}_{\mathcal{T}}$, $q_{\mathcal{T}}\leq q$ for every $q\in\mathcal{Q}_{\mathcal{T}}$. The first claim therefore follows from inequality (21) and Corollary 2. The second claim follows from inequality (21) and Lemma 4 in Appendix 6.3.
+}
+& \literalcell{
+for all $x\in X$ and $\mathcal{F}\in\mathbf{F}$. The first claim follows from inequality (21) and Corollary 2. If the no-tranching benchmark is not issuer-optimal, Proposition 3 gives a tranching $\mathcal{T}$ such that $q_{\mathcal{T}^0}(x)<q_{\mathcal{T}}^{\min}(x)$ in every state. Combining this strict inequality with (21) and $q_{\mathcal{T}}^{\min}\leq q$ for every $q\in\mathcal{Q}_{\mathcal{T}}$ proves the second claim.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop5_discussion
+Following Proposition 5
+& \literalcell{
+Proposition 5 states that if the no-tranching benchmark is not issuer-optimal, then there exists a tranching under which the asset price strictly exceeds every theory's perceived present value of dividends. The full-support assumption ensures that the resale opportunities created by tranching raise the asset price above these perceived fundamental values in every state.
+}
+& \literalcell{
+Proposition 5 states that if the no-tranching benchmark is not issuer-optimal, then there exists a tranching under which every equilibrium asset price strictly exceeds every theory's perceived present value of dividends. The full-support assumption ensures that the resale opportunities created by tranching raise the asset price above these perceived fundamental values in every state.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: payoff_definition
+Section 4.3: equilibrium and individual payoff
+& \literalcell{
+Formally, consider buying one unit of a tranche whenever theory $\mathcal{F}\in\mathbf{F}$ is selected as its buyer and financing that purchase by forgoing $p_\tau(x)$ units of the bond. Denote by $\Delta_\mathcal{F}^{\mathcal{T}}$ the long-run average realized payoff from these purchases in excess of the corresponding bond payoff under tranching $\mathcal{T}$. Let $\psi_\tau:=\phi_\tau(q_\mathcal{T})$ be the function that maps states of the world into equilibrium payoffs for tranche $\tau\in\mathcal{T}$. Denote by $\mathbf{B}(\tau,x)$ the set of theories with the highest willingness to pay for tranche $\tau\in\mathcal{T}$ at state $x\in X$:
+}
+& \literalcell{
+Formally, fix a tranching $\mathcal{T}$ and any equilibrium price $q\in\mathcal{Q}_{\mathcal{T}}$. Consider buying one unit of a tranche whenever theory $\mathcal{F}\in\mathbf{F}$ is selected as its buyer and financing that purchase by forgoing $p_\tau(x)$ units of the bond. Denote by $\Delta_\mathcal{F}^{\mathcal{T}}(q)$ the long-run average realized payoff from these purchases in excess of the corresponding bond payoff. In the examples below, the argument $q$ is omitted when the equilibrium price has been specified. Let $\psi_\tau:=\phi_\tau(q)$ be the function that maps states into equilibrium payoffs for tranche $\tau\in\mathcal{T}$. Tranche prices and buyer choices below are evaluated at $q$, with this dependence left implicit. Denote by $\mathbf{B}(\tau,x)$ the set of theories with the highest willingness to pay for tranche $\tau\in\mathcal{T}$ at state $x\in X$:
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: payoff_eq22
+Section 4.3: individual payoff formula
+& \literalcell{
+\[
+\begin{aligned}
+&\Delta_\mathcal{F}^{\mathcal{T}}\\
+&=\sum_{x\in X}\biggl(
+\sum_{\tau\in\mathcal{T}}
+\bigl(T(\psi_\tau)(x)-R(x)p_\tau(x)\bigr)\\
+&\qquad I_{\left\{\mathcal{F}=\beta_{\mathcal{T}}(\tau,x)\right\}}
+\biggr)\mu(x)
+\end{aligned}
+\]
+}
+& \literalcell{
+\[
+\begin{aligned}
+&\Delta_\mathcal{F}^{\mathcal{T}}(q)\\
+&=\sum_{x\in X}\biggl(
+\sum_{\tau\in\mathcal{T}}
+\bigl(T(\psi_\tau)(x)-R(x)p_\tau(x)\bigr)\\
+&\qquad I_{\left\{\mathcal{F}=\beta_{\mathcal{T}}(\tau,x)\right\}}
+\biggr)\mu(x)
+\end{aligned}
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: payoff_alt
+Section 4.3: actual minus perceived payoffs
+& \literalcell{
+it follows that
+\[
+\begin{aligned}
+&\Delta_\mathcal{F}^{\mathcal{T}}\\
+&=\sum_{x\in X}\biggl(
+\sum_{\tau\in\mathcal{T}}
+\bigl(T(\psi_\tau)(x)-E_\mathcal{F}(\psi_\tau\mid x)\bigr)\\
+&\qquad I_{\left\{\mathcal{F}=\beta_{\mathcal{T}}(\tau,x)\right\}}
+\biggr)\mu(x)
+\end{aligned}
+\]
+}
+& \literalcell{
+it follows that
+\[
+\begin{aligned}
+&\Delta_\mathcal{F}^{\mathcal{T}}(q)\\
+&=\sum_{x\in X}\biggl(
+\sum_{\tau\in\mathcal{T}}
+\bigl(T(\psi_\tau)(x)-E_\mathcal{F}(\psi_\tau\mid x)\bigr)\\
+&\qquad I_{\left\{\mathcal{F}=\beta_{\mathcal{T}}(\tau,x)\right\}}
+\biggr)\mu(x)
+\end{aligned}
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: payoff_single
+Section 4.3: one theory
+& \literalcell{
+An immediate result obtained from the statistical consistency of beliefs is that if $\mathbf{F}=\left\{\mathcal{F}\right\}$, then $\Delta_\mathcal{F}^{\mathcal{T}}=0$. Thus, without competing theories, the long-run average payoff from the securities purchased by the agent equals the payoff from investing the same amounts in the bond.
+}
+& \literalcell{
+An immediate result obtained from the statistical consistency of beliefs is that if $\mathbf{F}=\left\{\mathcal{F}\right\}$, then $\Delta_\mathcal{F}^{\mathcal{T}}(q)=0$. Thus, without competing theories, the long-run average payoff from the securities purchased by the agent equals the payoff from investing the same amounts in the bond.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: aggregate_definition
+Section 4.3: definition of aggregate payoff
+& \literalcell{
+\[
+\Delta_{\mathrm{agg}}^{\mathcal{T}}
+:=
+\sum_{\mathcal{F}\in\mathbf{F}}
+\Delta_{\mathcal{F}}^{\mathcal{T}}.
+\]
+}
+& \literalcell{
+\[
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+:=
+\sum_{\mathcal{F}\in\mathbf{F}}
+\Delta_{\mathcal{F}}^{\mathcal{T}}(q).
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop6
@@ -540,7 +858,127 @@ For every finite tranching $\mathcal{T}$, every $q\in\mathcal{Q}_{\mathcal{T}}$,
 \leq0.
 \]
 }
-& The existing proof applies at any equilibrium. Its scope is now explicit, and the equilibrium price is an argument of the payoff measure. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: aggregate_decomposition
+Proposition 6: sum across buyers
+& \literalcell{
+Summing equation (22) across theories and using definition (23) eliminates the selected-buyer indicators because each tranche in each state is assigned to exactly one theory. Hence
+\[
+\Delta_{\mathrm{agg}}^{\mathcal{T}}
+=
+\sum_{x\in X}\mu(x)
+\sum_{\tau\in\mathcal{T}}
+\left[
+T(\psi_\tau)(x)-R(x)p_\tau(x)
+\right].
+\]
+}
+& \literalcell{
+Summing equation (22) across theories and using definition (23) eliminates the selected-buyer indicators because each tranche in each state is assigned to exactly one theory. Hence
+\[
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+=
+\sum_{x\in X}\mu(x)
+\sum_{\tau\in\mathcal{T}}
+\left[
+T(\psi_\tau)(x)-R(x)p_\tau(x)
+\right].
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: aggregate_budget
+Proposition 6: resale and financing
+& \literalcell{
+Budget balance implies
+\[
+\sum_{\tau\in\mathcal{T}}T(\psi_\tau)(x)
+=
+\sum_{y\in X}P(x,y)q_{\mathcal{T}}(y),
+\]
+while equation (16) gives
+\[
+R(x)\sum_{\tau\in\mathcal{T}}p_\tau(x)
+=R(x)q_{\mathcal{T}}(x)-d(x).
+\]
+}
+& \literalcell{
+Budget balance implies
+\[
+\sum_{\tau\in\mathcal{T}}T(\psi_\tau)(x)
+=
+\sum_{y\in X}P(x,y)q(y),
+\]
+while equation (16) gives
+\[
+R(x)\sum_{\tau\in\mathcal{T}}p_\tau(x)
+=R(x)q(x)-d(x).
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: aggregate_resale
+Proposition 6: substitution
+& \literalcell{
+Substituting equations (26) and (27) into equation (25) yields
+\[
+\begin{aligned}
+&\Delta_{\mathrm{agg}}^{\mathcal{T}}\\
+&=\sum_{x\in X}\mu(x)\biggl[d(x)
++\sum_{y\in X}P(x,y)q_{\mathcal{T}}(y)\\
+&\qquad-R(x)q_{\mathcal{T}}(x)\biggr].
+\end{aligned}
+\]
+}
+& \literalcell{
+Substituting equations (26) and (27) into equation (25) yields
+\[
+\begin{aligned}
+&\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)\\
+&=\sum_{x\in X}\mu(x)\biggl[d(x)
++\sum_{y\in X}P(x,y)q(y)\\
+&\qquad-R(x)q(x)\biggr].
+\end{aligned}
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: aggregate_stationarity
+Proposition 6: stationarity
+& \literalcell{
+Because $\mu$ is stationary under $P$,
+\[
+\sum_{x\in X}\mu(x)
+\sum_{y\in X}P(x,y)q_{\mathcal{T}}(y)
+=
+\sum_{x\in X}\mu(x)q_{\mathcal{T}}(x),
+\]
+}
+& \literalcell{
+Because $\mu$ is stationary under $P$,
+\[
+\sum_{x\in X}\mu(x)
+\sum_{y\in X}P(x,y)q(y)
+=
+\sum_{x\in X}\mu(x)q(x),
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: agg_identity
@@ -567,7 +1005,68 @@ Proposition 6: aggregate-payoff identity
 \end{gathered}
 \]
 }
-& The identity is unchanged apart from explicit dependence on an arbitrary equilibrium price. It yields the next two payoff comparisons. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: aggregate_max
+Proposition 6: maximum-valuation representation
+& \literalcell{
+Substituting equation (31) into equation (25) gives
+\[
+\begin{gathered}
+\Delta_{\mathrm{agg}}^{\mathcal{T}}
+\\
+=\sum_{\tau\in\mathcal{T}}
+\left[
+\begin{aligned}
+&\sum_{x\in X}\mu(x)T(\psi_\tau)(x)\\
+&-\sum_{x\in X}\mu(x)
+\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}(\psi_\tau\mid x)
+\end{aligned}
+\right]
+\\
+\leq\sum_{\tau\in\mathcal{T}}
+\left[
+\begin{aligned}
+&\sum_{x\in X}\mu(x)T(\psi_\tau)(x)\\
+&-\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{x\in X}\mu(x)E_\mathcal{F}(\psi_\tau\mid x)
+\end{aligned}
+\right].
+\end{gathered}
+\]
+}
+& \literalcell{
+Substituting equation (31) into equation (25) gives
+\[
+\begin{gathered}
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+\\
+=\sum_{\tau\in\mathcal{T}}
+\left[
+\begin{aligned}
+&\sum_{x\in X}\mu(x)T(\psi_\tau)(x)\\
+&-\sum_{x\in X}\mu(x)
+\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}(\psi_\tau\mid x)
+\end{aligned}
+\right]
+\\
+\leq\sum_{\tau\in\mathcal{T}}
+\left[
+\begin{aligned}
+&\sum_{x\in X}\mu(x)T(\psi_\tau)(x)\\
+&-\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{x\in X}\mu(x)E_\mathcal{F}(\psi_\tau\mid x)
+\end{aligned}
+\right].
+\end{gathered}
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: cor4_new
@@ -590,7 +1089,10 @@ For every finite tranching $\mathcal{T}$ and every $q\in\mathcal{Q}_{\mathcal{T}
 \]
 The aggregate payoff is strictly lower at $q_{\mathcal{T}}^{\max}$ than at $q_{\mathcal{T}}^{\min}$ whenever these price functions differ.
 }
-& A new consequence of the existing identity: the least equilibrium maximizes the aggregate payoff and the greatest minimizes it. No analogous ranking of individual payoffs is asserted. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}\par\smallskip
+Additional consequence of the revised equilibrium analysis; not explicitly requested.
+} \\
 \addlinespace[1em]
 
 % Literal comparison: cor4_proof
@@ -612,7 +1114,10 @@ For any $q,w\in\mathcal{Q}_{\mathcal{T}}$ with $q\leq w$, equation (30) gives
 \]
 Since $\mu(x)>0$ and $R(x)>1$ for every $x$, the inequality is strict if $q\neq w$. Proposition 1 gives $q_{\mathcal{T}}^{\min}\leq q\leq q_{\mathcal{T}}^{\max}$, and Proposition 6 gives the final inequality.
 }
-& The proof applies the aggregate-payoff identity in the preceding row to ordered equilibria of the same tranching. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}\par\smallskip
+Proof of the additional consequence stated in Corollary 4.
+} \\
 \addlinespace[1em]
 
 % Literal comparison: cor5
@@ -640,7 +1145,10 @@ If $\mathcal{S}$ refines $\mathcal{T}$, then
 \]
 Each inequality is strict whenever the corresponding equilibrium price functions differ.
 }
-& Extends the original least-equilibrium comparison to the greatest-equilibrium selection, using the strengthened Lemma 1. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}\par\smallskip
+Extension to the greatest-equilibrium selection; not explicitly requested.
+} \\
 \addlinespace[1em]
 
 % Literal comparison: cor5_proof
@@ -674,7 +1182,24 @@ For any $q\in\mathcal{Q}_{\mathcal{T}}$ and $w\in\mathcal{Q}_{\mathcal{S}}$ with
 \]
 Lemma 1 orders both pairs of extreme equilibrium prices. Applying this identity to each pair proves the comparisons. Because $\mu(x)>0$ and $R(x)>1$ for every $x$, each comparison is strict whenever the corresponding price functions differ.
 }
-& The same identity is applied separately to the two pairs of ordered extreme prices; the strictness argument is unchanged. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}\par\smallskip
+Proof of the extension stated in Corollary 5.
+} \\
+\addlinespace[1em]
+
+% Complete comparison: payoff_discussion
+Following Corollary 5
+& \literalcell{
+Proposition 6 shows that the aggregate realized excess payoff of the selected tranche buyers is nonpositive. Under the least-equilibrium selection, Corollary 4 shows that a tranching refinement weakly reduces this aggregate payoff, with a strict reduction whenever the refinement changes the asset price. Because $\Delta_{\mathrm{agg}}^{\mathcal T}$ evaluates a one-unit purchase of each tranche rather than weighting excess payoffs by the amounts invested, it should not be interpreted as an aggregate portfolio return. A nonpositive aggregate payoff does not rule out a positive excess payoff for a particular theory.
+}
+& \literalcell{
+Proposition 6 establishes a nonpositive aggregate realized excess payoff at every equilibrium. For a fixed tranching, Corollary 4 shows that the least equilibrium maximizes this payoff and the greatest equilibrium minimizes it, with a strict difference when there is multiplicity. The least equilibrium therefore yields the smallest aggregate loss. Corollary 5 shows that refinement weakly reduces the aggregate payoff under either extreme-equilibrium selection, strictly whenever the corresponding prices change. This measure evaluates a one-unit purchase of each tranche rather than weighting excess payoffs by the amounts invested, so it is not an aggregate portfolio return. The ranking across equilibria need not hold for each theory and is not a ranking of overall welfare. A nonpositive aggregate payoff does not rule out a positive excess payoff for a particular theory.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}\par\smallskip
+Interpretation of the payoff comparisons; not an additional result requested by the editor.
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop7
@@ -705,7 +1230,22 @@ Suppose that $\mathcal{G}\in\mathbf{F}$ refines every $\mathcal{F}\in\mathbf{F}$
 \end{gathered}
 \]
 }
-& The original argument did not require the least equilibrium. The statement now explicitly covers every waterfall equilibrium. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop7_discussion
+Following Proposition 7
+& \literalcell{
+Proposition 7 extends the no-securitization result in Proposition 5 of Eyster and Piccione (2013): when one theory refines every other theory, no theory outperforms the bond on average under any finite tranching. The proposition does not determine how a change in tranching affects each theory's payoff. In the motivating example, however, securitization lowers $\mathcal{A}$'s realized excess payoff while $\mathcal{B}$'s remains unchanged at zero. In states where, without securitization, the most sophisticated agent would have bought the whole asset, the tranches not bought by this agent underperform the same expenditure in the bond on average. Thus, securitization can lower one theory's realized excess payoff without increasing the payoff of any other theory.
+}
+& \literalcell{
+Proposition 7 extends the no-securitization result in Proposition 5 of Eyster and Piccione (2013): when one theory refines every other theory, no theory outperforms the bond on average at any waterfall equilibrium under any finite tranching. The proposition does not determine how a change in tranching affects each theory's payoff. In the motivating example, however, securitization lowers $\mathcal{A}$'s realized excess payoff while $\mathcal{B}$'s remains unchanged at zero. In states where, without securitization, the most sophisticated agent would have bought the whole asset, the tranches not bought by this agent underperform the same expenditure in the bond on average. Thus, securitization can lower one theory's realized excess payoff without increasing the payoff of any other theory.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop9
@@ -722,7 +1262,9 @@ Suppose that equation (35) admits a nonnegative solution $\bar q$. Then every fi
 q_{\mathcal{T}}\leq\bar q.
 \]
 }
-& Request 1: add uniqueness under the spectral condition, retaining the upper bound. The referenced equation (35) is $\bar q=b+A\bar q$. \\
+& \literalcell{
+\textit{``Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop9_proof1
@@ -755,7 +1297,9 @@ Using the inequality $|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|$, it follows th
 \end{aligned}
 \]
 }
-& The new proof bounds differences between the two price-operator values by $A|q-w|$, using monotonicity and budget balance of tranche payoffs. \\
+& \literalcell{
+\textit{``Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop9_proof2
@@ -770,7 +1314,30 @@ If $q$ and $w$ are both fixed points, this inequality gives
 \]
 for every $n\geq1$. Proposition 8 implies that $A^n$ converges to zero. Hence $q=w$. Existence follows from Proposition 1, so $\mathcal{Q}_{\mathcal{T}}$ is a singleton; denote its element by $q_{\mathcal{T}}$.
 }
-& Request 1: since $A^n$ converges to zero under the condition in Proposition 8, any two fixed points coincide. \\
+& \literalcell{
+\textit{``Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop9_upper_proof
+Proposition 9: upper-bound proof
+& \literalcell{
+Thus, if $q\in\mathcal{Q}_{\mathcal{T}}$,
+\[
+q\leq b+Aq,
+\]
+or $(I-A)q\leq b$. By Proposition 8, $(I-A)^{-1}$ is nonnegative. Multiplication by this matrix yields $q\leq\bar q$.
+}
+& \literalcell{
+Applying this inequality to the unique fixed point gives
+\[
+q_{\mathcal{T}}\leq b+Aq_{\mathcal{T}},
+\]
+or $(I-A)q_{\mathcal{T}}\leq b$. By Proposition 8, $(I-A)^{-1}$ is nonnegative. Multiplication by this matrix yields $q_{\mathcal{T}}\leq\bar q$.
+}
+& \literalcell{
+\textit{``Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop9_discussion
@@ -781,7 +1348,22 @@ Following Proposition 9
 & \literalcell{
 The matrix $A$ depends on beliefs and interest rates, not on the tranching. When all its eigenvalues lie strictly inside the unit circle, every finite waterfall tranching has a unique equilibrium. Tranching may still raise the asset price, but it cannot generate multiplicity. Failure of the eigenvalue condition does not by itself imply multiplicity.
 }
-& Explains the new uniqueness result economically and distinguishes a sufficient condition from a claim that its failure implies multiplicity. \\
+& \literalcell{
+\textit{``Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: state_discussion
+Following Proposition 9: state-contingent contracts
+& \literalcell{
+State-contingent securities allow the issuer to exploit disagreement more flexibly than waterfall tranches. Proposition 9 shows that, when equation (35) admits a nonnegative solution, the resulting state-contingent price provides an upper bound for every waterfall-equilibrium price.\footnote{A related result appears in Allen and Gale (1988): in a different security-design environment with short-sale constraints, market value is maximized by designing securities so that, in each state, the asset's entire payoff goes to the investor group that values it most.} The lack of a belief that stochastically dominates all others in at least one state is a necessary condition for waterfall tranching to increase the asset price only because of the waterfall constraint. State-contingent securitization, in contrast, can exploit any disagreement about transition probabilities, provided that the resulting price system satisfies the existence condition above.
+}
+& \literalcell{
+State-contingent securities allow the issuer to exploit disagreement more flexibly than waterfall tranches. Proposition 9 also shows that, under this eigenvalue condition, the state-contingent price bounds the waterfall-equilibrium price from above.\footnote{A related result appears in Allen and Gale (1988): in a different security-design environment with short-sale constraints, market value is maximized by designing securities so that, in each state, the asset's entire payoff goes to the investor group that values it most.} The lack of a belief that stochastically dominates all others in at least one state is a necessary condition for waterfall tranching to increase the asset price only because of the waterfall constraint. State-contingent securitization, in contrast, can exploit any disagreement about transition probabilities, provided that the resulting price system satisfies the existence condition above.
+}
+& \literalcell{
+\textit{``Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.''}
+} \\
 \addlinespace[1em]
 
 % Literal comparison: prop10
@@ -812,118 +1394,569 @@ For every iterated securitization structure $\Sigma$, there is a tranching $\mat
 \]
 Consequently, under the pointwise order, the least and greatest underlying-asset equilibrium price functions generated by $\Sigma$ are $q_{\mathcal{T}_{\Sigma}}^{\min}$ and $q_{\mathcal{T}_{\Sigma}}^{\max}$, respectively.
 }
-& The set-equivalence result is unchanged. Equality of the greatest prices is recorded alongside equality of the least prices. \\
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}\par\smallskip
+Additional consequence of the existing set-equivalence result; not explicitly requested.
+} \\
+% Complete comparison: conclusion_prices
+Conclusion: price comparisons
+& \literalcell{
+Refining a tranching weakly increases the selected equilibrium price of the underlying asset in every state. A tranching is issuer-optimal precisely when, within each tranche and state, one perceived distribution first-order stochastically dominates the others on the relevant payoff range. If this dominance condition fails, there exists a refinement that raises the selected equilibrium price strictly in every state.
+}
+& \literalcell{
+Refining a tranching weakly increases both the least and the greatest equilibrium prices of the underlying asset in every state. For issuer optimality, tranchings are compared by their least equilibrium prices. A tranching is issuer-optimal precisely when, at its least equilibrium and within each tranche and state, one perceived distribution first-order stochastically dominates the others on the relevant payoff range. If this dominance condition fails, there exists a refinement that raises the least equilibrium price strictly in every state.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: conclusion_payoffs
+Conclusion: scope of payoff results
+& \literalcell{
+Under statistically consistent beliefs, the aggregate realized excess payoff from unit tranche purchases is nonpositive and weakly decreases under refinement.
+}
+& \literalcell{
+Under statistically consistent beliefs, the aggregate realized excess payoff from unit tranche purchases is nonpositive in every equilibrium and weakly decreases under refinement for both the least and greatest equilibria.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: appendix_issuer
+Appendix 6.2: issuer-optimal example
+& \literalcell{
+For this example, it can be shown that a tranching that is issuer-optimal is one where there are four tranches and the attachment points coincide with the realizations of the asset price. Let $q$ be the waterfall equilibrium price function for the issuer-optimal tranching. Assume that the dividend function is such that $q(a)>q(b)>q(c)>q(d)$. In order of seniority, the tranches are labeled $s$ (senior), $m$ (mezzanine), $j$ (junior) and $e$ (equity). Table 1 presents the payoff function for each tranche.
+}
+& \literalcell{
+For this example, it can be shown that a tranching that is issuer-optimal is one where there are four tranches and the attachment points coincide with the realizations of the asset price. Let $q$ be the least waterfall-equilibrium price function for the issuer-optimal tranching. Assume that the dividend function is such that $q(a)>q(b)>q(c)>q(d)$. In order of seniority, the tranches are labeled $s$ (senior), $m$ (mezzanine), $j$ (junior) and $e$ (equity). Table 1 presents the payoff function for each tranche.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop10_proof
+Proposition 10: closing proof paragraph
+& \literalcell{
+Conversely, let $q\in\mathcal{Q}_{\mathcal{T}_\Sigma}$. Set $p_\Sigma(r,\cdot)=q$ and, for every terminal node $z$, define
+\[
+p_\Sigma(z,x)
+:=
+\frac{\max_{\mathcal{F}\in\mathbf{F}}
+E_\mathcal{F}(\phi_{\widehat\tau_z}(q)\mid x)}{R(x)}.
+\]
+For each non-terminal node other than $r$, define its price recursively as the sum of the prices of its successors. These prices satisfy equations (39) and (40) by construction. Since $q$ is a fixed point of $\Psi_{\mathcal{T}_\Sigma}$, recursive addition of the terminal-node prices also gives equation (38). Hence the constructed $p_\Sigma$ is an iterated securitization equilibrium whose underlying-asset price is $q$. The two sets of prices are therefore equal, and their least elements coincide.
+}
+& \literalcell{
+Conversely, let $q\in\mathcal{Q}_{\mathcal{T}_\Sigma}$. Set $p_\Sigma(r,\cdot)=q$ and, for every terminal node $z$, define
+\[
+p_\Sigma(z,x)
+:=
+\frac{\max_{\mathcal{F}\in\mathbf{F}}
+E_\mathcal{F}(\phi_{\widehat\tau_z}(q)\mid x)}{R(x)}.
+\]
+For each non-terminal node other than $r$, define its price recursively as the sum of the prices of its successors. These prices satisfy equations (39) and (40) by construction. Since $q$ is a fixed point of $\Psi_{\mathcal{T}_\Sigma}$, recursive addition of the terminal-node prices also gives equation (38). Hence the constructed $p_\Sigma$ is an iterated securitization equilibrium whose underlying-asset price is $q$. The two sets of prices are therefore equal, and their least and greatest elements coincide.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma2_start
+Appendix 6.3: Lemma 2 and proof opening
+& \literalcell{
+If $\mathcal{T}$ satisfies the dominance condition and $\mathcal{S}$ is a refinement of $\mathcal{T}$, then $q_{\mathcal{S}}= q_{\mathcal{T}}$.
+
+For $q=q_{\mathcal{T}}$, the payoff from a bounded tranche $\tau$ expected for next period by theory $\mathcal{F}$ at state $x$ can be written as
+\[
+E_{\mathcal{F}}
+\left(\phi_\tau(q)\mid x\right)
+=
+\int_{\inf(\tau)}^{\sup(\tau)}
+\left[1-G^\mathcal{T}_{\mathcal{F}}\left(t\mid x\right)\right]dt.
+\]
+If $\tau$ is unbounded, the upper limit is infinity. The integral remains finite because its integrand is zero above $\max_{x\in X}q_{\mathcal{T}}(x)$.
+}
+& \literalcell{
+If $\mathcal{T}$ satisfies the dominance condition and $\mathcal{S}$ is a refinement of $\mathcal{T}$, then $q_{\mathcal{S}}^{\min}= q_{\mathcal{T}}^{\min}$.
+
+For $q=q_{\mathcal{T}}^{\min}$, the payoff from a bounded tranche $\tau$ expected for next period by theory $\mathcal{F}$ at state $x$ can be written as
+\[
+E_{\mathcal{F}}
+\left(\phi_\tau(q)\mid x\right)
+=
+\int_{\inf(\tau)}^{\sup(\tau)}
+\left[1-G^\mathcal{T}_{\mathcal{F}}\left(t\mid x\right)\right]dt.
+\]
+If $\tau$ is unbounded, the upper limit is infinity. The integral remains finite because its integrand is zero above $\max_{x\in X}q_{\mathcal{T}}^{\min}(x)$.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma2_sum
+Appendix 6.3: Lemma 2, tranche valuations
+& \literalcell{
+For each $\tau\in\mathcal{T}$ and $x\in X$, let $\mathcal{G}_{\tau,x}$ be a theory satisfying the dominance condition. Equation (42) implies that $\mathcal{G}_{\tau,x}$ maximizes the expected payoff of every subtranche $\upsilon\in\mathcal{S}$ contained in $\tau$. The payoff of each such subtranche integrates $1-G^{\mathcal{T}}_{\mathcal{F}}(t\mid x)$ over a subinterval of $\tau$, on which the same dominance inequality applies. Hence one theory attains the maximum for every subtranche contained in $\tau$, and
+\[
+\begin{aligned}
+&\sum_{\upsilon \in \mathcal{S} : \upsilon\subseteq \tau}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left( \phi_{\upsilon} \left(q_{\mathcal{T}} \right)\mid x
+\right)
+\\
+&=
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left(
+\sum_{\upsilon \in \mathcal{S} : \upsilon\subseteq \tau}
+\phi_{\upsilon} \left(q_{\mathcal{T}} \right)\mid x
+\right)
+\\
+&=
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left(
+\phi_{\tau} \left(q_{\mathcal{T}} \right)\mid x
+\right)
+\end{aligned}
+\]
+}
+& \literalcell{
+For each $\tau\in\mathcal{T}$ and $x\in X$, let $\mathcal{G}_{\tau,x}$ be a theory satisfying the dominance condition. Equation (42) implies that $\mathcal{G}_{\tau,x}$ maximizes the expected payoff of every subtranche $\upsilon\in\mathcal{S}$ contained in $\tau$. The payoff of each such subtranche integrates $1-G^{\mathcal{T}}_{\mathcal{F}}(t\mid x)$ over a subinterval of $\tau$, on which the same dominance inequality applies. Hence one theory attains the maximum for every subtranche contained in $\tau$, and
+\[
+\begin{aligned}
+&\sum_{\upsilon \in \mathcal{S} : \upsilon\subseteq \tau}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left( \phi_{\upsilon} \left(q_{\mathcal{T}}^{\min} \right)\mid x
+\right)
+\\
+&=
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left(
+\sum_{\upsilon \in \mathcal{S} : \upsilon\subseteq \tau}
+\phi_{\upsilon} \left(q_{\mathcal{T}}^{\min} \right)\mid x
+\right)
+\\
+&=
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left(
+\phi_{\tau} \left(q_{\mathcal{T}}^{\min} \right)\mid x
+\right)
+\end{aligned}
+\]
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma2_fixed
+Appendix 6.3: Lemma 2, fixed-point argument
+& \literalcell{
+for any $\tau\in\mathcal{T}$ and $x\in X$. Summing this equality over $\tau\in\mathcal{T}$ and using equation (18) gives
+\[
+\begin{aligned}
+\Psi_{\mathcal{S} }
+\left(q_{\mathcal{T} }\right) &=
+\Psi_{\mathcal{T} }
+\left(q_{\mathcal{T} }\right) \\ &=
+q_{\mathcal{T} }
+\end{aligned}
+\]
+Thus $q_{\mathcal{T}}$ is a fixed point of $\Psi_{\mathcal{S}}$, and the minimality of $q_{\mathcal{S}}$ gives $q_{\mathcal{S}}\leq q_{\mathcal{T}}$. Since $\mathcal{S}$ refines $\mathcal{T}$, Lemma 1 gives the reverse inequality. Hence $q_{\mathcal{S}}=q_{\mathcal{T}}$.
+}
+& \literalcell{
+for any $\tau\in\mathcal{T}$ and $x\in X$. Summing this equality over $\tau\in\mathcal{T}$ and using equation (18) gives
+\[
+\begin{aligned}
+\Psi_{\mathcal{S} }
+\left(q_{\mathcal{T}}^{\min}\right) &=
+\Psi_{\mathcal{T} }
+\left(q_{\mathcal{T}}^{\min}\right) \\ &=
+q_{\mathcal{T}}^{\min}
+\end{aligned}
+\]
+Thus $q_{\mathcal{T}}^{\min}$ is a fixed point of $\Psi_{\mathcal{S}}$, and the minimality of $q_{\mathcal{S}}^{\min}$ gives $q_{\mathcal{S}}^{\min}\leq q_{\mathcal{T}}^{\min}$. Since $\mathcal{S}$ refines $\mathcal{T}$, Lemma 1 gives the reverse inequality. Hence $q_{\mathcal{S}}^{\min}=q_{\mathcal{T}}^{\min}$.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma3
+Appendix 6.3: Lemma 3 and proof
+& \literalcell{
+If $\mathcal{T}$ satisfies the dominance condition, then
+\[
+q_{\mathcal{S}}(x)\leq q_{\mathcal{T}}(x)
+\]
+for all $x\in X$ and any tranching $\mathcal{S}$.
+
+Let $\mathcal{S}\vee\mathcal{T}$ be the coarsest common refinement between $\mathcal{T}$ and $\mathcal{S}$.
+By Lemma 1,
+\[
+q_{\mathcal{S}}(x) \leq q_{\mathcal{S}\vee\mathcal{T}}(x)
+\]
+for $x\in X$.
+By Lemma 2,
+\[
+q_{\mathcal{S}\vee\mathcal{T}}(x)= q_{\mathcal{T}}(x)
+\]
+for $x\in X$.
+}
+& \literalcell{
+If $\mathcal{T}$ satisfies the dominance condition, then
+\[
+q_{\mathcal{S}}^{\min}(x)\leq q_{\mathcal{T}}^{\min}(x)
+\]
+for all $x\in X$ and any tranching $\mathcal{S}$.
+
+Let $\mathcal{S}\vee\mathcal{T}$ be the coarsest common refinement between $\mathcal{T}$ and $\mathcal{S}$.
+By Lemma 1,
+\[
+q_{\mathcal{S}}^{\min}(x) \leq q_{\mathcal{S}\vee\mathcal{T}}^{\min}(x)
+\]
+for $x\in X$.
+By Lemma 2,
+\[
+q_{\mathcal{S}\vee\mathcal{T}}^{\min}(x)= q_{\mathcal{T}}^{\min}(x)
+\]
+for $x\in X$.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma4_start
+Appendix 6.3: Lemma 4 and proof opening
+& \literalcell{
+If $\mathcal{T}$ does not satisfy the dominance condition, then there is a refinement $\mathcal{S}$ of $\mathcal{T}$ such that
+\[
+q_{\mathcal{T}}(x)<q_{\mathcal{S}}(x)
+\]
+for all $x\in X$.
+
+Let $q=q_{\mathcal{T}}$. Since $\mathcal{T}$ does not satisfy the dominance condition, there are a state $x^*\in X$ and a tranche $\tau\in\mathcal{T}$ such that no theory minimizes $G^\mathcal{T}_{\mathcal{F}}(t\mid x^*)$ at every point in the interior of $\tau$. Because $X$ is finite, these perceived distribution functions are step functions. Choose $B>\max_yq(y)$, truncate the active part of an unbounded tranche at $B$, and partition it at every value $q(y)$ in its interior. Complete this collection with the inactive tail $[B,\infty)$ when $\tau$ is unbounded, and denote the resulting finite partition of $\tau$ by $\mathcal{P}(\tau)$.
+}
+& \literalcell{
+If $\mathcal{T}$ does not satisfy the dominance condition, then there is a refinement $\mathcal{S}$ of $\mathcal{T}$ such that
+\[
+q_{\mathcal{T}}^{\min}(x)<q_{\mathcal{S}}^{\min}(x)
+\]
+for all $x\in X$.
+
+Let $q=q_{\mathcal{T}}^{\min}$. Since $\mathcal{T}$ does not satisfy the dominance condition, there are a state $x^*\in X$ and a tranche $\tau\in\mathcal{T}$ such that no theory minimizes $G^\mathcal{T}_{\mathcal{F}}(t\mid x^*)$ at every point in the interior of $\tau$. Because $X$ is finite, these perceived distribution functions are step functions. Choose $B>\max_yq(y)$, truncate the active part of an unbounded tranche at $B$, and partition it at every value $q(y)$ in its interior. Complete this collection with the inactive tail $[B,\infty)$ when $\tau$ is unbounded, and denote the resulting finite partition of $\tau$ by $\mathcal{P}(\tau)$.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma4_strict
+Appendix 6.3: Lemma 4, initial strict inequality
+& \literalcell{
+Lemma 1 gives $q\leq q_{\mathcal{S}}$. Monotonicity therefore implies
+\[
+\Psi_{\mathcal{S}}(q)
+\leq
+\Psi_{\mathcal{S}}(q_{\mathcal{S}})
+=q_{\mathcal{S}},
+\]
+and hence $q(x^*)<q_{\mathcal{S}}(x^*)$.
+}
+& \literalcell{
+Lemma 1 gives $q\leq q_{\mathcal{S}}^{\min}$. Monotonicity therefore implies
+\[
+\Psi_{\mathcal{S}}(q)
+\leq
+\Psi_{\mathcal{S}}(q_{\mathcal{S}}^{\min})
+=q_{\mathcal{S}}^{\min},
+\]
+and hence $q(x^*)<q_{\mathcal{S}}^{\min}(x^*)$.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: lemma4_propagation
+Appendix 6.3: Lemma 4, propagation of strictness
+& \literalcell{
+It remains to propagate strictness. Budget balance and monotonicity of tranche payoffs imply that there is some $\sigma^*\in\mathcal{S}$ such that
+\[
+\phi_{\sigma^*}(q_{\mathcal{S}}(x^*))
+>
+\phi_{\sigma^*}(q(x^*)).
+\]
+Every subjective transition matrix has full support, so for every current state $y$ and every theory $\mathcal{F}$,
+\[
+E_{\mathcal{F}}\left(\phi_{\sigma^*}(q_{\mathcal{S}})\mid y\right)
+>
+E_{\mathcal{F}}\left(\phi_{\sigma^*}(q)\mid y\right).
+\]
+The remaining tranche valuations increase weakly. Therefore
+\[
+\begin{aligned}
+&q_{\mathcal{S}}(y)
+=\Psi_{\mathcal{S}}(q_{\mathcal{S}})(y)
+\\
+&>\Psi_{\mathcal{S}}(q)(y)
+\geq\Psi_{\mathcal{T}}(q)(y)
+=q(y)
+\end{aligned}
+\]
+for every $y\in X$.
+}
+& \literalcell{
+It remains to propagate strictness. Budget balance and monotonicity of tranche payoffs imply that there is some $\sigma^*\in\mathcal{S}$ such that
+\[
+\phi_{\sigma^*}(q_{\mathcal{S}}^{\min}(x^*))
+>
+\phi_{\sigma^*}(q(x^*)).
+\]
+Every subjective transition matrix has full support, so for every current state $y$ and every theory $\mathcal{F}$,
+\[
+E_{\mathcal{F}}\left(\phi_{\sigma^*}(q_{\mathcal{S}}^{\min})\mid y\right)
+>
+E_{\mathcal{F}}\left(\phi_{\sigma^*}(q)\mid y\right).
+\]
+The remaining tranche valuations increase weakly. Therefore
+\[
+\begin{aligned}
+&q_{\mathcal{S}}^{\min}(y)
+=\Psi_{\mathcal{S}}(q_{\mathcal{S}}^{\min})(y)
+\\
+&>\Psi_{\mathcal{S}}(q)(y)
+\geq\Psi_{\mathcal{T}}(q)(y)
+=q(y)
+\end{aligned}
+\]
+for every $y\in X$.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop3_proof
+Appendix 6.3: Proposition 3 proof
+& \literalcell{
+Proof of Proposition 3: The condition in Proposition 3 is the dominance condition in Definition 5. If it holds, Lemma 3 implies that $\mathcal{T}$ is issuer-optimal. If it fails, Lemma 4 provides a refinement $\mathcal{S}$ of $\mathcal{T}$ such that $q_{\mathcal{T}}(x)<q_{\mathcal{S}}(x)$ for every $x\in X$. Hence $\mathcal{T}$ is not issuer-optimal, and the final claim follows.
+}
+& \literalcell{
+Proof of Proposition 3: The condition in Proposition 3 is the dominance condition in Definition 5. If it holds, Lemma 3 implies that $\mathcal{T}$ is issuer-optimal. If it fails, Lemma 4 provides a refinement $\mathcal{S}$ of $\mathcal{T}$ such that $q_{\mathcal{T}}^{\min}(x)<q_{\mathcal{S}}^{\min}(x)$ for every $x\in X$. Hence $\mathcal{T}$ is not issuer-optimal, and the final claim follows.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop7_proof_open
+Appendix 6.4: Proposition 7, proof opening
+& \literalcell{
+For each tranche $\tau\in\mathcal{T}$, define
+}
+& \literalcell{
+Fix any $q\in\mathcal{Q}_{\mathcal{T}}$ and evaluate tranche payoffs and buyer choices at this equilibrium. For each tranche $\tau\in\mathcal{T}$, define
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop7_proof_close
+Appendix 6.4: Proposition 7, proof conclusion
+& \literalcell{
+If $\mathcal{F}=\mathcal{G}$, the expression is zero. On blocks where $\mathcal{G}$ is selected, its contribution is therefore zero; on every other block, its selected-buyer indicator is zero. Hence $\delta_\mathcal{G}^{\mathcal{T}}(\tau)=0$. For every $\mathcal{F}\neq\mathcal{G}$, summing the nonpositive contributions over the blocks where $\mathcal{F}$ is selected gives $\delta_\mathcal{F}^{\mathcal{T}}(\tau)\leq0$. Finally, since $\Delta_\mathcal{F}^{\mathcal{T}}=\sum_{\tau\in\mathcal{T}}\delta_\mathcal{F}^{\mathcal{T}}(\tau)$, summing over tranches proves the result.
+}
+& \literalcell{
+If $\mathcal{F}=\mathcal{G}$, the expression is zero. On blocks where $\mathcal{G}$ is selected, its contribution is therefore zero; on every other block, its selected-buyer indicator is zero. Hence $\delta_\mathcal{G}^{\mathcal{T}}(\tau)=0$. For every $\mathcal{F}\neq\mathcal{G}$, summing the nonpositive contributions over the blocks where $\mathcal{F}$ is selected gives $\delta_\mathcal{F}^{\mathcal{T}}(\tau)\leq0$. Finally, since $\Delta_\mathcal{F}^{\mathcal{T}}(q)=\sum_{\tau\in\mathcal{T}}\delta_\mathcal{F}^{\mathcal{T}}(\tau)$, summing over tranches proves the result.
+}
+& \literalcell{
+\textit{``Clarify the role and scope of the least-equilibrium selection.''}
+} \\
+\addlinespace[1em]
+
 \end{longtable}
 \endgroup
 \end{landscape}
 
 % Separate appendix table, retained here for review before submission.
 \clearpage
+\begin{landscape}
 \section*{Literal comparison of exposition and disclosure changes}
 
-The two columns reproduce the relevant paragraphs or complete sentences from the submitted R1 manuscript and the present revision. Line breaks are adjusted to fit the table; citations and equation references are written out as they appear in the manuscript. Changes implementing the substantive revisions are covered by Table~\ref{tab:substantive-changes}.
+The first two columns reproduce the relevant paragraphs or complete sentences from the submitted R1 manuscript and the present revision. Line breaks are adjusted to fit the table; citations and equation references are written out as they appear in the manuscript. The third column reproduces relevant excerpts from the editor's decision letter verbatim, in italics and quotation marks. For additional sentence-level edits, it quotes the general request for an exposition check. The bibliography addition and other consistency edits are also recorded here. Changes implementing the substantive revisions are covered by Table~\ref{tab:substantive-changes}.
 
 \begingroup
 \small
-\setlength{\tabcolsep}{8pt}
+\setlength{\tabcolsep}{10pt}
 \setlength{\LTleft}{0pt}
 \setlength{\LTright}{0pt}
-\setlength{\LTcapwidth}{\textwidth}
+\setlength{\LTcapwidth}{\linewidth}
 \renewcommand{\arraystretch}{1.12}
 \newlength{\expositiontablewidth}
-\setlength{\expositiontablewidth}{\dimexpr\textwidth-2\tabcolsep\relax}
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.5\expositiontablewidth}>{\raggedright\arraybackslash}p{0.5\expositiontablewidth}@{}}
+\setlength{\expositiontablewidth}{\dimexpr\linewidth-4\tabcolsep\relax}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.38\expositiontablewidth}>{\raggedright\arraybackslash}p{0.38\expositiontablewidth}>{\raggedright\arraybackslash}p{0.24\expositiontablewidth}@{}}
 \caption{Literal before-and-after comparison of exposition and disclosure changes}\label{tab:exposition-changes}\\
 \toprule
-\textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} \\
+\textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} & \textbf{Editor's request (verbatim)} \\
 \midrule
 \endfirsthead
-\multicolumn{2}{@{}l}{\textit{Table \thetable\ continued}}\\
+\multicolumn{3}{@{}l}{\textit{Table \thetable\ continued}}\\
 \toprule
-\textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} \\
+\textbf{Submitted R1: original wording} & \textbf{Present revision: current wording} & \textbf{Editor's request (verbatim)} \\
 \midrule
 \endhead
 \midrule
-\multicolumn{2}{r@{}}{\textit{Continued on next page}}\\
+\multicolumn{3}{r@{}}{\textit{Continued on next page}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Introduction: realized excess payoff and perceived break-even positions}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Introduction: realized excess payoff and perceived break-even positions}}\\*
 Tranching has ambiguous effects on individual realized excess payoffs. Investors perceive their purchases to break even, but the realized payoffs may differ once they are evaluated under the objective transition probabilities. For the realized-payoff analysis, I follow Eyster and Piccione (2013) and specialize beliefs to statistically consistent theories that may coarsen the state space. This allows a comparison between perceived break-even purchases and the realized excess payoffs associated with the securities investors actually buy.
 &
-Tranching has ambiguous effects on individual realized excess payoffs. A realized excess payoff is the payoff from a purchased security minus the payoff that the same expenditure would have earned in the bond, averaged over time under the objective transition probabilities. Each position is perceived to break even at its equilibrium price, but its realized excess payoff need not be zero. For this analysis, I follow Eyster and Piccione (2013) and specialize beliefs to statistically consistent theories that may coarsen the state space. \\
+Tranching has ambiguous effects on individual realized excess payoffs. A realized excess payoff is the payoff from a purchased security minus the payoff that the same expenditure would have earned in the bond, averaged over time under the objective transition probabilities. Each position is perceived to break even at its equilibrium price, but its realized excess payoff need not be zero. For this analysis, I follow Eyster and Piccione (2013) and specialize beliefs to statistically consistent theories that may coarsen the state space.
+&
+\textit{``Please define ``realized excess payoff'' when it first appears, replace phrases such as ``purchases to break even'' with the more natural statement that a position is perceived to break even''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 2.2: attachment point}}\\*
+% Complete comparison: roadmap
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Introduction: organization of the paper}}\\*
+This paper is organized as follows. The rest of this introduction presents a literature review. Section 2 presents the motivating example that illustrates the setup and gives a hint of the main results. Section 3 describes the general model and establishes existence and possible multiplicity of equilibrium. Section 4 studies the effects of tranching securitization on the selected price of the underlying asset and on realized excess payoffs. Finally, Section 5 presents some conclusions and suggestions for further research.
+&
+This paper is organized as follows. The rest of this introduction presents a literature review. Section 2 presents the motivating example that illustrates the setup and gives a hint of the main results. Section 3 describes the general model and establishes existence and possible multiplicity of equilibrium. Section 4 studies the effects of tranching securitization on equilibrium prices of the underlying asset and on realized excess payoffs. Finally, Section 5 presents some conclusions and suggestions for further research.
+&
+\textit{``Clarify the role and scope of the least-equilibrium selection.''} \\
+\addlinespace[0.9em]
+
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 2.2: attachment point}}\\*
 Assume now that any owner of the long-term asset can issue two kinds of one-period ABS whose claims add up to the next-period value of the long-term asset. Denote the underlying-asset equilibrium price function in this securitized economy by $q^{\mathrm{ABS}}$. The attachment point is calibrated to $q^{\mathrm{ABS}}(m)$. The senior tranche pays $q^{\mathrm{ABS}}(m)$ next period unless the state becomes $l$, in which case it pays $q^{\mathrm{ABS}}(l)$. The junior tranche pays $q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m)$ if the realized state is $h$ and $0$ otherwise. Let $\phi_s$ and $\phi_j$ denote the payoff functions of the senior and junior tranches, respectively.
 &
-Assume now that any owner of the long-term asset can issue two kinds of one-period ABS whose claims add up to the next-period value of the long-term asset. Denote the underlying-asset equilibrium price function in this securitized economy by $q^{\mathrm{ABS}}$. The attachment point of a tranche is the asset-value threshold above which it begins to pay. In this example, the attachment point of the junior tranche is calibrated to coincide with the equilibrium asset price in state $m$, $q^{\mathrm{ABS}}(m)$. The senior tranche pays $q^{\mathrm{ABS}}(m)$ next period unless the state becomes $l$, in which case it pays $q^{\mathrm{ABS}}(l)$. The junior tranche pays $q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m)$ if the realized state is $h$ and $0$ otherwise. Let $\phi_s$ and $\phi_j$ denote the payoff functions of the senior and junior tranches, respectively. \\
+Assume now that any owner of the long-term asset can issue two kinds of one-period ABS whose claims add up to the next-period value of the long-term asset. Denote the underlying-asset equilibrium price function in this securitized economy by $q^{\mathrm{ABS}}$. The attachment point of a tranche is the asset-value threshold above which it begins to pay. In this example, the attachment point of the junior tranche is calibrated to coincide with the equilibrium asset price in state $m$, $q^{\mathrm{ABS}}(m)$. The senior tranche pays $q^{\mathrm{ABS}}(m)$ next period unless the state becomes $l$, in which case it pays $q^{\mathrm{ABS}}(l)$. The junior tranche pays $q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m)$ if the realized state is $h$ and $0$ otherwise. Let $\phi_s$ and $\phi_j$ denote the payoff functions of the senior and junior tranches, respectively.
+&
+\textit{``define an attachment point before using the term.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 2.2: ABS pricing}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 2.2: ABS pricing}}\\*
 Given the assumption about the existence of an exogenous constraint on short-selling, the price of each ABS is given by the willingness to pay from whoever is most optimistic about the payout of the ABS next period, discounted by the interest rate. To start with, assume $q^{\mathrm{ABS}}(l)<q^{\mathrm{ABS}}(m)<q^{\mathrm{ABS}}(h)$.
 &
-Because short sales are constrained, the price of each ABS equals the highest expected next-period payoff across agents, discounted at the interest rate. To start with, assume $q^{\mathrm{ABS}}(l)<q^{\mathrm{ABS}}(m)<q^{\mathrm{ABS}}(h)$. \\
+Because short sales are constrained, the price of each ABS equals the highest expected next-period payoff across agents, discounted at the interest rate. To start with, assume $q^{\mathrm{ABS}}(l)<q^{\mathrm{ABS}}(m)<q^{\mathrm{ABS}}(h)$.
+&
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 2.2: comparison of expected payoffs}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 2.2: comparison of expected payoffs}}\\*
 For states $l$ and $h$, the equilibrium conditions can be derived by identifying who buys the tranches at these states. At state $l$, the expectations of $\mathcal{A}$ on the payoff from any tranche are greater than those of $\mathcal{B}$. The opposite is true at state $h$. Hence both tranches are bought by $\mathcal{A}$ at state $l$ and both tranches are bought by $\mathcal{B}$ at state $h$.
 &
-For states $l$ and $h$, the equilibrium conditions can be derived by identifying who buys the tranches at these states. At state $l$, $\mathcal{A}$'s expected payoff from any tranche is greater than $\mathcal{B}$'s. The opposite is true at state $h$. Hence both tranches are bought by $\mathcal{A}$ at state $l$ and both tranches are bought by $\mathcal{B}$ at state $h$. \\
+For states $l$ and $h$, the equilibrium conditions can be derived by identifying who buys the tranches at these states. At state $l$, $\mathcal{A}$'s expected payoff from any tranche is greater than $\mathcal{B}$'s. The opposite is true at state $h$. Hence both tranches are bought by $\mathcal{A}$ at state $l$ and both tranches are bought by $\mathcal{B}$ at state $h$.
+&
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 3.2: extreme belief partitions}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 3.2: extreme belief partitions}}\\*
 If every block in a theory $\mathcal{F}$ is a singleton, it follows that $Q_\mathcal{F}=P$. In this case, $\mathcal{F}$ implies rational expectations. On the other side, if $\mathcal{F}=\left\{X\right\}$, then, $Q_{\mathcal{F}}\left(x,y\right)=\mu(y)$ for all $x$ and $y$ in $X$. This corresponds to the most naive theory, since its forecasts are not conditioned on the state.
 &
-If every block in a theory $\mathcal{F}$ is a singleton, it follows that $Q_\mathcal{F}=P$. In this case, $\mathcal{F}$ implies rational expectations. At the other extreme, if $\mathcal{F}=\left\{X\right\}$, then $Q_{\mathcal{F}}\left(x,y\right)=\mu(y)$ for all $x$ and $y$ in $X$. This corresponds to the most naive theory, since its forecasts are not conditioned on the state. \\
+If every block in a theory $\mathcal{F}$ is a singleton, it follows that $Q_\mathcal{F}=P$. In this case, $\mathcal{F}$ implies rational expectations. At the other extreme, if $\mathcal{F}=\left\{X\right\}$, then $Q_{\mathcal{F}}\left(x,y\right)=\mu(y)$ for all $x$ and $y$ in $X$. This corresponds to the most naive theory, since its forecasts are not conditioned on the state.
+&
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 3.3: liquidity, ABS contract, and backing}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 3.3: liquidity, ABS contract, and backing}}\\*
 The ownership of the long-term asset allows the possibility of obtaining liquidity (bonds) not only by reselling the asset but also by issuing and selling ABS. It is assumed that the ABS have a maturity of one period.
 The security is a contract in which the owner of the long-term asset (the issuer) commits to transferring to the holder of the security (the investor) a non-negative amount of bonds next period. This amount depends on the realization of the asset price when payment is due. The securities are backed by the long-term asset in the sense that the net transfer from the issuer to all investors is always equal to the price of the underlying asset.
 &
-The owner of the long-term asset can obtain liquidity (bonds) not only by reselling the asset but also by issuing and selling ABS. Each ABS has a maturity of one period and commits the owner of the long-term asset (the issuer) to transferring a nonnegative amount of bonds to its holder (the investor) next period. This amount depends on the realization of the asset price when payment is due. The collection of securities is backed by the long-term asset: the aggregate transfer from the issuer to investors equals the price of the underlying asset. \\
+The owner of the long-term asset can obtain liquidity (bonds) not only by reselling the asset but also by issuing and selling ABS. Each ABS has a maturity of one period and commits the owner of the long-term asset (the issuer) to transferring a nonnegative amount of bonds to its holder (the investor) next period. This amount depends on the realization of the asset price when payment is due. The collection of securities is backed by the long-term asset: the aggregate transfer from the issuer to investors equals the price of the underlying asset.
+&
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 3.3: link to the motivating example}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 3.3: link to the motivating example}}\\*
 In the motivating example, the economy without ABS corresponds to $\mathcal{T}^0:=\{[0,\infty)\}$, while the securitized economy corresponds to $\mathcal{T}^{\mathrm{ABS}}:=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q^{\mathrm{ABS}}(m))$ and $\tau^j=[q^{\mathrm{ABS}}(m),\infty)$. Thus, in the notation of the general model, $q=q_{\mathcal{T}^0}$ and $q^{\mathrm{ABS}}=q_{\mathcal{T}^{\mathrm{ABS}}}$, while equations (6) and (7) are the special cases of (15) associated with $\tau^s$ and $\tau^j$, respectively.
 &
-In the motivating example, the economy without ABS corresponds to $\mathcal{T}^0:=\{[0,\infty)\}$, while the securitized economy corresponds to $\mathcal{T}^{\mathrm{ABS}}:=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q^{\mathrm{ABS}}(m))$ and $\tau^j=[q^{\mathrm{ABS}}(m),\infty)$. Equations (6) and (7) are the special cases of (15) associated with $\tau^s$ and $\tau^j$, respectively. \\
+In the motivating example, the economy without ABS corresponds to $\mathcal{T}^0:=\{[0,\infty)\}$, while the securitized economy corresponds to $\mathcal{T}^{\mathrm{ABS}}:=\{\tau^s,\tau^j\}$, where $\tau^s=[0,q^{\mathrm{ABS}}(m))$ and $\tau^j=[q^{\mathrm{ABS}}(m),\infty)$. Equations (6) and (7) are the special cases of (15) associated with $\tau^s$ and $\tau^j$, respectively.
+&
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 3.4: short-sale constraints}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 3.4: short-sale constraints}}\\*
 It is assumed that the short-selling of the ABS or the long-term asset is not possible. Alternatively, it can be assumed that there is an exogenous constraint on the short-selling of the ABS and of the long-term asset. Under this assumption, the price of any ABS will be given by the willingness to pay from whoever is most optimistic about the ABS future payout. With unrestricted short selling and free borrowing, disagreement can generate unbounded positions, so equilibrium need not exist.
 &
-Short positions in ABS and in the long-term asset are assumed to be bounded. Under this assumption, the price of any ABS is determined by the willingness to pay of whoever is most optimistic about its future payoff. With unrestricted short selling and free borrowing, disagreement can generate unbounded positions, so equilibrium need not exist. \\
+Short positions in ABS and in the long-term asset are assumed to be bounded. Under this assumption, the price of any ABS is determined by the willingness to pay of whoever is most optimistic about its future payoff. With unrestricted short selling and free borrowing, disagreement can generate unbounded positions, so equilibrium need not exist.
+&
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 3.5: market clearing}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 3.5: market clearing}}\\*
 In equilibrium, the demand for the long-term asset and the demand for each security have to match their  respective supply. The exogenous limit on short-selling guarantees that this supply is finite.
 For $x\in X$, let $p_\tau(x)$ be the price of the security associated with tranche $\tau\in\mathcal{T}$ and $q(x)$ be the price of the long-term asset.
 &
 In equilibrium, demand for the long-term asset and for each security must equal their respective supplies. The exogenous limits on short positions ensure that these supplies are finite.
-For $x\in X$, let $p_\tau(x)$ be the price of the security associated with tranche $\tau\in\mathcal{T}$ and $q(x)$ be the price of the long-term asset. \\
-\addlinespace[0.9em]
-
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Section 4.3: perceived break-even condition}}\\*
-At the equilibrium price $p_\tau(x)$, the selected buyer perceives the purchase of one unit of tranche $\tau$ to break even relative to investing $p_\tau(x)$ in the bond.
+For $x\in X$, let $p_\tau(x)$ be the price of the security associated with tranche $\tau\in\mathcal{T}$ and $q(x)$ be the price of the long-term asset.
 &
-At the equilibrium price $p_\tau(x)$, the selected buyer perceives a one-unit position in tranche $\tau$ to break even relative to investing $p_\tau(x)$ in the bond. \\
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{Conclusion: perceived break-even condition}}\\*
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Section 4.3: perceived break-even condition}}\\*
+At the equilibrium price $p_\tau(x)$, the selected buyer perceives the purchase of one unit of tranche $\tau$ to break even relative to investing $p_\tau(x)$ in the bond. The \textit{actual} average excess payoff $\Delta_\mathcal{F}^{\mathcal{T}}$, evaluated under the objective transition probabilities, is not necessarily zero.
+&
+At the equilibrium price $p_\tau(x)$, the selected buyer perceives a one-unit position in tranche $\tau$ to break even relative to investing $p_\tau(x)$ in the bond. The \textit{actual} average excess payoff $\Delta_\mathcal{F}^{\mathcal{T}}(q)$, evaluated under the objective transition probabilities, is not necessarily zero.
+&
+\textit{``replace phrases such as ``purchases to break even'' with the more natural statement that a position is perceived to break even''} \\
+\addlinespace[0.9em]
+
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Conclusion: perceived break-even condition}}\\*
 The paper has also studied the effect of securitization on agents' realized excess payoffs. Whoever buys an asset may be subject to a winner's curse: the payoff they expect on the asset may exceed its objective average payoff, even though the purchase is perceived to break even relative to the bond.
 &
-The paper has also studied the effect of securitization on agents' realized excess payoffs. Whoever buys an asset may be subject to a winner's curse: the payoff they expect on the asset may exceed its objective average payoff, even though the position is perceived to break even relative to the bond. \\
+The paper has also studied the effect of securitization on agents' realized excess payoffs. Whoever buys an asset may be subject to a winner's curse: the payoff they expect on the asset may exceed its objective average payoff, even though the position is perceived to break even relative to the bond.
+&
+\textit{``replace phrases such as ``purchases to break even'' with the more natural statement that a position is perceived to break even''} \\
 \addlinespace[0.9em]
 
-\multicolumn{2}{@{}p{\textwidth}@{}}{\textbf{AI and code disclosure}}\\*
+% Complete comparison: appendix_unique
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Appendix 6.5: example equilibrium}}\\*
+If $q$ and $\widehat q$ were both fixed points, this inequality would imply $\|q-\widehat q\|_\infty\leq(3/4)\|q-\widehat q\|_\infty$. Thus they must coincide, and the displayed price is the least equilibrium price selected in the paper. The resulting tranche payoff vectors are
+&
+If $q$ and $\widehat q$ were both fixed points, this inequality would imply $\|q-\widehat q\|_\infty\leq(3/4)\|q-\widehat q\|_\infty$. Thus they must coincide, and the displayed price is the unique equilibrium price. The resulting tranche payoff vectors are
+&
+\textit{``Clarify the role and scope of the least-equilibrium selection.''} \\
+\addlinespace[0.9em]
+
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{AI and code disclosure}}\\*
 During the revision of this work, the author used OpenAI Codex to assist with language editing, mathematical exposition, consistency checks, and the preparation and verification of computational code. The author reviewed and edited all output and takes full responsibility for the content of the article.
 &
-During the revision of this work, the author used OpenAI Codex interactively to assist with language editing, mathematical exposition, consistency checks, and the drafting and testing of the computational companion. The author treated these outputs as drafts, supplied the substantive direction, and reviewed and revised the resulting text and code. The author takes full responsibility for the manuscript and the computational companion. \\
+During the revision of this work, the author used OpenAI Codex to help edit the text, review proofs, check notation, and write and test the code in the computational companion. The author reviewed and edited the resulting text and code and takes full responsibility for the manuscript and computational companion.
+&
+\textit{``Undertake a final paragraph-by-paragraph exposition check and clarify the AI/code disclosure.''}\par\smallskip
+\textit{``Please therefore treat AI output as a draft, not as finished prose, and iterate paragraph by paragraph until the argument is clear and readable.''} \\
 \addlinespace[0.9em]
+% Complete comparison: tarski_reference
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{References: Tarski (1955)}}\\*
+\textit{No corresponding passage in the submitted R1 version.}
+&
+Alfred Tarski.
+A lattice-theoretical fixpoint theorem and its applications.
+\emph{Pacific Journal of Mathematics}, 5 (2):
+  285--309, 1955.
+doi: 10.2140/pjm.1955.5.285.
+URL \url{https://doi.org/10.2140/pjm.1955.5.285}.
+&
+\textit{``Because $\Psi_T$ is monotone on a complete lattice, Tarski's fixed-point theorem appears to provide a complete-lattice structure for its fixed-point set. Please state the appropriate result or explain why it does not apply.''}\par\smallskip
+Reference added to support the application of Tarski's theorem. \\
+\addlinespace[0.9em]
+
 \end{longtable}
 \endgroup
+\end{landscape}
 
 \end{document}
