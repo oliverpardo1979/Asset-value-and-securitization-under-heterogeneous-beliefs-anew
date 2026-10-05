@@ -11,11 +11,11 @@ from computational_companion.paper_examples import (
     REALIZED_PAYOFF_OBJECTIVE_TRANSITION,
     REALIZED_PAYOFF_PRIORITY,
     REALIZED_PAYOFF_STATIONARY_DISTRIBUTION,
-    REVIEWER_INTERMEDIATE_EQUILIBRIUM,
+    MULTIPLICITY_INTERMEDIATE_EQUILIBRIUM,
     all_examples,
     motivating_two_tranche_multiplicity_example,
     realized_payoff_example,
-    reviewer_example,
+    multiplicity_example,
 )
 from computational_companion.waterfall_equilibria import (
     WaterfallEconomy,
@@ -39,8 +39,8 @@ class WaterfallEquilibriumTests(unittest.TestCase):
                 self.assertLess(result.residual_min, 1e-10)
                 self.assertLess(result.residual_max, 1e-10)
 
-    def test_reviewer_example_detects_multiplicity(self) -> None:
-        example = reviewer_example(with_tranching=True)
+    def test_multiplicity_example_detects_multiplicity(self) -> None:
+        example = multiplicity_example(with_tranching=True)
         result = compute_extreme_equilibria(example.economy)
         self.assertEqual(example.economy.tranche_count, 2)
         self.assertTrue(result.multiplicity_detected())
@@ -58,8 +58,8 @@ class WaterfallEquilibriumTests(unittest.TestCase):
         np.testing.assert_array_equal(junior_is_active_at_q_max, (False, True, True))
 
     def test_reported_intermediate_price_is_a_fixed_point(self) -> None:
-        economy = reviewer_example(with_tranching=True).economy
-        q_middle = REVIEWER_INTERMEDIATE_EQUILIBRIUM
+        economy = multiplicity_example(with_tranching=True).economy
+        q_middle = MULTIPLICITY_INTERMEDIATE_EQUILIBRIUM
         np.testing.assert_allclose(
             price_operator(economy, q_middle), q_middle, atol=2e-9, rtol=0.0
         )
@@ -73,7 +73,7 @@ class WaterfallEquilibriumTests(unittest.TestCase):
         np.testing.assert_array_equal(result.q_max > 3.0, (False, True, True))
 
     def test_tranche_payoffs_are_budget_balanced(self) -> None:
-        economy = reviewer_example(with_tranching=True).economy
+        economy = multiplicity_example(with_tranching=True).economy
         prices = np.array((13.0, 15.0, 18.0))
         np.testing.assert_allclose(
             tranche_payoffs(economy, prices).sum(axis=0), prices

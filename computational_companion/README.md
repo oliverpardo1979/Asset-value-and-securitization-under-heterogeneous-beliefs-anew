@@ -88,12 +88,12 @@ print(result.q_max)
 2. the motivating example with two tranches;
 3. an additional parameterization of the motivating economy in which two
    tranches generate multiplicity;
-4. the reviewer's parameterization without tranching;
-5. the reviewer's parameterization with a two-tranche debt--equity structure;
+4. the economy in Example 1 of the paper without tranching;
+5. the economy in Example 1 of the paper with a two-tranche debt--equity structure;
 6. the full-support realized-payoff example without tranching; and
 7. the same economy with three tranches.
 
-The reviewer's tranching case reproduces the least and greatest of the three
+The tranching case in Example 1 reproduces the least and greatest of the three
 equilibrium price vectors reported in the paper. The tests also verify directly
 that the reported intermediate vector is a fixed point, although the solver
 does not search for or return it.
@@ -105,8 +105,8 @@ The expected numerical results are:
 | Motivating, no tranching | `(1, 2, 3)` | `(1, 2, 3)` | No |
 | Motivating, two tranches | `(1.05, 2.25, 3)` | `(1.05, 2.25, 3)` | No |
 | Motivating family, two-tranche multiplicity | `(46.634, 48.539, 51.724)` | `(48.497, 51.077, 53.191)` | Yes |
-| Reviewer, no tranching | `(2.593, 2.844, 2.991)` | Same | No |
-| Reviewer, two-tranche debt--equity structure | `(2.593, 2.844, 2.991)` | `(2.741, 3.020, 3.142)` | Yes |
+| Example 1, no tranching | `(2.593, 2.844, 2.991)` | Same | No |
+| Example 1, two-tranche debt--equity structure | `(2.593, 2.844, 2.991)` | `(2.741, 3.020, 3.142)` | Yes |
 | Realized-payoff example, no tranching | `(1.994, 2.500, 4.000)` | Same | No |
 | Realized-payoff example, three tranches | `(2, 2.5, 4)` | Same | No |
 

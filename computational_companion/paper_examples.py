@@ -77,8 +77,8 @@ def motivating_two_tranche_multiplicity_example() -> PaperExample:
     )
 
 
-def reviewer_example(*, with_tranching: bool) -> PaperExample:
-    """Return the non-uniqueness example in Section 3.5."""
+def multiplicity_example(*, with_tranching: bool) -> PaperExample:
+    """Return the economy in Example 1 of the paper, with or without tranching."""
 
     transition = np.array(
         (
@@ -93,9 +93,9 @@ def reviewer_example(*, with_tranching: bool) -> PaperExample:
 
     return PaperExample(
         name=(
-            "Reviewer example: two-tranche debt-equity structure"
+            "Example 1: two-tranche debt-equity structure"
             if with_tranching
-            else "Reviewer example: no tranching"
+            else "Example 1: no tranching"
         ),
         economy=WaterfallEconomy(
             dividends=(0.0, 3.0 / 12.0, 5.0 / 12.0),
@@ -110,7 +110,7 @@ def reviewer_example(*, with_tranching: bool) -> PaperExample:
     )
 
 
-REVIEWER_INTERMEDIATE_EQUILIBRIUM = (
+MULTIPLICITY_INTERMEDIATE_EQUILIBRIUM = (
     np.array((259.0, 285.0, 297.0)) / 97.0
 )
 
@@ -178,8 +178,8 @@ def all_examples() -> tuple[PaperExample, ...]:
         motivating_example(with_tranching=False),
         motivating_example(with_tranching=True),
         motivating_two_tranche_multiplicity_example(),
-        reviewer_example(with_tranching=False),
-        reviewer_example(with_tranching=True),
+        multiplicity_example(with_tranching=False),
+        multiplicity_example(with_tranching=True),
         realized_payoff_example(with_tranching=False),
         realized_payoff_example(with_tranching=True),
     )

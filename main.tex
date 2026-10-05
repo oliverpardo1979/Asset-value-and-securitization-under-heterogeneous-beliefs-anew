@@ -471,7 +471,7 @@ The matrix $P$ is strictly positive and doubly stochastic. Consider the coarse t
 \[
 \mathcal{T}=\{[0,3),[3,\infty)\},
 \]
-the senior tranche $[0,3)$ is debt with face value 3, and the junior tranche $[3,\infty)$ is residual equity. Direct substitution gives the following three fixed points, with coordinates ordered as $(l,m,h)$:
+the senior tranche $[0,3)$ is debt with face value 3, and the junior tranche $[3,\infty)$ is residual equity. Direct substitution shows that $\Psi_{\mathcal{T}}$ has at least the following three fixed points, with coordinates ordered as $(l,m,h)$:
 \[
 q^{(1)}=\frac{1}{327}(848,930,978)
 \approx(2.593,2.844,2.991),
@@ -488,7 +488,7 @@ q^{(3)}=\frac{1}{803}(2201,2425,2523)
 Numerically implementing the monotone-iteration algorithm in Proposition \ref{exu}, starting from $\mathbf{0}$ and $M_{\mathcal{T}}\mathbf{1}$, yields $q^{(1)}$ and $q^{(3)}$, respectively. Hence, $q^{(1)}=q_{\mathcal{T}}^{\min}$ and $q^{(3)}=q_{\mathcal{T}}^{\max}$, while $q^{(2)}$ is an intermediate equilibrium.
 The first vector is also the unique equilibrium price without tranching. The approximate values make the payment patterns of the residual-equity tranche $[3,\infty)$ explicit. At $q^{(1)}$, all three prices are below 3, so this tranche never pays. At $q^{(2)}$, only $q^{(2)}(h)>3$, so it pays only in state $h$. At $q^{(3)}$, both $q^{(3)}(m)>3$ and $q^{(3)}(h)>3$, so it pays in states $m$ and $h$. Thus even a two-tranche debt--equity structure can support different patterns of active tranches and multiple equilibrium prices.
 
-The multiplicity in this example is locally robust: sufficiently small changes in the transition probabilities, dividends, interest rate, and attachment point preserve three distinct equilibria. The equilibrium prices may change, but the states in which residual equity pays remain as described above.
+The multiplicity in this example is locally robust: sufficiently small changes in the transition probabilities, dividends, interest rate, and attachment point preserve three distinct equilibria. The equilibrium prices may change, but in each of the three equilibria the states in which residual equity pays remain as described above.
 \end{example}
 
 \begin{crl}\label{cor:tranching-multiplicity}
@@ -523,7 +523,9 @@ Because $\underline R>1$, $\Psi_{\mathcal{T}^0}$ is a contraction and has a uniq
 Corollary \ref{cor:tranching-multiplicity} isolates multiplicity as a possible consequence of pricing tranches separately, rather than a feature of the no-tranching resale-option benchmark. It does not assert that every refinement increases the number of equilibria.
 Proposition \ref{exu} nevertheless imposes order on the multiplicity: every collection of waterfall-equilibrium prices has a greatest lower bound and a least upper bound within the equilibrium set. Example \ref{ex:multiplicity} shows that this complete-lattice structure may include equilibria strictly between its least and greatest elements.
 
-\subsection{Finite-horizon interpretation}\label{sec:selection}
+\subsection{Equilibrium selection}\label{sec:selection}
+
+Comparisons based on a single equilibrium price function for each tranching require specifying which equilibrium is selected. To assess whether any alternative tranching can yield a higher asset price, the analysis compares tranchings using their least equilibrium prices.
 
 The least equilibrium price has a finite-horizon interpretation. Consider an economy in which $H$ dividend dates remain, the terminal continuation value is zero, and the same menu of one-period waterfall claims is available at every date. The following proposition shows that its price converges to the least waterfall-equilibrium price as the horizon increases.
 
@@ -617,7 +619,7 @@ q_{\mathcal{T}}^{\min}(x)
 for any tranching $\mathcal{S}$ and all $x\in X$.
 \end{dfn}
 
-In order to characterize the necessary and sufficient conditions for a tranching to be issuer-optimal, the following object is introduced: Let $I_A$ be the indicator function for event $A$. For $t\in\mathbb{R}_+$, define $G^\mathcal{T}_\mathcal{F}\left(t\mid x\right)$ as the probability at state $x$ that the asset price  next period is no higher than $t$, as perceived by theory $\mathcal{F}$ when the tranching is $\mathcal{T}$ and the least equilibrium is selected:
+In order to characterize the necessary and sufficient conditions for a tranching to be issuer-optimal, the following object is introduced: Let $I_A$ be the indicator function for event $A$. For $t\in\mathbb{R}_+$, define $G^\mathcal{T}_\mathcal{F}\left(t\mid x\right)$ as the probability at state $x$ that the asset price  next period is no higher than $t$, as perceived by theory $\mathcal{F}$ when the tranching is $\mathcal{T}$ and prices are given by $q_{\mathcal{T}}^{\min}$:
 \begin{equation*}
 G^\mathcal{T}_\mathcal{F}\left(t\mid x\right) := E_{\mathcal{F}}\left(I_{\left\{q_{\mathcal{T}}^{\min}\leq t\right\}}\mid x\right)
 \end{equation*}
@@ -1088,7 +1090,9 @@ q_{\mathcal{T}}\leq b+Aq_{\mathcal{T}},
 or $(I-A)q_{\mathcal{T}}\leq b$. By Proposition \ref{prp:state-existence}, $(I-A)^{-1}$ is nonnegative. Multiplication by this matrix yields $q_{\mathcal{T}}\leq\bar q$.
 \end{proof}
 
-State-contingent securities allow the issuer to exploit disagreement more flexibly than waterfall tranches. Proposition \ref{prp:upper} shows that the eigenvalue condition in Proposition \ref{prp:state-existence} has two further implications: every finite waterfall tranching has a unique equilibrium price, and the state-contingent price bounds that price from above.\footnote{A related result appears in \cite{AllenGale1988}: in a different security-design environment with short-sale constraints, market value is maximized by designing securities so that, in each state, the asset's entire payoff goes to the investor group that values it most.} The lack of a belief that stochastically dominates all others in at least one state is a necessary condition for waterfall tranching to increase the asset price only because of the waterfall constraint. State-contingent securitization, in contrast, can exploit any disagreement about transition probabilities, provided that the resulting price system satisfies the existence condition above.
+The matrix $A$ depends on beliefs and interest rates, not on the tranching. When all its eigenvalues lie strictly inside the unit circle, every finite waterfall tranching has a unique equilibrium. Tranching may still raise the asset price, but it cannot generate multiplicity. Failure of the eigenvalue condition does not by itself imply multiplicity.
+
+State-contingent securities allow the issuer to exploit disagreement more flexibly than waterfall tranches. Proposition \ref{prp:upper} also shows that, under this eigenvalue condition, the state-contingent price bounds the waterfall-equilibrium price from above.\footnote{A related result appears in \cite{AllenGale1988}: in a different security-design environment with short-sale constraints, market value is maximized by designing securities so that, in each state, the asset's entire payoff goes to the investor group that values it most.} The lack of a belief that stochastically dominates all others in at least one state is a necessary condition for waterfall tranching to increase the asset price only because of the waterfall constraint. State-contingent securitization, in contrast, can exploit any disagreement about transition probabilities, provided that the resulting price system satisfies the existence condition above.
 
 \section{Conclusion} \label{sec:disc}
 
