@@ -1049,9 +1049,15 @@ For any $r,s\in\mathbb{R}_+$, the monotonicity and budget balance of the tranche
 \left|\phi_\tau(r)-\phi_\tau(s)\right|
 =|r-s|.
 \]
-Using the inequality $|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|$, it follows that, for any nonnegative price functions $q,w$,
+Using the triangle inequality and $|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|$, it follows that, for any nonnegative price functions $q,w$,
 \begin{align*}
 \left|\Psi_{\mathcal{T}}(q)(x)-\Psi_{\mathcal{T}}(w)(x)\right|
+&\leq
+\frac{1}{R(x)}
+\sum_{\tau\in\mathcal{T}}
+\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{y\in X}Q_\mathcal{F}(x,y)
+\left|\phi_\tau(q(y))-\phi_\tau(w(y))\right|\\
 &\leq
 \frac{1}{R(x)}
 \sum_{\tau\in\mathcal{T}}
@@ -1061,13 +1067,13 @@ Using the inequality $|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|$, it follows th
 &=
 \sum_{y\in X}A(x,y)|q(y)-w(y)|.
 \end{align*}
-If $q$ and $w$ are both fixed points, this inequality gives
+If $q$ and $w$ are both fixed points, this inequality gives $|q-w|\leq A|q-w|$. Since $A$ is nonnegative, repeated multiplication gives
 \[
-|q-w|\leq A|q-w|\leq A^n|q-w|
+|q-w|\leq A^n|q-w|
 \]
 for every $n\geq1$. Proposition \ref{prp:state-existence} implies that $A^n$ converges to zero. Hence $q=w$. Existence follows from Proposition \ref{exu}, so $\mathcal{Q}_{\mathcal{T}}$ is a singleton; denote its element by $q_{\mathcal{T}}$.
 
-For every nonnegative price function $w$ and every tranche $\tau$,
+It remains to prove the upper bound. For every nonnegative price function $w$ and every tranche $\tau$,
 \begin{align*}
 \max_{\mathcal{F}\in\mathbf{F}}
 E_{\mathcal{F}}\left(\phi_\tau(w)\mid x\right)

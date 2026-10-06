@@ -1418,11 +1418,19 @@ For any $r,s\in\mathbb{R}_+$, the monotonicity and budget balance of the tranche
 \left|\phi_\tau(r)-\phi_\tau(s)\right|
 =|r-s|.
 \]
-Using the inequality $|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|$, it follows that, for any nonnegative price functions $q,w$,
+Using the triangle inequality and $|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|$, it follows that, for any nonnegative price functions $q,w$,
 \[
 \begin{aligned}
 &\left|\Psi_{\mathcal{T}}(q)(x)-\Psi_{\mathcal{T}}(w)(x)\right|
 \\
+&\leq
+\frac{1}{R(x)}
+\sum_{\tau\in\mathcal{T}}
+\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{y\in X}
+\\
+&\qquad Q_\mathcal{F}(x,y)
+\left|\phi_\tau(q(y))-\phi_\tau(w(y))\right|\\
 &\leq
 \frac{1}{R(x)}
 \sum_{\tau\in\mathcal{T}}
@@ -1447,14 +1455,27 @@ Using the inequality $|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|$, it follows th
 \textit{No corresponding passage in the submitted R1 version.}
 }
 & \literalcell{
-If $q$ and $w$ are both fixed points, this inequality gives
+If $q$ and $w$ are both fixed points, this inequality gives $|q-w|\leq A|q-w|$. Since $A$ is nonnegative, repeated multiplication gives
 \[
-|q-w|\leq A|q-w|\leq A^n|q-w|
+|q-w|\leq A^n|q-w|
 \]
 for every $n\geq1$. Proposition 8 implies that $A^n$ converges to zero. Hence $q=w$. Existence follows from Proposition 1, so $\mathcal{Q}_{\mathcal{T}}$ is a singleton; denote its element by $q_{\mathcal{T}}$.
 }
 & \literalcell{
 \textit{``Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: prop9_upper_transition
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Proposition 9: transition to the upper-bound argument}\quad\textit{Exposition}}\\*
+\literalcell{
+For every nonnegative price function $w$ and every tranche $\tau$,
+}
+& \literalcell{
+It remains to prove the upper bound. For every nonnegative price function $w$ and every tranche $\tau$,
+}
+& \literalcell{
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''}
 } \\
 \addlinespace[1em]
 
