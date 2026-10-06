@@ -340,7 +340,7 @@ In the motivating example, the economy without ABS corresponds to $\mathcal{T}^0
 
 \subsection{The market}
 
-In each period, there is an infinitely-supplied bond used as a numeraire. Let $R:X\to(1,\infty)$ denote its payoff next period as a function of the current state, and let $d:X\to\mathbb{R}_+$ denote the nonnegative dividend declared by the long-term asset in the current state and paid next period. Since $X$ is finite, set $\underline R:=\min_{x\in X}R(x)>1$. The bond can be traded for the long-term asset, which is in finite supply.
+In each period, there is an infinitely-supplied bond used as a numeraire. Let $R:X\to(1,\infty)$ denote its payoff next period as a function of the current state, and let $d:X\to\mathbb{R}_+$ denote the nonnegative dividend declared by the long-term asset in the current state and paid next period. Assume that $d(x)>0$ for at least one state $x\in X$. Since $X$ is finite, set $\underline R:=\min_{x\in X}R(x)>1$. The bond can be traded for the long-term asset, which is in finite supply.
 
 
 Short positions in ABS and in the long-term asset are assumed to be bounded. Under this assumption, the price of any ABS is determined by the willingness to pay of whoever is most optimistic about its future payoff. With unrestricted short selling and free borrowing, disagreement can generate unbounded positions, so equilibrium need not exist.
@@ -1013,7 +1013,7 @@ An equilibrium price $\bar q$ under this state-contingent securitization structu
 The matrix $A$ is not a transition matrix: because the maximization is performed separately across next-period states, different entries in the same row may be determined by different theories, and the row sum can exceed one. Therefore, $R(x)>1$ alone does not guarantee the existence of a nonnegative solution to equation (\ref{eq:upper}).
 
 \begin{prp}\label{prp:state-existence}
-Suppose dividends are positive in at least one state. Equation (\ref{eq:upper}) admits a nonnegative solution if and only if all eigenvalues of $A$ lie strictly inside the unit circle. In that case, the solution is unique and
+Equation (\ref{eq:upper}) admits a nonnegative solution if and only if all eigenvalues of $A$ lie strictly inside the unit circle. In that case, the solution is unique and
 \[
 \bar q=(I-A)^{-1}b=\sum_{n=0}^{\infty}A^n b.
 \]
