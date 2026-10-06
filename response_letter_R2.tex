@@ -70,7 +70,7 @@ d=\frac1{12}(0,3,5).
 \]
 The coarse theory assigns probability $1/3$ to each next-period state, while the fine theory uses $P$. The tranching is $\mathcal T=\{[0,3),[3,\infty)\}$. I verified that the three reported price vectors satisfy the equilibrium conditions by direct substitution. The main text presents both their exact and approximate values and explains when residual equity pays in each equilibrium: never in the first, only in state $h$ in the second, and in states $m$ and $h$ in the third. The text also identifies the first equilibrium as the least equilibrium, the second as an intermediate equilibrium, and the third as the greatest equilibrium. The least equilibrium coincides with the unique equilibrium price without tranching.
 
-Example 1 now includes a brief local-robustness observation: sufficiently small changes in the transition probabilities, dividends, interest rate, and attachment point preserve three distinct equilibria. A detailed proof would require setting out and analyzing the local equilibrium systems for all three cases. I have kept the discussion brief to avoid substantially lengthening the example. I have nevertheless verified local robustness separately for each of the three equilibria.}
+Example 1 now includes a brief local-robustness observation: sufficiently small changes in the transition probabilities, dividends, interest rate, and attachment point preserve three distinct equilibria. A footnote briefly explains the argument. A detailed proof would require setting out and analyzing the local equilibrium systems for all three cases. I have kept the discussion brief to avoid substantially lengthening the example. I have nevertheless verified local robustness separately for each of the three equilibria.}
 
 \clearpage
 \commenttext{Please conduct a final paragraph-by-paragraph exposition check. In particular, define realized excess payoff when it first appears, revise the statement that a purchase is perceived to break even, define ``attachment point'' before using the term, and clarify the disclosure concerning AI and the computational code.}
@@ -645,6 +645,7 @@ The first vector is also the unique equilibrium price without tranching. The app
 }
 & \literalcell{
 The multiplicity in this example is locally robust: sufficiently small changes in the transition probabilities, dividends, interest rate, and attachment point preserve three distinct equilibria. The equilibrium prices may change, but in each of the three equilibria the states in which residual equity pays remain as described above.
+\par\smallskip\textit{Footnote:} Each equilibrium is determined locally by an invertible linear system. Its solution varies continuously with the parameters, and sufficiently small changes preserve the strict inequalities determining tranche payments and the theories pricing tranches with nonzero payoffs.
 }
 & \literalcell{
 \textit{``This makes the mechanism more transparent and also supports a local-robustness observation.''}
