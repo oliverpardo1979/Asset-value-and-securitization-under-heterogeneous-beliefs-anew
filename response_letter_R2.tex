@@ -31,21 +31,15 @@ Oliver Pardo
 
 I thank the editor for the careful reading of the revised manuscript and for the constructive requests in the minor revision decision. I have addressed all four points. The principal changes are a complete-lattice characterization of the equilibrium set, a simpler multiplicity example, an explicit set-valued refinement comparison, and a new uniqueness result under the spectral condition. I also reviewed the manuscript paragraph by paragraph and clarified the disclosure concerning the use of AI. Table~\ref{tab:manuscript-changes} reproduces the original and revised passages in manuscript order, bringing together revisions to results, proofs, exposition, and terminology.
 
-\commenttext{Please add the uniqueness implication of the spectral-radius condition highlighted by Reviewer 2. If the contraction statement is correct, the paper should say explicitly that the condition implies uniqueness of the waterfall equilibrium.}
+\commenttext{Add the uniqueness implication of the spectral-radius condition. This is discussed in Reviewer 2's report.}
 
-\response{Proposition 9 now states and proves this implication. For any two price functions $q$ and $w$, the proof establishes the componentwise bound
+\response{Proposition 9 now states and proves that, when all eigenvalues of $A$ lie strictly inside the unit circle, every finite tranching has a unique waterfall-equilibrium price. For any two equilibrium price functions $q$ and $w$, the proof establishes
 \[
-\left|\Psi_{\mathcal T}(q)-\Psi_{\mathcal T}(w)\right|
-\leq A|q-w|.
+|q-w|\leq A^n|q-w|
 \]
-The key step is that the tranche payoff functions are monotone and budget balanced, so
-\[
-\sum_{\tau\in\mathcal T}
-\left|\phi_\tau(r)-\phi_\tau(s)\right|=|r-s|.
-\]
-When all eigenvalues of $A$ lie strictly inside the unit circle, $A^n$ converges to zero. If $q$ and $w$ are fixed points, the preceding inequality therefore gives $|q-w|\leq A^n|q-w|\to0$. Thus every finite tranching has a unique waterfall-equilibrium price under the spectral condition. Proposition 9 retains the additional conclusion that the state-contingent price bounds this unique waterfall price from above.
+for every $n\geq1$. The eigenvalue condition implies that $A^n$ converges to zero, so $q=w$. The proposition also retains the upper bound provided by the state-contingent price.
 
-The discussion following Proposition 9 now explains that the condition depends on beliefs and interest rates, not on the tranching. Under this condition, tranching may still raise prices but cannot generate multiplicity. The text also notes that failure of the condition does not by itself imply multiplicity.}
+The discussion following Proposition 9 explains that $A$ depends on beliefs and interest rates, not on the tranching. When all its eigenvalues lie strictly inside the unit circle, tranching may still raise prices but cannot generate multiplicity.}
 
 \commenttext{Clarify the role and scope of the least-equilibrium selection. The statement that the comparative statics ``require an equilibrium selection'' is too broad: set-valued comparative statics are possible without selecting an equilibrium. The intended point is that the paper's single-valued price comparisons require a selection. Please revise the wording accordingly.}
 
