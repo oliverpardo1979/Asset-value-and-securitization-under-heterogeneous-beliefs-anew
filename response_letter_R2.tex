@@ -77,7 +77,9 @@ Example 1 now includes a brief local-robustness observation: sufficiently small 
 
 \response{I completed the requested exposition check. The introduction now defines a realized excess payoff when the concept first appears: it is the payoff from a purchased security minus the payoff that the same expenditure would have earned in the bond, averaged under the objective transition probabilities. The relevant passages now state that a \emph{position} is perceived to break even at the equilibrium price. The motivating example now defines the attachment point of a tranche before specifying its value for the junior tranche.
 
-The revised disclosure specifies the use of OpenAI Codex to help edit the text, review proofs, check notation, and write and test the code in the computational companion. It states that I reviewed and edited the resulting text and code and take full responsibility for the manuscript and computational companion. In addition, I streamlined several sentences in the motivating example and model setup whose earlier wording obscured otherwise standard economic assumptions.}
+The revised disclosure specifies the use of OpenAI Codex to help edit the text, review proofs, check notation, and write and test the code in the computational companion. It states that I reviewed and edited the resulting text and code and take full responsibility for the manuscript and computational companion. In addition, I streamlined several sentences in the motivating example and model setup whose earlier wording obscured otherwise standard economic assumptions.
+
+As part of the paragraph-by-paragraph exposition check, I revised the literature review to describe the cited results more precisely and clarify the comparisons with the present paper.}
 
 \bigskip
 
@@ -194,6 +196,32 @@ This paper is organized as follows. The rest of this introduction presents a lit
 } \\
 \addlinespace[1em]
 
+% Complete comparison: literature_no_trade
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Literature Review: no-trade theorem}\quad\textit{Exposition}}\\*
+\literalcell{
+Milgrom and Stokey (1982) show that, under common priors and an ex ante Pareto-optimal allocation, private information alone cannot generate mutually agreeable speculative trade.
+}
+& \literalcell{
+Milgrom and Stokey (1982) show that, under common priors and an ex ante Pareto-optimal allocation, private information alone cannot generate gains from speculative trade when the trade's feasibility and acceptability to all traders are common knowledge.
+}
+& \literalcell{
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''}
+} \\
+\addlinespace[1em]
+
+% Complete comparison: literature_innovation_collateral
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Literature Review: financial innovation and collateral}\quad\textit{Exposition}}\\*
+\literalcell{
+The paper also relates to the literature on financial innovation and collateral, surveyed by Duffie and Rahi (1995). Fostel and Geanakoplos (2012) show that tranching and leverage can raise the price of an underlying asset, whereas credit default swaps can lower it. Simsek (2013a) instead shows that the form of disagreement determines whether collateral constraints bind and how additional contracts redirect speculative positions. Geanakoplos and Zame (2014) and Fostel and Geanakoplos (2016) place these mechanisms in the broader collateral-equilibrium literature.
+}
+& \literalcell{
+The paper also relates to the literature on financial innovation, surveyed by Duffie and Rahi (1995). Fostel and Geanakoplos (2012) show that tranching and leverage can raise the price of an underlying asset, whereas credit default swaps can lower it. Simsek (2013a) shows how the form of disagreement affects investors' ability to borrow against an asset and how additional contracts redirect speculative positions. Geanakoplos and Zame (2014) develop a general-equilibrium framework with collateralized borrowing and default, while Fostel and Geanakoplos (2016) study how financial innovation affects asset prices and investment through the use of collateral.
+}
+& \literalcell{
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''}
+} \\
+\addlinespace[1em]
+
 % Complete comparison: literature_portfolio_choice
 \multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Literature Review: portfolio choice}\quad\textit{Exposition}}\\*
 \literalcell{
@@ -207,13 +235,26 @@ More generally, Brock et al. (2009), Kubler and Schmedders (2012), and Simsek (2
 } \\
 \addlinespace[1em]
 
+% Complete comparison: literature_security_design_comparison
+\multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Literature Review: comparison with security-design studies}\quad\textit{Exposition}}\\*
+\literalcell{
+Unlike those papers, the analysis here takes the available waterfall class as given and characterizes issuer-optimal tranching within that class under belief disagreement.
+}
+& \literalcell{
+The analysis here takes the available waterfall class as given and characterizes issuer-optimal tranching within that class under belief disagreement.
+}
+& \literalcell{
+\textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''}
+} \\
+\addlinespace[1em]
+
 % Complete comparison: literature_diagnostic_expectations
 \multicolumn{3}{@{}p{\linewidth}@{}}{\textbf{Literature Review: beliefs and diagnostic expectations}\quad\textit{Exposition}}\\*
 \literalcell{
 Finally, work on distorted beliefs, credit cycles, and financial crises motivates the economic setting rather than providing a direct theoretical comparison. Gennaioli, Shleifer, and Vishny (2012) connect financial innovation with neglected risks and fragility. Models of diagnostic expectations generate credit and investment cycles (Bordalo, Gennaioli, and Shleifer, 2018; Maxted, 2024; Bordalo et al., 2026), while empirical and quantitative work links credit booms, asset-price growth, sentiment, and intermediation to financial crises (Greenwood et al., 2022; Krishnamurthy and Li, 2025). These papers do not study waterfall tranching, but they support the broader premise that distorted beliefs and financial intermediation can jointly generate price booms and fragility.
 }
 & \literalcell{
-Finally, the paper relates to research on beliefs, financial innovation, and financial crises. Gennaioli, Shleifer, and Vishny (2012) connect financial innovation with neglected risks and fragility. Models of diagnostic expectations, in which agents overreact to news when forming beliefs, generate credit and investment cycles (Bordalo, Gennaioli, and Shleifer, 2018; Maxted, 2024; Bordalo et al., 2026), while empirical and quantitative work links credit booms, asset-price growth, sentiment, and intermediation to financial crises (Greenwood et al., 2022; Krishnamurthy and Li, 2025). These papers do not study waterfall tranching, but they support the broader premise that distorted beliefs and financial intermediation can jointly generate price booms and fragility.
+Finally, the paper relates to research on beliefs, financial innovation, and financial crises. Gennaioli, Shleifer, and Vishny (2012) connect financial innovation with neglected risks and fragility. Models of diagnostic expectations, in which agents overreact to news when forming beliefs, generate credit and investment cycles (Bordalo, Gennaioli, and Shleifer, 2018; Maxted, 2024; Bordalo et al., 2026), while empirical and quantitative work links credit booms, asset-price growth, sentiment, and intermediation to financial crises (Greenwood et al., 2022; Krishnamurthy and Li, 2025). These papers support the broader premise that distorted beliefs and financial intermediation can jointly generate price booms and fragility.
 }
 & \literalcell{
 \textit{``More generally, please make one final pass for clarity, consistency of terminology, and sentence structure.''}
