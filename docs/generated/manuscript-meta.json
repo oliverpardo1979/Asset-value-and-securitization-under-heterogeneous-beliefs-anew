@@ -1,0 +1,281 @@
+{
+  "title": "Asset Value and Securitization under Heterogeneous Beliefs",
+  "author": "Oliver Pardo",
+  "source": "main.tex",
+  "source_commit": "569840397ac65ab5e8bede250cf86e1ae1d45b8a",
+  "source_sha256": "456e825d8efcb4670ad138e9c6c671d55153e094ad91f0c35f90c84563103c48",
+  "source_hash_line_endings": "LF",
+  "pdf_sha256": "7ab29feaa6878c529d6320047bf2551a376e93ad4ce217e50cd1823d65088566",
+  "abstract_html": "<p>This paper studies how securitization affects asset prices and realized excess payoffs when investors hold heterogeneous beliefs. I extend the resale-option asset-pricing model of <a href=\"#ref-HarrisonKreps1978\">Harrison and Kreps (1978)</a> by allowing the owner of a long-term asset to issue a finite set of asset-backed securities backed by its future cash flow. These securities are organized into tranches with different payment priorities. The no-tranching benchmark has a unique equilibrium price, but tranching can generate multiple equilibrium prices because separately priced tranches feed back into the asset’s resale value. Securitization weakly raises the equilibrium prices of the underlying asset relative to the no-tranching benchmark. Furthermore, there exists a tranching that raises the lowest equilibrium price strictly above its no-tranching level if and only if, at some state, no agent perceives a distribution of the next-period asset price in the no-tranching benchmark that first-order stochastically dominates the distributions perceived by all other agents. Tranching has ambiguous effects on individual realized excess payoffs, but the aggregate realized excess payoff is nonpositive and weakly decreases as the tranching is refined. When one agent has the finest information partition, securitization may lower some agents’ realized excess payoffs without raising anyone else’s. The results characterize how belief disagreement shapes the effect of security design on asset prices and realized payoffs.</p>",
+  "sections": [
+    {
+      "id": "asset-value-and-securitization-under-heterogeneous-beliefs",
+      "title": "Asset Value and Securitization under Heterogeneous Beliefs",
+      "level": 1,
+      "number": ""
+    },
+    {
+      "id": "abstract",
+      "title": "Abstract",
+      "level": 1,
+      "number": ""
+    },
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "level": 1,
+      "number": "1"
+    },
+    {
+      "id": "literature-review",
+      "title": "Literature Review",
+      "level": 2,
+      "number": "1.1"
+    },
+    {
+      "id": "example",
+      "title": "Motivating example",
+      "level": 1,
+      "number": "2"
+    },
+    {
+      "id": "benchmark",
+      "title": "Benchmark: A world without asset-backed securities",
+      "level": 2,
+      "number": "2.1"
+    },
+    {
+      "id": "securitized",
+      "title": "A world with asset-backed securities",
+      "level": 2,
+      "number": "2.2"
+    },
+    {
+      "id": "model",
+      "title": "The Model",
+      "level": 1,
+      "number": "3"
+    },
+    {
+      "id": "dividends-and-interest-rates",
+      "title": "Dividends and interest rates",
+      "level": 2,
+      "number": "3.1"
+    },
+    {
+      "id": "beliefs",
+      "title": "Beliefs",
+      "level": 2,
+      "number": "3.2"
+    },
+    {
+      "id": "asset-backed-securities",
+      "title": "Asset-backed securities",
+      "level": 2,
+      "number": "3.3"
+    },
+    {
+      "id": "the-market",
+      "title": "The market",
+      "level": 2,
+      "number": "3.4"
+    },
+    {
+      "id": "sec:eq",
+      "title": "Equilibrium",
+      "level": 2,
+      "number": "3.5"
+    },
+    {
+      "id": "sec:extuni",
+      "title": "Existence and multiplicity",
+      "level": 2,
+      "number": "3.6"
+    },
+    {
+      "id": "sec:selection",
+      "title": "Equilibrium selection",
+      "level": 2,
+      "number": "3.7"
+    },
+    {
+      "id": "sec:eff",
+      "title": "The effects of tranching",
+      "level": 1,
+      "number": "4"
+    },
+    {
+      "id": "effect-on-asset-prices",
+      "title": "Effect on asset prices",
+      "level": 2,
+      "number": "4.1"
+    },
+    {
+      "id": "subsec:fun",
+      "title": "Relation to Fundamentals",
+      "level": 2,
+      "number": "4.2"
+    },
+    {
+      "id": "sec:ep",
+      "title": "Effect on realized excess payoffs",
+      "level": 2,
+      "number": "4.3"
+    },
+    {
+      "id": "sec:cds",
+      "title": "Other types of contracts",
+      "level": 2,
+      "number": "4.4"
+    },
+    {
+      "id": "sec:disc",
+      "title": "Conclusion",
+      "level": 1,
+      "number": "5"
+    },
+    {
+      "id": "sec:appx",
+      "title": "Appendix",
+      "level": 1,
+      "number": "6"
+    },
+    {
+      "id": "app:example-prices",
+      "title": "Price equations for the motivating example",
+      "level": 2,
+      "number": "6.1"
+    },
+    {
+      "id": "sec:is",
+      "title": "Iterated securitization",
+      "level": 2,
+      "number": "6.2"
+    },
+    {
+      "id": "example-1",
+      "title": "Example",
+      "level": 3,
+      "number": "6.2.1"
+    },
+    {
+      "id": "general-case",
+      "title": "General case",
+      "level": 3,
+      "number": "6.2.2"
+    },
+    {
+      "id": "app:asset-price-proofs",
+      "title": "Proofs of the asset-price results",
+      "level": 2,
+      "number": "6.3"
+    },
+    {
+      "id": "app:finest-return-proof",
+      "title": "Proof of Proposition ",
+      "level": 2,
+      "number": "6.4"
+    },
+    {
+      "id": "app:return-example",
+      "title": "Realized-payoff example with three theories",
+      "level": 2,
+      "number": "6.5"
+    },
+    {
+      "id": "declaration-of-generative-ai-and-ai-assisted-technologies-in-the-manuscript-preparation-process",
+      "title": "Declaration of generative AI and AI-assisted technologies in the manuscript preparation process",
+      "level": 1,
+      "number": ""
+    },
+    {
+      "id": "references",
+      "title": "References",
+      "level": 1,
+      "number": ""
+    }
+  ],
+  "figures": [
+    {
+      "id": "fig:CDFs",
+      "number": "1",
+      "asset": "generated/assets/fig-CDFs.svg",
+      "kind": "tikz-pdf-crop",
+      "pdf_page": 6,
+      "crop": [
+        222.18698120117188,
+        70.08953857421875,
+        390.9842529296875,
+        375.70721435546875
+      ]
+    },
+    {
+      "id": "fig1:se",
+      "number": "2",
+      "asset": "generated/assets/fig1-se.svg",
+      "kind": "tikz-pdf-crop",
+      "pdf_page": 7,
+      "crop": [
+        210.15310668945312,
+        66.69778442382812,
+        398.5090026855469,
+        206.2069549560547
+      ]
+    },
+    {
+      "id": "fig:pay",
+      "number": "3",
+      "asset": "generated/assets/fig-pay.svg",
+      "kind": "tikz-pdf-crop",
+      "pdf_page": 10,
+      "crop": [
+        210.15310668945312,
+        434.4419250488281,
+        398.5090026855469,
+        571.4247436523438
+      ]
+    },
+    {
+      "id": "fig:mbs",
+      "number": "4",
+      "asset": "generated/assets/fig-mbs.svg",
+      "kind": "tikz-pdf-crop",
+      "pdf_page": 27,
+      "crop": [
+        144.81381225585938,
+        187.92767333984375,
+        470.1153564453125,
+        369.0101318359375
+      ]
+    },
+    {
+      "id": "fig:tree",
+      "number": "5",
+      "asset": "generated/assets/fig-tree.svg",
+      "kind": "tikz-pdf-crop",
+      "pdf_page": 28,
+      "crop": [
+        220.16204833984375,
+        447.1122131347656,
+        390.9837646484375,
+        539.3048095703125
+      ]
+    }
+  ],
+  "counts": {
+    "labels": 92,
+    "numbered_equations": 42,
+    "display_math": 149,
+    "figures": 5,
+    "tables": 3,
+    "references": 30
+  },
+  "checks": {
+    "all_labels_present": true,
+    "all_links_resolved": true,
+    "compiled_numbering_checked": true,
+    "text_inventory_checked": true,
+    "math_inventory_checked": true,
+    "pandoc_warnings": []
+  }
+}

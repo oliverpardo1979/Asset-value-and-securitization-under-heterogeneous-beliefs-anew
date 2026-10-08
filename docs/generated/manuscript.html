@@ -1,0 +1,1136 @@
+<h1 class="unnumbered" id="asset-value-and-securitization-under-heterogeneous-beliefs">Asset Value and Securitization under Heterogeneous Beliefs</h1>
+<p>Oliver Pardo</p><details class="author-note"><summary>Author affiliation and acknowledgments</summary><p>Departamento de Administración, Pontificia Universidad Javeriana. Email: <a href="mailto:pardoo@javeriana.edu.co">pardoo@javeriana.edu.co</a>. I thank Jason Donaldson, Erik Eyster, Leonardo Felli, Francesco Nava, Daniel Osorio, Petr Postl, Balazs Szentes, and participants at the LSE Summer Seminar for comments and suggestions. I also thank the anonymous referees for their careful and constructive reports. All errors and omissions are my own.</p></details>
+<h1 class="unnumbered" id="abstract">Abstract</h1>
+<p>This paper studies how securitization affects asset prices and realized excess payoffs when investors hold heterogeneous beliefs. I extend the resale-option asset-pricing model of <a href="#ref-HarrisonKreps1978">Harrison and Kreps (1978)</a> by allowing the owner of a long-term asset to issue a finite set of asset-backed securities backed by its future cash flow. These securities are organized into tranches with different payment priorities. The no-tranching benchmark has a unique equilibrium price, but tranching can generate multiple equilibrium prices because separately priced tranches feed back into the asset’s resale value. Securitization weakly raises the equilibrium prices of the underlying asset relative to the no-tranching benchmark. Furthermore, there exists a tranching that raises the lowest equilibrium price strictly above its no-tranching level if and only if, at some state, no agent perceives a distribution of the next-period asset price in the no-tranching benchmark that first-order stochastically dominates the distributions perceived by all other agents. Tranching has ambiguous effects on individual realized excess payoffs, but the aggregate realized excess payoff is nonpositive and weakly decreases as the tranching is refined. When one agent has the finest information partition, securitization may lower some agents’ realized excess payoffs without raising anyone else’s. The results characterize how belief disagreement shapes the effect of security design on asset prices and realized payoffs.</p>
+<p><strong>JEL codes:</strong> G12, G21, G24, D84.</p>
+<p><strong>Keywords:</strong> asset pricing; securitization; tranching; financial innovation; belief disagreement; multiple equilibria.</p>
+<h1 id="introduction"><span class="section-number">1</span> Introduction</h1>
+<p>Can securitization raise the market value of an asset without changing its cash flow? This paper studies this question in an infinite-horizon asset-pricing model with heterogeneous beliefs and short-selling constraints. I compare a benchmark economy in which investors trade a risk-free bond and a long-term asset with economies in which the owner can issue one-period asset-backed securities (ABS) collateralized by the asset and whose aggregate payoff equals its next-period resale value. The central mechanism is that an investor who is not the most optimistic buyer of the whole asset may be the most optimistic buyer of a particular tranche.</p>
+<p>In the resale-option model of <a href="#ref-HarrisonKreps1978">Harrison and Kreps (1978)</a>, the price of the whole asset reflects the valuation of the investor most optimistic about that asset. With securitization, the relevant object changes. Each tranche is priced by the investor most optimistic about the payoff range covered by that tranche. If perceived distributions over next-period asset prices cross, different tranches can be priced by different investors, and the sum of tranche prices can exceed the valuation of the whole asset by any single investor. Since ownership of the asset is necessary to issue the securities, the higher value of claims backed by the asset feeds back into the demand for the asset itself.</p>
+<p>The paper formalizes this mechanism by allowing risk-neutral investors with a finite set of belief types to trade three types of assets in each period of a countably infinite sequence: i) an infinitely-supplied, risk-free, one-period bond, ii) a finitely-supplied, long-term asset that pays an uncertain dividend every period, and iii) securities backed by the latter. By issuing ABS, the owner of the long-term asset commits to allocating the asset’s next-period resale value among tranche holders. These securities have a waterfall payment structure: the most senior tranche promises a fixed amount unless the asset’s resale value is below that amount; the next tranche is paid out of the resale value left after the senior tranche is paid; and so on. The process of issuing ABS with this priority structure is referred to as <em>tranching securitization</em>, or <em>tranching</em> for short.</p>
+<p>The equilibrium price conditions rest on three assumptions. First, only owners of the long-term asset can issue ABS. Second, short positions in both the asset and the ABS are bounded. Third, one-period bonds are in infinite supply, so investors can borrow freely at the market interest rate. Because the long-term asset is in finite supply, the first two assumptions make the supply of ABS finite. Free borrowing, in turn, implies that each ABS is priced at the willingness to pay of the investor who is most optimistic about its next payout. The no-tranching benchmark has a unique equilibrium because its price-forming operator is a contraction. With tranching, uniqueness can fail because changes in next-period asset prices can alter both which tranches pay and which theory has the highest willingness to pay for each tranche. Under any tranching, however, there is an equilibrium that assigns the lowest asset price in every state and another that assigns the highest.</p>
+<p>Tranching weakly raises the price of the underlying asset relative to the no-tranching benchmark in every equilibrium. Furthermore, there exists a tranching that raises the lowest equilibrium price strictly above its no-tranching level if and only if, at some state, no agent perceives a distribution of the next-period asset price in the no-tranching benchmark that first-order stochastically dominates the distributions perceived by all other agents. When a dominant theory exists at every state, tranching cannot raise the lowest equilibrium price above the benchmark. If perceived distributions cross, tranching can create claims that are valued most highly by different investors. As a result, the gap between the asset price and any perceived present value of dividends can widen.</p>
+<p>Tranching has ambiguous effects on individual realized excess payoffs. A realized excess payoff is the payoff from a purchased security minus the payoff that the same expenditure would have earned in the bond, averaged over time under the objective transition probabilities. Each position is perceived to break even at its equilibrium price, but its realized excess payoff need not be zero. For this analysis, I follow <a href="#ref-EysterPiccione2014">Eyster and Piccione (2013)</a> and specialize beliefs to statistically consistent theories that may coarsen the state space. Securitization can transfer underperforming claims across investors: it may lower some investors’ realized excess payoffs without raising anyone else’s, but it can also make an investor’s realized excess payoff less negative by shifting worse claims to someone else. At the aggregate level, the sum of realized excess payoffs from unit tranche purchases is nonpositive in every equilibrium and weakly decreases under refinement for both the lowest- and highest-price equilibria.</p>
+<p>The mechanism is motivated by securitization before the 2007 financial crisis. Subprime mortgages were pooled into mortgage-backed securities (MBS); tranches of MBS were pooled into collateralized debt obligations (CDOs); and tranches of CDOs were repackaged into CDO-squared structures. Instruments such as MBS, CDOs, and CDO-squared structures are ABS, securities whose payout is derived from and collateralized by underlying assets. The possibility of creating highly rated securities backed by subprime mortgages eased credit to subprime borrowers, fueling an increase in house prices (<a href="#ref-Brunnermeier2009">Brunnermeier, 2009</a>).<a class="footnote-ref" href="#fn1" id="fnref1" role="doc-noteref"><sup>1</sup></a> The purpose of the model is not to provide a full institutional account of that episode, but to isolate how belief disagreement and security design can interact to raise asset values.</p>
+<p>This paper is organized as follows. The rest of this introduction presents a literature review. Section <a href="#example">2</a> presents the motivating example that illustrates the setup and gives a hint of the main results. Section <a href="#model">3</a> describes the general model and establishes existence and possible multiplicity of equilibrium. Section <a href="#sec:eff">4</a> studies the effects of tranching securitization on equilibrium prices of the underlying asset and on realized excess payoffs. Finally, Section <a href="#sec:disc">5</a> presents some conclusions and suggestions for further research.</p>
+<h2 id="literature-review"><span class="section-number">1.1</span> Literature Review</h2>
+<p>This paper builds on the asset-pricing literature under belief disagreement. <a href="#ref-MilgromStokey1982">Milgrom and Stokey (1982)</a> show that, under common priors and an ex ante Pareto-optimal allocation, private information alone cannot generate gains from speculative trade when the trade’s feasibility and acceptability to all traders are common knowledge. <a href="#ref-Miller1977">Miller (1977)</a> emphasizes how disagreement and short-sale constraints lead asset prices to reflect the valuations of more optimistic investors, while <a href="#ref-HarrisonKreps1978">Harrison and Kreps (1978)</a> show that expected resale to a future optimist can raise an asset’s price above investors’ valuations of its dividend stream. <a href="#ref-Scheinkman2004">Scheinkman and Xiong (2004)</a> survey this literature. The analysis of realized excess payoffs builds on <a href="#ref-EysterPiccione2014">Eyster and Piccione (2013)</a>, who study a long-lived asset under statistically consistent incomplete theories and evaluate investors’ long-run realized returns, but do not allow the asset to be securitized. The present paper adds securitization to this line of analysis and studies how security design changes both the resale price of the underlying asset and the distribution of realized excess payoffs across agents.</p>
+<p>The closest comparisons on securitization under diverse beliefs are <a href="#ref-GuoWangWei2014">Guo et al. (2014)</a>, <a href="#ref-Broer2018">Broer (2018)</a>, and <a href="#ref-EllisPiccioneZhang2022">Ellis et al. (2022)</a>. <a href="#ref-GuoWangWei2014">Guo et al. (2014)</a> show that tranching a one-period payoff can raise an issuer’s sale revenue and characterize optimal tranching. <a href="#ref-Broer2018">Broer (2018)</a> shows how disagreement about the level and correlation of default risk can inflate the value of structured claims. <a href="#ref-EllisPiccioneZhang2022">Ellis et al. (2022)</a> endogenize pooling and monotone security design in general equilibrium and characterize how investors sort across securities. Relative to these papers, the distinct object here is the feedback created by a long-lived underlying asset: securitization changes the asset’s endogenous resale value, that resale value determines future tranche payoffs, and the loop can produce multiple equilibrium price functions. The long-lived structure also makes it possible to evaluate tranche buyers’ long-run realized excess payoffs under the objective transition process.</p>
+<p>The paper also relates to the literature on financial innovation, surveyed by <a href="#ref-DuffieRahi1995">Duffie and Rahi (1995)</a> and <a href="#ref-AllenBarbalau2024">Allen and Barbalau (2024)</a>. <a href="#ref-FostelGeanakoplos2012">Fostel and Geanakoplos (2012)</a> show that tranching and leverage can raise the price of an underlying asset, whereas credit default swaps can lower it. <a href="#ref-Simsek2013a">Simsek (2013<span>a</span>)</a> shows how the form of disagreement affects investors’ ability to borrow against an asset and how additional contracts redirect speculative positions. <a href="#ref-GeanakoplosZame2014">Geanakoplos and Zame (2014)</a> develop a general-equilibrium framework with collateralized borrowing and default, while <a href="#ref-FostelGeanakoplos2016">Fostel and Geanakoplos (2016)</a> study how financial innovation affects asset prices and investment through the use of collateral. More generally, <a href="#ref-Brock2009">Brock et al. (2009)</a>, <a href="#ref-Kubler2012">Kubler and Schmedders (2012)</a>, and <a href="#ref-Simsek2013b">Simsek (2013<span>b</span>)</a> show that expanded asset menus can increase volatility or speculative risk. <a href="#ref-IachanNenovSimsek2021">Iachan et al. (2021)</a> study financial innovation as an expansion of portfolio choice in a two-period model, whereas the present paper examines how securitization feeds back into the endogenous resale value of a long-lived asset.</p>
+<p>Finally, the paper relates to research on beliefs, financial innovation, and financial crises. <a href="#ref-GennaioliShleiferVishny2012">Gennaioli et al. (2012)</a> connect financial innovation with neglected risks and fragility. Models of diagnostic expectations, in which agents overreact to news when forming beliefs, generate credit and investment cycles (<a href="#ref-BordaloGennaioliShleifer2018">Bordalo et al., 2018</a>; <a href="#ref-Maxted2024">Maxted, 2024</a>; <a href="#ref-BordaloGennaioliShleiferTerry2026">Bordalo et al., 2026</a>). Empirical and quantitative work links credit booms, asset-price growth, sentiment, and intermediation to financial crises (<a href="#ref-GreenwoodHansonShleiferSorensen2022">Greenwood et al., 2022</a>; <a href="#ref-KrishnamurthyLi2025">Krishnamurthy and Li, 2025</a>). These papers support the broader premise that distorted beliefs and financial intermediation can jointly generate price booms and fragility.</p>
+<h1 id="example"><span class="section-number">2</span> Motivating example</h1>
+<p>Consider an environment where trade takes place in a countably infinite sequence of periods. Each period there is an infinitely supplied bond used as a numeraire that entitles a payoff <span class="math inline">\(R&gt;1\)</span> next period. The bond can be traded for a finitely supplied asset that yields a random dividend <span class="math inline">\(d\)</span> every period. There are three possible states of the world, collected in the state space <span class="math inline">\(X:=\{l,m,h\}\)</span>. The realizations of the dividend are such that <span class="math inline">\(d(l) &lt; d(m) &lt; d(h)\)</span>. Securities backed by the long-term asset can be issued and traded.</p>
+<p>There are two types of infinitely lived agents, <span class="math inline">\(\mathcal{A}\)</span> and <span class="math inline">\(\mathcal{B}\)</span>. Both are risk-neutral. To keep the notation close to the general model, identify each type with the theory it uses. A theory is a forecasting rule for the next-period state. In the block interpretation developed in Section <a href="#model">3</a>, theory <span class="math inline">\(\mathcal{A}\)</span> has a single block, <span class="math inline">\(\{l,m,h\}\)</span>, so it does not condition its forecasts on the current state. Theory <span class="math inline">\(\mathcal{B}\)</span> has three singleton blocks, <span class="math inline">\(\{l\}\)</span>, <span class="math inline">\(\{m\}\)</span> and <span class="math inline">\(\{h\}\)</span>, so it conditions its forecasts on the current state. For a theory <span class="math inline">\(\mathcal{F} \in \{\mathcal{A},\mathcal{B}\}\)</span>, <span class="math inline">\(Q_{\mathcal{F}}(x,y)\)</span> is the probability, according to <span class="math inline">\(\mathcal{F}\)</span>, of moving from current state <span class="math inline">\(x\)</span> to next-period state <span class="math inline">\(y\)</span>. In every state, theory <span class="math inline">\(\mathcal{A}\)</span> assigns probability <span class="math inline">\(1/3\)</span> to each state next period. Meanwhile, theory <span class="math inline">\(\mathcal{B}\)</span> assigns probability <span class="math inline">\(1-\epsilon\)</span> to staying in the current state and is uniform otherwise: <span class="manuscript-equation"><span class="equation-anchor" id="eq:QAexample"></span><span class="equation-anchor" id="eq:QBexample"></span><span class="math display">\[\begin{align}
+
+Q_{\mathcal{A}}(x,y) &amp;= \frac{1}{3} &amp;&amp; \text{for all } x,y\in X, \tag{1}\\
+
+Q_{\mathcal{B}}(x,y) &amp;=
+\begin{cases}
+1-\epsilon, &amp; \text{if } y=x,\\
+\epsilon/2, &amp; \text{if } y\neq x,
+\end{cases}
+&amp;&amp; x,y\in X. \tag{2}
+\end{align}\]</span></span></p>
+<p>Let <span class="math inline">\(P(x,y)\)</span> denote the objective transition probability from state <span class="math inline">\(x\)</span> to state <span class="math inline">\(y\)</span>. Throughout the example, take <span class="math inline">\(P=Q_{\mathcal{B}}\)</span>. Thus, theory <span class="math inline">\(\mathcal{B}\)</span> coincides with the true transition process, whereas theory <span class="math inline">\(\mathcal{A}\)</span> is statistically consistent but does not condition on the current state: both theories imply the same long-run frequency for the three states, with each state occurring one third of the time.</p>
+<p>The disagreement may emerge because agents use different forecasting tools or do not use all available information. The theories are maintained reduced-form forecasting rules, not Bayesian posteriors in a correctly specified common model. An agent may observe the current state yet use a theory that maps several states into the same forecast. Such a theory can be statistically consistent in the long run while remaining conditionally misspecified. The model deliberately abstracts from learning and switching among theories: the maintained rules persist as the state evolves.</p>
+<h2 id="benchmark"><span class="section-number">2.1</span> Benchmark: A world without asset-backed securities</h2>
+<p>In the benchmark scenario, there are no asset-backed securities. Let <span class="math inline">\(q:X\to[0,\infty)\)</span> denote the underlying-asset price function. Because of limited short-selling, the market clears when the long-term asset’s highest expected return matches the return of the short-term bond. Notation is simplified by assuming that the asset price is <em>cum-dividend</em> and that the declared dividend is to be paid next period.</p>
+<p>Consider the state <span class="math inline">\(x \in X\)</span>. When considering buying the long-term asset, both agents are willing to pay <span class="math inline">\(d(x)/R\)</span> plus the discounted asset price they expect for next period. For agent <span class="math inline">\(\mathcal{A}\)</span>, the expected price of the long-term asset is <span class="math inline">\(\frac{1}{3}\left(q(l)+q(m)+q(h)\right)\)</span>. For agent <span class="math inline">\(\mathcal{B}\)</span>, the same expectation is close to <span class="math inline">\(q(x)\)</span>. If, as happens in equilibrium, <span class="math inline">\(q(l)&lt;q(m)&lt;q(h)\)</span>, agent <span class="math inline">\(\mathcal{A}\)</span> buys the long-term asset in state <span class="math inline">\(l\)</span> whereas agent <span class="math inline">\(\mathcal{B}\)</span> buys it in state <span class="math inline">\(h\)</span>. Ex ante, it is not clear who will buy the asset in state <span class="math inline">\(m\)</span>. Still, the solution to the price function <span class="math inline">\(q\)</span> when <span class="math inline">\(\epsilon\)</span> goes to zero is given by</p>
+<p><span class="manuscript-equation"><span class="equation-anchor" id="ql"></span><span class="equation-anchor" id="qm"></span><span class="equation-anchor" id="qh"></span><span class="math display">\[\begin{align}
+
+
+q(l) &amp; =  \frac{d(l)+\frac{1}{3}\left(q(l)+q(m)+q(h)\right)}{R} \tag{3}\\
+
+q(m) &amp; =  \frac{ d(m) + \max \left\{ q(m), \frac{1}{3} \left( q(l)+q(m)+q(h)\right) \right\} } {R} \tag{4}\\
+
+q(h) &amp; =  \frac{d(h)+q(h)}{R} \tag{5}
+\end{align}\]</span></span><br/>
+For instance, if <span class="math inline">\(R=2\)</span>, <span class="math inline">\(d(l)=0\)</span>, <span class="math inline">\(d(m)=2\)</span> and <span class="math inline">\(d(h)=3\)</span>, then <span class="math inline">\(q(l)=1\)</span>, <span class="math inline">\(q(m)=2\)</span> and <span class="math inline">\(q(h)=3\)</span>.</p>
+<p>To illustrate the conditions under which the introduction of ABS increases the long-term asset price, consider the perceived distributions regarding the asset price for the next period. Let <span class="math inline">\(G_\mathcal{F}(t\mid x)\)</span> denote the cumulative distribution function (CDF) of the next-period benchmark price perceived by theory <span class="math inline">\(\mathcal{F} \in \{\mathcal{A},\mathcal{B}\}\)</span> conditional on current state <span class="math inline">\(x\in X\)</span>, evaluated at <span class="math inline">\(t\geq0\)</span>. Figure <a href="#fig:CDFs">1</a> plots these CDFs for each of the three current states. In states <span class="math inline">\(l\)</span> and <span class="math inline">\(h\)</span>, the distributions can be ranked according to first-order stochastic dominance, as one distribution always takes values no lower than the other. The agent whose beliefs first-order stochastically dominate those of the other will buy the asset. In state <span class="math inline">\(m\)</span>, there is no stochastic dominance between <span class="math inline">\(G_\mathcal{A}(\cdot\mid m)\)</span> and <span class="math inline">\(G_\mathcal{B}(\cdot\mid m)\)</span>. Still, whoever has highest expectation regarding the asset price will buy the asset. The nontrivial parts of the perceived distributions cross at <span class="math inline">\(q(m)\)</span>: for <span class="math inline">\(q(l)\leq t&lt;q(m)\)</span>, <span class="math inline">\(G_\mathcal{B}(t\mid m)&lt;G_\mathcal{A}(t\mid m)\)</span>, whereas for <span class="math inline">\(q(m)\leq t&lt;q(h)\)</span>, <span class="math inline">\(G_\mathcal{A}(t\mid m)&lt;G_\mathcal{B}(t\mid m)\)</span>. The CDFs coincide below <span class="math inline">\(q(l)\)</span> and at or above <span class="math inline">\(q(h)\)</span>. Thus, theory <span class="math inline">\(\mathcal{B}\)</span> is more optimistic about avoiding low price realizations, while theory <span class="math inline">\(\mathcal{A}\)</span> is more optimistic about the upper tail. This divergence can be exploited by dividing the asset’s resale value between two securities: one that receives this value up to a fixed amount and another that receives any value above that amount. This is illustrated in the next subsection.</p>
+<figure id="fig:CDFs">
+<img src="generated/assets/fig-CDFs.svg"/>
+<figcaption><strong>Figure 1:</strong> Perceived distributions on the asset price</figcaption>
+</figure>
+<h2 id="securitized"><span class="section-number">2.2</span> A world with asset-backed securities</h2>
+<p>Assume now that any owner of the long-term asset can issue two kinds of one-period ABS whose claims add up to the next-period value of the long-term asset. Denote the underlying-asset equilibrium price function in this securitized economy by <span class="math inline">\(q^{\mathrm{ABS}}\)</span>. The attachment point of a tranche is the asset-value threshold above which it begins to pay. In this example, the attachment point of the junior tranche is calibrated to coincide with the equilibrium asset price in state <span class="math inline">\(m\)</span>, <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span>. The senior tranche pays <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> next period unless the state becomes <span class="math inline">\(l\)</span>, in which case it pays <span class="math inline">\(q^{\mathrm{ABS}}(l)\)</span>. The junior tranche pays <span class="math inline">\(q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m)\)</span> if the realized state is <span class="math inline">\(h\)</span> and <span class="math inline">\(0\)</span> otherwise. Let <span class="math inline">\(\phi_s\)</span> and <span class="math inline">\(\phi_j\)</span> denote the payoff functions of the senior and junior tranches, respectively. Then</p>
+<p><span class="manuscript-equation"><span class="equation-anchor" id="spayoff"></span><span class="equation-anchor" id="epayoff"></span><span class="math display">\[\begin{align}
+
+\phi_s(t) &amp; =  t - (t-q^{\mathrm{ABS}}(m))^+, \tag{6}\\
+
+\phi_j(t) &amp; =  (t-q^{\mathrm{ABS}}(m))^+, \tag{7}
+\end{align}\]</span></span></p>
+<figure id="fig1:se">
+<img src="generated/assets/fig1-se.svg"/>
+<figcaption><strong>Figure 2:</strong> Payoff functions from senior and junior tranches</figcaption>
+</figure>
+<p>Figure <a href="#fig1:se">2</a> plots the payoff from each tranche as a function of the cum-dividend price of the underlying asset. Owning the junior tranche is equivalent to holding a one-period call option on the underlying asset with strike price <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span>. Owning the senior tranche is equivalent to holding a risk-free claim paying <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> and writing a one-period put option with the same strike. The threshold separating the two tranches is <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span>. It is the attachment point of the junior tranche and the detachment point of the senior tranche.</p>
+<p>On an alternative interpretation, the buyer of the junior tranche becomes the owner of the asset, but has a debt liability to the buyer of the senior tranche and is using the underlying asset as collateral. In this example, the junior buyer promises to pay <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> to the senior buyer in the next period. However, if the value of the collateral is <span class="math inline">\(q^{\mathrm{ABS}}(l)\)</span>, the junior buyer defaults and the senior buyer seizes the collateral.</p>
+<p>Because short sales are constrained, the price of each ABS equals the highest expected next-period payoff across agents, discounted at the interest rate. To start with, assume <span class="math inline">\(q^{\mathrm{ABS}}(l)&lt;q^{\mathrm{ABS}}(m)&lt;q^{\mathrm{ABS}}(h)\)</span>. At state <span class="math inline">\(m\)</span>, agent <span class="math inline">\(\mathcal{B}\)</span> expects a payoff close to <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> from the senior tranche, while agent <span class="math inline">\(\mathcal{A}\)</span> expects <span class="math inline">\(\frac{2}{3}q^{\mathrm{ABS}}(m)+\frac{1}{3}q^{\mathrm{ABS}}(l)\)</span>. Hence, the senior tranche will be bought by agent <span class="math inline">\(\mathcal{B}\)</span>. Meanwhile, agent <span class="math inline">\(\mathcal{B}\)</span> expects a payoff close to zero from the junior tranche, while agent <span class="math inline">\(\mathcal{A}\)</span> expects <span class="math inline">\(q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m)\)</span> with one-third probability. Hence agent <span class="math inline">\(\mathcal{A}\)</span> will buy the junior tranche.</p>
+<p>Let <span class="math inline">\(p_s\)</span> and <span class="math inline">\(p_j\)</span> denote the respective price functions of the senior and junior tranches. As <span class="math inline">\(\epsilon\)</span> tends to zero, <span class="math display">\[\begin{align*}
+
+p_s(m) &amp; =  \frac{q^{\mathrm{ABS}}(m)}{R} \\
+p_j(m) &amp; =  \frac{\frac{1}{3}\left(q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m)\right)}{R}
+\end{align*}\]</span></p>
+<p>Since different agents might have claims on the same asset, the total market value of the securities can exceed the value that any single agent assigns to those securities. To show this, note that at state <span class="math inline">\(m\)</span>, the expectation on the asset price for next period is close to <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> for agent <span class="math inline">\(\mathcal{B}\)</span> and <span class="math inline">\(\frac{1}{3}(q^{\mathrm{ABS}}(l)+q^{\mathrm{ABS}}(m)+q^{\mathrm{ABS}}(h))\)</span> for agent <span class="math inline">\(\mathcal{A}\)</span>. Then <span class="math display">\[\begin{align*}
+
+p_s(m) + p_j(m) &amp; &gt;   \frac{q^{\mathrm{ABS}}(m)}{R}  \\
+p_s(m) + p_j(m) &amp; &gt;   \frac{\frac{1}{3}\left(q^{\mathrm{ABS}}(l)+q^{\mathrm{ABS}}(m)+q^{\mathrm{ABS}}(h)\right)}{R}
+\end{align*}\]</span> which means that the payoff from selling the securities surpasses any expectation regarding the discounted price of the underlying asset.<a class="footnote-ref" href="#fn2" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>The equilibrium price for the long-term asset is given by a no-arbitrage condition. Any agent could buy the long-term asset and sell the asset-backed securities derived from it. In equilibrium, the long-term asset cum-dividend price has to equal the discounted declared dividend plus the market value of the asset-backed securities: <span class="manuscript-equation"><span class="equation-anchor" id="eq:simarb"></span><span class="math display">\[\begin{equation}
+
+q^{\mathrm{ABS}}(x) = \frac{d(x)}{R} + p_s(x) + p_j(x)\tag{8}
+\end{equation}\]</span></span> If the left-hand side of (<a href="#eq:simarb">8</a>) were greater than the right-hand side, there would be no demand for the long-term asset. On the other hand, if the left-hand side were smaller than the right-hand side, demand would be infinite.</p>
+<p>For states <span class="math inline">\(l\)</span> and <span class="math inline">\(h\)</span>, the equilibrium conditions can be derived by identifying who buys the tranches at these states. At state <span class="math inline">\(l\)</span>, <span class="math inline">\(\mathcal{A}\)</span>’s expected payoff from any tranche is greater than <span class="math inline">\(\mathcal{B}\)</span>’s. The opposite is true at state <span class="math inline">\(h\)</span>. Hence both tranches are bought by <span class="math inline">\(\mathcal{A}\)</span> at state <span class="math inline">\(l\)</span> and both tranches are bought by <span class="math inline">\(\mathcal{B}\)</span> at state <span class="math inline">\(h\)</span>. Adding up the tranche prices yields the discounted long-term asset price expected by whoever buys both tranches. Hence the price equations for <span class="math inline">\(q^{\mathrm{ABS}}(l)\)</span> and <span class="math inline">\(q^{\mathrm{ABS}}(h)\)</span> resemble equations (<a href="#ql">3</a>) and (<a href="#qh">5</a>). The same is not true for <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span>, however, since at state <span class="math inline">\(m\)</span> each tranche is bought by different agents. In summary, the equilibrium price function <span class="math inline">\(q^{\mathrm{ABS}}\)</span> is given by <span class="manuscript-equation"><span class="equation-anchor" id="qpl"></span><span class="equation-anchor" id="qpm"></span><span class="equation-anchor" id="qph"></span><span class="math display">\[\begin{align}
+
+
+q^{\mathrm{ABS}}(l) &amp; =  \frac{d(l)+\frac{1}{3}\left(q^{\mathrm{ABS}}(l)+q^{\mathrm{ABS}}(m)+q^{\mathrm{ABS}}(h)\right)}{R} \tag{9}\\
+
+q^{\mathrm{ABS}}(m) &amp; =  \frac{ d(m) +  q^{\mathrm{ABS}}(m) + \frac{1}{3}(q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m))} {R} \tag{10}\\
+
+q^{\mathrm{ABS}}(h) &amp; =  \frac{d(h)+q^{\mathrm{ABS}}(h)}{R} \tag{11}
+\end{align}\]</span></span></p>
+<p>By comparing equation (<a href="#qpm">10</a>) with equation (<a href="#qm">4</a>), it can be seen that the introduction of ABS has increased the asset price at state <span class="math inline">\(m\)</span>. This in turn increases the price at state <span class="math inline">\(l\)</span>, since <span class="math inline">\(\mathcal{A}\)</span>’s expectation at state <span class="math inline">\(l\)</span> is higher. Returning to the numerical example where <span class="math inline">\(R=2\)</span>, <span class="math inline">\(d(l)=0\)</span>, <span class="math inline">\(d(m)=2\)</span> and <span class="math inline">\(d(h)=3\)</span>, the asset price increases by <span class="math inline">\(\frac{1}{20}\)</span> at state <span class="math inline">\(l\)</span> and by <span class="math inline">\(\frac{1}{4}\)</span> at state <span class="math inline">\(m\)</span>. Thanks to the reselling opportunity, the introduction of ABS increases the asset price in states in which ABS appear to be innocuous.</p>
+<p>Because <span class="math inline">\(P=Q_{\mathcal{B}}\)</span>, theory <span class="math inline">\(\mathcal{B}\)</span> has rational expectations in this example and its realized excess payoff is zero both with and without ABS. This excess payoff is the one-period payoff from buying the asset or ABS, net of the payoff that the same expenditure would have obtained by buying the bond, averaged across states according to their long-run frequencies and evaluated under the objective transition <span class="math inline">\(P\)</span>. Theory <span class="math inline">\(\mathcal{A}\)</span>, instead, earns a negative realized excess payoff. In the numerical example, its excess payoff falls from <span class="math inline">\(-\frac{1}{3}\)</span> without ABS to <span class="math inline">\(-\frac{13}{30}\)</span> with ABS. Appendix <a href="#app:example-prices">6.1</a> reports the corresponding calculations. Thus, in this example, securitization increases the price of the underlying asset while making the less sophisticated agent’s realized payoff worse. This payoff effect is not general: Subsection <a href="#sec:ep">4.3</a> later presents a case in which securitization makes an agent’s realized excess payoff less negative, although it remains below zero.</p>
+<h1 id="model"><span class="section-number">3</span> The Model</h1>
+<p>Consider an environment where trade takes place in each period of a countably infinite horizon. The assets traded in each period are of three kinds: 1) an infinitely supplied one-period bond used as a numeraire, 2) a single long-term asset that generates a random dividend every period, and 3) securities backed by the long-term asset.</p>
+<h2 id="dividends-and-interest-rates"><span class="section-number">3.1</span> Dividends and interest rates</h2>
+<p>The background structure of the model is given by an exogenous Markov process defined over a finite state-space <span class="math inline">\(X\)</span>. The transition probability from state <span class="math inline">\(x\in X\)</span> to state <span class="math inline">\(y\in X\)</span> is given by <span class="math inline">\(P(x,y)\)</span>, which is assumed to be strictly positive for every pair of states. This assumption implies the existence of a unique stationary distribution <span class="math inline">\(\mu\)</span>, satisfying <span class="math inline">\(\mu(x)&gt;0\)</span> for every <span class="math inline">\(x\in X\)</span>, <span class="math inline">\(\sum_{x\in X}\mu(x)=1\)</span>, and <span class="manuscript-equation"><span class="equation-anchor" id="eq:mu"></span><span class="math display">\[\begin{equation}
+
+\mu(y)=\sum_{x\in X}P(x,y)\mu(x)\tag{12}
+\end{equation}\]</span></span> for every <span class="math inline">\(y\in X\)</span>. In the long-run, the world spends a fraction <span class="math inline">\(\mu(x)\)</span> of the time at state <span class="math inline">\(x\in X\)</span>, regardless of the initial state.</p>
+<h2 id="beliefs"><span class="section-number">3.2</span> Beliefs</h2>
+<p>All agents perceive that the state of the world evolves according to a Markov chain, but they may disagree on the transition probabilities. Each agent has a theory that represents her beliefs about the next-period state of the world. The finite set of theories in the market is represented by <span class="math inline">\(\mathbf{F}\)</span>. The transition probability from state <span class="math inline">\(x\in X\)</span> to state <span class="math inline">\(y\in X\)</span>, as perceived by theory <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>, is denoted by <span class="math inline">\(Q_\mathcal{F}(x,y)\)</span>. For the pricing analysis, <span class="math inline">\((Q_\mathcal{F})_{\mathcal{F}\in\mathbf{F}}\)</span> can be any finite collection of strictly positive stochastic matrices. In particular, the price-forming operator does not require the subjective transition matrices to be generated by partitions or to share the objective stationary distribution.</p>
+<p>For the analysis of realized excess payoffs, agents’ beliefs are restricted to the statistically consistent incomplete theories studied by <a href="#ref-EysterPiccione2014">Eyster and Piccione (2013)</a>. Under this restriction, every theory <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span> is a partition of <span class="math inline">\(X\)</span>. An element in <span class="math inline">\(\mathcal{F}\)</span> is known as a block of theory <span class="math inline">\(\mathcal{F}\)</span>. If <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span> are two different states in the same block of <span class="math inline">\(\mathcal{F}\)</span>, then <span class="math inline">\(Q_\mathcal{F}(x,y)=Q_\mathcal{F}(z,y)\)</span> for all <span class="math inline">\(y\in X\)</span>. An agent using theory <span class="math inline">\(\mathcal{F}\)</span> therefore ignores the informational content of being at state <span class="math inline">\(x\)</span> rather than at state <span class="math inline">\(z\)</span>.</p>
+<p>Let <span class="math inline">\(\mathcal{F}(x)\)</span> be the block in <span class="math inline">\(\mathcal{F}\)</span> that contains <span class="math inline">\(x\in X\)</span>. The statistically consistent transition matrix generated by the partition is <span class="manuscript-equation"><span class="equation-anchor" id="eq:Q"></span><span class="math display">\[\begin{equation}
+
+Q_{\mathcal{F}}\left(x,y\right)=\frac{\sum_{z\in \mathcal{F}\left(x\right)}P(z,y)\mu\left(z\right)}{\sum_{z\in \mathcal{F}\left(x\right)}\mu\left(z\right)}\tag{13}
+\end{equation}\]</span></span> for all <span class="math inline">\(y\)</span> in <span class="math inline">\(X\)</span>. By averaging across states, it follows that <span class="math inline">\(\sum_{x\in X}Q_{\mathcal{F}}\left(x,y\right)\mu(x)=\mu(y)\)</span>, meaning that there is no disagreement in the long-run frequency of any state. Equation (<a href="#eq:Q">13</a>) and the partition ordering are used only when explicitly invoked, primarily in the realized-payoff analysis. The pricing results require only the finite, full-support Markov beliefs described above.</p>
+<p>This distinction also clarifies the interpretation of persistent belief errors. Statistical consistency is an unconditional calibration property: each partition-based theory predicts the correct long-run frequency of states. It does not imply that the theory uses all information in the current state or that repeated observations drive it toward <span class="math inline">\(P\)</span>. Endogenous learning would require a model of how agents compare or revise forecasting rules and lies outside the equilibrium analyzed here.</p>
+<p>If every block in a theory <span class="math inline">\(\mathcal{F}\)</span> is a singleton, it follows that <span class="math inline">\(Q_\mathcal{F}=P\)</span>. In this case, <span class="math inline">\(\mathcal{F}\)</span> implies rational expectations. At the other extreme, if <span class="math inline">\(\mathcal{F}=\left\{X\right\}\)</span>, then <span class="math inline">\(Q_{\mathcal{F}}\left(x,y\right)=\mu(y)\)</span> for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> in <span class="math inline">\(X\)</span>. This corresponds to the most naive theory, since its forecasts are not conditioned on the state.</p>
+<p>The motivating example in Section <a href="#example">2</a> fits this notation by using the state space <span class="math inline">\(X=\{l,m,h\}\)</span>, a constant interest rate <span class="math inline">\(R\)</span>, and <span class="math inline">\(\mathbf{F}=\{\mathcal{A},\mathcal{B}\}\)</span>, with perceived transitions as in equations (<a href="#eq:QAexample">1</a>) and (<a href="#eq:QBexample">2</a>). Consistent with the assumption that <span class="math inline">\(P=Q_{\mathcal{B}}\)</span>, theory <span class="math inline">\(\mathcal{A}\)</span> corresponds to the coarse partition <span class="math inline">\(\{X\}\)</span> and theory <span class="math inline">\(\mathcal{B}\)</span> corresponds to the singleton partition <span class="math inline">\(\{\{l\},\{m\},\{h\}\}\)</span>.</p>
+<p>One-period forward expectations play a pivotal role in the forthcoming analysis. To denote them, consider a random variable <span class="math inline">\(s:X\to\mathbb{R}\)</span>. For any theory <span class="math inline">\(\mathcal{F} \in \mathbf{F}\)</span>, the expectation regarding <span class="math inline">\(s\)</span> one period forward, conditional on being at state <span class="math inline">\(x\in X\)</span>, is given by <span class="manuscript-equation"><span class="equation-anchor" id="eq:E"></span><span class="math display">\[\begin{equation}
+
+E_{\mathcal{F}}\left(s\mid x\right):=\sum_{y\in X}s(y)Q_{\mathcal{F}}\left(x,y\right)\tag{14}
+\end{equation}\]</span></span> Denote by <span class="math inline">\(E\left(s\mid x\right)\)</span> the expectation for the case where <span class="math inline">\(Q_\mathcal{F}=P\)</span>. Equations (<a href="#eq:mu">12</a>), (<a href="#eq:E">14</a>) and (<a href="#eq:Q">13</a>) imply that: <span class="math display">\[\begin{equation*}
+\sum_{x\in X}E_{\mathcal{F}}\left(s\mid x\right)\mu(x)=\sum_{x\in X}E\left(s\mid x\right)\mu(x)
+\end{equation*}\]</span> for all <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>. This means that the average one-period-ahead forecast of any theory matches the actual average of the random variable.</p>
+<h2 id="asset-backed-securities"><span class="section-number">3.3</span> Asset-backed securities</h2>
+<p>The owner of the long-term asset can obtain liquidity (bonds) not only by reselling the asset but also by issuing and selling ABS. Each ABS has a maturity of one period and commits the owner of the long-term asset (the issuer) to transferring a nonnegative amount of bonds to its holder (the investor) next period. This amount depends on the realization of the asset price when payment is due. The collection of securities is backed by the long-term asset: the aggregate transfer from the issuer to investors equals the price of the underlying asset.</p>
+<p>Formally, write <span class="math inline">\(\mathbb{R}_+:=[0,\infty)\)</span> and let <span class="math inline">\(\mathcal{T}\)</span> be a finite collection of non-overlapping intervals that partition <span class="math inline">\(\mathbb{R}_+\)</span>, the set of all conceivable realizations of the asset price. The partition <span class="math inline">\(\mathcal{T}\)</span> is known as a <em>tranching</em> and an interval <span class="math inline">\(\tau\in \mathcal{T}\)</span> is known as a <em>tranche</em>. Define <span class="math inline">\(\underline{\tau}:=\inf(\tau)\)</span> and <span class="math inline">\(\overline{\tau}:=\sup(\tau)\)</span>. The payoff function <span class="math inline">\(\phi_\tau:\mathbb{R}_+\to\mathbb{R}_+\)</span> from a security associated with tranche <span class="math inline">\(\tau\)</span> is given by <span class="manuscript-equation"><span class="equation-anchor" id="tpayoff"></span><span class="math display">\[\begin{equation}
+
+\phi_\tau(t):=(t-\underline{\tau})^+-(t-\overline{\tau})^+\tag{15}
+\end{equation}\]</span></span> where <span class="math inline">\(t\in\mathbb{R}_+\)</span> is a realization for the underlying asset price. Under the convention <span class="math inline">\((t-\infty)^+:=0\)</span>, equation (<a href="#tpayoff">15</a>) also applies when <span class="math inline">\(\overline{\tau}=\infty\)</span>. A simple debt–equity structure is therefore a two-tranche waterfall: for a face value <span class="math inline">\(K\)</span>, debt is the senior tranche <span class="math inline">\([0,K)\)</span>, with payoff <span class="math inline">\(\min\{t,K\}\)</span>, and equity is the residual tranche <span class="math inline">\([K,\infty)\)</span>, with payoff <span class="math inline">\((t-K)^+\)</span>. For any price function <span class="math inline">\(q:X\to\mathbb{R}_+\)</span>, <span class="math inline">\(\phi_\tau(q)\)</span> denotes the function <span class="math inline">\(\phi_\tau\circ q:X\to\mathbb{R}_+\)</span>, so <span class="math inline">\(\phi_\tau(q)(y)=\phi_\tau(q(y))\)</span> for every <span class="math inline">\(y\in X\)</span>.</p>
+<p>The point <span class="math inline">\(\underline{\tau}\)</span> is known as the <em>attachment point</em> of tranche <span class="math inline">\(\tau\)</span>. This is because the tranche only starts to pay off when the realization for the asset price is above <span class="math inline">\(\underline{\tau}\)</span>. Above <span class="math inline">\(\overline{\tau}\)</span>, the payoff from tranche <span class="math inline">\(\tau\)</span> is capped at <span class="math inline">\(\overline{\tau}-\underline{\tau}\)</span> and the next more junior tranche (if any) begins to pay. Figure <a href="#fig:pay">3</a> illustrates the payoff function for a generic tranche.</p>
+<figure id="fig:pay">
+<img src="generated/assets/fig-pay.svg"/>
+<figcaption><strong>Figure 3:</strong> Payoff function of a generic tranche <span class="math inline">\(\tau\)</span></figcaption>
+</figure>
+<p>The securities are backed by the long-term asset in the sense that they are <em>budget balanced</em>: if <span class="math inline">\(t\)</span> is the realization of the asset price at the expiration date, the tranche payoffs add up to <span class="math inline">\(t\)</span>: <span class="math display">\[\begin{equation*}
+\sum_{\tau\in\mathcal{T}} \phi_\tau(t)=t
+\end{equation*}\]</span> In addition, there is <em>limited liability</em> for the issuer: <span class="math inline">\(\phi_\tau(t) \geq 0\)</span> for all <span class="math inline">\(\tau\in\mathcal{T}\)</span> and <span class="math inline">\(t\in\mathbb{R}_+\)</span>.</p>
+<p>In the motivating example, the economy without ABS corresponds to <span class="math inline">\(\mathcal{T}^0:=\{[0,\infty)\}\)</span>, while the securitized economy corresponds to <span class="math inline">\(\mathcal{T}^{\mathrm{ABS}}:=\{\tau^s,\tau^j\}\)</span>, where <span class="math inline">\(\tau^s=[0,q^{\mathrm{ABS}}(m))\)</span> and <span class="math inline">\(\tau^j=[q^{\mathrm{ABS}}(m),\infty)\)</span>. Equations (<a href="#spayoff">6</a>) and (<a href="#epayoff">7</a>) are the special cases of (<a href="#tpayoff">15</a>) associated with <span class="math inline">\(\tau^s\)</span> and <span class="math inline">\(\tau^j\)</span>, respectively.</p>
+<h2 id="the-market"><span class="section-number">3.4</span> The market</h2>
+<p>In each period, there is an infinitely-supplied bond used as a numeraire. Let <span class="math inline">\(R:X\to(1,\infty)\)</span> denote its payoff next period as a function of the current state, and let <span class="math inline">\(d:X\to\mathbb{R}_+\)</span> denote the nonnegative dividend declared by the long-term asset in the current state and paid next period. Assume that <span class="math inline">\(d(x)&gt;0\)</span> for at least one state <span class="math inline">\(x\in X\)</span>. Since <span class="math inline">\(X\)</span> is finite, set <span class="math inline">\(\underline R:=\min_{x\in X}R(x)&gt;1\)</span>. The bond can be traded for the long-term asset, which is in finite supply.</p>
+<p>Short positions in ABS and in the long-term asset are assumed to be bounded. Under this assumption, the price of any ABS is determined by the willingness to pay of whoever is most optimistic about its future payoff. With unrestricted short selling and free borrowing, disagreement can generate unbounded positions, so equilibrium need not exist.</p>
+<h2 id="sec:eq"><span class="section-number">3.5</span> Equilibrium</h2>
+<p>In equilibrium, demand for the long-term asset and for each security must equal their respective supplies. The exogenous limits on short positions ensure that these supplies are finite. For <span class="math inline">\(x\in X\)</span>, let <span class="math inline">\(p_\tau(x)\)</span> be the price of the security associated with tranche <span class="math inline">\(\tau\in\mathcal{T}\)</span> and <span class="math inline">\(q(x)\)</span> be the price of the long-term asset.</p>
+<div class="theorem definition">
+<p><strong>Definition 1.</strong></p>
+<p><span class="source-anchor" id="def:core"></span> For a given tranching <span class="math inline">\(\mathcal{T}\)</span>, a waterfall equilibrium is a function <span class="math inline">\(q:X\to\mathbb{R}_+\)</span> and a collection of functions <span class="math inline">\(p_\tau:X\to\mathbb{R}_+\)</span> for <span class="math inline">\(\tau\in\mathcal{T}\)</span> such that, for every <span class="math inline">\(x\in X\)</span>, <span class="manuscript-equation"><span class="equation-anchor" id="eqq"></span><span class="math display">\[\begin{equation}
+
+q(x)=\frac{d(x)}{R\left(x\right)}+\sum_{\tau\in\mathcal{T}}p_\tau(x)\tag{16}
+\end{equation}\]</span></span> and, for every <span class="math inline">\(\tau\in\mathcal{T}\)</span>, <span class="manuscript-equation"><span class="equation-anchor" id="eqp"></span><span class="math display">\[\begin{equation}
+
+p_\tau(x)=\frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\phi_\tau(q)\mid x\right)}{R(x)}\tag{17}
+\end{equation}\]</span></span></p>
+</div>
+<p>Equation (<a href="#eqq">16</a>) states that, in equilibrium, zero profits are made by buying the long-term asset and selling the securities derived from it. Equation (<a href="#eqp">17</a>) states that the price of each security is given by the highest discounted expectation regarding the payoff from the corresponding tranche.</p>
+<h2 id="sec:extuni"><span class="section-number">3.6</span> Existence and multiplicity</h2>
+<p>For any tranching <span class="math inline">\(\mathcal{T}\)</span>, define a mapping <span class="math inline">\(\Psi_\mathcal{T}\)</span> from the set of price functions <span class="math inline">\(\mathbb{R}_+^X\)</span> to itself. For <span class="math inline">\(q\in\mathbb{R}_+^X\)</span> and <span class="math inline">\(x\in X\)</span>, the mapping is given by</p>
+<p><span class="manuscript-equation"><span class="equation-anchor" id="eq:map"></span><span class="math display">\[\begin{equation}
+
+\Psi_{\mathcal{T}}(q)(x)=\frac{d(x)+\sum_{\tau\in\mathcal{T}}\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\phi_\tau(q)\mid x\right)}{R\left(x\right)}\tag{18}
+\end{equation}\]</span></span> By substituting equation (<a href="#eqp">17</a>) into equation (<a href="#eqq">16</a>), it follows that a long-term asset price function <span class="math inline">\(q\)</span> is part of a waterfall equilibrium if and only if it is a fixed point of <span class="math inline">\(\Psi_\mathcal{T}\)</span>. Denote the set of such price functions by <span class="math display">\[\mathcal{Q}_{\mathcal{T}}
+:=
+\left\{q\in\mathbb{R}_+^X:q=\Psi_{\mathcal{T}}(q)\right\}.\]</span></p>
+<p>The space <span class="math inline">\(\mathbb{R}_+^X\)</span> is endowed with the pointwise order: for <span class="math inline">\(q,w\in\mathbb{R}_+^X\)</span>, write <span class="math inline">\(q\leq w\)</span> if <span class="math inline">\(q(x)\leq w(x)\)</span> for every <span class="math inline">\(x\in X\)</span>. The symbols <span class="math inline">\(\mathbf{0}\)</span> and <span class="math inline">\(\mathbf{1}\)</span> denote the constant functions on <span class="math inline">\(X\)</span> equal to zero and one, respectively. For any <span class="math inline">\(q\in\mathbb{R}^X\)</span>, define <span class="math inline">\(\lVert q\rVert_\infty:=\max_{x\in X}|q(x)|\)</span>.</p>
+<div class="theorem proposition">
+<p><strong>Proposition 1.</strong></p>
+<p><span class="source-anchor" id="exu"></span> For every finite tranching <span class="math inline">\(\mathcal{T}\)</span>, the set <span class="math inline">\(\mathcal{Q}_{\mathcal{T}}\)</span> is a nonempty complete lattice under the pointwise order. In particular, there exist a least equilibrium price function <span class="math inline">\(q^{\min}_{\mathcal{T}}\)</span> and a greatest equilibrium price function <span class="math inline">\(q^{\max}_{\mathcal{T}}\)</span>, satisfying <span class="math display">\[q^{\min}_{\mathcal{T}}(x)
+\leq q(x)
+\leq q^{\max}_{\mathcal{T}}(x)\]</span> for every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span> and every <span class="math inline">\(x\in X\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Every <span class="math inline">\(\phi_\tau\)</span> is nondecreasing, so <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> is monotone. Because <span class="math inline">\(\mathcal{T}\)</span> is finite, it contains a unique tranche <span class="math inline">\(\tau_\infty\)</span> with <span class="math inline">\(\overline{\tau_\infty}=\infty\)</span>. Define <span class="math inline">\(a_{\mathcal{T}}:=\underline{\tau_\infty}\)</span>. The widths of the remaining tranches add up to <span class="math inline">\(a_{\mathcal{T}}\)</span>. Hence, for every <span class="math inline">\(q\in\mathbb{R}_+^X\)</span> and <span class="math inline">\(x\in X\)</span>, <span class="math display">\[\sum_{\substack{\tau\in\mathcal{T}\\ \overline{\tau}&lt;\infty}}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(\phi_\tau(q)\mid x\right)
+\leq
+\sum_{\substack{\tau\in\mathcal{T}\\ \overline{\tau}&lt;\infty}}
+\left(\overline{\tau}-\underline{\tau}\right)
+=a_{\mathcal{T}}.\]</span> The payoff function of <span class="math inline">\(\tau_\infty\)</span> satisfies <span class="math inline">\(\phi_{\tau_\infty}(q)(y)=(q(y)-a_{\mathcal{T}})^+\leq q(y)\)</span> for every <span class="math inline">\(y\in X\)</span>, and therefore <span class="math display">\[\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(\phi_{\tau_\infty}(q)\mid x\right)
+\leq \lVert q\rVert_\infty.\]</span> Let <span class="math display">\[\overline d:=\max_{x\in X}d(x),
+\qquad
+M_{\mathcal{T}}:=\frac{\overline d+a_{\mathcal{T}}}{\underline R-1}.\]</span> It follows that <span class="math display">\[\lVert\Psi_{\mathcal{T}}(q)\rVert_\infty
+\leq
+\frac{\overline d+a_{\mathcal{T}}+\lVert q\rVert_\infty}{\underline R}.\]</span> Consequently, <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> maps <span class="math inline">\([0,M_{\mathcal{T}}]^X\)</span> into itself. The same inequality implies that every fixed point of <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> belongs to this set.</p>
+<p>The interval <span class="math inline">\([0,M_{\mathcal{T}}]^X\)</span> is a complete lattice under the pointwise order. Since <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> is a monotone self-map of this interval, Tarski’s fixed-point theorem implies that its fixed-point set is a nonempty complete lattice (<a href="#ref-Tarski1955">Tarski, 1955</a>). This fixed-point set is precisely <span class="math inline">\(\mathcal{Q}_{\mathcal{T}}\)</span>. The following iterations identify its least and greatest elements constructively.</p>
+<p>Define <span class="math inline">\(\underline q^{\,0}_{\mathcal{T}}=\mathbf{0}\)</span> and <span class="math display">\[\underline q^{\,n+1}_{\mathcal{T}}
+=
+\Psi_{\mathcal{T}}\left(\underline q^{\,n}_{\mathcal{T}}\right).\]</span> Since dividends are nonnegative, <span class="math inline">\(\underline q^{\,0}_{\mathcal{T}}\leq\underline q^{\,1}_{\mathcal{T}}\)</span>. Monotonicity then implies that the sequence is nondecreasing. It is bounded above by <span class="math inline">\(M_{\mathcal{T}}\mathbf{1}\)</span>, so it converges pointwise to some <span class="math inline">\(q^{\min}_{\mathcal{T}}\)</span>. The mapping <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> is continuous because <span class="math inline">\(X\)</span>, <span class="math inline">\(\mathbf{F}\)</span>, and <span class="math inline">\(\mathcal{T}\)</span> are finite and every <span class="math inline">\(\phi_\tau\)</span> is continuous. Thus <span class="math inline">\(q^{\min}_{\mathcal{T}}\)</span> is a fixed point. If <span class="math inline">\(\widehat q\)</span> is any other fixed point, then <span class="math inline">\(\underline q^{\,0}_{\mathcal{T}}=\mathbf{0}\leq\widehat q\)</span>. Moreover, if <span class="math inline">\(\underline q^{\,n}_{\mathcal{T}}\leq\widehat q\)</span>, monotonicity and the fixed-point property imply <span class="math display">\[\underline q^{\,n+1}_{\mathcal{T}}
+=\Psi_{\mathcal{T}}\left(\underline q^{\,n}_{\mathcal{T}}\right)
+\leq\Psi_{\mathcal{T}}(\widehat q)
+=\widehat q.\]</span> Therefore, <span class="math inline">\(\underline q^{\,n}_{\mathcal{T}}\leq\widehat q\)</span> for every <span class="math inline">\(n\)</span>, and taking limits gives <span class="math inline">\(q^{\min}_{\mathcal{T}}\leq\widehat q\)</span>.</p>
+<p>Similarly, define <span class="math inline">\(\overline q^{\,0}_{\mathcal{T}}=M_{\mathcal{T}}\mathbf{1}\)</span> and <span class="math display">\[\overline q^{\,n+1}_{\mathcal{T}}
+=
+\Psi_{\mathcal{T}}\left(\overline q^{\,n}_{\mathcal{T}}\right).\]</span> This sequence is nonincreasing and bounded below by <span class="math inline">\(\mathbf{0}\)</span>, so it converges to a fixed point <span class="math inline">\(q^{\max}_{\mathcal{T}}\)</span>. Every fixed point is bounded above by <span class="math inline">\(M_{\mathcal{T}}\mathbf{1}\)</span>; monotonicity therefore gives <span class="math inline">\(\widehat q\leq\overline q^{\,n}_{\mathcal{T}}\)</span> for every fixed point <span class="math inline">\(\widehat q\)</span> and every <span class="math inline">\(n\)</span>. Taking limits shows that <span class="math inline">\(\widehat q\leq q^{\max}_{\mathcal{T}}\)</span>. ◻</p>
+</div>
+<p>The proof is constructive: iterating <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> from <span class="math inline">\(\mathbf{0}\)</span> converges to <span class="math inline">\(q^{\min}_{\mathcal{T}}\)</span>, while iterating it from <span class="math inline">\(M_{\mathcal{T}}\mathbf{1}\)</span> converges to <span class="math inline">\(q^{\max}_{\mathcal{T}}\)</span>.<a class="footnote-ref" href="#fn3" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Waterfall equilibria need not be unique. To see why the contraction argument that guarantees uniqueness without tranching can fail, suppose that every next-period asset price rises by the same amount <span class="math inline">\(c\)</span>. Without tranching, every theory’s expected continuation value also rises by <span class="math inline">\(c\)</span>. The current price at state <span class="math inline">\(x\)</span> therefore rises by only <span class="math inline">\(c/R(x)\)</span>. With tranching, however, the same increase changes how the asset’s payoff is distributed across tranches. Although their combined payoff rises by only <span class="math inline">\(c\)</span> in every future state, the sum of their highest expected payoffs can rise by more than <span class="math inline">\(c\)</span> because each tranche is priced separately by the theory that values it most. The price-forming operator <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> therefore need not be a contraction, and the resulting feedback can support multiple fixed points. The following example makes this possibility explicit.<a class="footnote-ref" href="#fn4" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="theorem example">
+<p><strong>Example 1.</strong></p>
+<p><span class="source-anchor" id="ex:multiplicity"></span> Let <span class="math inline">\(X=\{l,m,h\}\)</span>, <span class="math display">\[P=
+\frac{1}{8}
+\begin{pmatrix}
+4&amp;1&amp;3\\
+1&amp;6&amp;1\\
+3&amp;1&amp;4
+\end{pmatrix},
+\qquad
+R=\frac{13}{12},
+\qquad
+d=\frac{1}{12}(0,3,5).\]</span> The matrix <span class="math inline">\(P\)</span> is strictly positive and doubly stochastic. Consider the coarse theory <span class="math inline">\(\{X\}\)</span> and the singleton theory. Their transition matrices are, respectively, the matrix with every row equal to <span class="math inline">\((1/3,1/3,1/3)\)</span> and <span class="math inline">\(P\)</span>. For the tranching <span class="math display">\[\mathcal{T}=\{[0,3),[3,\infty)\},\]</span> the senior tranche <span class="math inline">\([0,3)\)</span> is debt with face value 3, and the junior tranche <span class="math inline">\([3,\infty)\)</span> is residual equity. Direct substitution shows that <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> has at least the following three fixed points, with coordinates ordered as <span class="math inline">\((l,m,h)\)</span>: <span class="math display">\[q^{(1)}=\frac{1}{327}(848,930,978)
+\approx(2.593,2.844,2.991),\]</span> <span class="math display">\[q^{(2)}=\frac{1}{97}(259,285,297)
+\approx(2.670,2.938,3.062),\]</span> and <span class="math display">\[q^{(3)}=\frac{1}{803}(2201,2425,2523)
+\approx(2.741,3.020,3.142).\]</span> Numerically implementing the monotone-iteration algorithm in Proposition <a href="#exu">1</a>, starting from <span class="math inline">\(\mathbf{0}\)</span> and <span class="math inline">\(M_{\mathcal{T}}\mathbf{1}\)</span>, yields <span class="math inline">\(q^{(1)}\)</span> and <span class="math inline">\(q^{(3)}\)</span>, respectively. Hence, <span class="math inline">\(q^{(1)}=q_{\mathcal{T}}^{\min}\)</span> and <span class="math inline">\(q^{(3)}=q_{\mathcal{T}}^{\max}\)</span>, while <span class="math inline">\(q^{(2)}\)</span> is an intermediate equilibrium. The first vector is also the unique equilibrium price without tranching. The approximate values make the payment patterns of the residual-equity tranche <span class="math inline">\([3,\infty)\)</span> explicit. At <span class="math inline">\(q^{(1)}\)</span>, all three prices are below 3, so this tranche never pays. At <span class="math inline">\(q^{(2)}\)</span>, only <span class="math inline">\(q^{(2)}(h)&gt;3\)</span>, so it pays only in state <span class="math inline">\(h\)</span>. At <span class="math inline">\(q^{(3)}\)</span>, both <span class="math inline">\(q^{(3)}(m)&gt;3\)</span> and <span class="math inline">\(q^{(3)}(h)&gt;3\)</span>, so it pays in states <span class="math inline">\(m\)</span> and <span class="math inline">\(h\)</span>. Thus even a two-tranche debt–equity structure can support different patterns of active tranches and multiple equilibrium prices.</p>
+<p>The multiplicity in this example is locally robust: sufficiently small changes in the transition probabilities, dividends, interest rate, and attachment point preserve three distinct equilibria. The equilibrium prices may change, but in each of the three equilibria the states in which residual equity pays remain as described above.<a class="footnote-ref" href="#fn5" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+</div>
+<div class="theorem corollary">
+<p><strong>Corollary 1.</strong></p>
+<p><span class="source-anchor" id="cor:tranching-multiplicity"></span> The no-tranching benchmark always has a unique equilibrium price. In contrast, there exist economies in which a finite tranching has multiple equilibrium prices.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(\mathcal{T}^0=\{[0,\infty)\}\)</span>. Since <span class="math inline">\(\phi_{[0,\infty)}(q)=q\)</span>, for any <span class="math inline">\(q,w\in\mathbb{R}_+^X\)</span> and <span class="math inline">\(x\in X\)</span>, <span class="math display">\[\begin{align*}
+&amp;\left|
+\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}(q\mid x)
+-
+\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}(w\mid x)
+\right|\\
+&amp;\qquad\leq
+\max_{\mathcal{F}\in\mathbf{F}}
+\left|E_\mathcal{F}(q-w\mid x)\right|
+\leq
+\lVert q-w\rVert_\infty.
+\end{align*}\]</span> Consequently, <span class="math display">\[\left\lVert
+\Psi_{\mathcal{T}^0}(q)-\Psi_{\mathcal{T}^0}(w)
+\right\rVert_\infty
+\leq
+\frac{1}{\underline R}\lVert q-w\rVert_\infty.\]</span> Because <span class="math inline">\(\underline R&gt;1\)</span>, <span class="math inline">\(\Psi_{\mathcal{T}^0}\)</span> is a contraction and has a unique fixed point. Example <a href="#ex:multiplicity">1</a> establishes the second claim. ◻</p>
+</div>
+<p>Corollary <a href="#cor:tranching-multiplicity">1</a> isolates multiplicity as a possible consequence of pricing tranches separately, rather than a feature of the no-tranching resale-option benchmark. It does not assert that every refinement increases the number of equilibria. Proposition <a href="#exu">1</a> nevertheless imposes order on the multiplicity: every collection of waterfall-equilibrium prices has a greatest lower bound and a least upper bound within the equilibrium set. Example <a href="#ex:multiplicity">1</a> shows that this complete-lattice structure may include equilibria strictly between its least and greatest elements.</p>
+<h2 id="sec:selection"><span class="section-number">3.7</span> Equilibrium selection</h2>
+<p>Comparisons based on a single equilibrium price function for each tranching require specifying which equilibrium is selected. To assess whether any alternative tranching can yield a higher asset price, the analysis compares tranchings using their least equilibrium prices.</p>
+<p>The least equilibrium price has a finite-horizon interpretation. Consider an economy in which <span class="math inline">\(H\)</span> dividend dates remain, the terminal continuation value is zero, and the same menu of one-period waterfall claims is available at every date. The following proposition shows that its price converges to the least waterfall-equilibrium price as the horizon increases.</p>
+<div class="theorem proposition">
+<p><strong>Proposition 2.</strong></p>
+<p><span class="source-anchor" id="prp:finite-selection"></span> For every finite tranching <span class="math inline">\(\mathcal{T}\)</span> and every <span class="math inline">\(H\geq0\)</span>, the finite-horizon economy with <span class="math inline">\(H\)</span> remaining dividend dates has a unique backward-induction price <span class="math inline">\(q_{\mathcal{T}}^{[H]}\)</span>, determined by <span class="math display">\[q_{\mathcal{T}}^{[0]}=\mathbf{0},
+\qquad
+q_{\mathcal{T}}^{[H+1]}
+=\Psi_{\mathcal{T}}\left(q_{\mathcal{T}}^{[H]}\right).\]</span> The sequence is nondecreasing and <span class="math display">\[q_{\mathcal{T}}^{[H]}
+\uparrow
+q_{\mathcal{T}}^{\min}
+\qquad
+\text{as }H\to\infty.\]</span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> When <span class="math inline">\(H=0\)</span>, the terminal condition uniquely determines <span class="math inline">\(q_{\mathcal{T}}^{[0]}=\mathbf{0}\)</span>. Suppose that <span class="math inline">\(q_{\mathcal{T}}^{[H]}\)</span> has been determined. In the economy with <span class="math inline">\(H+1\)</span> remaining dividend dates, the next-period payoff of tranche <span class="math inline">\(\tau\)</span> is <span class="math inline">\(\phi_\tau(q_{\mathcal{T}}^{[H]})\)</span>. Equations <a href="#eqp">(17)</a> and <a href="#eqq">(16)</a> therefore uniquely determine <span class="math display">\[q_{\mathcal{T}}^{[H+1]}
+=
+\Psi_{\mathcal{T}}\left(q_{\mathcal{T}}^{[H]}\right).\]</span> Thus backward induction uniquely determines the finite-horizon price for every <span class="math inline">\(H\)</span>.</p>
+<p>This initial condition and recursion coincide with those of the lower sequence <span class="math inline">\(\underline q_{\mathcal{T}}^{\,H}\)</span> constructed in the proof of Proposition <a href="#exu">1</a>. Hence <span class="math inline">\(q_{\mathcal{T}}^{[H]}=\underline q_{\mathcal{T}}^{\,H}\)</span> for every <span class="math inline">\(H\)</span>. The proof of Proposition <a href="#exu">1</a> shows that this sequence is nondecreasing and converges to <span class="math inline">\(q_{\mathcal{T}}^{\min}\)</span>. ◻</p>
+</div>
+<p>When <span class="math inline">\(H=0\)</span>, the asset has no remaining payoff. With one dividend date remaining, there is no resale value, so <span class="math display">\[q_{\mathcal{T}}^{[1]}(x)=\frac{d(x)}{R(x)}.\]</span> With two dividend dates remaining, next period’s asset price is <span class="math inline">\(q_{\mathcal{T}}^{[1]}\)</span>, so the current price also includes the value of the waterfall claims that pay <span class="math inline">\(\phi_\tau(q_{\mathcal{T}}^{[1]})\)</span>. Each subsequent iteration extends the horizon by one dividend date and applies the same resale-and-tranching pricing rule.</p>
+<h1 id="sec:eff"><span class="section-number">4</span> The effects of tranching</h1>
+<p>This section studies the effect of tranching securitization, understood as the introduction of new ABS with a waterfall payment constraint, on the equilibrium price of the long-term asset. Formally, tranching securitization means a refinement of the existing tranching:</p>
+<div class="theorem definition">
+<p><strong>Definition 2.</strong></p>
+<p><span class="source-anchor" id="def:tranching-sec"></span> An economy engages in tranching securitization if it switches from a tranching <span class="math inline">\(\mathcal{T}\)</span> to a tranching <span class="math inline">\(\mathcal{S}\)</span>, where <span class="math inline">\(\mathcal{S}\)</span> is a refinement of <span class="math inline">\(\mathcal{T}\)</span>.</p>
+</div>
+<p>This means that agents who buy the long-term asset are able to sell a greater variety of tranches. Appendix <a href="#sec:is">6.2</a> shows that every finite iterated securitization structure backed by existing ABS generates the same set of equilibrium prices for the underlying asset as a suitable one-shot waterfall tranching. In particular, their least and greatest equilibrium prices coincide.</p>
+<h2 id="effect-on-asset-prices"><span class="section-number">4.1</span> Effect on asset prices</h2>
+<p>Further securitization cannot decrease either extreme equilibrium price of the underlying asset:</p>
+<div class="theorem lemma">
+<p><strong>Lemma 1.</strong></p>
+<p><span class="source-anchor" id="refine"></span> If <span class="math inline">\(\mathcal{S}\)</span> is a refinement of <span class="math inline">\(\mathcal{T}\)</span>, then:</p>
+<ol type="i">
+<li><p>for every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, there is a <span class="math inline">\(w\in\mathcal{Q}_{\mathcal{S}}\)</span> such that <span class="math inline">\(q\leq w\)</span>; and</p></li>
+<li><p>for every <span class="math inline">\(w\in\mathcal{Q}_{\mathcal{S}}\)</span>, there is a <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span> such that <span class="math inline">\(q\leq w\)</span>.</p></li>
+</ol>
+<p>Consequently, <span class="math display">\[q_{\mathcal{T}}^{\min}\leq q_{\mathcal{S}}^{\min}
+\qquad\text{and}\qquad
+q_{\mathcal{T}}^{\max}\leq q_{\mathcal{S}}^{\max}.\]</span></p>
+</div>
+<p><span class="smallcaps">Proof:</span> See Appendix <a href="#app:asset-price-proofs">6.3</a>.</p>
+<p>The intuition for Lemma <a href="#refine">1</a> is that splitting a tranche into smaller claims cannot reduce the sum of their prices. The highest valuation of the original tranche cannot exceed the sum of the highest valuations of its components, because each component may be priced by a different investor. Refinement therefore cannot reduce either extreme equilibrium price of the underlying asset.</p>
+<p>The operator comparison also implies <span class="math inline">\(q_{\mathcal{T}}^{[H]}\leq q_{\mathcal{S}}^{[H]}\)</span> at every finite horizon <span class="math inline">\(H\)</span>. Thus, the weak price comparison does not depend on taking the stationary infinite-horizon limit.</p>
+<p>It is worth comparing the benchmark scenario, where there is no tranching, with any scenario where there is some degree of tranching:</p>
+<div class="theorem corollary">
+<p><strong>Corollary 2.</strong></p>
+<p><span class="source-anchor" id="cor:eonben"></span> Let <span class="math inline">\(\mathcal{T}^0:=\{[0,\infty)\}\)</span> denote the no-tranching benchmark and <span class="math inline">\(q_{\mathcal{T}^0}\)</span> its unique equilibrium price. Then, for any tranching <span class="math inline">\(\mathcal{T}\)</span> and any <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, <span class="manuscript-equation"><span class="equation-anchor" id="eq:eonben"></span><span class="math display">\[\begin{equation}
+
+q_{\mathcal{T}^0}(x)\leq q(x)\tag{19}
+\end{equation}\]</span></span> for every <span class="math inline">\(x\in X\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Every tranching <span class="math inline">\(\mathcal{T}\)</span> refines <span class="math inline">\(\mathcal{T}^0\)</span>. Lemma <a href="#refine">1</a>(ii) therefore places every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span> weakly above an equilibrium of <span class="math inline">\(\mathcal{T}^0\)</span>, whose unique equilibrium price is <span class="math inline">\(q_{\mathcal{T}^0}\)</span>. ◻</p>
+</div>
+<p>The weak comparison raises the question of when further tranching can increase the asset price strictly. For the analysis of issuer optimality, tranchings are evaluated at their least equilibrium prices, motivated by the finite-horizon limit in Proposition <a href="#prp:finite-selection">2</a>. A tranching is <em>issuer-optimal</em> if no alternative tranching yields a higher least equilibrium price in any state:</p>
+<div class="theorem definition">
+<p><strong>Definition 3.</strong></p>
+<p><span class="source-anchor" id="def:fse"></span> A tranching <span class="math inline">\(\mathcal{T}\)</span> is issuer-optimal if <span class="math display">\[\begin{equation*}
+q_{\mathcal{S}}^{\min}(x) \leq
+q_{\mathcal{T}}^{\min}(x)
+\end{equation*}\]</span> for any tranching <span class="math inline">\(\mathcal{S}\)</span> and all <span class="math inline">\(x\in X\)</span>.</p>
+</div>
+<p>In order to characterize the necessary and sufficient conditions for a tranching to be issuer-optimal, the following object is introduced: Let <span class="math inline">\(I_A\)</span> be the indicator function for event <span class="math inline">\(A\)</span>. For <span class="math inline">\(t\in\mathbb{R}_+\)</span>, define <span class="math inline">\(G^\mathcal{T}_\mathcal{F}\left(t\mid x\right)\)</span> as the probability at state <span class="math inline">\(x\)</span> that the asset price next period is no higher than <span class="math inline">\(t\)</span>, as perceived by theory <span class="math inline">\(\mathcal{F}\)</span> when the tranching is <span class="math inline">\(\mathcal{T}\)</span> and prices are given by <span class="math inline">\(q_{\mathcal{T}}^{\min}\)</span>: <span class="math display">\[\begin{equation*}
+G^\mathcal{T}_\mathcal{F}\left(t\mid x\right) := E_{\mathcal{F}}\left(I_{\left\{q_{\mathcal{T}}^{\min}\leq t\right\}}\mid x\right)
+\end{equation*}\]</span></p>
+<div class="theorem proposition">
+<p><strong>Proposition 3.</strong></p>
+<p><span class="source-anchor" id="mthm"></span> A tranching <span class="math inline">\(\mathcal{T}\)</span> is issuer-optimal if and only if, for each <span class="math inline">\(\tau\in\mathcal{T}\)</span> and <span class="math inline">\(x\in X\)</span>, there is a theory <span class="math inline">\(\mathcal{G}\in\mathbf{F}\)</span> such that <span class="math display">\[\begin{equation*}
+G^{\mathcal{T}}_
+{\mathcal{G}}
+\left(t\mid x\right)
+\leq
+G^{\mathcal{T}}_
+{\mathcal{F}}
+\left(t\mid x\right)
+\end{equation*}\]</span> for every <span class="math inline">\(t\)</span> in the interior of <span class="math inline">\(\tau\)</span> and all <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>. Moreover, if this condition fails, there is a refinement <span class="math inline">\(\mathcal{S}\)</span> of <span class="math inline">\(\mathcal{T}\)</span> such that <span class="math display">\[\begin{equation*}
+q_{\mathcal{T}}^{\min}(x)&lt;q_{\mathcal{S}}^{\min}(x)
+\end{equation*}\]</span> for every <span class="math inline">\(x\in X\)</span>.</p>
+</div>
+<p><span class="smallcaps">Proof:</span> See Appendix <a href="#app:asset-price-proofs">6.3</a>.</p>
+<p>Proposition <a href="#mthm">3</a> states that a tranching is issuer-optimal if and only if, for every state and every tranche, there is a theory that is weakly more optimistic than every other theory over the entire range of asset prices covered by the tranche. If this is not the case, then there is a refinement of the tranching that increases the least equilibrium asset price strictly in every state. This is because, at some state, the current tranche can be split so that another theory is willing to outbid the theory that values the original tranche most for at least one of the resulting smaller tranches.</p>
+<p>Applying Proposition <a href="#mthm">3</a> to the no-tranching benchmark gives the following corollary.</p>
+<div class="theorem corollary">
+<p><strong>Corollary 3.</strong></p>
+<p>The no-tranching benchmark <span class="math inline">\(\mathcal{T}^0\)</span> is issuer-optimal if and only if, for every <span class="math inline">\(x\in X\)</span>, there is a theory <span class="math inline">\(\mathcal{G}\in\mathbf{F}\)</span> whose perceived distribution <span class="math inline">\(G^{\mathcal{T}^0}_{\mathcal{G}}
+\left(\cdot\mid x\right)\)</span> first-order stochastically dominates <span class="math inline">\(G^{\mathcal{T}^0}_{\mathcal{F}}
+\left(\cdot\mid x\right)\)</span> for every <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Immediate from Proposition <a href="#mthm">3</a>. ◻</p>
+</div>
+<p>In the motivating example, the perceived distributions cross at state <span class="math inline">\(m\)</span> (Figure <a href="#fig:CDFs">1</a>), so <span class="math inline">\(\mathcal{T}^0\)</span> is not issuer-optimal.</p>
+<p>Finally, it is worth remarking that whenever the introduction of ABS increases the asset price, the asset will be traded at a price higher than anyone thinks it is worth:</p>
+<div class="theorem proposition">
+<p><strong>Proposition 4.</strong></p>
+<p><span class="source-anchor" id="rem:worth"></span> Let <span class="math inline">\(\mathcal{T}\)</span> be any finite tranching and let <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>. Then <span class="math display">\[q(x)\geq
+\frac{d(x)+
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(q\mid x\right)}
+{R(x)}\]</span> for every <span class="math inline">\(x\in X\)</span>. Moreover, if <span class="math inline">\(q\neq q_{\mathcal{T}^0}\)</span>, the inequality is strict in at least one state.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math display">\[\Psi_{\mathcal{T}^0}(w)(x):=
+\frac{d(x)+\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}(w\mid x)}{R(x)}\]</span> be the price-forming operator without tranching. Since every <span class="math inline">\(\mathcal{T}\)</span> is a refinement of <span class="math inline">\(\mathcal{T}^0\)</span>, <span class="math display">\[\Psi_{\mathcal{T}^0}(w)\leq\Psi_{\mathcal{T}}(w)\]</span> for every <span class="math inline">\(w\in\mathbb{R}_+^X\)</span>. Hence, if <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, <span class="math display">\[\Psi_{\mathcal{T}^0}(q)\leq\Psi_{\mathcal{T}}(q)=q.\]</span> If equality holds in every state, then <span class="math inline">\(q\)</span> is a fixed point of <span class="math inline">\(\Psi_{\mathcal{T}^0}\)</span>. This operator is a contraction with modulus <span class="math inline">\(\underline R^{-1}&lt;1\)</span>, so its unique fixed point is <span class="math inline">\(q_{\mathcal{T}^0}\)</span>. Thus equality in every state implies <span class="math inline">\(q=q_{\mathcal{T}^0}\)</span>. Equivalently, if <span class="math inline">\(q\neq q_{\mathcal{T}^0}\)</span>, the inequality is strict in at least one state. ◻</p>
+</div>
+<p>Intuitively, in an equilibrium different from the no-securitization benchmark, there has to be at least one state in which the tranching allows for an investor who otherwise would not have bought the whole asset to buy a piece of it. Since investors with different theories will be buying different tranches of the same asset, each of them will think that the others are overpaying for theirs.</p>
+<h2 id="subsec:fun"><span class="section-number">4.2</span> Relation to Fundamentals</h2>
+<p>Consider the relationship between the asset price and the perceived fundamental values, namely the present value of dividends perceived by each theory in the market. Let <span class="math inline">\(v_\mathcal{F}(x)\)</span> be the present value of dividends perceived by <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span> at state <span class="math inline">\(x\in X\)</span>. This value function is given by the recursive solution to <span class="manuscript-equation"><span class="equation-anchor" id="equ:fund"></span><span class="math display">\[\begin{equation}
+
+v_\mathcal{F}(x)
+=
+\frac{d(x)+E_{\mathcal{F}}\left(v_\mathcal{F}\mid x\right)}
+{R(x)}\tag{20}
+\end{equation}\]</span></span> for <span class="math inline">\(x\in X\)</span>.</p>
+<div class="theorem proposition">
+<p><strong>Proposition 5.</strong></p>
+<p><span class="source-anchor" id="prp:fun"></span> For any finite tranching <span class="math inline">\(\mathcal{T}\)</span>, any <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, and any collection of theories <span class="math inline">\(\mathbf{F}\)</span>, <span class="math display">\[\begin{equation*}
+v_\mathcal{F}(x)
+\leq q(x)
+\end{equation*}\]</span> for all <span class="math inline">\(x\in X\)</span> and all <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>. Furthermore, if <span class="math inline">\(\left\{[0,\infty)\right\}\)</span> is not issuer-optimal, then there is a tranching <span class="math inline">\(\mathcal{T}\)</span> such that <span class="math display">\[\begin{equation*}
+v_\mathcal{F}(x)
+&lt; q(x)
+\end{equation*}\]</span> for every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, all <span class="math inline">\(x\in X\)</span>, and all <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For each theory <span class="math inline">\(\mathcal{F}\)</span>, define the operator <span class="math display">\[\Gamma_\mathcal{F}(w)(x):=
+\frac{d(x)+E_{\mathcal{F}}\left(w\mid x\right)}{R(x)}.\]</span> The perceived fundamental value <span class="math inline">\(v_\mathcal{F}\)</span> is the fixed point of <span class="math inline">\(\Gamma_\mathcal{F}\)</span>. The benchmark price <span class="math inline">\(q_{\mathcal{T}^0}\)</span> is the fixed point of <span class="math display">\[\Psi_{\mathcal{T}^0}(w)(x):=
+\frac{d(x)+\max_{\mathcal{G}\in\mathbf{F}}E_{\mathcal{G}}\left(w\mid x\right)}
+{R(x)}.\]</span> For every nonnegative price function <span class="math inline">\(w\)</span> and every <span class="math inline">\(\mathcal{F}\)</span>, <span class="math inline">\(\Gamma_\mathcal{F}(w)(x)\leq \Psi_{\mathcal{T}^0}(w)(x)\)</span>. Since both operators are monotone contractions, iterating from the zero function and taking limits gives <span class="manuscript-equation"><span class="equation-anchor" id="equ:ifl"></span><span class="math display">\[\begin{equation}
+
+v_\mathcal{F}(x)
+\leq q_{\mathcal{T}^0}(x)\tag{21}
+\end{equation}\]</span></span> for all <span class="math inline">\(x\in X\)</span> and <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>. The first claim follows from inequality (<a href="#equ:ifl">21</a>) and Corollary <a href="#cor:eonben">2</a>. If the no-tranching benchmark is not issuer-optimal, Proposition <a href="#mthm">3</a> gives a tranching <span class="math inline">\(\mathcal{T}\)</span> such that <span class="math inline">\(q_{\mathcal{T}^0}(x)&lt;q_{\mathcal{T}}^{\min}(x)\)</span> in every state. Combining this strict inequality with (<a href="#equ:ifl">21</a>) and <span class="math inline">\(q_{\mathcal{T}}^{\min}\leq q\)</span> for every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span> proves the second claim. ◻</p>
+</div>
+<p>Proposition <a href="#prp:fun">5</a> states that if the no-tranching benchmark is not issuer-optimal, then there exists a tranching under which every equilibrium asset price strictly exceeds every theory’s perceived present value of dividends. The full-support assumption ensures that the resale opportunities created by tranching raise the asset price above these perceived fundamental values in every state.</p>
+<h2 id="sec:ep"><span class="section-number">4.3</span> Effect on realized excess payoffs</h2>
+<p>This subsection imposes the partition-based, statistically consistent belief structure in equation (<a href="#eq:Q">13</a>). It studies how the introduction of ABS affects the realized excess payoff obtained by each theory in the market. For each unit of a security purchased, the excess payoff is the security’s realized payoff minus the payoff from investing its purchase price in the bond.</p>
+<p>The effect of the introduction of new ABS on realized excess payoffs is subtle. Agents who are not optimistic about the overall expected payoff from an underlying asset could be the most optimistic about the payoff being above a certain threshold. Without ABS, they will not buy the asset. By introducing the appropriate tranching, they will buy a security with an attachment point at that threshold. Tranching thus allows the issuer to sell claims that other agents value more highly than the issuer does. On the other hand, by being outbid by less sophisticated agents, they may be prevented from buying tranches that do not have a promising payoff. Except for special cases, the effect of the introduction of ABS on individual realized excess payoffs is ambiguous.</p>
+<p>Formally, fix a tranching <span class="math inline">\(\mathcal{T}\)</span> and any equilibrium price <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>. Consider buying one unit of a tranche whenever theory <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span> is selected as its buyer and financing that purchase by forgoing <span class="math inline">\(p_\tau(x)\)</span> units of the bond. Denote by <span class="math inline">\(\Delta_\mathcal{F}^{\mathcal{T}}(q)\)</span> the long-run average realized payoff from these purchases in excess of the corresponding bond payoff. In the examples below, the argument <span class="math inline">\(q\)</span> is omitted when the equilibrium price has been specified. Let <span class="math inline">\(\psi_\tau:=\phi_\tau(q)\)</span> be the function that maps states into equilibrium payoffs for tranche <span class="math inline">\(\tau\in\mathcal{T}\)</span>. Tranche prices and buyer choices below are evaluated at <span class="math inline">\(q\)</span>, with this dependence left implicit. Denote by <span class="math inline">\(\mathbf{B}(\tau,x)\)</span> the set of theories with the highest willingness to pay for tranche <span class="math inline">\(\tau\in\mathcal{T}\)</span> at state <span class="math inline">\(x\in X\)</span>: <span class="math display">\[\begin{equation*}
+\mathbf{B}
+(\tau,x)=
+\left\{
+\mathcal{F}\in\mathbf{F}:
+E_\mathcal{F}(\psi_\tau\mid x)
+\geq
+E_{\mathcal{G}}(\psi_\tau\mid x)
+\text{ for all } \mathcal{G}\in\mathbf{F}
+\right\}
+\end{equation*}\]</span> Fix once and for all a strict total priority ordering <span class="math inline">\(\succ\)</span> over <span class="math inline">\(\mathbf{F}\)</span>, independent of the current state and the tranche. Let <span class="math display">\[\beta_{\mathcal{T}}(\tau,x)
+:=
+\max_{\succ}\mathbf{B}(\tau,x)\]</span> denote the selected buyer. Thus, whenever several theories have the same highest willingness to pay, the one with the highest fixed priority buys the tranche. The equilibrium price is independent of the priority ordering, whereas realized excess payoffs can depend on it. The <em>actual</em> as opposed to the <em>perceived</em> payoff from buying the security in tranche <span class="math inline">\(\tau\in\mathcal{T}\)</span> at state <span class="math inline">\(x\in X\)</span> is given by: <span class="math display">\[T(\psi_\tau)(x):=\sum_{y\in X}\psi_\tau(y)P(x,y)\]</span> Finally, let <span class="math inline">\(p_\tau\)</span> be the equilibrium price function for tranche <span class="math inline">\(\tau\in\mathcal{T}\)</span>. The realized excess payoff assigned to theory <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span> is: <span class="manuscript-equation"><span class="equation-anchor" id="eq:exr"></span><span class="math display">\[\begin{equation}
+
+\Delta_\mathcal{F}^{\mathcal{T}}(q)
+=
+\sum_{x\in X}
+\left(
+\sum_{\tau\in\mathcal{T}}
+\left(
+T(\psi_\tau)(x)-
+R(x)p_\tau(x)
+\right)
+I_{\left\{\mathcal{F}=\beta_{\mathcal{T}}(\tau,x)\right\}}
+\right)\mu(x)\tag{22}
+\end{equation}\]</span></span></p>
+<p>At the equilibrium price <span class="math inline">\(p_\tau(x)\)</span>, the selected buyer perceives a one-unit position in tranche <span class="math inline">\(\tau\)</span> to break even relative to investing <span class="math inline">\(p_\tau(x)\)</span> in the bond. The <em>actual</em> average excess payoff <span class="math inline">\(\Delta_\mathcal{F}^{\mathcal{T}}(q)\)</span>, evaluated under the objective transition probabilities, is not necessarily zero.<a class="footnote-ref" href="#fn6" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>Equation (<a href="#eq:exr">22</a>) could be rewritten as the average gap between actual and perceived payoffs from each tranche. Since the equilibrium price for tranche <span class="math inline">\(\tau\)</span> is given by <span class="math display">\[p_\tau(x) =
+\frac{
+\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}
+(\psi_\tau\mid x)
+}
+{R(x)}\]</span> it follows that <span class="math display">\[\begin{equation*}
+\Delta_\mathcal{F}^{\mathcal{T}}(q)
+=
+\sum_{x\in X}
+\left(
+\sum_{\tau\in\mathcal{T}}
+\left(
+T(\psi_\tau)(x)-
+E_\mathcal{F}(\psi_\tau\mid x)
+\right)
+I_{\left\{\mathcal{F}=\beta_{\mathcal{T}}(\tau,x)\right\}}
+\right)\mu(x)
+\end{equation*}\]</span> Thus, the realized excess payoff is the average gap between actual and perceived payoffs for the tranches the theory buys.</p>
+<p>An immediate result obtained from the statistical consistency of beliefs is that if <span class="math inline">\(\mathbf{F}=\left\{\mathcal{F}\right\}\)</span>, then <span class="math inline">\(\Delta_\mathcal{F}^{\mathcal{T}}(q)=0\)</span>. Thus, without competing theories, the long-run average payoff from the securities purchased by the agent equals the payoff from investing the same amounts in the bond.</p>
+<p>The aggregate per-unit excess payoff of the selected buyers has a definite sign even though individual excess payoffs need not. Define <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-definition"></span><span class="math display">\[\begin{equation}
+
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+:=
+\sum_{\mathcal{F}\in\mathbf{F}}
+\Delta_{\mathcal{F}}^{\mathcal{T}}(q).\tag{23}
+\end{equation}\]</span></span> Summing across theories eliminates the selected-buyer indicators because the priority rule assigns each tranche in each state to exactly one theory. The next proposition establishes the sign of the aggregate excess payoff.</p>
+<div class="theorem proposition">
+<p><strong>Proposition 6.</strong></p>
+<p><span class="source-anchor" id="prp:aggregate-return"></span> For every finite tranching <span class="math inline">\(\mathcal{T}\)</span>, every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, and every fixed priority ordering, <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-sign"></span><span class="math display">\[\begin{equation}
+
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+\leq0.\tag{24}
+\end{equation}\]</span></span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Summing equation (<a href="#eq:exr">22</a>) across theories and using definition (<a href="#eq:aggregate-definition">23</a>) eliminates the selected-buyer indicators because each tranche in each state is assigned to exactly one theory. Hence <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-decomposition"></span><span class="math display">\[\begin{equation}
+
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+=
+\sum_{x\in X}\mu(x)
+\sum_{\tau\in\mathcal{T}}
+\left[
+T(\psi_\tau)(x)-R(x)p_\tau(x)
+\right].\tag{25}
+\end{equation}\]</span></span> Budget balance implies <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-budget"></span><span class="math display">\[\begin{equation}
+
+\sum_{\tau\in\mathcal{T}}T(\psi_\tau)(x)
+=
+\sum_{y\in X}P(x,y)q(y),\tag{26}
+\end{equation}\]</span></span> while equation (<a href="#eqq">16</a>) gives <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-financing"></span><span class="math display">\[\begin{equation}
+
+R(x)\sum_{\tau\in\mathcal{T}}p_\tau(x)
+=R(x)q(x)-d(x).\tag{27}
+\end{equation}\]</span></span> Substituting equations (<a href="#eq:aggregate-budget">26</a>) and (<a href="#eq:aggregate-financing">27</a>) into equation (<a href="#eq:aggregate-decomposition">25</a>) yields <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-resale"></span><span class="math display">\[\begin{equation}
+
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+=
+\sum_{x\in X}\mu(x)
+\left[
+d(x)
++\sum_{y\in X}P(x,y)q(y)
+-R(x)q(x)
+\right].\tag{28}
+\end{equation}\]</span></span> Because <span class="math inline">\(\mu\)</span> is stationary under <span class="math inline">\(P\)</span>, <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-stationarity"></span><span class="math display">\[\begin{equation}
+
+\sum_{x\in X}\mu(x)
+\sum_{y\in X}P(x,y)q(y)
+=
+\sum_{x\in X}\mu(x)q(x),\tag{29}
+\end{equation}\]</span></span> Substituting equation (<a href="#eq:aggregate-stationarity">29</a>) into equation (<a href="#eq:aggregate-resale">28</a>) gives the equivalent representation <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-compact"></span><span class="math display">\[\begin{equation}
+
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+=
+\sum_{x\in X}\mu(x)
+\left[d(x)-(R(x)-1)q(x)\right].\tag{30}
+\end{equation}\]</span></span></p>
+<p>It remains to establish the sign. Tranche pricing implies <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-pricing"></span><span class="math display">\[\begin{equation}
+
+R(x)p_\tau(x)
+=
+\max_{\mathcal{F}\in\mathbf{F}}
+E_\mathcal{F}(\psi_\tau\mid x).\tag{31}
+\end{equation}\]</span></span> Substituting equation (<a href="#eq:aggregate-pricing">31</a>) into equation (<a href="#eq:aggregate-decomposition">25</a>) gives <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-max-representation"></span><span class="equation-anchor" id="eq:aggregate-max-bound"></span><span class="math display">\[\begin{align}
+
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+&amp;=
+\sum_{\tau\in\mathcal{T}}
+\left[
+\sum_{x\in X}\mu(x)T(\psi_\tau)(x)
+-
+\sum_{x\in X}\mu(x)
+\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}(\psi_\tau\mid x)
+\right]\tag{32}\\
+
+&amp;\leq
+\sum_{\tau\in\mathcal{T}}
+\left[
+\sum_{x\in X}\mu(x)T(\psi_\tau)(x)
+-
+\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{x\in X}\mu(x)E_\mathcal{F}(\psi_\tau\mid x)
+\right].\tag{33}
+\end{align}\]</span></span> The inequality uses that the average of pointwise maxima is at least the maximum of the averages. For every theory <span class="math inline">\(\mathcal{F}\)</span> and tranche <span class="math inline">\(\tau\)</span>, statistical consistency implies <span class="manuscript-equation"><span class="equation-anchor" id="eq:aggregate-consistency"></span><span class="math display">\[\begin{equation}
+
+\sum_{x\in X}\mu(x)
+E_\mathcal{F}(\psi_\tau\mid x)
+=
+\sum_{x\in X}\mu(x)T(\psi_\tau)(x).\tag{34}
+\end{equation}\]</span></span> Equation (<a href="#eq:aggregate-consistency">34</a>) implies that the right-hand side of equation (<a href="#eq:aggregate-max-bound">33</a>) is zero, which proves equation (<a href="#eq:aggregate-sign">24</a>). ◻</p>
+</div>
+<div class="theorem corollary">
+<p><strong>Corollary 4.</strong></p>
+<p><span class="source-anchor" id="cor:aggregate-equilibria"></span> For every finite tranching <span class="math inline">\(\mathcal{T}\)</span> and every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, <span class="math display">\[\Delta_{\mathrm{agg}}^{\mathcal{T}}(q_{\mathcal{T}}^{\max})
+\leq
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+\leq
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q_{\mathcal{T}}^{\min})
+\leq0.\]</span> The aggregate payoff is strictly lower at <span class="math inline">\(q_{\mathcal{T}}^{\max}\)</span> than at <span class="math inline">\(q_{\mathcal{T}}^{\min}\)</span> whenever these price functions differ.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For any <span class="math inline">\(q,w\in\mathcal{Q}_{\mathcal{T}}\)</span> with <span class="math inline">\(q\leq w\)</span>, equation (<a href="#eq:aggregate-compact">30</a>) gives <span class="math display">\[\Delta_{\mathrm{agg}}^{\mathcal{T}}(w)
+-\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+=-
+\sum_{x\in X}\mu(x)(R(x)-1)\left[w(x)-q(x)\right]
+\leq0.\]</span> Since <span class="math inline">\(\mu(x)&gt;0\)</span> and <span class="math inline">\(R(x)&gt;1\)</span> for every <span class="math inline">\(x\)</span>, the inequality is strict if <span class="math inline">\(q\neq w\)</span>. Proposition <a href="#exu">1</a> gives <span class="math inline">\(q_{\mathcal{T}}^{\min}\leq q\leq q_{\mathcal{T}}^{\max}\)</span>, and Proposition <a href="#prp:aggregate-return">6</a> gives the final inequality. ◻</p>
+</div>
+<div class="theorem corollary">
+<p><strong>Corollary 5.</strong></p>
+<p><span class="source-anchor" id="cor:aggregate-refinement"></span> If <span class="math inline">\(\mathcal{S}\)</span> refines <span class="math inline">\(\mathcal{T}\)</span>, then <span class="math display">\[\begin{aligned}
+\Delta_{\mathrm{agg}}^{\mathcal{S}}(q_{\mathcal{S}}^{\min})
+&amp;\leq
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q_{\mathcal{T}}^{\min}),\\
+\Delta_{\mathrm{agg}}^{\mathcal{S}}(q_{\mathcal{S}}^{\max})
+&amp;\leq
+\Delta_{\mathrm{agg}}^{\mathcal{T}}(q_{\mathcal{T}}^{\max}).
+\end{aligned}\]</span> Each inequality is strict whenever the corresponding equilibrium price functions differ.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For any <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span> and <span class="math inline">\(w\in\mathcal{Q}_{\mathcal{S}}\)</span> with <span class="math inline">\(q\leq w\)</span>, equation (<a href="#eq:aggregate-compact">30</a>) gives <span class="math display">\[\Delta_{\mathrm{agg}}^{\mathcal{S}}(w)
+-\Delta_{\mathrm{agg}}^{\mathcal{T}}(q)
+=-
+\sum_{x\in X}\mu(x)(R(x)-1)\left[w(x)-q(x)\right]
+\leq0.\]</span> Lemma <a href="#refine">1</a> orders both pairs of extreme equilibrium prices. Applying this identity to each pair proves the comparisons. Because <span class="math inline">\(\mu(x)&gt;0\)</span> and <span class="math inline">\(R(x)&gt;1\)</span> for every <span class="math inline">\(x\)</span>, each comparison is strict whenever the corresponding price functions differ. ◻</p>
+</div>
+<p>Proposition <a href="#prp:aggregate-return">6</a> establishes a nonpositive aggregate realized excess payoff at every equilibrium. For a fixed tranching, Corollary <a href="#cor:aggregate-equilibria">4</a> shows that the least equilibrium maximizes this payoff and the greatest equilibrium minimizes it, with a strict difference when there is multiplicity. The least equilibrium therefore yields the smallest aggregate loss. Corollary <a href="#cor:aggregate-refinement">5</a> shows that refinement weakly reduces the aggregate payoff under either extreme-equilibrium selection, strictly whenever the corresponding prices change. This measure sums the realized excess payoffs from buying one unit of each tranche, not from agents’ actual portfolio holdings. The ranking across equilibria need not hold for each theory and is not a ranking of overall welfare. A nonpositive aggregate payoff does not rule out a positive excess payoff for a particular theory.</p>
+<p>When one theory refines every other theory, the realized excess payoff is nonpositive for every theory.</p>
+<div class="theorem proposition">
+<p><strong>Proposition 7.</strong></p>
+<p><span class="source-anchor" id="prp:finest-return"></span> Suppose that <span class="math inline">\(\mathcal{G}\in\mathbf{F}\)</span> refines every <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>. Then, for every finite tranching <span class="math inline">\(\mathcal{T}\)</span>, every <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>, and every fixed priority ordering, <span class="math display">\[\Delta_\mathcal{G}^{\mathcal{T}}(q)=0
+\qquad\text{and}\qquad
+\Delta_\mathcal{F}^{\mathcal{T}}(q)\leq0
+\quad
+\text{for every }\mathcal{F}\in\mathbf{F}\setminus\{\mathcal{G}\}.\]</span></p>
+</div>
+<p><span class="smallcaps">Proof:</span> See Appendix <a href="#app:finest-return-proof">6.4</a>.</p>
+<p>Proposition <a href="#prp:finest-return">7</a> extends the no-securitization result in Proposition 5 of <a href="#ref-EysterPiccione2014">Eyster and Piccione (2013)</a>: when one theory refines every other theory, no theory outperforms the bond on average at any waterfall equilibrium under any finite tranching. The proposition does not determine how a change in tranching affects each theory’s payoff. In the motivating example, however, securitization lowers <span class="math inline">\(\mathcal{A}\)</span>’s realized excess payoff while <span class="math inline">\(\mathcal{B}\)</span>’s remains unchanged at zero. In states where, without securitization, the most sophisticated agent would have bought the whole asset, the tranches not bought by this agent underperform the same expenditure in the bond on average. Thus, securitization can lower one theory’s realized excess payoff without increasing the payoff of any other theory.</p>
+<p>Nevertheless, the introduction of ABS <em>can</em> increase a theory’s realized excess payoff. Appendix <a href="#app:return-example">6.5</a> presents a full-support, three-theory example in which securitization induces a coarse theory to buy a mezzanine tranche. As a consequence, theory <span class="math inline">\(\mathcal{B}\)</span> has a higher realized excess payoff than it would have without securitization, even though its payoff remains negative: <span class="math display">\[\Delta_\mathcal{B}^{\mathcal{T}^1}=-\frac{1}{16}&gt;
+-\frac{373}{4464}=\Delta_\mathcal{B}^{\mathcal{T}^0}.\]</span> Theory <span class="math inline">\(\mathcal{A}\)</span> has zero realized excess payoff under both tranchings, while theory <span class="math inline">\(\mathcal{C}\)</span>’s payoff falls from zero to <span class="math inline">\(-1/36\)</span>. Thus, securitization can transfer losses across agents: it may lower one theory’s realized excess payoff while improving another theory’s payoff relative to the benchmark, even if the improved payoff remains negative.</p>
+<h2 id="sec:cds"><span class="section-number">4.4</span> Other types of contracts</h2>
+<p>Apart from having their real-life counterparts, the only appealing features of securities with a waterfall structure are: i) their payoff is monotone in the cash flow from the underlying asset, ii) as shown in Appendix <a href="#sec:is">6.2</a>, they implicitly represent any case where only debt and equity can be issued and debt itself can be used as collateral. However, no argument has been given in this paper for agents to choose or be constrained by this class of contracts.</p>
+<p>Without being constrained to issue ABS with a waterfall payment structure, agents could exploit the divergence of beliefs even further by creating contracts that do not satisfy this constraint. For instance, consider the equilibrium of Subsection <a href="#securitized">2.2</a>. The senior tranche pays <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> if the state in the next period is <span class="math inline">\(m\)</span> or <span class="math inline">\(h\)</span> and <span class="math inline">\(q^{\mathrm{ABS}}(l)\)</span> otherwise. At state <span class="math inline">\(m\)</span>, this tranche is bought by agent <span class="math inline">\(\mathcal{B}\)</span>. This agent could create a new security, backed by the senior tranche, that pays <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> at state <span class="math inline">\(h\)</span> and 0 otherwise. This security cannot be written as a waterfall claim on the senior tranche because its payoff is not determined solely by the senior tranche’s payoff: the senior tranche pays <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> in both states <span class="math inline">\(m\)</span> and <span class="math inline">\(h\)</span>, whereas the new security pays zero in <span class="math inline">\(m\)</span> and <span class="math inline">\(q^{\mathrm{ABS}}(m)\)</span> in <span class="math inline">\(h\)</span>. This new security is almost worthless for <span class="math inline">\(\mathcal{B}\)</span>, given that a realization <span class="math inline">\(h\)</span> next period looks very unlikely. However, agent <span class="math inline">\(\mathcal{A}\)</span> would be willing to pay <span class="math inline">\(\frac{1}{3}\frac{q^{\mathrm{ABS}}(m)}{R}\)</span> for it.</p>
+<p>As an alternative to the waterfall equilibrium, consider the following asset-backed securities: for <span class="math inline">\(y\in X\)</span>, the <span class="math inline">\(y\)</span>-security pays <span class="math inline">\(q(y)\)</span> in the next period if the realized state is <span class="math inline">\(y\)</span> and 0 otherwise. Define the vector <span class="math inline">\(b\)</span> and the nonnegative matrix <span class="math inline">\(A\)</span> by <span class="math display">\[b(x):=\frac{d(x)}{R(x)},
+\qquad
+A(x,y):=\frac{\max_{\mathcal{F}\in\mathbf{F}}Q_\mathcal{F}(x,y)}{R(x)}.\]</span> An equilibrium price <span class="math inline">\(\bar q\)</span> under this state-contingent securitization structure must satisfy <span class="manuscript-equation"><span class="equation-anchor" id="eq:upper"></span><span class="math display">\[\begin{equation}
+
+\bar q=b+A\bar q.\tag{35}
+\end{equation}\]</span></span> The matrix <span class="math inline">\(A\)</span> is not a transition matrix: because the maximization is performed separately across next-period states, different entries in the same row may be determined by different theories, and the row sum can exceed one. Therefore, <span class="math inline">\(R(x)&gt;1\)</span> alone does not guarantee the existence of a nonnegative solution to equation (<a href="#eq:upper">35</a>).</p>
+<div class="theorem proposition">
+<p><strong>Proposition 8.</strong></p>
+<p><span class="source-anchor" id="prp:state-existence"></span> Equation (<a href="#eq:upper">35</a>) admits a nonnegative solution if and only if all eigenvalues of <span class="math inline">\(A\)</span> lie strictly inside the unit circle. In that case, the solution is unique and <span class="math display">\[\bar q=(I-A)^{-1}b=\sum_{n=0}^{\infty}A^n b.\]</span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> If all eigenvalues of <span class="math inline">\(A\)</span> lie strictly inside the unit circle, then the matrix series converges and <span class="math display">\[(I-A)^{-1}=\sum_{n=0}^{\infty}A^n\]</span> exists and is nonnegative. This proves existence, uniqueness, and nonnegativity of <span class="math inline">\(\bar q=(I-A)^{-1}b\)</span>.</p>
+<p>Conversely, suppose that equation (<a href="#eq:upper">35</a>) has a nonnegative solution <span class="math inline">\(\bar q\)</span>. Since every subjective transition matrix is strictly positive, <span class="math inline">\(A\)</span> is strictly positive. Hence <span class="math inline">\(A\)</span> has a positive eigenvalue <span class="math inline">\(\lambda^*\)</span> and a positive left eigenvector <span class="math inline">\(v\)</span> such that <span class="math inline">\(v'A=\lambda^*v'\)</span>, with <span class="math inline">\(|\lambda|\leq\lambda^*\)</span> for every eigenvalue <span class="math inline">\(\lambda\)</span> of <span class="math inline">\(A\)</span>. Multiplying equation (<a href="#eq:upper">35</a>) by <span class="math inline">\(v'\)</span> gives <span class="math display">\[(1-\lambda^*)v'\bar q=v'b.\]</span> The right-hand side is strictly positive because <span class="math inline">\(b\geq0\)</span> and at least one dividend is positive. Since <span class="math inline">\(v'\bar q\geq0\)</span>, the equality requires <span class="math inline">\(\lambda^*&lt;1\)</span>. Therefore, all eigenvalues of <span class="math inline">\(A\)</span> lie strictly inside the unit circle. ◻</p>
+</div>
+<p>The term <span class="math inline">\(A^n b\)</span> captures the contribution of dividends reached after <span class="math inline">\(n\)</span> rounds of resale-price feedback. Convergence of the matrix series <span class="math inline">\(\sum_{n=0}^{\infty}A^n\)</span> means that discounting dominates the amplification created by selling each state-contingent security to its most optimistic buyer, so the contribution of increasingly distant resale opportunities vanishes.</p>
+<div class="theorem proposition">
+<p><strong>Proposition 9.</strong></p>
+<p><span class="source-anchor" id="prp:upper"></span> Suppose that equation (<a href="#eq:upper">35</a>) admits a nonnegative solution <span class="math inline">\(\bar q\)</span>. Then every finite tranching <span class="math inline">\(\mathcal{T}\)</span> has a unique waterfall-equilibrium price <span class="math inline">\(q_{\mathcal{T}}\)</span>. Moreover, <span class="math display">\[q_{\mathcal{T}}\leq\bar q.\]</span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For any <span class="math inline">\(r,s\in\mathbb{R}_+\)</span>, the monotonicity and budget balance of the tranche payoff functions imply <span class="math display">\[\sum_{\tau\in\mathcal{T}}
+\left|\phi_\tau(r)-\phi_\tau(s)\right|
+=|r-s|.\]</span> Using the triangle inequality and <span class="math inline">\(|\max_i a_i-\max_i b_i|\leq\max_i|a_i-b_i|\)</span>, it follows that, for any nonnegative price functions <span class="math inline">\(q,w\)</span>, <span class="math display">\[\begin{align*}
+\left|\Psi_{\mathcal{T}}(q)(x)-\Psi_{\mathcal{T}}(w)(x)\right|
+&amp;\leq
+\frac{1}{R(x)}
+\sum_{\tau\in\mathcal{T}}
+\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{y\in X}Q_\mathcal{F}(x,y)
+\left|\phi_\tau(q(y))-\phi_\tau(w(y))\right|\\
+&amp;\leq
+\frac{1}{R(x)}
+\sum_{\tau\in\mathcal{T}}
+\sum_{y\in X}
+\max_{\mathcal{F}\in\mathbf{F}}Q_\mathcal{F}(x,y)
+\left|\phi_\tau(q(y))-\phi_\tau(w(y))\right|\\
+&amp;=
+\sum_{y\in X}A(x,y)|q(y)-w(y)|.
+\end{align*}\]</span> If <span class="math inline">\(q\)</span> and <span class="math inline">\(w\)</span> are both fixed points, this inequality gives <span class="math inline">\(|q-w|\leq A|q-w|\)</span>. Since <span class="math inline">\(A\)</span> is nonnegative, repeated multiplication gives <span class="math display">\[|q-w|\leq A^n|q-w|\]</span> for every <span class="math inline">\(n\geq1\)</span>. Proposition <a href="#prp:state-existence">8</a> implies that <span class="math inline">\(A^n\)</span> converges to zero. Hence <span class="math inline">\(q=w\)</span>. Existence follows from Proposition <a href="#exu">1</a>, so <span class="math inline">\(\mathcal{Q}_{\mathcal{T}}\)</span> is a singleton; denote its element by <span class="math inline">\(q_{\mathcal{T}}\)</span>.</p>
+<p>It remains to prove the upper bound. For every nonnegative price function <span class="math inline">\(w\)</span> and every tranche <span class="math inline">\(\tau\)</span>, <span class="math display">\[\begin{align*}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(\phi_\tau(w)\mid x\right)
+&amp;=
+\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{y\in X}Q_\mathcal{F}(x,y)\phi_\tau(w(y))\\
+&amp;\leq
+\sum_{y\in X}
+\max_{\mathcal{F}\in\mathbf{F}}Q_\mathcal{F}(x,y)
+\phi_\tau(w(y)).
+\end{align*}\]</span> Summing over <span class="math inline">\(\tau\in\mathcal{T}\)</span> and using budget balance gives <span class="math display">\[\Psi_{\mathcal{T}}(w)\leq b+Aw.\]</span> Applying this inequality to the unique fixed point gives <span class="math display">\[q_{\mathcal{T}}\leq b+Aq_{\mathcal{T}},\]</span> or <span class="math inline">\((I-A)q_{\mathcal{T}}\leq b\)</span>. By Proposition <a href="#prp:state-existence">8</a>, <span class="math inline">\((I-A)^{-1}\)</span> is nonnegative. Multiplication by this matrix yields <span class="math inline">\(q_{\mathcal{T}}\leq\bar q\)</span>. ◻</p>
+</div>
+<p>The matrix <span class="math inline">\(A\)</span> depends on beliefs and interest rates, not on the tranching. When all its eigenvalues lie strictly inside the unit circle, every finite waterfall tranching has a unique equilibrium. Tranching may still raise the asset price, but it cannot generate multiplicity. Failure of the eigenvalue condition does not by itself imply multiplicity.</p>
+<p>State-contingent securities allow the issuer to exploit disagreement more flexibly than waterfall tranches. Proposition <a href="#prp:upper">9</a> also shows that, under this eigenvalue condition, the state-contingent price bounds the waterfall-equilibrium price from above.<a class="footnote-ref" href="#fn7" id="fnref7" role="doc-noteref"><sup>7</sup></a> The lack of a belief that stochastically dominates all others in at least one state is a necessary condition for waterfall tranching to increase the asset price only because of the waterfall constraint. State-contingent securitization, in contrast, can exploit any disagreement about transition probabilities, provided that the resulting price system satisfies the existence condition above.</p>
+<h1 id="sec:disc"><span class="section-number">5</span> Conclusion</h1>
+<p>This paper has shown the effect of the introduction of asset-backed securities under heterogeneous beliefs and short-selling constraints. The heterogeneity is motivated by assuming that agents are not capable of processing all information available. Hence, different agents may ignore different information, leading to divergent expectations about the assets’ payouts. This heterogeneity can be exploited by financial institutions through the issuing of asset-backed securities to be traded among those agents with divergent beliefs.</p>
+<p>The no-tranching benchmark has a unique equilibrium, but waterfall tranching can create multiplicity because tranche activation and the identity of the marginal buyer feed back into the resale price of the underlying asset. Consequently, the same dividends, interest rates, beliefs, and tranching can support different equilibrium price functions. Example <a href="#ex:multiplicity">1</a> shows that this multiplicity can arise even with a two-tranche debt–equity structure. Securitization can therefore affect both the level of asset prices and whether the equilibrium price is unique.</p>
+<p>Refining a tranching weakly increases both the least and the greatest equilibrium prices of the underlying asset in every state. For issuer optimality, tranchings are compared by their least equilibrium prices. A tranching is issuer-optimal precisely when, at its least equilibrium and within each tranche and state, one perceived distribution first-order stochastically dominates the others on the relevant payoff range. If this dominance condition fails, there exists a refinement that raises the least equilibrium price strictly in every state.</p>
+<p>The paper has also studied the effect of securitization on agents’ realized excess payoffs. Whoever buys an asset may be subject to a winner’s curse: the payoff they expect on the asset may exceed its objective average payoff, even though the position is perceived to break even relative to the bond. Under statistically consistent beliefs, the aggregate realized excess payoff from unit tranche purchases is nonpositive in every equilibrium and weakly decreases under refinement for both the least and greatest equilibria. Individual effects remain ambiguous: securitization may allow one agent to transfer part of an underperforming claim to another, but it may also decrease some agents’ realized excess payoffs without increasing anyone else’s.</p>
+<p>Because agents are risk-neutral, ABS do not generate risk-sharing gains in the present model. With risk-averse agents, however, securitization could generate such gains. Determining whether these gains outweigh the potential welfare costs of belief-driven speculation would require a richer model. The belief-neutral efficiency criterion of <a href="#ref-BrunnermeierSimsekXiong2014">Brunnermeier et al. (2014)</a> provides one possible approach.</p>
+<p>In a full theoretical account of financial crises, both the boom and the bust of asset prices should be explained. This paper isolates how securitization allows belief disagreement to raise asset prices, but it does not generate a collapse. One extension would endogenize learning or switching among theories after persistently disappointing realized payoffs; such behavior is not part of the maintained-belief equilibrium studied here. Another would introduce liquidity constraints, so investors holding underperforming ABS eventually lose the capacity to roll over their debts. A formalization of these narratives is left for future research.</p>
+<h1 id="sec:appx"><span class="section-number">6</span> Appendix</h1>
+<h2 id="app:example-prices"><span class="section-number">6.1</span> Price equations for the motivating example</h2>
+<p>This appendix collects the systems solved in Section <a href="#example">2</a>. Consider the limiting case in which <span class="math inline">\(\epsilon\)</span> tends to zero and both price functions are increasing across states: <span class="math inline">\(q(l)&lt;q(m)&lt;q(h)\)</span> and <span class="math inline">\(q^{\mathrm{ABS}}(l)&lt;q^{\mathrm{ABS}}(m)&lt;q^{\mathrm{ABS}}(h)\)</span>.</p>
+<p>In the benchmark without ABS, the price function <span class="math inline">\(q\)</span> solves <span class="math display">\[\begin{align*}
+q(l) &amp; = \frac{d(l)+\frac{1}{3}\left(q(l)+q(m)+q(h)\right)}{R}, \\
+q(m) &amp; = \frac{ d(m) + \max \left\{ q(m), \frac{1}{3} \left( q(l)+q(m)+q(h)\right) \right\} } {R}, \\
+q(h) &amp; = \frac{d(h)+q(h)}{R}.
+\end{align*}\]</span> For <span class="math inline">\(R=2\)</span>, <span class="math inline">\(d(l)=0\)</span>, <span class="math inline">\(d(m)=2\)</span> and <span class="math inline">\(d(h)=3\)</span>, the solution is <span class="math inline">\(q(l)=1\)</span>, <span class="math inline">\(q(m)=2\)</span> and <span class="math inline">\(q(h)=3\)</span>.</p>
+<p>With senior and junior ABS, the price function <span class="math inline">\(q^{\mathrm{ABS}}\)</span> solves <span class="math display">\[\begin{align*}
+q^{\mathrm{ABS}}(l) &amp; = \frac{d(l)+\frac{1}{3}\left(q^{\mathrm{ABS}}(l)+q^{\mathrm{ABS}}(m)+q^{\mathrm{ABS}}(h)\right)}{R}, \\
+q^{\mathrm{ABS}}(m) &amp; = \frac{ d(m) +  q^{\mathrm{ABS}}(m) + \frac{1}{3}(q^{\mathrm{ABS}}(h)-q^{\mathrm{ABS}}(m))} {R}, \\
+q^{\mathrm{ABS}}(h) &amp; = \frac{d(h)+q^{\mathrm{ABS}}(h)}{R}.
+\end{align*}\]</span> For the same parameter values, the solution is <span class="math inline">\(q^{\mathrm{ABS}}(l)=\frac{21}{20}\)</span>, <span class="math inline">\(q^{\mathrm{ABS}}(m)=\frac{9}{4}\)</span> and <span class="math inline">\(q^{\mathrm{ABS}}(h)=3\)</span>.</p>
+<p>The same numerical example illustrates the realized-payoff effect discussed in Subsection <a href="#sec:ep">4.3</a>. To keep notation consistent with that subsection, let <span class="math inline">\(T(\psi)(x)=\sum_{y\in X}\psi(y)P(x,y)\)</span> denote the objective expectation of a payoff vector <span class="math inline">\(\psi:X\to\mathbb{R}_{+}\)</span> from state <span class="math inline">\(x\)</span>. If theory <span class="math inline">\(\mathcal{F}\)</span> buys a security with payoff <span class="math inline">\(\psi\)</span> at price <span class="math inline">\(p_\psi(x)\)</span>, its contribution to the realized excess payoff is <span class="math inline">\(T(\psi)(x)-R p_\psi(x)\)</span>. Since the buyer’s equilibrium price satisfies <span class="math inline">\(R p_\psi(x)=E_{\mathcal{F}}(\psi\mid x)\)</span>, this contribution can be written as <span class="math display">\[T(\psi)(x)-E_{\mathcal{F}}(\psi\mid x).\]</span> The long-run average gives weight <span class="math inline">\(\frac{1}{3}\)</span> to each state.</p>
+<p>In the benchmark without ABS, take <span class="math inline">\(\psi=q\)</span>; the current dividend is known at state <span class="math inline">\(x\)</span>, so it cancels from the actual-versus-perceived payoff gap. Use a priority ordering in which <span class="math inline">\(\mathcal{A}\succ\mathcal{B}\)</span>. Theory <span class="math inline">\(\mathcal{A}\)</span> buys the asset in state <span class="math inline">\(l\)</span> and wins the tie with <span class="math inline">\(\mathcal{B}\)</span> in state <span class="math inline">\(m\)</span>, where the contribution is zero. Hence <span class="math display">\[\underline{\Delta}_{\mathcal{A}}
+=\frac{1}{3}\left[T(q)(l)-E_{\mathcal{A}}(q\mid l)\right]
++\frac{1}{3}\left[T(q)(m)-E_{\mathcal{A}}(q\mid m)\right]
+=\frac{1}{3}(1-2)+\frac{1}{3}(2-2)
+=-\frac{1}{3}.\]</span></p>
+<p>With ABS, let <span class="math inline">\(\psi_s\)</span> and <span class="math inline">\(\psi_j\)</span> denote the payoff vectors of the senior and junior tranches. At the numerical solution, <span class="math display">\[\psi_s=\left(\frac{21}{20},\frac{9}{4},\frac{9}{4}\right)
+\quad\text{and}\quad
+\psi_j=\left(0,0,\frac{3}{4}\right).\]</span> Theory <span class="math inline">\(\mathcal{A}\)</span> buys both tranches in state <span class="math inline">\(l\)</span> and the junior tranche in state <span class="math inline">\(m\)</span>. Moreover, <span class="math inline">\(E_{\mathcal{A}}(\psi_s\mid l)=\frac{37}{20}\)</span> and <span class="math inline">\(E_{\mathcal{A}}(\psi_j\mid l)=E_{\mathcal{A}}(\psi_j\mid m)=\frac{1}{4}\)</span>. Therefore <span class="math display">\[\Delta_{\mathcal{A}}
+=\frac{1}{3}\left[T(\psi_s)(l)-E_{\mathcal{A}}(\psi_s\mid l)
++T(\psi_j)(l)-E_{\mathcal{A}}(\psi_j\mid l)\right]
++\frac{1}{3}\left[T(\psi_j)(m)-E_{\mathcal{A}}(\psi_j\mid m)\right]\]</span> <span class="math display">\[=\frac{1}{3}\left(\frac{21}{20}-\frac{37}{20}+0-\frac{1}{4}\right)
++\frac{1}{3}\left(0-\frac{1}{4}\right)
+=-\frac{13}{30}.\]</span> Since <span class="math inline">\(P=Q_{\mathcal{B}}\)</span>, theory <span class="math inline">\(\mathcal{B}\)</span>’s objective and perceived expectations coincide for every payoff vector, so <span class="math inline">\(\underline{\Delta}_{\mathcal{B}}=\Delta_{\mathcal{B}}=0\)</span>. Thus, in this example, securitization makes theory <span class="math inline">\(\mathcal{A}\)</span>’s realized excess payoff lower by <span class="math inline">\(\frac{1}{10}\)</span> without increasing theory <span class="math inline">\(\mathcal{B}\)</span>’s realized excess payoff.</p>
+<h2 id="sec:is"><span class="section-number">6.2</span> Iterated securitization</h2>
+<p>In Section <a href="#sec:eff">4</a>, increased securitization has been modeled as a refinement of the existing tranching, which is equivalent to creating more tranches for the cash flow coming from the long-term asset. Securitization, however, is also seen as issuing securities backed by asset-backed securities, as when CDO are created based on existing MBS or squared CDO are created based on existing CDO. This appendix shows the equivalence between these two interpretations. Remarkably, any tranching is equivalent to issuing debt using debt securities as collateral and iterating this process a finite number of times.</p>
+<p>Figure <a href="#fig:mbs">4</a> sketches the kind of repeated securitization structure that motivates the formal equivalence result below. Subprime mortgages may be pooled into MBS, the MBS cash flow may back CDO, and the CDO cash flow may in turn back squared CDO.</p>
+<figure id="fig:mbs">
+<img src="generated/assets/fig-mbs.svg"/>
+<figcaption><strong>Figure 4:</strong> Multiple rounds of ABS</figcaption>
+</figure>
+<h3 id="example-1"><span class="section-number">6.2.1</span> Example</h3>
+<p>Consider the limit of a symmetric transition process in which the probability of returning to the current state tends to one and the remaining probability is divided uniformly among the other states. The stationary distribution is uniform for every positive transition probability, so the system spends a quarter of the time in each state. The calculations below report the limit as the probability of leaving the current state tends to zero. The interest rate is assumed to be constant. The collection of theories in the market is given by <span class="math inline">\(\mathbf{F}=\left\{\mathcal{A},\mathcal{B},\mathcal{C}\right\}\)</span>, where <span class="math display">\[\begin{align*}
+
+\mathcal{A} &amp; =  \left\{\left\{a,d\right\},\left\{b,c\right\}\right\} \\
+\mathcal{B} &amp; =  \left\{\left\{a,b,d\right\},\left\{c\right\}\right\} \\
+\mathcal{C} &amp; =  \left\{\left\{a,b,c,d\right\}\right\}
+\end{align*}\]</span> All theories in the market achieve statistical consistency: the perceived transition probability for agent <span class="math inline">\(\mathcal{A}\)</span> from states <span class="math inline">\(a\)</span> or <span class="math inline">\(d\)</span> to states <span class="math inline">\(a\)</span> or <span class="math inline">\(d\)</span> tends to one half, the perceived transition probability for agent <span class="math inline">\(\mathcal{B}\)</span> from states <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> or <span class="math inline">\(d\)</span> to states <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> or <span class="math inline">\(d\)</span> tends to one third and the perceived transition probability for agent <span class="math inline">\(\mathcal{C}\)</span> from any state to any other tends to one fourth.</p>
+<p>For this example, it can be shown that a tranching that is issuer-optimal is one where there are four tranches and the nonzero attachment points coincide with the realizations of the asset price. Let <span class="math inline">\(q\)</span> be the least waterfall-equilibrium price function for the issuer-optimal tranching. Assume that the dividend function is such that <span class="math inline">\(q(a)&gt;q(b)&gt;q(c)&gt;q(d)\)</span>. In order of seniority, the tranches are labeled <span class="math inline">\(s\)</span> (senior), <span class="math inline">\(m\)</span> (mezzanine), <span class="math inline">\(j\)</span> (junior) and <span class="math inline">\(e\)</span> (equity). Table <a href="#tab:ptr">1</a> presents the payoff function for each tranche.</p>
+<div>
+<table id="tab:ptr">
+<caption><strong>Table 1:</strong> Security payoffs for the issuer-optimal tranching</caption>
+<thead>
+<tr>
+<th style="text-align: center;">States</th>
+<th style="text-align: center;"><span class="math inline">\(\phi_e\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi_j\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi_m\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi_s\)</span></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(~~a\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(a)-q(b)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(b)-q(c)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(c)-q(d)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(d)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(~~b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(b)-q(c)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(c)-q(d)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(d)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(~~c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(c)-q(d)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(d)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(~~d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(q(d)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>In state <span class="math inline">\(d\)</span>, theory <span class="math inline">\(\mathcal{A}\)</span> buys the tranche <span class="math inline">\(e\)</span>, theory <span class="math inline">\(\mathcal{B}\)</span> buys the tranche <span class="math inline">\(j\)</span> and theory <span class="math inline">\(\mathcal{C}\)</span> buys the tranche <span class="math inline">\(m\)</span>. All agents have the same willingness to pay regarding tranche <span class="math inline">\(s\)</span>. In state <span class="math inline">\(d\)</span>, three different types of agents have claims on the underlying asset.</p>
+<p>Instead of a unique round of securitization with four tranches, consider three rounds of securitization. In the first round, the underlying asset is securitized into debt and equity tranches. In the second round, the debt tranche of the first round is securitized into other debt and equity tranches. In the third round, the debt tranche of the second round is securitized into more debt and equity tranches (Figure <a href="#fig:tree">5</a>). Let <span class="math inline">\(\phi^i_e\)</span> and <span class="math inline">\(\phi^i_f\)</span> be the payoffs from the equity and the debt tranches in the <span class="math inline">\(i\)</span>-th round of securitization, where <span class="math inline">\(i\in\left\{1,2,3\right\}\)</span>. Table <a href="#tab:pit">2</a> shows the assumed payoff for each tranche. By construction, the payoff from the debt and the equity tranches add up to the payoff from the debt tranche from the previous round.</p>
+<figure id="fig:tree">
+<img src="generated/assets/fig-tree.svg"/>
+<figcaption><strong>Figure 5:</strong> Iterated securitization</figcaption>
+</figure>
+<div>
+<table id="tab:pit">
+<caption><strong>Table 2:</strong> Security payoffs for the iterated case</caption>
+<thead>
+<tr>
+<th style="text-align: center;">States</th>
+<th style="text-align: center;"><span class="math inline">\(\phi^1_e\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi^1_f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi^2_e\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi^2_f\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi^3_e\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\phi^3_f\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(a)-q(b)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(b)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(b)-q(c)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(c)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(c)-q(d)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(d)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(b\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(b)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(b)-q(c)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(c)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(c)-q(d)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(d)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(c\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(c)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(c)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(c)-q(d)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(d)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(d\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(d)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(d)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(q(d)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Consider the equilibrium in state <span class="math inline">\(d\)</span>. The equity tranche of the 1st round will be bought by theory <span class="math inline">\(\mathcal{A}\)</span>, the equity tranche of the 2nd round will be bought by theory <span class="math inline">\(\mathcal{B}\)</span>, and the equity tranche of the 3rd round will be bought by theory <span class="math inline">\(\mathcal{C}\)</span>. The value of the debt tranche on the 3rd round will be <span class="math inline">\(q(d)\)</span>, discounted by the interest rate. Given this and the willingness to pay by agent <span class="math inline">\(\mathcal{C}\)</span> on the equity tranche of the 3rd round, the value of the debt tranche in the 2nd round will be <span class="math inline">\(q(d)\)</span> plus three quarters of <span class="math inline">\(q(c)-q(d)\)</span>, discounted by the interest rate. Given this and the willingness to pay by agent <span class="math inline">\(\mathcal{B}\)</span> on the equity tranche of the 2nd round, the value of the debt tranche in the 1st round will be <span class="math inline">\(q(d)\)</span> plus three quarters of <span class="math inline">\(q(c)-q(d)\)</span> plus two thirds of <span class="math inline">\(q(b)-q(c)\)</span>, discounted by the interest rate. Given this and the willingness to pay by agent <span class="math inline">\(\mathcal{A}\)</span> on the equity tranche of the 1st round, the value of the asset at state <span class="math inline">\(d\)</span> will be the dividend at <span class="math inline">\(d\)</span> plus <span class="math inline">\(q(d)\)</span> plus three quarters of <span class="math inline">\(q(c)-q(d)\)</span> plus two thirds of <span class="math inline">\(q(b)-q(c)\)</span> plus half of <span class="math inline">\(q(a)-q(b)\)</span>, discounted by the interest rate. This is the same asset price equation for the aforementioned case of one round of securitization with four tranches.</p>
+<p>A way of reading the equilibrium transactions at state <span class="math inline">\(d\)</span> is that agent <span class="math inline">\(\mathcal{A}\)</span> is borrowing from agent <span class="math inline">\(\mathcal{B}\)</span> using the underlying asset as collateral. In turn, agent <span class="math inline">\(\mathcal{B}\)</span> is borrowing from agent <span class="math inline">\(\mathcal{C}\)</span> using the debt issued by <span class="math inline">\(\mathcal{A}\)</span> as collateral. The equilibrium features a <em>pyramiding arrangement</em>, as defined by <a href="#ref-Geanakoplos1996">Geanakoplos (1996)</a>.</p>
+<h3 id="general-case"><span class="section-number">6.2.2</span> General case</h3>
+<p>In order to define what will be labeled an <em>iterated securitization equilibrium</em>, consider a tree with finite node set <span class="math inline">\(\mathbb{N}\)</span> and terminal-node set <span class="math inline">\(\mathbb{Z}\subset\mathbb{N}\)</span>. Let <span class="math inline">\(r\in\mathbb{N}\setminus\mathbb{Z}\)</span> denote the node representing the long-term asset. Let <span class="math inline">\(a:\mathbb{N}\setminus\left\{r\right\}\to\mathbb{N}\setminus\mathbb{Z}\)</span> be a function where <span class="math inline">\(a(n)\)</span> denotes the predecessor of <span class="math inline">\(n\)</span>. Each node <span class="math inline">\(n\in\mathbb{N}\setminus\left\{r\right\}\)</span> represents a security backed by asset <span class="math inline">\(a(n)\)</span>. Nodes in <span class="math inline">\(\mathbb{Z}\)</span> represent securities that are not further securitized.</p>
+<p>For <span class="math inline">\(m\in\mathbb{N}\setminus\mathbb{Z}\)</span>, denote by <span class="math inline">\(S(m)\)</span> the set of <span class="math inline">\(m\)</span>’s successors: <span class="math display">\[S(m) = \left\{ n \in \mathbb{N}\setminus \left\{r\right\} : a(n)=m \right\}\]</span></p>
+<p>Let <span class="math inline">\((\tau_n)_{n\in\mathbb{N}}\)</span> be a collection of intervals such that</p>
+<ol>
+<li><p><span class="math inline">\(\tau_r=[0,\infty)\)</span> and</p></li>
+<li><p>for <span class="math inline">\(m\in\mathbb{N}\setminus\mathbb{Z}\)</span>, the collection <span class="math inline">\((\tau_n)_{n\in S(m)}\)</span> partitions the interval <span class="math display">\[[0,\sup(\tau_{m})-\inf(\tau_{m})]\]</span></p></li>
+</ol>
+<p>Each security in <span class="math inline">\(\mathbb{N}\setminus\left\{r\right\}\)</span> is a one-period waterfall tranche. Its payoff is a function of the cash flow from its predecessor. Specifically, if <span class="math inline">\(t\)</span> is the cash flow from asset <span class="math inline">\(a(n)\)</span>, then the cash flow for security <span class="math inline">\(n\in\mathbb{N}\setminus\left\{r\right\}\)</span> would be given by: <span class="manuscript-equation"><span class="equation-anchor" id="eq:psi"></span><span class="math display">\[\begin{equation}
+
+\zeta_n(t) = (t-\inf(\tau_n))^+ - (t-\sup(\tau_n))^+\tag{36}
+\end{equation}\]</span></span> Hence, for <span class="math inline">\(m\in\mathbb{N}\setminus\mathbb{Z}\)</span> and every feasible cash flow <span class="math inline">\(t\)</span> from asset <span class="math inline">\(m\)</span>, <span class="math display">\[\begin{equation*}
+\sum_{n\in S(m)}\zeta_{n}(t)=t.
+\end{equation*}\]</span> This confirms that the cash flows from securities in <span class="math inline">\(S(m)\)</span> add up to the cash flow from asset <span class="math inline">\(m\)</span>.</p>
+<p>Let <span class="math inline">\(\gamma_n:X\to\mathbb{R}_+\)</span> be the cash flow for security <span class="math inline">\(n\in\mathbb{N}\)</span> as a function of the state of the world. If <span class="math inline">\(q:X\to\mathbb{R}_+\)</span> is the price function for the long-term asset, then <span class="math inline">\(\gamma_r=q\)</span> and <span class="manuscript-equation"><span class="equation-anchor" id="eq:gamma"></span><span class="math display">\[\begin{equation}
+
+\gamma_{n}(x) = \zeta_n(\gamma_{a(n)}(x))\tag{37}
+\end{equation}\]</span></span> for <span class="math inline">\(n\in\mathbb{N}\setminus\left\{r\right\}\)</span> and <span class="math inline">\(x\in X\)</span>.</p>
+<p>A tuple <span class="math inline">\(\Sigma=\left(\mathbb{N},r,\mathbb{Z},a,(\tau_n)_{n\in\mathbb{N}}\right)\)</span> is labeled an <em>iterated securitization structure</em>.</p>
+<div class="theorem definition">
+<p><strong>Definition 4.</strong></p>
+<p><span class="source-anchor" id="def:ise"></span> For a given iterated securitization structure <span class="math inline">\(\Sigma\)</span>, an iterated securitization equilibrium is a function <span class="math inline">\(p_{\Sigma}:\mathbb{N}\times X \to \mathbb{R}_+\)</span> such that, for <span class="math inline">\(x\in X\)</span>,</p>
+<ol>
+<li><p><span class="manuscript-equation"><span class="equation-anchor" id="eq:pr"></span><span class="math display">\[\begin{equation}
+
+p_{\Sigma}(r,x) = \frac{d(x)}{R(x)}+\sum_{n\in S(r)}p_{\Sigma}(n,x)\tag{38}
+\end{equation}\]</span></span></p></li>
+<li><p>For <span class="math inline">\(m\in\mathbb{N}\setminus(\mathbb{Z}\cup\left\{r\right\})\)</span>, <span class="manuscript-equation"><span class="equation-anchor" id="eq:pm"></span><span class="math display">\[\begin{equation}
+
+p_{\Sigma}(m,x) = \sum_{n\in S(m)}p_{\Sigma}(n,x)\tag{39}
+\end{equation}\]</span></span></p></li>
+<li><p>For <span class="math inline">\(z\in\mathbb{Z}\)</span>, <span class="manuscript-equation"><span class="equation-anchor" id="eq:pz"></span><span class="math display">\[\begin{equation}
+
+p_{\Sigma}(z,x) = \frac{\max_{\mathcal{F}\in\mathbf{F}}E_{\mathcal{F}}\left(\gamma_z\mid x\right)}{R(x)}\tag{40}
+\end{equation}\]</span></span> where <span class="math inline">\(\gamma_r=p_{\Sigma}(r,\cdot)\)</span> and, for <span class="math inline">\(n\in\mathbb{N}\setminus\left\{r\right\}\)</span>, <span class="math inline">\(\gamma_n\)</span> is given by equation (<a href="#eq:gamma">37</a>).</p></li>
+</ol>
+</div>
+<p>The function <span class="math inline">\(p_{\Sigma}(r,\cdot)\)</span> is the price function for the long-term asset. Equation (<a href="#eq:pr">38</a>) states that it is given by the discounted declared dividend plus the added prices of the securities derived from it. Equation (<a href="#eq:pm">39</a>) states that for the securities that are not terminal nodes, their price is given by the added prices of the securities derived from them. Finally, equation (<a href="#eq:pz">40</a>) gives the equilibrium for the terminal nodes, i.e. the securities that are not further securitized. Their price is given by the highest discounted expectation regarding the cash flow coming from them. Ultimately, the cash flow from the securities at the terminal nodes will depend on the price of the long-term asset in the next period.</p>
+<div class="theorem proposition">
+<p><strong>Proposition 10.</strong></p>
+<p><span class="source-anchor" id="thm:equiv"></span> For every iterated securitization structure <span class="math inline">\(\Sigma\)</span>, there is a tranching <span class="math inline">\(\mathcal{T}_{\Sigma}\)</span> such that <span class="math display">\[\left\{p_{\Sigma}(r,\cdot):p_{\Sigma}\text{ is an iterated securitization equilibrium}\right\}
+=
+\mathcal{Q}_{\mathcal{T}_{\Sigma}}.\]</span> Consequently, under the pointwise order, the least and greatest underlying-asset equilibrium price functions generated by <span class="math inline">\(\Sigma\)</span> are <span class="math inline">\(q_{\mathcal{T}_{\Sigma}}^{\min}\)</span> and <span class="math inline">\(q_{\mathcal{T}_{\Sigma}}^{\max}\)</span>, respectively.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For each terminal node <span class="math inline">\(z\in\mathbb{Z}\)</span>, let <span class="math inline">\(b(z)\)</span> be the set of non-terminal nodes on the branch from <span class="math inline">\(r\)</span> to the predecessor of <span class="math inline">\(z\)</span>, and define <span class="math display">\[c_z:=\sum_{n\in b(z)}\underline\tau_n,
+\qquad
+\widehat\tau_z:=
+\left[c_z+\underline\tau_z,c_z+\overline\tau_z\right).\]</span> Repeated application of equations (<a href="#eq:psi">36</a>) and (<a href="#eq:gamma">37</a>) gives <span class="manuscript-equation"><span class="equation-anchor" id="eq:gzx"></span><span class="math display">\[\begin{equation}
+
+\gamma_z(x)
+=
+\left(p_\Sigma(r,x)-c_z-\underline\tau_z\right)^+
+-
+\left(p_\Sigma(r,x)-c_z-\overline\tau_z\right)^+
+=
+\phi_{\widehat\tau_z}\left(p_\Sigma(r,x)\right).\tag{41}
+\end{equation}\]</span></span> Because the successors of every non-terminal node partition the feasible payoff of that node, the collection <span class="math display">\[\mathcal{T}_\Sigma:=\{\widehat\tau_z:z\in\mathbb{Z}\}\]</span> is a finite partition of <span class="math inline">\([0,\infty)\)</span>.</p>
+<p>Let <span class="math inline">\(p_\Sigma\)</span> be an iterated securitization equilibrium and set <span class="math inline">\(q=p_\Sigma(r,\cdot)\)</span>. Recursively substituting equation (<a href="#eq:pm">39</a>) into equation (<a href="#eq:pr">38</a>) and then using equation (<a href="#eq:pz">40</a>) gives <span class="math display">\[q(x)
+=
+\frac{d(x)}{R(x)}
++
+\sum_{z\in\mathbb{Z}}
+\frac{\max_{\mathcal{F}\in\mathbf{F}}E_\mathcal{F}(\gamma_z\mid x)}{R(x)}.\]</span> Equation (<a href="#eq:gzx">41</a>) therefore implies <span class="math display">\[q=\Psi_{\mathcal{T}_\Sigma}(q),\]</span> so <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}_\Sigma}\)</span>.</p>
+<p>Conversely, let <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}_\Sigma}\)</span>. Set <span class="math inline">\(p_\Sigma(r,\cdot)=q\)</span> and, for every terminal node <span class="math inline">\(z\)</span>, define <span class="math display">\[p_\Sigma(z,x)
+:=
+\frac{\max_{\mathcal{F}\in\mathbf{F}}
+E_\mathcal{F}(\phi_{\widehat\tau_z}(q)\mid x)}{R(x)}.\]</span> For each non-terminal node other than <span class="math inline">\(r\)</span>, define its price recursively as the sum of the prices of its successors. These prices satisfy equations (<a href="#eq:pm">39</a>) and (<a href="#eq:pz">40</a>) by construction. Since <span class="math inline">\(q\)</span> is a fixed point of <span class="math inline">\(\Psi_{\mathcal{T}_\Sigma}\)</span>, recursive addition of the terminal-node prices also gives equation (<a href="#eq:pr">38</a>). Hence the constructed <span class="math inline">\(p_\Sigma\)</span> is an iterated securitization equilibrium whose underlying-asset price is <span class="math inline">\(q\)</span>. The two sets of prices are therefore equal, and their least and greatest elements coincide. ◻</p>
+</div>
+<p>Proposition <a href="#thm:equiv">10</a> states the equivalence between the equilibrium concepts in Definitions <a href="#def:core">1</a> and <a href="#def:ise">4</a>. The full set of underlying-asset price functions generated by an iterated structure is the set of waterfall-equilibrium prices under a suitable one-shot tranching. Intuitively, multiple rounds of securitization are redundant since the same terminal payoffs can be obtained by tranching the long-term asset into <span class="math inline">\(|\mathbb{Z}|\)</span> securities in a single round.</p>
+<h2 id="app:asset-price-proofs"><span class="section-number">6.3</span> Proofs of the asset-price results</h2>
+<p><span class="smallcaps">Proof of Lemma <a href="#refine">1</a></span>: For each <span class="math inline">\(\tau\in\mathcal{T}\)</span>, let <span class="math display">\[\mathcal{S}(\tau):=\{\upsilon\in\mathcal{S}:\upsilon\subseteq\tau\}.\]</span> Because <span class="math inline">\(\mathcal{S}\)</span> is a refinement of <span class="math inline">\(\mathcal{T}\)</span>, <span class="math display">\[\phi_\tau(g)=\sum_{\upsilon\in\mathcal{S}(\tau)}\phi_\upsilon(g).\]</span> Consequently, for any <span class="math inline">\(g:X\to\mathbb{R}_+\)</span> and <span class="math inline">\(x\in X\)</span>, <span class="math display">\[\begin{align*}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(\phi_\tau(g)\mid x\right)
+&amp;=
+\max_{\mathcal{F}\in\mathbf{F}}
+\sum_{\upsilon\in\mathcal{S}(\tau)}
+E_{\mathcal{F}}\left(\phi_\upsilon(g)\mid x\right)\\
+&amp;\leq
+\sum_{\upsilon\in\mathcal{S}(\tau)}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(\phi_\upsilon(g)\mid x\right).
+\end{align*}\]</span> Summing over <span class="math inline">\(\tau\in\mathcal{T}\)</span> gives <span class="math display">\[\Psi_{\mathcal{T}}(g)\leq\Psi_{\mathcal{S}}(g)\]</span> for every <span class="math inline">\(g\in\mathbb{R}_+^X\)</span>.</p>
+<p>Fix <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span>. The operator comparison gives <span class="math display">\[q=\Psi_{\mathcal{T}}(q)\leq\Psi_{\mathcal{S}}(q).\]</span> Iterating <span class="math inline">\(\Psi_{\mathcal{S}}\)</span> from <span class="math inline">\(q\)</span> therefore produces a nondecreasing sequence. In the notation of the proof of Proposition <a href="#exu">1</a>, refinement implies <span class="math inline">\(a_{\mathcal{T}}\leq a_{\mathcal{S}}\)</span> and hence <span class="math inline">\(M_{\mathcal{T}}\leq M_{\mathcal{S}}\)</span>. Since <span class="math inline">\(q\leq M_{\mathcal{T}}\mathbf{1}\)</span>, the sequence is bounded above by the invariant bound <span class="math inline">\(M_{\mathcal{S}}\mathbf{1}\)</span>. Continuity therefore implies that it converges to some <span class="math inline">\(w\in\mathcal{Q}_{\mathcal{S}}\)</span> with <span class="math inline">\(q\leq w\)</span>.</p>
+<p>Conversely, fix <span class="math inline">\(w\in\mathcal{Q}_{\mathcal{S}}\)</span>. Then <span class="math display">\[\Psi_{\mathcal{T}}(w)\leq\Psi_{\mathcal{S}}(w)=w.\]</span> Iterating <span class="math inline">\(\Psi_{\mathcal{T}}\)</span> from <span class="math inline">\(w\)</span> produces a nonincreasing sequence bounded below by <span class="math inline">\(\mathbf{0}\)</span>. Its limit is a fixed point <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span> satisfying <span class="math inline">\(q\leq w\)</span>.</p>
+<p>Applying the second comparison to <span class="math inline">\(q_{\mathcal{S}}^{\min}\)</span> and the first comparison to <span class="math inline">\(q_{\mathcal{T}}^{\max}\)</span> yields <span class="math display">\[q_{\mathcal{T}}^{\min}\leq q_{\mathcal{S}}^{\min}
+\qquad\text{and}\qquad
+q_{\mathcal{T}}^{\max}\leq q_{\mathcal{S}}^{\max},\]</span> respectively.</p>
+<p><span class="math inline">\(\Box\)</span></p>
+<p>Definition <a href="#def:dom">5</a> and Lemmas <a href="#Urefine">2</a>, <a href="#prp:Ucon">3</a> and <a href="#prp:nUcon">4</a> will be used to prove Proposition <a href="#mthm">3</a>.</p>
+<div class="theorem definition">
+<p><strong>Definition 5.</strong></p>
+<p><span class="source-anchor" id="def:dom"></span> A tranching <span class="math inline">\(\mathcal{T}\)</span> satisfies the dominance condition if, for each <span class="math inline">\(\tau\in\mathcal{T}\)</span> and <span class="math inline">\(x\in X\)</span>, there is a theory <span class="math inline">\(\mathcal{G}\in\mathbf{F}\)</span> such that <span class="math display">\[\begin{equation*}
+G^{\mathcal{T}}_
+{\mathcal{G}}
+\left(t\mid x\right)
+\leq
+G^{\mathcal{T}}_
+{\mathcal{F}}
+\left(t\mid x\right)
+\end{equation*}\]</span> for every <span class="math inline">\(t\)</span> in the interior of <span class="math inline">\(\tau\)</span> and all <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>.</p>
+</div>
+<div class="theorem lemma">
+<p><strong>Lemma 2.</strong></p>
+<p><span class="source-anchor" id="Urefine"></span> If <span class="math inline">\(\mathcal{T}\)</span> satisfies the dominance condition and <span class="math inline">\(\mathcal{S}\)</span> is a refinement of <span class="math inline">\(\mathcal{T}\)</span>, then <span class="math inline">\(q_{\mathcal{S}}^{\min}= q_{\mathcal{T}}^{\min}\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> For <span class="math inline">\(q=q_{\mathcal{T}}^{\min}\)</span>, the payoff from a bounded tranche <span class="math inline">\(\tau\)</span> expected for next period by theory <span class="math inline">\(\mathcal{F}\)</span> at state <span class="math inline">\(x\)</span> can be written as <span class="manuscript-equation"><span class="equation-anchor" id="eq:core"></span><span class="math display">\[\begin{equation}
+
+E_{\mathcal{F}}
+\left(\phi_\tau(q)\mid x\right)
+=
+\int_{\inf(\tau)}^{\sup(\tau)}
+\left[1-G^\mathcal{T}_{\mathcal{F}}\left(t\mid x\right)\right]dt.
+\tag{42}
+\end{equation}\]</span></span> If <span class="math inline">\(\tau\)</span> is unbounded, the upper limit is infinity. The integral remains finite because its integrand is zero above <span class="math inline">\(\max_{x\in X}q_{\mathcal{T}}^{\min}(x)\)</span>.</p>
+<p>For each <span class="math inline">\(\tau\in\mathcal{T}\)</span> and <span class="math inline">\(x\in X\)</span>, let <span class="math inline">\(\mathcal{G}_{\tau,x}\)</span> be a theory satisfying the dominance condition. Equation (<a href="#eq:core">42</a>) implies that <span class="math inline">\(\mathcal{G}_{\tau,x}\)</span> maximizes the expected payoff of every subtranche <span class="math inline">\(\upsilon\in\mathcal{S}\)</span> contained in <span class="math inline">\(\tau\)</span>. The payoff of each such subtranche integrates <span class="math inline">\(1-G^{\mathcal{T}}_{\mathcal{F}}(t\mid x)\)</span> over a subinterval of <span class="math inline">\(\tau\)</span>, on which the same dominance inequality applies. Hence one theory attains the maximum for every subtranche contained in <span class="math inline">\(\tau\)</span>, and <span class="math display">\[\begin{align*}
+
+\sum_{\upsilon \in \mathcal{S} : \upsilon\subseteq \tau}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left( \phi_{\upsilon} \left(q_{\mathcal{T}}^{\min} \right)\mid x
+\right)
+&amp; =
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left(
+\sum_{\upsilon \in \mathcal{S} : \upsilon\subseteq \tau}
+\phi_{\upsilon} \left(q_{\mathcal{T}}^{\min} \right)\mid x
+\right)
+\\
+&amp; =
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}
+\left(
+\phi_{\tau} \left(q_{\mathcal{T}}^{\min} \right)\mid x
+\right)
+\end{align*}\]</span> for any <span class="math inline">\(\tau\in\mathcal{T}\)</span> and <span class="math inline">\(x\in X\)</span>. Summing this equality over <span class="math inline">\(\tau\in\mathcal{T}\)</span> and using equation (<a href="#eq:map">18</a>) gives <span class="math display">\[\begin{align*}
+
+\Psi_{\mathcal{S} }
+\left(q_{\mathcal{T}}^{\min}\right) &amp; =
+\Psi_{\mathcal{T} }
+\left(q_{\mathcal{T}}^{\min}\right) \\ &amp; =
+q_{\mathcal{T}}^{\min}
+\end{align*}\]</span> Thus <span class="math inline">\(q_{\mathcal{T}}^{\min}\)</span> is a fixed point of <span class="math inline">\(\Psi_{\mathcal{S}}\)</span>, and the minimality of <span class="math inline">\(q_{\mathcal{S}}^{\min}\)</span> gives <span class="math inline">\(q_{\mathcal{S}}^{\min}\leq q_{\mathcal{T}}^{\min}\)</span>. Since <span class="math inline">\(\mathcal{S}\)</span> refines <span class="math inline">\(\mathcal{T}\)</span>, Lemma <a href="#refine">1</a> gives the reverse inequality. Hence <span class="math inline">\(q_{\mathcal{S}}^{\min}=q_{\mathcal{T}}^{\min}\)</span>. ◻</p>
+</div>
+<div class="theorem lemma">
+<p><strong>Lemma 3.</strong></p>
+<p><span class="source-anchor" id="prp:Ucon"></span> If <span class="math inline">\(\mathcal{T}\)</span> satisfies the dominance condition, then <span class="math display">\[\begin{equation*}
+q_{\mathcal{S}}^{\min}(x)\leq q_{\mathcal{T}}^{\min}(x)
+\end{equation*}\]</span> for all <span class="math inline">\(x\in X\)</span> and any tranching <span class="math inline">\(\mathcal{S}\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(\mathcal{S}\vee\mathcal{T}\)</span> be the coarsest common refinement between <span class="math inline">\(\mathcal{T}\)</span> and <span class="math inline">\(\mathcal{S}\)</span>. By Lemma <a href="#refine">1</a>, <span class="math display">\[\begin{equation*}
+q_{\mathcal{S}}^{\min}(x) \leq q_{\mathcal{S}\vee\mathcal{T}}^{\min}(x)
+\end{equation*}\]</span> for <span class="math inline">\(x\in X\)</span>. By Lemma <a href="#Urefine">2</a>, <span class="math display">\[\begin{equation*}
+q_{\mathcal{S}\vee\mathcal{T}}^{\min}(x)= q_{\mathcal{T}}^{\min}(x)
+\end{equation*}\]</span> for <span class="math inline">\(x\in X\)</span>. ◻</p>
+</div>
+<div class="theorem lemma">
+<p><strong>Lemma 4.</strong></p>
+<p><span class="source-anchor" id="prp:nUcon"></span> If <span class="math inline">\(\mathcal{T}\)</span> does not satisfy the dominance condition, then there is a refinement <span class="math inline">\(\mathcal{S}\)</span> of <span class="math inline">\(\mathcal{T}\)</span> such that <span class="math display">\[\begin{equation*}
+q_{\mathcal{T}}^{\min}(x)&lt;q_{\mathcal{S}}^{\min}(x)
+\end{equation*}\]</span> for all <span class="math inline">\(x\in X\)</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline">\(q=q_{\mathcal{T}}^{\min}\)</span>. Since <span class="math inline">\(\mathcal{T}\)</span> does not satisfy the dominance condition, there are a state <span class="math inline">\(x^*\in X\)</span> and a tranche <span class="math inline">\(\tau\in\mathcal{T}\)</span> such that no theory minimizes <span class="math inline">\(G^\mathcal{T}_{\mathcal{F}}(t\mid x^*)\)</span> at every point in the interior of <span class="math inline">\(\tau\)</span>. Because <span class="math inline">\(X\)</span> is finite, these perceived distribution functions are step functions. Choose <span class="math inline">\(B&gt;\max_yq(y)\)</span>, truncate the active part of an unbounded tranche at <span class="math inline">\(B\)</span>, and partition it at every value <span class="math inline">\(q(y)\)</span> in its interior. Complete this collection with the inactive tail <span class="math inline">\([B,\infty)\)</span> when <span class="math inline">\(\tau\)</span> is unbounded, and denote the resulting finite partition of <span class="math inline">\(\tau\)</span> by <span class="math inline">\(\mathcal{P}(\tau)\)</span>.</p>
+<p>Write <span class="math inline">\(\tau^B:=\tau\cap[0,B)\)</span> when <span class="math inline">\(\tau\)</span> is unbounded and <span class="math inline">\(\tau^B:=\tau\)</span> otherwise. For every cell <span class="math inline">\(I=[a,b)\in\mathcal{P}(\tau)\)</span> contained in <span class="math inline">\(\tau^B\)</span>, <span class="math display">\[E_{\mathcal{F}}\left(\phi_I(q)\mid x^*\right)
+=
+\int_a^b\left[1-G^\mathcal{T}_{\mathcal{F}}(t\mid x^*)\right]dt.\]</span> It follows that <span class="math display">\[\sum_{\substack{I\in\mathcal{P}(\tau)\\ I\subseteq\tau^B}}
+\min_{\mathcal{F}\in\mathbf{F}}
+\int_I G^\mathcal{T}_{\mathcal{F}}(t\mid x^*)dt
+&lt;
+\min_{\mathcal{F}\in\mathbf{F}}
+\int_{\tau^B} G^\mathcal{T}_{\mathcal{F}}(t\mid x^*)dt.\]</span> Indeed, let <span class="math inline">\(\mathcal{F}^*\)</span> minimize the integral over <span class="math inline">\(\tau^B\)</span>. Each integral of <span class="math inline">\(G^\mathcal{T}_{\mathcal{F}^*}\)</span> over a cell is weakly above the minimum for that cell. Equality in the display would therefore require equality cell by cell. Since the CDFs are right-continuous step functions, <span class="math inline">\(\mathcal{F}^*\)</span> would then minimize the CDF at every point in the interior of <span class="math inline">\(\tau\)</span>, contradicting the failure of the dominance condition. Consequently, <span class="math display">\[\sum_{I\in\mathcal{P}(\tau)}
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(\phi_I(q)\mid x^*\right)
+&gt;
+\max_{\mathcal{F}\in\mathbf{F}}
+E_{\mathcal{F}}\left(\phi_\tau(q)\mid x^*\right).\]</span></p>
+<p>Let <span class="math inline">\(\mathcal{S}\)</span> be the refinement of <span class="math inline">\(\mathcal{T}\)</span> that replaces <span class="math inline">\(\tau\)</span> by <span class="math inline">\(\mathcal{P}(\tau)\)</span>. Then <span class="math display">\[q(x^*)
+=
+\Psi_{\mathcal{T}}(q)(x^*)
+&lt;
+\Psi_{\mathcal{S}}(q)(x^*).\]</span> Lemma <a href="#refine">1</a> gives <span class="math inline">\(q\leq q_{\mathcal{S}}^{\min}\)</span>. Monotonicity therefore implies <span class="math display">\[\Psi_{\mathcal{S}}(q)
+\leq
+\Psi_{\mathcal{S}}(q_{\mathcal{S}}^{\min})
+=q_{\mathcal{S}}^{\min},\]</span> and hence <span class="math inline">\(q(x^*)&lt;q_{\mathcal{S}}^{\min}(x^*)\)</span>.</p>
+<p>It remains to propagate strictness. Budget balance and monotonicity of tranche payoffs imply that there is some <span class="math inline">\(\sigma^*\in\mathcal{S}\)</span> such that <span class="math display">\[\phi_{\sigma^*}(q_{\mathcal{S}}^{\min}(x^*))
+&gt;
+\phi_{\sigma^*}(q(x^*)).\]</span> Every subjective transition matrix has full support, so for every current state <span class="math inline">\(y\)</span> and every theory <span class="math inline">\(\mathcal{F}\)</span>, <span class="math display">\[E_{\mathcal{F}}\left(\phi_{\sigma^*}(q_{\mathcal{S}}^{\min})\mid y\right)
+&gt;
+E_{\mathcal{F}}\left(\phi_{\sigma^*}(q)\mid y\right).\]</span> The remaining tranche valuations increase weakly. Therefore <span class="math display">\[q_{\mathcal{S}}^{\min}(y)
+=\Psi_{\mathcal{S}}(q_{\mathcal{S}}^{\min})(y)
+&gt;\Psi_{\mathcal{S}}(q)(y)
+\geq\Psi_{\mathcal{T}}(q)(y)
+=q(y)\]</span> for every <span class="math inline">\(y\in X\)</span>. ◻</p>
+</div>
+<p><span class="smallcaps">Proof of Proposition <a href="#mthm">3</a></span>: The condition in Proposition <a href="#mthm">3</a> is the dominance condition in Definition <a href="#def:dom">5</a>. If it holds, Lemma <a href="#prp:Ucon">3</a> implies that <span class="math inline">\(\mathcal{T}\)</span> is issuer-optimal. If it fails, Lemma <a href="#prp:nUcon">4</a> provides a refinement <span class="math inline">\(\mathcal{S}\)</span> of <span class="math inline">\(\mathcal{T}\)</span> such that <span class="math inline">\(q_{\mathcal{T}}^{\min}(x)&lt;q_{\mathcal{S}}^{\min}(x)\)</span> for every <span class="math inline">\(x\in X\)</span>. Hence <span class="math inline">\(\mathcal{T}\)</span> is not issuer-optimal, and the final claim follows.</p>
+<p><span class="math inline">\(\Box\)</span></p>
+<h2 id="app:finest-return-proof"><span class="section-number">6.4</span> Proof of Proposition <a href="#prp:finest-return">7</a></h2>
+<p>Fix any <span class="math inline">\(q\in\mathcal{Q}_{\mathcal{T}}\)</span> and evaluate tranche payoffs and buyer choices at this equilibrium. For each tranche <span class="math inline">\(\tau\in\mathcal{T}\)</span>, define <span class="math display">\[\begin{equation*}
+\delta_\mathcal{F}^{\mathcal{T}}(\tau) :=
+\sum_{x\in X}
+\left(
+T(\psi_\tau)(x)-
+E_\mathcal{F}(\psi_\tau\mid x)\right)
+I_{\left\{\mathcal{F}=\beta_{\mathcal{T}}(\tau,x)\right\}}
+\mu(x)
+\end{equation*}\]</span> as the average realized excess payoff from tranche <span class="math inline">\(\tau\)</span> assigned to theory <span class="math inline">\(\mathcal{F}\)</span>. For any block <span class="math inline">\(C\in\mathcal{G}\)</span> and <span class="math inline">\(x\in C\)</span>, equations (<a href="#eq:Q">13</a>) and (<a href="#eq:E">14</a>), together with the definition of <span class="math inline">\(T\)</span>, imply <span class="math display">\[E_\mathcal{G}(\psi_\tau\mid x)
+=
+\sum_{y\in X}\psi_\tau(y)Q_\mathcal{G}(x,y)
+=
+\frac{\sum_{z\in C}\mu(z)T(\psi_\tau)(z)}{\sum_{z\in C}\mu(z)}.\]</span> Since <span class="math inline">\(\mathcal{G}\)</span> refines every <span class="math inline">\(\mathcal{F}\in\mathbf{F}\)</span>, each block <span class="math inline">\(C\in\mathcal{G}\)</span> is contained in a block of <span class="math inline">\(\mathcal{F}\)</span>. Thus, <span class="math inline">\(E_\mathcal{F}(\psi_\tau\mid x)\)</span> is constant over <span class="math inline">\(x\in C\)</span>. Let <span class="math inline">\(e_\mathcal{F}^\tau(C)\)</span> denote this common value. Hence <span class="math inline">\(\mathbf{B}(\tau,x)\)</span> and, under the fixed priority ordering, <span class="math inline">\(\beta_\mathcal{T}(\tau,x)\)</span> are also constant on <span class="math inline">\(C\)</span>. If theory <span class="math inline">\(\mathcal{F}\)</span> is selected on <span class="math inline">\(C\)</span>, its willingness to pay is at least that of <span class="math inline">\(\mathcal{G}\)</span>, and therefore <span class="math display">\[\begin{align*}
+&amp;\sum_{x\in C}\mu(x)
+\left[T(\psi_\tau)(x)-E_\mathcal{F}(\psi_\tau\mid x)\right]\\
+&amp;\qquad=
+\left(\sum_{x\in C}\mu(x)\right)
+\left[e_\mathcal{G}^\tau(C)-e_\mathcal{F}^\tau(C)\right]
+\leq0.
+\end{align*}\]</span> If <span class="math inline">\(\mathcal{F}=\mathcal{G}\)</span>, the expression is zero. On blocks where <span class="math inline">\(\mathcal{G}\)</span> is selected, its contribution is therefore zero; on every other block, its selected-buyer indicator is zero. Hence <span class="math inline">\(\delta_\mathcal{G}^{\mathcal{T}}(\tau)=0\)</span>. For every <span class="math inline">\(\mathcal{F}\neq\mathcal{G}\)</span>, summing the nonpositive contributions over the blocks where <span class="math inline">\(\mathcal{F}\)</span> is selected gives <span class="math inline">\(\delta_\mathcal{F}^{\mathcal{T}}(\tau)\leq0\)</span>. Finally, since <span class="math inline">\(\Delta_\mathcal{F}^{\mathcal{T}}(q)=\sum_{\tau\in\mathcal{T}}\delta_\mathcal{F}^{\mathcal{T}}(\tau)\)</span>, summing over tranches proves the result.</p>
+<p><span class="math inline">\(\Box\)</span></p>
+<h2 id="app:return-example"><span class="section-number">6.5</span> Realized-payoff example with three theories</h2>
+<p>This appendix provides the example summarized in Subsection <a href="#sec:ep">4.3</a>, in which securitization increases one theory’s realized excess payoff even though that payoff remains negative. Let the objective transition matrix be <span class="math display">\[P=
+\begin{pmatrix}
+1/2&amp;1/4&amp;1/4\\
+1/4&amp;1/2&amp;1/4\\
+1/4&amp;1/4&amp;1/2
+\end{pmatrix}.\]</span> This matrix has full support and stationary distribution <span class="math inline">\(\mu=(1/3,1/3,1/3)\)</span>. The collection of theories is <span class="math inline">\(\mathbf{F}=\left\{\mathcal{A},\mathcal{B},\mathcal{C}\right\}\)</span>, where <span class="math display">\[\begin{align*}
+
+\mathcal{A} &amp; =
+\left\{
+\left\{l\right\},
+\left\{m,h\right\}
+\right\},
+\\
+\mathcal{B} &amp; =
+\left\{
+\left\{l,h\right\},
+\left\{m\right\}
+\right\},
+\\
+\mathcal{C} &amp; =
+\left\{
+\left\{l,m,h\right\}
+\right\}.
+\end{align*}\]</span> The corresponding statistically consistent transition matrices are obtained from equation (<a href="#eq:Q">13</a>). Set <span class="math inline">\(R=4\)</span> and <span class="math display">\[d=\left(\frac{245}{48},\frac{113}{16},\frac{209}{16}\right),\]</span> and fix the priority ordering <span class="math inline">\(\mathcal{A}\succ\mathcal{B}\succ\mathcal{C}\)</span>.</p>
+<p>Under the no-tranching benchmark <span class="math inline">\(\mathcal{T}^0\)</span>, the unique equilibrium price is <span class="math display">\[q_{\mathcal{T}^0}=
+\left(
+\frac{4451}{2232},
+\frac{5579}{2232},
+\frac{8927}{2232}
+\right).\]</span> Theory <span class="math inline">\(\mathcal{B}\)</span> buys the whole claim at state <span class="math inline">\(l\)</span>, while theory <span class="math inline">\(\mathcal{A}\)</span> buys it at states <span class="math inline">\(m\)</span> and <span class="math inline">\(h\)</span>. Because <span class="math display">\[T(q_{\mathcal{T}^0})(l)-E_\mathcal{B}(q_{\mathcal{T}^0}\mid l)
+=\frac{q_{\mathcal{T}^0}(l)-q_{\mathcal{T}^0}(h)}{8},\]</span> the realized excess payoffs are <span class="math display">\[\Delta_\mathcal{A}^{\mathcal{T}^0}=0,
+\qquad
+\Delta_\mathcal{B}^{\mathcal{T}^0}
+=\frac{q_{\mathcal{T}^0}(l)-q_{\mathcal{T}^0}(h)}{24}
+=-\frac{373}{4464},
+\qquad
+\Delta_\mathcal{C}^{\mathcal{T}^0}=0.\]</span></p>
+<p>Now consider the three-tranche waterfall <span class="math display">\[\mathcal{T}^1=
+\left\{
+[0,2),
+[2,5/2),
+[5/2,\infty)
+\right\}.\]</span> The equilibrium price used below is <span class="math display">\[q_{\mathcal{T}^1}=(2,5/2,4).\]</span> Direct substitution gives <span class="math inline">\(\Psi_{\mathcal{T}^1}(q_{\mathcal{T}^1})=q_{\mathcal{T}^1}\)</span>. Because each tranche payoff changes by no more than the change in the underlying asset price, expectations and maximization over theories do not amplify this change. Summing across the three tranches and dividing by <span class="math inline">\(R=4\)</span> therefore gives, for any price functions <span class="math inline">\(q\)</span> and <span class="math inline">\(\widehat q\)</span>, <span class="math display">\[\left\|\Psi_{\mathcal{T}^1}(q)-\Psi_{\mathcal{T}^1}(\widehat q)\right\|_\infty
+\leq
+\frac{3}{4}\left\|q-\widehat q\right\|_\infty.\]</span> If <span class="math inline">\(q\)</span> and <span class="math inline">\(\widehat q\)</span> were both fixed points, this inequality would imply <span class="math inline">\(\|q-\widehat q\|_\infty\leq(3/4)\|q-\widehat q\|_\infty\)</span>. Thus they must coincide, and the displayed price is the unique equilibrium price. The resulting tranche payoff vectors are <span class="math display">\[\psi_s=(2,2,2),
+\qquad
+\psi_m=(0,1/2,1/2),
+\qquad
+\psi_j=(0,0,3/2).\]</span> The selected buyers are shown in Table <a href="#tab:return-buyers">3</a>.</p>
+<div>
+<table id="tab:return-buyers">
+<caption><strong>Table 3:</strong> Selected buyers in the realized-payoff example</caption>
+<thead>
+<tr>
+<th style="text-align: center;">Tranche</th>
+<th style="text-align: center;"><span class="math inline">\(l\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(m\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(h\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Senior</td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{A}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{A}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Mezzanine</td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{C}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{A}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{A}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Junior</td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{A}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathcal{A}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For the mezzanine tranche at state <span class="math inline">\(l\)</span>, <span class="math inline">\(T(\psi_m)(l)=1/4\)</span> and <span class="math inline">\(E_\mathcal{C}(\psi_m\mid l)=1/3\)</span>. For the junior tranche at that state, <span class="math inline">\(T(\psi_j)(l)=3/8\)</span> and <span class="math inline">\(E_\mathcal{B}(\psi_j\mid l)=9/16\)</span>. The realized excess payoffs are therefore <span class="math display">\[\Delta_\mathcal{A}^{\mathcal{T}^1}=0,
+\qquad
+\Delta_\mathcal{B}^{\mathcal{T}^1}
+=\frac{1}{3}\left(\frac{3}{8}-\frac{9}{16}\right)
+=-\frac{1}{16},
+\qquad
+\Delta_\mathcal{C}^{\mathcal{T}^1}
+=\frac{1}{3}\left(\frac{1}{4}-\frac{1}{3}\right)
+=-\frac{1}{36}.\]</span> Consequently, <span class="math display">\[\Delta_\mathcal{B}^{\mathcal{T}^1}
+=-\frac{1}{16}
+&gt;
+-\frac{373}{4464}
+=\Delta_\mathcal{B}^{\mathcal{T}^0}.\]</span> Securitization induces theory <span class="math inline">\(\mathcal{C}\)</span> to buy the mezzanine tranche at state <span class="math inline">\(l\)</span>, allowing theory <span class="math inline">\(\mathcal{B}\)</span> to avoid part of its benchmark loss. At the same time, the aggregate realized excess payoff falls from <span class="math inline">\(-373/4464\)</span> to <span class="math display">\[\Delta_{\mathrm{agg}}^{\mathcal{T}^1}
+=-\frac{1}{16}-\frac{1}{36}
+=-\frac{13}{144}
+&lt;
+-\frac{373}{4464},\]</span> as required by Corollary <a href="#cor:aggregate-refinement">5</a>.</p>
+<h1 class="unnumbered" id="declaration-of-generative-ai-and-ai-assisted-technologies-in-the-manuscript-preparation-process">Declaration of generative AI and AI-assisted technologies in the manuscript preparation process</h1>
+<p>During the revision of this work, the author used OpenAI Codex to help edit the text, review proofs, check notation, and write and test the code in the computational companion. The author reviewed and edited the resulting text and code and takes full responsibility for the manuscript and computational companion.</p>
+<section class="footnotes footnotes-end-of-document" id="footnotes" role="doc-endnotes">
+<hr/>
+<ol>
+<li id="fn1"><p>For a historical account of security innovation, see <a href="#ref-Matthews1994">Matthews (1994)</a>.<a class="footnote-back" href="#fnref1" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="#ref-FostelGeanakoplos2012">Fostel and Geanakoplos (2012)</a> for a similar result.<a class="footnote-back" href="#fnref2" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Replication code for the numerical examples, including an executable notebook, is available in the <a href="https://github.com/oliverpardo1979/Asset-value-and-securitization-under-heterogeneous-beliefs-anew/tree/jme-r2-companion-2026-10-05/computational_companion">computational companion</a>.<a class="footnote-back" href="#fnref3" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>I thank an anonymous referee for suggesting the example on which this simplified version is based.<a class="footnote-back" href="#fnref4" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Each equilibrium is determined locally by an invertible linear system. Its solution varies continuously with the parameters, and sufficiently small changes preserve the strict inequalities determining tranche payments and the theories pricing tranches with nonzero payoffs.<a class="footnote-back" href="#fnref5" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>An individual theory’s actual average excess payoff can be positive: see Example 5 in <a href="#ref-EysterPiccione2014">Eyster and Piccione (2013)</a>.<a class="footnote-back" href="#fnref6" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>A related result appears in <a href="#ref-AllenGale1988">Allen and Gale (1988)</a>: in a different security-design environment with short-sale constraints, market value is maximized by designing securities so that, in each state, the asset’s entire payoff goes to the investor group that values it most.<a class="footnote-back" href="#fnref7" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<section id="references"><h1>References</h1><div class="csl-entry" id="ref-AllenBarbalau2024"><p>Franklin Allen and Adelina Barbalau. Security design: A review. <em>Journal of Financial Intermediation</em>, 60:101113, 2024. <a href="https://doi.org/10.1016/j.jfi.2024.101113">doi: 10.1016/j.jfi.2024.101113</a>. URL <a class="uri" href="https://doi.org/10.1016/j.jfi.2024.101113">https://doi.org/10.1016/j.jfi.2024.101113</a>.</p></div>
+<div class="csl-entry" id="ref-AllenGale1988"><p>Franklin Allen and Douglas Gale. Optimal security design. <em>Review of Financial Studies</em>, 1(3):229–263, 1988.</p></div>
+<div class="csl-entry" id="ref-BordaloGennaioliShleifer2018"><p>Pedro Bordalo, Nicola Gennaioli, and Andrei Shleifer. Diagnostic expectations and credit cycles. <em>The Journal of Finance</em>, 73(1):199–227, 2018. <a href="https://doi.org/10.1111/jofi.12586">doi: 10.1111/jofi.12586</a>. URL <a class="uri" href="https://doi.org/10.1111/jofi.12586">https://doi.org/10.1111/jofi.12586</a>.</p></div>
+<div class="csl-entry" id="ref-BordaloGennaioliShleiferTerry2026"><p>Pedro Bordalo, Nicola Gennaioli, Andrei Shleifer, and Stephen J. Terry. Real credit cycles. <em>American Economic Review</em>, 116(4):1274–1308, 2026. <a href="https://doi.org/10.1257/aer.20211820">doi: 10.1257/aer.20211820</a>. URL <a class="uri" href="https://doi.org/10.1257/aer.20211820">https://doi.org/10.1257/aer.20211820</a>.</p></div>
+<div class="csl-entry" id="ref-Brock2009"><p>W.A. Brock, C.H. Hommes, and F.O.O. Wagener. More hedging instruments may destabilize markets. <em>Journal of Economic Dynamics and Control</em>, 33(11):1912 – 1928, 2009. ISSN 0165-1889. <a href="https://doi.org/http://dx.doi.org/10.1016/j.jedc.2009.05.004">doi: http://dx.doi.org/10.1016/j.jedc.2009.05.004</a>. URL <a class="uri" href="http://www.sciencedirect.com/science/article/pii/S0165188909001158">http://www.sciencedirect.com/science/article/pii/S0165188909001158</a>.</p></div>
+<div class="csl-entry" id="ref-Broer2018"><p>Tobias Broer. Securitization bubbles: Structured finance with disagreement about default risk. <em>Journal of Financial Economics</em>, 127(3):505–518, 2018. <a href="https://doi.org/10.1016/j.jfineco.2017.12.001">doi: 10.1016/j.jfineco.2017.12.001</a>. URL <a class="uri" href="https://doi.org/10.1016/j.jfineco.2017.12.001">https://doi.org/10.1016/j.jfineco.2017.12.001</a>.</p></div>
+<div class="csl-entry" id="ref-Brunnermeier2009"><p>Markus K. Brunnermeier. Deciphering the liquidity and credit crunch 2007-2008. <em>Journal of Economic Perspectives</em>, 23(1):77–100, 2009. <a href="https://doi.org/10.1257/jep.23.1.77">doi: 10.1257/jep.23.1.77</a>. URL <a class="uri" href="http://www.aeaweb.org/articles.php?doi=10.1257/jep.23.1.77">http://www.aeaweb.org/articles.php?doi=10.1257/jep.23.1.77</a>.</p></div>
+<div class="csl-entry" id="ref-BrunnermeierSimsekXiong2014"><p>Markus K. Brunnermeier, Alp Simsek, and Wei Xiong. A welfare criterion for models with distorted beliefs. <em>The Quarterly Journal of Economics</em>, 129(4):1753–1797, 2014. <a href="https://doi.org/10.1093/qje/qju025">doi: 10.1093/qje/qju025</a>. URL <a class="uri" href="https://doi.org/10.1093/qje/qju025">https://doi.org/10.1093/qje/qju025</a>.</p></div>
+<div class="csl-entry" id="ref-DuffieRahi1995"><p>Darrell Duffie and Rohit Rahi. <span>Financial Market Innovation and Security Design: An Introduction</span>. <em>Journal of Economic Theory, Elsevier</em>, 65(1):1–42, February 1995. URL <a class="uri" href="http://ideas.repec.org/a/eee/jetheo/v65y1995i1p1-42.html">http://ideas.repec.org/a/eee/jetheo/v65y1995i1p1-42.html</a>.</p></div>
+<div class="csl-entry" id="ref-EllisPiccioneZhang2022"><p>Andrew Ellis, Michele Piccione, and Shengxing Zhang. Equilibrium securitization with diverse beliefs. <em>Theoretical Economics</em>, 17(1):121–152, 2022. <a href="https://doi.org/10.3982/TE4157">doi: 10.3982/TE4157</a>. URL <a class="uri" href="https://doi.org/10.3982/TE4157">https://doi.org/10.3982/TE4157</a>.</p></div>
+<div class="csl-entry" id="ref-EysterPiccione2014"><p>Erik Eyster and Michele Piccione. An approach to asset pricing under incomplete and diverse perceptions. <em>Econometrica</em>, 81(4):1483–1506, 2013. ISSN 1468-0262. <a href="https://doi.org/10.3982/ECTA10499">doi: 10.3982/ECTA10499</a>. URL <a class="uri" href="http://dx.doi.org/10.3982/ECTA10499">http://dx.doi.org/10.3982/ECTA10499</a>.</p></div>
+<div class="csl-entry" id="ref-FostelGeanakoplos2012"><p>Ana Fostel and John Geanakoplos. Tranching, cds, and asset prices: How financial innovation can cause bubbles and crashes. <em>American Economic Journal: Macroeconomics</em>, 4(1):190–225, 2012. <a href="https://doi.org/10.1257/mac.4.1.190">doi: 10.1257/mac.4.1.190</a>. URL <a class="uri" href="http://www.aeaweb.org/articles.php?doi=10.1257/mac.4.1.190">http://www.aeaweb.org/articles.php?doi=10.1257/mac.4.1.190</a>.</p></div>
+<div class="csl-entry" id="ref-FostelGeanakoplos2016"><p>Ana Fostel and John Geanakoplos. Financial innovation, collateral, and investment. <em>American Economic Journal: Macroeconomics</em>, 8(1):242–284, 2016. <a href="https://doi.org/10.1257/mac.20130183">doi: 10.1257/mac.20130183</a>. URL <a class="uri" href="https://doi.org/10.1257/mac.20130183">https://doi.org/10.1257/mac.20130183</a>.</p></div>
+<div class="csl-entry" id="ref-Geanakoplos1996"><p>John Geanakoplos. <span>Promises Promises</span>. Cowles Foundation Discussion Papers, Cowles Foundation for Research in Economics, Yale University 1143, Cowles Foundation for Research in Economics, Yale University, December 1996. URL <a class="uri" href="http://ideas.repec.org/p/cwl/cwldpp/1143.html">http://ideas.repec.org/p/cwl/cwldpp/1143.html</a>.</p></div>
+<div class="csl-entry" id="ref-GeanakoplosZame2014"><p>John Geanakoplos and William R. Zame. Collateral equilibrium: I: A basic framework. <em>Economic Theory</em>, 56(3):443–492, 2014. <a href="https://doi.org/10.1007/s00199-013-0797-4">doi: 10.1007/s00199-013-0797-4</a>. URL <a class="uri" href="https://doi.org/10.1007/s00199-013-0797-4">https://doi.org/10.1007/s00199-013-0797-4</a>.</p></div>
+<div class="csl-entry" id="ref-GennaioliShleiferVishny2012"><p>Nicola Gennaioli, Andrei Shleifer, and Robert Vishny. Neglected risks, financial innovation, and financial fragility. <em>Journal of Financial Economics</em>, 104(3):452–468, 2012. <a href="https://doi.org/10.1016/j.jfineco.2011.05.005">doi: 10.1016/j.jfineco.2011.05.005</a>. URL <a class="uri" href="https://doi.org/10.1016/j.jfineco.2011.05.005">https://doi.org/10.1016/j.jfineco.2011.05.005</a>.</p></div>
+<div class="csl-entry" id="ref-GreenwoodHansonShleiferSorensen2022"><p>Robin Greenwood, Samuel G. Hanson, Andrei Shleifer, and Jakob Ahm Sorensen. Predictable financial crises. <em>The Journal of Finance</em>, 77(2):863–921, 2022. <a href="https://doi.org/10.1111/jofi.13105">doi: 10.1111/jofi.13105</a>. URL <a class="uri" href="https://doi.org/10.1111/jofi.13105">https://doi.org/10.1111/jofi.13105</a>.</p></div>
+<div class="csl-entry" id="ref-GuoWangWei2014"><p>Guixia Guo, Frank Yong Wang, and Xu Wei. Optimal tranching with diverse beliefs. <em>Economics Letters</em>, 124(2):222–226, 2014. <a href="https://doi.org/10.1016/j.econlet.2014.05.030">doi: 10.1016/j.econlet.2014.05.030</a>. URL <a class="uri" href="https://doi.org/10.1016/j.econlet.2014.05.030">https://doi.org/10.1016/j.econlet.2014.05.030</a>.</p></div>
+<div class="csl-entry" id="ref-HarrisonKreps1978"><p>J Michael Harrison and David M Kreps. <span>Speculative Investor Behavior in a Stock Market with Heterogeneous Expectations</span>. <em>The Quarterly Journal of Economics</em>, 92(2):323–36, May 1978. URL <a class="uri" href="http://ideas.repec.org/a/tpr/qjecon/v92y1978i2p323-36.html">http://ideas.repec.org/a/tpr/qjecon/v92y1978i2p323-36.html</a>.</p></div>
+<div class="csl-entry" id="ref-IachanNenovSimsek2021"><p>Felipe S. Iachan, Plamen T. Nenov, and Alp Simsek. The choice channel of financial innovation. <em>American Economic Journal: Macroeconomics</em>, 13(2):333–372, 2021. <a href="https://doi.org/10.1257/mac.20180429">doi: 10.1257/mac.20180429</a>. URL <a class="uri" href="https://doi.org/10.1257/mac.20180429">https://doi.org/10.1257/mac.20180429</a>.</p></div>
+<div class="csl-entry" id="ref-KrishnamurthyLi2025"><p>Arvind Krishnamurthy and Wenhao Li. Dissecting mechanisms of financial crises: Intermediation and sentiment. <em>Journal of Political Economy</em>, 133(3):935–985, 2025. <a href="https://doi.org/10.1086/733423">doi: 10.1086/733423</a>. URL <a class="uri" href="https://doi.org/10.1086/733423">https://doi.org/10.1086/733423</a>.</p></div>
+<div class="csl-entry" id="ref-Kubler2012"><p>Felix Kubler and Karl Schmedders. Financial innovation and asset price volatility. <em>American Economic Review</em>, 102(3):147–51, 2012. <a href="https://doi.org/10.1257/aer.102.3.147">doi: 10.1257/aer.102.3.147</a>. URL <a class="uri" href="http://www.aeaweb.org/articles.php?doi=10.1257/aer.102.3.147">http://www.aeaweb.org/articles.php?doi=10.1257/aer.102.3.147</a>.</p></div>
+<div class="csl-entry" id="ref-Matthews1994"><p>John O Matthews. Struggle and survival on wall street. <em>New York</em>, 1994.</p></div>
+<div class="csl-entry" id="ref-Maxted2024"><p>Peter Maxted. A macro-finance model with sentiment. <em>Review of Economic Studies</em>, 91(1):438–475, 2024. <a href="https://doi.org/10.1093/restud/rdad023">doi: 10.1093/restud/rdad023</a>. URL <a class="uri" href="https://doi.org/10.1093/restud/rdad023">https://doi.org/10.1093/restud/rdad023</a>.</p></div>
+<div class="csl-entry" id="ref-MilgromStokey1982"><p>Paul Milgrom and Nancy Stokey. Information, trade and common knowledge. <em>Journal of Economic Theory</em>, 26(1):17 – 27, 1982. ISSN 0022-0531. <a href="https://doi.org/http://dx.doi.org/10.1016/0022-0531(82)90046-1">doi: http://dx.doi.org/10.1016/0022-0531(82)90046-1</a>. URL <a class="uri" href="http://www.sciencedirect.com/science/article/pii/0022053182900461">http://www.sciencedirect.com/science/article/pii/0022053182900461</a>.</p></div>
+<div class="csl-entry" id="ref-Miller1977"><p>Edward M. Miller. Risk, uncertainty, and divergence of opinion. <em>The Journal of Finance</em>, 32(4):pp. 1151–1168, 1977. ISSN 00221082. URL <a class="uri" href="http://www.jstor.org/stable/2326520">http://www.jstor.org/stable/2326520</a>.</p></div>
+<div class="csl-entry" id="ref-Scheinkman2004"><p>Jos<span>é</span> Scheinkman and Wei Xiong. Heterogeneous beliefs, speculation and trading in financial markets. In <em>Paris-Princeton Lectures on Mathematical Finance 2003</em>, pages 217–250. Springer, 2004.</p></div>
+<div class="csl-entry" id="ref-Simsek2013a"><p>Alp Simsek. Belief disagreements and collateral constraints. <em>Econometrica</em>, 81(1):1–53, 2013<span>a</span>. ISSN 1468-0262. <a href="https://doi.org/10.3982/ECTA9956">doi: 10.3982/ECTA9956</a>. URL <a class="uri" href="http://dx.doi.org/10.3982/ECTA9956">http://dx.doi.org/10.3982/ECTA9956</a>.</p></div>
+<div class="csl-entry" id="ref-Simsek2013b"><p>Alp Simsek. Speculation and risk sharing with new financial assets. <em>The Quarterly Journal of Economics</em>, 128(3):1365–1396, 2013<span>b</span>. <a href="https://doi.org/10.1093/qje/qjt007">doi: 10.1093/qje/qjt007</a>. URL <a class="uri" href="http://qje.oxfordjournals.org/content/128/3/1365.abstract">http://qje.oxfordjournals.org/content/128/3/1365.abstract</a>.</p></div>
+<div class="csl-entry" id="ref-Tarski1955"><p>Alfred Tarski. A lattice-theoretical fixpoint theorem and its applications. <em>Pacific Journal of Mathematics</em>, 5(2):285–309, 1955. <a href="https://doi.org/10.2140/pjm.1955.5.285">doi: 10.2140/pjm.1955.5.285</a>. URL <a class="uri" href="https://doi.org/10.2140/pjm.1955.5.285">https://doi.org/10.2140/pjm.1955.5.285</a>.</p></div></section>

@@ -1,0 +1,47 @@
+name: Verify and publish digital edition
+on:
+  push:
+    branches: [codex/jme-major-revision]
+    paths:
+      - 'docs/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'main.tex'
+      - 'computational_companion/**'
+      - 'requirements-web.txt'
+      - '.github/workflows/web-edition.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: asset-value-pages
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.3.5 beautifulsoup4==4.13.5
+      - run: python -m unittest computational_companion.test_waterfall_equilibria
+      - run: python -m unittest discover -s tests
+      - run: python scripts/build_web_data.py --check
+      - run: node --check docs/web.js
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+  deploy:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy validated snapshot
+        id: deployment
+        uses: actions/deploy-pages@v4

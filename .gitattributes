@@ -1,0 +1,7 @@
+/docs/** text eol=lf
+/docs/paper/*.pdf binary
+/scripts/** text eol=lf
+/tests/** text eol=lf
+/requirements-web.txt text eol=lf
+/WEB_EDITION.md text eol=lf
+/.github/workflows/web-edition.yml text eol=lf
